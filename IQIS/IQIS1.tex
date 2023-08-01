@@ -1,6 +1,7 @@
 \documentclass[a4paper,chapter,kosection,atbegshi,hidelinks,itemph]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,}
+\graphicspath{{./IMG/}}
 \setlist{nosep}
 
 \renewcommand\chaptername{강}
@@ -55,10 +56,11 @@
         \begin{align*}\pmb{\vdots}\end{align*}
 \end{description}
 
-\newpage\pagestyle{hf}
-헤더 테스트
-
-\newpage
-\itshape헤더 테스트
-
+\pagestyle{hf}
+두 점이 하나의 슬릿을 지닌 장벽으로 구분되어 있다고 하자.
+우리는 입자가 한 점에서 다른 점으로 이동하는 확률을 측정하고자 한다.
+경로를 늘리면 (다시 말해 또 다른 슬릿을 개방하면) 다른 쪽에 도달할 가능성이 증가,
+아니 적어도 감소하지는 않을 것은 분명하다.
+확률이 \textbf{단조}{\footnotesize monotone}라고 말하여 이런 성질을 가리킬 수 있다.
+    \includegraphics[width=0.25\textwidth]{iqis1_001}
 \end{document}
