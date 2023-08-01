@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.25)  1 AUG 2023 16:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.25)  1 AUG 2023 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -921,13 +921,12 @@ LaTeX Info: Redefining \vdots on input line 1241.
 LaTeX Info: Redefining \cdots on input line 1246.
 LaTeX Info: Redefining \not on input line 1488.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 10.
-LaTeX Font Info:    Trying to load font information for OT1+LinuxLibertineT-TLF on input line 14.
+LaTeX Font Info:    Trying to load font information for OT1+LinuxLibertineT-TLF on input line 10.
  (/usr/share/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TLF.fd
 File: OT1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for OT1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 14.
+(Font)              scaled to size 10.0pt on input line 10.
 
 
 LaTeX Warning: Unused global option(s):
@@ -936,55 +935,55 @@ LaTeX Warning: Unused global option(s):
 (./IQIS1.aux)
 \openout1 = `IQIS1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 14.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 10.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 10.
  (/usr/share/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input line 14.
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on input line 14.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input line 10.
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on input line 10.
  (/usr/share/texmf-dist/tex/latex/libertinust1math/ls1libertinust1math.fd
 File: ls1libertinust1math.fd 2016/03/23 Fontinst v1.933 font definitions for LS1/libertinust1math.
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input line 14.
-LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym on input line 14.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input line 10.
+LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym on input line 10.
  (/usr/share/texmf-dist/tex/latex/libertinust1math/ls2libertinust1mathsym.fd
 File: ls2libertinust1mathsym.fd 2015/04/17 v1.1.2-latex LibertinusT1Mathsym LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    ... okay on input line 10.
    defining Unicode char U+00B7 (decimal 183)
  (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph.sty
 Package: memucs-gremph 
 LaTeX Info: Redefining \itshape on input line 74.
 LaTeX Info: Redefining \slshape on input line 78.
 )
-Package hyperref Info: Link coloring ON on input line 14.
+Package hyperref Info: Link coloring OFF on input line 10.
  (./IQIS1.out) (./IQIS1.out)
 \@outlinefile=\write4
 \openout4 = `IQIS1.out'.
 
-LaTeX Info: Command `\dddot' is already robust on input line 14.
-LaTeX Info: Command `\ddddot' is already robust on input line 14.
+LaTeX Info: Command `\dddot' is already robust on input line 10.
+LaTeX Info: Command `\ddddot' is already robust on input line 10.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count351
@@ -1002,163 +1001,158 @@ LaTeX Info: Command `\ddddot' is already robust on input line 14.
 \c@mv@tabular=\count357
 \c@mv@boldtabular=\count358
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 7.0pt on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 7.0pt on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 7.0pt on input line 23.
-LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathex on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
+LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathex on input line 19.
  (/usr/share/texmf-dist/tex/latex/libertinust1math/ls2libertinust1mathex.fd
 File: ls2libertinust1mathex.fd 2016/03/15 v1.0.0-latex LibertinusMath extensions LS2 font definitions
 )
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 7.0pt on input line 23.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb on input line 23.
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb on input line 19.
  (/usr/share/texmf-dist/tex/latex/libertinust1math/ls1libertinust1mathbb.fd
 File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font definitions
 )
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 7.0pt on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 7.0pt on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 14.4pt on input line 23.
+(Font)              scaled to size 14.4pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 7.0pt on input line 23.
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 23.
+(Font)              scaled to size 7.0pt on input line 19.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 19.
  (/usr/share/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 23.
+(Font)              scaled to size 10.0pt on input line 19.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
-(Font)              scaled to size 5.0pt on input line 23.
+(Font)              scaled to size 5.0pt on input line 19.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 19.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 26.
+(Font)              scaled to size 20.74pt on input line 22.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 20.74pt on input line 26.
+(Font)              scaled to size 20.74pt on input line 22.
 
 
 LaTeX Font Warning: Font shape `LUC/nanummj/sb/n' undefined
-(Font)              using `LUC/nanummj/m/n' instead on input line 26.
+(Font)              using `LUC/nanummj/m/n' instead on input line 22.
 
 (./IQIS1.toc
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
 (Font)              scaled to size 10.0pt on input line 1.
 ) [2{/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_fygcup.enc}]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 27.
+(Font)              scaled to size 17.28pt on input line 23.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 17.28pt on input line 27.
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
- []
-
-[3
+(Font)              scaled to size 17.28pt on input line 23.
+ [3
 
 {/usr/share/texmf-dist/fonts/enc/dvips/libertinust1math/libusSYM.enc}]
 \tf@toc=\write5
@@ -1172,19 +1166,19 @@ Package rerunfilecheck Info: File `IQIS1.out' has not changed.
 (rerunfilecheck)             Checksum: 1EB4BEEA04B05B13F659FDB9523FCF7F;260.
  ) 
 Here is how much of TeX's memory you used:
- 18106 strings out of 477985
- 292797 string characters out of 5840058
- 1859388 words of memory out of 5000000
- 37889 multiletter control sequences out of 15000+600000
- 582454 words of font info for 197 fonts, out of 8000000 for 9000
+ 18103 strings out of 477985
+ 292748 string characters out of 5840058
+ 1858388 words of memory out of 5000000
+ 37888 multiletter control sequences out of 15000+600000
+ 582161 words of font info for 196 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,11n,106p,488b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
-Output written on IQIS1.pdf (3 pages, 1654754 bytes).
+</usr/share/texmf-dist/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/t
+exmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
+Output written on IQIS1.pdf (3 pages, 1603789 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
+ 226 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  6 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

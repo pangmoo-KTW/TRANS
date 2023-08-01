@@ -88,6 +88,8 @@ INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 INPUT /usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
 INPUT /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
@@ -809,7 +811,6 @@ INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
-INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
@@ -947,7 +948,6 @@ INPUT /usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph
 INPUT /usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph.sty
 INPUT /usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph.sty
 INPUT /usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-INPUT /usr/share/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./IQIS1.out
 INPUT IQIS1.out
 INPUT ./IQIS1.out
@@ -1140,11 +1140,10 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd5.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb7.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb2.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbd.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbb.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbd.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb2.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc0.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmad.tfm
@@ -1154,7 +1153,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmba.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb3.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmae.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb4.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd1.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/libertine/LinLibertineTZ-tlf-ot1.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/libertine/LinLibertineTZ-tlf-ot1--base.tfm
@@ -1177,7 +1176,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb
