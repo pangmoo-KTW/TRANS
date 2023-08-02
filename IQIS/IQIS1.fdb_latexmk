@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1690963147 "IQIS1.tex" "IQIS1.pdf" "IQIS1" 1690963149 0
+["pdflatex"] 1690964999 "IQIS1.tex" "IQIS1.pdf" "IQIS1" 1690965000 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1689853683 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -78,6 +78,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm" 1689853683 1256 65e23cc1bcd2b64aca8af1f732fed042 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.tfm" 1689853683 1252 818c5e98aaef778763029f70d8876c68 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc3.tfm" 1689853683 1268 1364c73bafbd0d19f22e0484c465f663 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc4.tfm" 1689853683 1260 9b758ab7a4dde34b1a04a2b2aae66eac ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm" 1689853683 1240 519d105c3f882d4e81d993bd5669c5c8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm" 1689853683 1260 8036be1c5030d1ed0ea8755dd5820fff ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc7.tfm" 1689853683 1260 b0ea938725b0995b1f91c462ecbf4f1f ""
@@ -195,6 +196,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb" 1689853683 161865 4f209de35b3f8f8bf0c6bd2626c71039 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb" 1689853683 153768 774715bfa19c744cd0c61d8837698d54 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb" 1689853683 159636 95fe7c0526ffc7040309eb751cd4014d ""
+  "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb" 1689853683 179426 936e80fb1ebcb112ad90fb1e16e65352 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb" 1689853683 160980 bd8397c3a5098b5e923061af463cdc2f ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb" 1689853683 187129 6f90122b69ea350c302ecb7ec19b0cd5 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb" 1689853683 160872 59a8c8ebbe2a739f67efb454490bfe1a ""
@@ -318,10 +320,10 @@
   "IMG//iqis1_001.png" 1690885025 10201 9835e91429ad80ba225e96765b8c0a5d ""
   "IMG//iqis1_002.png" 1690897623 18741 369a7069bf241836b4664f147377723f ""
   "IMG//iqis1_003.png" 1690962425 94875 dedf81a204fa8c8493a246e1b3e18c2d ""
-  "IQIS1.aux" 1690963148 1021 586bad1f4cc8e2be526278b7c47ee2e4 "pdflatex"
-  "IQIS1.out" 1690963148 260 1eb4beea04b05b13f659fdb9523fcf7f "pdflatex"
-  "IQIS1.tex" 1690963147 9963 88f6fe82cb75cdf0af8a3aef6e516b70 ""
-  "IQIS1.toc" 1690963148 182 765b1cce25d753a952f3fa3b09afe133 "pdflatex"
+  "IQIS1.aux" 1690965000 1021 586bad1f4cc8e2be526278b7c47ee2e4 "pdflatex"
+  "IQIS1.out" 1690965000 260 1eb4beea04b05b13f659fdb9523fcf7f "pdflatex"
+  "IQIS1.tex" 1690964993 9989 79a89e89bc643210733ed908c95f1d21 ""
+  "IQIS1.toc" 1690965000 182 765b1cce25d753a952f3fa3b09afe133 "pdflatex"
   (generated)
   "IQIS1.aux"
   "IQIS1.log"
