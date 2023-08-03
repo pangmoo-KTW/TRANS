@@ -1,0 +1,190 @@
+\documentclass[a4paper,chapter,kosection,atbegshi,hidelinks,itemph]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
+\graphicspath{{./IMG/}}
+\setlist{nosep}
+
+\renewcommand\chaptername{강}
+
+\makepagestyle{hf}
+\makeevenhead{hf}{\thepage}{}{\itshape\leftmark}
+\makeoddhead{hf}{}{}{\thepage}
+\makeevenfoot{hf}{}{}{}
+\makeoddfoot{hf}{}{}{}
+\makepsmarks{hf}{%
+\createmark{chapter}{left}{nonumber}{}{}}
+
+\begin{document}
+\title{양자정보학 개론\thanks{원문: \url{https://www.scottaaronson.com/qclec.pdf}}}
+\author{
+    스콧 애론슨\thanks{코리 오스트로브와 파울로 알브스의 큰 도움을 받았다.}, 
+    2018년 가을\\
+    번역: 김태원
+}
+\date{\today}
+\newpage
+\maketitle\thispagestyle{empty}\newpage
+
+\tableofcontents\pagestyle{plain}
+
+\chapter{강의 개요 및 확장 처치-튜링 논제}
+\begin{itemize}[label=\(\blacktriangleright\)]
+    \item 양자정보학은 천성이 간학문적인 분야다. (물리학, 전산학, 수학, 공학, 철학)
+    \item 양자정보학은 단지 유용한 장치나 알고리즘의 발명만이 아니라 양자역학적 작용의 명료화에 관한 것이기도 하다.
+    \begin{itemize}
+        \item 양자역학으로 할 수 있느냐 없느냐는 물음을 던지기 위한 것이자
+        \item 양자역학 자체의 본성에 대한 더 나은 이해를 독려하기 위한 것이다.
+    \end{itemize}
+    \item 애론슨 교수는 양자정보학 연구의 이론적인 극단에 헌신한다.
+    \item 이론가들은 실험가들이 만드는 것을 알리고 이는 다시 이론가들의 질문에 영향을 미친다.
+\end{itemize}\hfill\break
+오늘은 물리적 세계에 관해 ``자명한" 진술들을 명시하겠다.
+그런 다음 양자역학이 이들 진술 가운데 몇몇만 놔두고 나머지는 뒤엎어 버리는 광경을
+목도할 테다. 
+그런데 이들 진술 간의 차이란 종종 아주 미묘하다!
+우선...\hfill\break
+
+\begin{description}[leftmargin=0cm]
+    \item[\textbf{확률}\;] 
+        $(P\in[0,1])$는 세상의 불확실성을 나타내는 표준적인 방법이다. 
+        확률은 아래 같은 일련의 공리를 따라야 한다.
+        \begin{itemize}[label=$\blacktriangleright$]
+            \item  상호배타적이며 포괄적인 사건{\footnotesize mutually exclusive
+            exhaustive events} $n$개의 집합에 대해  
+                확률들의 합은 $P_1+P_2+\cdots+P_n=1$을 만족한다.
+            \item 임의의 사건에 대한 확률은 $P_i\geq0$을 만족한다.
+        \end{itemize}
+        \begin{align*}\bullet\\\bullet\\\bullet\end{align*}
+\end{description}
+
+\newpage\pagestyle{hf}
+
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape``확률은 전부 우리 손 안에 있다"는
+관점이 존재한다. 우주에 관해 전부 (요컨대 태양계 속 모든 원자의 
+위치/속도를) 안다면 방정식들을 처리해서 뭐가 일어나는지 아닌지
+보기만 하는 것으로 충분하다는 뜻이다.}}\break
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \centering
+    \includegraphics[width=0.35\textwidth]{iqis1_001}
+\end{wrapfigure}
+
+\hfill
+
+장벽이 두 점을 구분하고 있다고 하자. 장벽에는 슬릿{\footnotesize slit}이 하나
+있다. 우리는 입자가 한 점에서 다른 점으로 이동하는 확률을 측정하고자 한다. 
+경로를 늘리면 (다시 말해 또 다른 슬릿을 개방하면) 다른 쪽에 도달할 가능성이 증가, 아니 적어도 감소하지는 않을 것은 분명하다. 확률이 \textbf{단조}{\footnotesize
+monotone}라는 말로 이런 성질을가리킬 수 있다.
+
+\hfill
+\begin{description}[leftmargin=0cm]
+    \item[국소성{\footnotesize Locality}.] 
+        우주를 가로지르는 전파가 특정 속도를 지닌다는 원리다.
+        공간상의 한 부분에 대해 상태를 업데이트할 때는 그 부분 주변의 지식만
+        필요할 것이다. 이에 적절한 모델은 콘웨이의 생명게임{\footnotesize Game Of
+        Life}이다. 계{\footnotesize system}에 일으키는 변화는 계에 영향을 미칠
+        수 있다. 하지만 각 칸은 오직 가장 가까운 주변부와 상호작용할 뿐이다. 
+        그리하여 변화는 오직 특정 속도로 전파한다.
+\end{description}
+
+\begin{wrapfigure}{l}{0.33\textwidth}
+    \centering
+    \includegraphics[width=0.33\textwidth]{iqis1_002}
+\end{wrapfigure}
+
+\hfill
+
+국소성은 물리학에서 자연스럽게 모습을 드러낸다. 아인슈타인의 특수상대성이론
+덕분이다. 이는 어떤 신호도 빛의 (유한한) 속력보다 빠르게 전파할 수 없다는
+암시를 지니는 원리다. 이 간단한 원리는 여러 물리 현상을 설명할 수 있다. 
+특수상대성이론에 따른 어떤 관찰자의 관점으로는 광속보다 빠르게 이동하는 것이라면
+모두 사실상 시간을 역행한다.\break
+
+\begin{description}[leftmargin=0cm]
+    \item[국소적 실재론{\footnotesize Local Realism}.] 멀리 떨어진 사건에 대한
+        지식의 업데이트를 몽땅 무작위 변수의 상관관계로 설명할 수 있다는
+        원리다. 당신은 오스틴, 친구는 샌프란시스코에 있다고 하자. 둘 다
+        같은 신문을 구독한다. 아침이 되자 당신은 신문을 펼친다. 그러자 당신의
+        지식은 즉각 붕괴한다. 바로 샌프란시스코 친구가 지니는 신문의 헤드라인에
+        관한 지식이었다. 붕괴의 자리에는 지금 손에 쥔 신문의 헤드라인이 들어선다.
+        신문을 집기 전의 상황이라면 당신의 지식은 확률 분포로 가장 잘 서술될 수
+        있었다. 하지만 지금 결과는 완벽하게 상호연관되어 있다. 그래서 신문
+        헤드라인을 학습하는 바로 그 순간 친구의 신문도 동일한 헤드라인을
+        지닌다고 즉각 알 수 있다.
+        \end{description}
+
+\newpage
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape어떤 대중과학 기사는 한 입자의
+스핀을 측정할 때 은하계 이면에 있는 또 다른 입자의 스핀을 즉각 알 수 있는
+방법을 논한다. 다만 별다른 언급이 따로 없다면 신문 사례와 다를 바 없다.
+그리고 국소적 실재론과 100\% 호환되는 것으로 보인다!}}
+
+\hfill\break
+
+\begin{description}[leftmargin=0cm]
+    \item[처치-튜링 논제{\footnotesize Chuch-Turing Thesis}.] 처치-튜링 논제란
+        모든 물리적인 과정이 튜링장치를 통해 원하는 임의의 정밀도로
+        시뮬레이션 가능하다는 진술이다. 처치와 튜링은 이 진술을
+        계산{\footnotesize computation}에 대한 정의로 이해했다. 그러나 이런 정의
+        대신 물리 세계에 관해 반증가능한 주장으로 처치-튜링 논제를 받아들일 수
+        있다. 전체 우주가 일종의 초대형 비디오 게임이라는 발상으로
+        이해하는 것이다. 여기에는 쿼크와 블랙홀, 온갖 종류의 복잡한 것이라면
+        뭐든 있다. 다만 종국에는 이들을 컴퓨터로 시뮬레이션할 수 있어야 한다.
+        \textbf{확장 처치-튜링 논제}는 여기서 더 나아간다. 바로 디지털 컴퓨터를
+        통한 실재{\footnotesize reality}의 시뮬레이션에는 시간과 공간과 여타
+        계산 자원상 다항{\footnotesize polynomial}의 (즉 선형이나
+        이차의) 증가가 최대라는 것이다.
+\end{description}
+
+\hfill
+
+\hfill\parbox[t]{9cm}{\textcolor{gray}{이론전산학 수업은 근본적으로 수학 수업처럼
+보일 수 있다. 그럼 뭐가 이론전산학과 실재를 연결하는가? 바로 처치-튜링 논제다.}}
+
+\hfill\break
+
+그렇다면 양자역학은 이들 원리에 대해 뭐라고 말하고자 하는가? 나머지 수업에 관한
+예고편을 제공하자면 아래와 같다.
+
+\hfill
+
+\begin{itemize}[label=$\blacktriangleright$]
+    \item 확률을 쓰긴 한다. 다만 \circemph{연산}을 아예
+        달리할 것이다. 그리고 단조의 공리를 위배하겠다. 즉 한 사건이
+        일어날 수 있는 방법의 \circemph{증가}에 의해 그 사건이 일어나는 확률은
+        \circemph{감소}할 수 있다.
+    \item 국소성은 놔둔다. 그러나 \circemph{국소적 실재론}은 타도하겠다. 이 두
+        원리가 서로에 대한 재진술처럼 들렸다면 글쎄 양자역학은 이들 간의 차리를
+        극적으로 묘사하리다!
+    \item 앞으로 확인하겠지만 처치-튜링 논제는 양자역학이라는 역광에도 불구하고
+        상태가 좋아 보인다. 그러나 확장 처치-튜링 논제는 그 반례로서 이글거리며
+        서 있는 양자컴퓨팅 탓에 거짓으로 보인다. 양자컴퓨팅은 확장 처치-튜링 
+        논제에 대해 아마 우리의 물리학 법칙들이 허용하는 단 하나의 반례일지도
+        모른다. 그런데도 이야기한 김에 덧붙이자면 양자 버전으로 확장 처치-튜링
+        논제를 정식화할 수도 있다. 이 양자 버전은 오늘날의 지식에 한해 아직 
+        참이다.
+\end{itemize}
+
+\hfill\break
+
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape확장 처치-튜링 논제에 대해 다른
+반례도 생각해 볼 수 있다. 가령 어떤 이들은 시간 팽창{\footnotesize time 
+dilation}을 사용하면 미래로 수십억 년을 여행해 난해한 문제들{\footnotesize hard
+problems}에 대한 결과를 취할 수 있다고 제안했다. 재밌다! 하지만 \textbf{엄청난}
+에너지가 필요하겠다. 또 그만큼 에너지를 한 장소에 지니면 당신은 블랙홀로
+붕괴한다. 별로 재미없다!}}
+
+\hfill\break
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{iqis1_003}
+\end{figure}
+
+\chapter{확률론과 양자역학}
+
+유명한 물리학자인 리차드 파인만이 말하기를 양자역학에 관한 모든 것은 \textbf{이중
+슬릿 실험}으로 캡슐화할 수 있다. 이중 슬릿 시험에서는 두 narrow 슬릿이 있는
+벽으로 한 번에 하나씩 광자를 쏜다. 
+
+\end{document}
