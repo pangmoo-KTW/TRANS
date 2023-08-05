@@ -1,6 +1,7 @@
 \documentclass[a4paper,chapter,kosection,atbegshi,hidelinks,itemph]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
+\usepackage{caption}
 \graphicspath{{./IMG/}}
 \setlist{nosep}
 
@@ -183,17 +184,18 @@ problems}에 대한 결과를 취할 수 있다고 제안했다. 재밌다! 하�
 
 \chapter{확률론과 양자역학}
 
-유명한 물리학자 리차드 파인만이 말하기를 양자역학에 관한 모든 것은 \textbf{이중
-슬릿 실험}으로 요약할 수 있다. 이중 슬릿 실험에서는 좁은 슬릿 두 개가 있는
-벽으로 한 번에 하나씩 광자를 쏜다. 이때 두 번째 벽에 안착하는 각 광자는
-확률론적이다. 광자가 나타나는 곳을 뒷벽에 표시한다면 어떤 데는 아주 그럴듯하고
-어떤 데는 그럴듯하지 않을 테다. 그림 2.1 - 2.3은 기본적인 실험 구성과
-이들 광자로 단일 슬릿과 이중 슬릿 실험을 수행하여 얻는 결과를 보인다. 
+유명한 물리학자 리차드 파인만이 말하기를 양자역학은 전부 \textbf{이중
+슬릿 실험}으로 요약할 수 있다. 이중 슬릿 실험은 좁은 슬릿 두 개가 있는
+벽으로 한 번에 하나씩 광자를 쏜다. 이때 확률론적인 것은 두 번째 벽에 안착하는
+광자다. 광자가 나타나는 구역을 뒷벽에 표시해 보자. 어떤 구역은 아주 그럴듯하고
+어떤 구역은 그렇지 않다. 그림 \ref{fig:figure21} - \ref{fig:figure23}은 
+기본 실험 구성과 단일 및 이중 슬릿 실험을 수행 결과를 보인다. 
 
-이상한 점은 스크린상에서 어떤 데는 그럴듯하고 어떤 데는 그럴듯하지 않다는 것이
-아니다. 이는 각 광자가 미지의 ("RFID 태그" 혹은) 여유 자유도{\footnotesize degree
-of freedom}를 지녔으며 이것이 작금의 현상을 결정했다는 이론으로 충분히 설명할
-수 있다. 이상한 점은 아래와 같다. 두 번째 벽 위의 어떤 구간에 대해 광자가
+스크린상 어떤 구역은 그럴듯하고 어떤 구역은 그럴듯하지 않다. 그런데 이 결과
+자체가 기이하지는 않다. 각 광자가 (``전자태그"와 같은) 미지의 여유
+자유도{\footnotesize degree of freedom}를 지녀서 작금의 현상을 결정했다는
+이론으로 충분히 설명할 수 있는 결과다. 기이한 사실은 이렇다. 두 번째 벽
+위 어떤 구간에 대해 광자가
 
 \hfill
 
@@ -205,10 +207,30 @@ of freedom}를 지녔으며 이것이 작금의 현상을 결정했다는 이론
 \hfill\break
 
 $P=P_1+P_2$라고 생각하겠지만 실험에 따르면 사실이 아니다! 모든 슬릿이 개방될 때
-맞지 않은 구역은 이따금 하나의 슬릿만 개방될 때 맞을 수도 있다. 
+맞지 않은 구역이더라도 이따금 하나의 슬릿만 개방될 때 맞을 수 있다. 
 
 \hfill
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape 기이한 것은 ``신이 주사위를
-굴린다"는 것이 아니다. 차라리 말하자면 ``이건 멀쩡한 주사위가 아니다"!}}
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape ``신이 주사위를 굴린다"는 말은
+별로 기이하지 않다. 차라리 기이한 쪽을 말하자면 ``이건 멀쩡한 주사위가 아니다"!}}
+
+\begin{figure}[h]
+    \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{iqis1_004}
+    \caption{\label{fig:figure21}\dotemph{단일 슬릿} 광자 간섭 실험 구성}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=.9\linewidth]{iqis1_005}
+        \caption{\label{fig:figure22}\dotemph{이중 슬릿} 광자 간섭 실험 구성}
+    \end{minipage}
+    \centering
+    \includegraphics[width=.5\textwidth]{iqis1_006}
+     \caption{\label{fig:figure23}실질적인 실험으로 보이는 단일 슬릿과 이중 슬릿
+    간섭 패턴의 비교다. 단일 슬릿 패턴에는 보이지 않은 신규 암점{\footnotesize
+    dark spots}이 (즉 광자 안착 확률이 낮은 구역이) 이중 슬릿 패턴에 나타난다는
+    사실을 확인하라.}
+\end{figure}
+
 \end{document}

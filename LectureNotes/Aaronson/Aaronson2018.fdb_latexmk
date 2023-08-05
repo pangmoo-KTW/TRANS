@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1691231107 "Aaronson2018.tex" "Aaronson2018.pdf" "Aaronson2018" 1691231108 0
+["pdflatex"] 1691235234 "Aaronson2018.tex" "Aaronson2018.pdf" "Aaronson2018" 1691235236 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1689853683 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -258,6 +258,9 @@
   "/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1689853683 3052 30236f0cc243a8651b82240dfd2e8b9d ""
   "/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1689853683 2462 8ce5f9a9c63002f2c1af03c262cf29af ""
   "/usr/share/texmf-dist/tex/latex/base/inputenc.sty" 1689853683 5048 84b05796b49b69e2d4257d537721c960 ""
+  "/usr/share/texmf-dist/tex/latex/caption/caption-memoir.sto" 1689853683 2807 bf6053fbbc28c0d538d5bf6e20bc7465 ""
+  "/usr/share/texmf-dist/tex/latex/caption/caption.sty" 1689853683 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
+  "/usr/share/texmf-dist/tex/latex/caption/caption3.sty" 1689853683 71836 1a735454ad10692452eb2f2fc37f3865 ""
   "/usr/share/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty" 1689853683 4624 c01180d27e7528d224448437230c9abd ""
   "/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty" 1689853683 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1689853683 13886 d1306dcf79a944f6988e688c1785f9ce ""
@@ -325,13 +328,16 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1690224450 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1690224378 6768057 f63a4a6f565519813df6cca0d804403b ""
-  "Aaronson2018.aux" 1691231107 1232 eae6f5d16b1af2681ca7d997f6237f51 "pdflatex"
-  "Aaronson2018.out" 1691231107 375 498d9a2574f600a5594fba07a907dd7a "pdflatex"
-  "Aaronson2018.tex" 1691231106 11742 4cb5ca848c55360029fed16148440876 ""
-  "Aaronson2018.toc" 1691231107 280 c8415c57ff3a40af165487a58d8bba77 "pdflatex"
+  "Aaronson2018.aux" 1691235236 3146 cf2bdcd7ee89f668230a4c59aa916bb8 "pdflatex"
+  "Aaronson2018.out" 1691235236 375 498d9a2574f600a5594fba07a907dd7a "pdflatex"
+  "Aaronson2018.tex" 1691235232 12635 0dc903f89dd3ce4be262195360fa357d ""
+  "Aaronson2018.toc" 1691235236 280 c8415c57ff3a40af165487a58d8bba77 "pdflatex"
   "IMG//iqis1_001.png" 1690885025 10201 9835e91429ad80ba225e96765b8c0a5d ""
   "IMG//iqis1_002.png" 1690897623 18741 369a7069bf241836b4664f147377723f ""
   "IMG//iqis1_003.png" 1690962425 94875 dedf81a204fa8c8493a246e1b3e18c2d ""
+  "IMG//iqis1_004.png" 1691232652 25910 81cc1cb54478bb37a3e9355e6680fbeb ""
+  "IMG//iqis1_005.png" 1691232689 26678 a9a7cebc3ae4fc0bd2a438a70459ad13 ""
+  "IMG//iqis1_006.png" 1691232731 79913 95b635344455bc134cc7965293b0e7bb ""
   (generated)
   "Aaronson2018.aux"
   "Aaronson2018.log"
