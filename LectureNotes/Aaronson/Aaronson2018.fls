@@ -1,4 +1,4 @@
-PWD /home/ktw/TRANS/TRANS/LectureNotes/IQIS
+PWD /home/ktw/TRANS/TRANS/LectureNotes/Aaronson
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT Aaronson2018.tex
@@ -1172,6 +1172,8 @@ INPUT ./IMG//iqis1_003.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc9.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmoca.tfm
 OUTPUT Aaronson2018.toc
 INPUT Aaronson2018.aux
 INPUT ./Aaronson2018.out
@@ -1268,6 +1270,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb
@@ -1287,6 +1290,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
