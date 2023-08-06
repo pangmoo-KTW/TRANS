@@ -1114,7 +1114,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd0.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd4.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd3.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmod6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmob9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmoc7.tfm
@@ -1161,7 +1161,6 @@ INPUT ./IMG//iqis1_002.png
 INPUT ./IMG//iqis1_002.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbe.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc2.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmob5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmoc0.tfm
@@ -1186,8 +1185,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj04.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj05.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmod2.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmod3.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsl8.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxsl10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjboc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbocc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbob0.tfm
@@ -1231,7 +1230,6 @@ INPUT ./IMG//iqis1_008.png
 INPUT ./IMG//iqis1_008.png
 INPUT ./IMG//iqis1_008.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd3.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 OUTPUT Aaronson2018.toc
 INPUT Aaronson2018.aux
 INPUT ./Aaronson2018.out
@@ -1245,8 +1243,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
