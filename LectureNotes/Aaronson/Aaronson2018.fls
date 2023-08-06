@@ -1213,6 +1213,11 @@ INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmaf.tfm
+INPUT ./IMG//iqis1_007.png
+INPUT ./IMG//iqis1_007.png
+INPUT ./IMG//iqis1_007.png
+INPUT ./IMG//iqis1_007.png
 OUTPUT Aaronson2018.toc
 INPUT Aaronson2018.aux
 INPUT ./Aaronson2018.out
@@ -1259,6 +1264,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb
