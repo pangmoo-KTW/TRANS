@@ -60,7 +60,7 @@
 
 \newpage\pagestyle{hf}
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape``확률은 전부 우리 손 안에 있다"는
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape``확률은 전부 우리 손 안에 있다"는
 관점이 존재한다. 우주에 관해 전부 (요컨대 태양계 속 모든 원자의 
 위치/속도를) 안다면 방정식들을 처리해서 뭐가 일어나는지 아닌지
 보기만 하는 것으로 충분하다는 뜻이다.}}\break
@@ -115,7 +115,7 @@ monotone}라는 말로 이런 성질을가리킬 수 있다.
         \end{description}
 
 \newpage
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape어떤 대중과학 기사는 한 입자의
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape어떤 대중과학 기사는 한 입자의
 스핀을 측정할 때 은하계 이면에 있는 또 다른 입자의 스핀을 즉각 알 수 있는
 방법을 논한다. 다만 별다른 언급이 따로 없다면 신문 사례와 다를 바 없다.
 그리고 국소적 실재론과 100\% 호환되는 것으로 보인다!}}
@@ -168,7 +168,7 @@ monotone}라는 말로 이런 성질을가리킬 수 있다.
 
 \hfill\break
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape확장 처치-튜링 논제에 대해 다른
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape확장 처치-튜링 논제에 대해 다른
 반례도 생각해 볼 수 있다. 가령 어떤 이들은 시간 팽창{\footnotesize time 
 dilation}을 사용하면 미래로 수십억 년을 여행해 난해한 문제들{\footnotesize hard
 problems}에 대한 결과를 취할 수 있다고 제안했다. 재밌다! 하지만 \textbf{엄청난}
@@ -211,7 +211,7 @@ $P=P_1+P_2$라고 생각하겠지만 실험에 따르면 사실이 아니다! �
 
 \hfill
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape ``신이 주사위를 굴린다"는 말은
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape ``신이 주사위를 굴린다"는 말은
 별로 기이하지 않다. 차라리 기이한 쪽을 말하자면 ``이건 멀쩡한 주사위가 아니다"!}}
 
 \newpage
@@ -237,14 +237,14 @@ $P=P_1+P_2$라고 생각하겠지만 실험에 따르면 사실이 아니다! �
 
 \newpage
 
-광자가 어느 슬릿을 지나갔는지 측정하고자 할 수 있겠다. 하지만 그러다간 각 슬릿에
+광자가 어느 슬릿을 지나갔는지 측정하고 싶을 수 있겠다. 하지만 그러다간 각 슬릿에
 하나씩 밝은 부분이 남는 더 말이 되는 쪽으로 측정결과를 \dotemph{바꾸고 만다}. 
 의식을 지닌 관찰자가 있는지는 중요하지 않다는 사실에 유의하라. 지나간 슬릿의
 정보가 외부 환경에 아무튼 유출되면 결과는 고전 확률론을 따르는 꼴로 돌아간다. 
 
 \hfill
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape자연은 말하는 듯 하다. ``뭐? 나? 나 아무것도 안 했는데?''}}
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape자연은 말하는 듯 하다. ``뭐? 나? 나 아무것도 안 했는데?''}}
 
 \hfill
 
@@ -268,7 +268,7 @@ group}에 대해 일어나는 일이다. 입자는 격리되어야 하며 이런
 
 \hfill
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\slshape입자들이 \textbf{완벽하게}
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape입자들이 \textbf{완벽하게}
 격리되지는 않았지만 거의 \textbf{대부분} 격리되었다면 어떤가? 훌륭한 질문이다!
 나중 강의에서 돌이키겠다.}}
 
@@ -296,4 +296,48 @@ $a\in\mathbb{C}$를 사용하기 시작했다. 진폭은 양일 수도 음일 �
 핵심 주장}은 바로 격리된 계의 상태를 충분하게 설명하려면 측정할 적의 계로
 발견되는 가능한 구성 각각에 대해 하나의 진폭을 부여해야 한다는 것이다.
 
+\textbf{보른 규칙}{\footnotesize Born Rule}이 말하기를 특정 출력을 보는 확률은
+진폭 절댓값의 제곱이다.
+
+\begin{equation}{\label{eq:21}}
+  P = |\alpha|^2=\textrm{Re}(\alpha)^2+\textrm{Im}(\alpha)^2.
+\end{equation}
+
+진폭은 복소수라는 사실이 진폭을 확률과 다르게 행동하게끔 하는지 보자. 진폭을
+사용해 이중 슬릿 실험을 돌이키자.
+
+\hfill
+\hfill\parbox[t]{12cm}{
+  $\alpha$는 스크린상 특정 지점에 안착하는 광자의 총 진폭,\\
+  $\alpha_1$은 오직 1번 슬릿만 개방되었을 때 안착하는 광자의 진폭,\\
+  $\alpha_2$는 오직 2번 슬릿만 개방되었을 때 안착하는 광자의 진폭이라고 하자.
+}
+
+\hfill\break
+확률론에 빗대 다음을 취한다.
+\begin{equation}
+  \alpha = \alpha_1+\alpha_2.
+\end{equation}
+그런 다음 보른 규칙 \ref{eq:21}에서 다음을 취한다.
+\begin{equation}
+  P = |\alpha|^2=|\alpha_1+\alpha_2|^2=|\alpha_1|^2+|\alpha_2|^2+
+  \alpha_1^*\alpha_2+\alpha_1\alpha_2^*.
+\end{equation}
+가령 $\alpha_1=1/2, \alpha_2=-1/2$일 때 두 슬릿 모두 개방되었다면 $P=0$이라고
+확인할 수 있지만 하나의 슬릿만 개방된 경우 $P=1/4$다. 이 현상을
+\textbf{간섭}{\footnotesize interference}이라고들 한다.
+
+
+\newpage
+그리하여 핵으로 나선 운동하지 않는 전자를 정당화하기 위해 말할 수 있는 바,
+맞다. 전자가 그런 꼴을 보이는 경로는 여럿 있다. 하지만 어떤 경로는 양의 진폭을
+지니며 다른 경로는 음의 진폭을 지닌다. 잇따라 이들 경로는 서로를 소거한다. 
+
+\hfill
+
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape 이 강의에서 다루지 않을 
+물리학으로 진폭이 서로 소거하지 않는 확률은 이산 에너지 준위{\footnotesize
+discrete energy levels}를 유도한다는 사실을 확인할 수 있다. 이산 에너지
+준위는 전자들이 자리할 수 있는 곳이다. 이산 에너지 준위라는 현상은 결과적으로
+화학을 요청한다.}}
 \end{document}

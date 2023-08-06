@@ -1231,6 +1231,7 @@ INPUT ./IMG//iqis1_008.png
 INPUT ./IMG//iqis1_008.png
 INPUT ./IMG//iqis1_008.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd3.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 OUTPUT Aaronson2018.toc
 INPUT Aaronson2018.aux
 INPUT ./Aaronson2018.out
@@ -1247,6 +1248,9 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
