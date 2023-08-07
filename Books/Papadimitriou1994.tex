@@ -1,0 +1,55 @@
+\documentclass[a4paper,chapter,kosection,atbegshi,itemph]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{graphicx,wrapfig,xcolor,caption}
+\graphicspath{{./IMG/}}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\title{계산복잡도\\Computational Complexity}
+\author{크리스토스 H. 파파디미트리우\\
+Chistos H. Papadimitiriou\\
+\small 캘리포니아 대학교 샌디에이고\\
+\small \copyright 1994 Addison-Wesley Publishing Company, Inc.}
+\date{번역 김태원\\\today}
+
+\begin{document}
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+\frontmatter
+\tableofcontents
+\mainmatter
+\renewcommand{\partpageend}{}
+\part{알고리즘}
+\vspace{5\baselineskip}\noindent
+\emph{알고리즘 책은 계산복잡도를 다루는 장으로 끝나기 마련이니, 알고리즘에 관한
+기본 사실 몇 가지 돌이키며 본고를 시작하는 편이 적절하겠다. 이어지는 세 장에서
+우리의 목표는 간단하지만 중요한 요점을 조금 지적하는 것이다. 계산{\footnotesize
+computational} 문제란 해결되어야 하는 것일 뿐만 아니라, 탐구할 가치가 있는
+객체이기도 하다는 점이다. 문제와 알고리즘은 수학적으로 형식화되고 분석될 수 있다.
+차례로 이를테면 언어{\footnotesize languages}나 튜링장치{\footnotesize Turing
+machines}가 그렇다. 그리고 정확한 형식주의는 그닥 중요하지 않다. 다항시간
+계산가능성{\footnotesize Polynomial-time computability}은 계산 문제에 대해 원하는
+성질로, 실용적인 해결가능성{\footnotesize practical solvability}의 직관적인
+개념과 동질이다. 여러 상이한 계산 모델{\footnotesize models}은 효율성의 다항
+손실{\footnotesize polynomial loss}로 또 다른 모델을 시뮬레이션할 수 
+있다---비결정론{\footnotesize nondeterminism}이라는 예외, 즉 제 시뮬레이션에 
+지수시간{\footnotesize exponential time}을 요구하는 것으로 보이는 예외를 제외하면
+말이다. 그리고 알고리즘을 아예 지니지 않는 문제가 존재하는데, 아무리 비효율적인
+것조차 지니지 않는다.
+}
+\cleardoublepage
+\chapter{문제와 알고리즘}
+\emph{알고리즘은 문제를 풀기 위한 자세한 스텝별{\footnotesize step-by-step}
+방법론이다. 다만 문제{\footnotesize problem}가 뭔가? 우리는 이 장에서 
+중요한 예시 세 개를 소개한다}
+\section{그래프 도달가능성}
+\end{document}
