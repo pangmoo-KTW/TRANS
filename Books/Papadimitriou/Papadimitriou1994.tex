@@ -1,6 +1,8 @@
-\documentclass[a4paper,chapter,atbegshi,itemph]{oblivoir}
+\documentclass[a4paper,chapter,atbegshi,]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\newtheorem{defn}{정의}[chapter]
+\usepackage{euler}
 \usepackage{enumitem}
 \setlist{nosep}
 \usepackage{graphicx,wrapfig,xcolor,caption}
@@ -46,24 +48,24 @@ Chistos H. Papadimitiriou\\
 \vspace{5\baselineskip}\noindent
 \emph{알고리즘 책은 계산복잡도를 다루는 장으로 끝나기 마련이니, 알고리즘에 관한
 기본 사실 몇 가지 돌이키며 본고를 시작하는 편이 적절하겠다. 이어지는 세 장에서
-우리의 목표는 간단하지만 중요한 요점을 조금 지적하는 것이다. 계산{\footnotesize
-computational} 문제란 해결되어야 하는 것일 뿐만 아니라, 탐구할 가치가 있는
-객체이기도 하다는 점이다. 문제와 알고리즘은 수학적으로 형식화되고 분석될 수 있다.
-차례로 이를테면 언어{\footnotesize languages}나 튜링장치{\footnotesize Turing
-machines}가 그렇다. 그리고 정확한 형식주의는 그닥 중요하지 않다. 다항시간
-계산가능성{\footnotesize Polynomial-time computability}은 계산 문제에 대해 원하는
-성질로, 실용적인 해결가능성{\footnotesize practical solvability}의 직관적인
-개념과 동질이다. 여러 상이한 계산 모델{\footnotesize models}은 효율성의 다항
-손실{\footnotesize polynomial loss}로 또 다른 모델을 시뮬레이션할 수 
-있다---비결정론{\footnotesize nondeterminism}이라는 예외, 즉 제 시뮬레이션에 
-지수시간{\footnotesize exponential time}을 요구하는 것으로 보이는 예외를 제외하면
-말이다. 그리고 알고리즘을 아예 지니지 않는 문제가 존재하는데, 아무리 비효율적인
-것조차 지니지 않는다.
+우리의 목표는 간단하지만 중요한 요점을 조금 지적하는 것이다. 바로 
+계산{\footnotesize computational} 문제란 해결되어야 하는 것일 뿐만 아니라, 탐구할
+가치가 있는 객체이기도 하다는 점이다. 문제와 알고리즘은 수학적으로 형식화되고 
+분석될 수 있다. 차례로 이를테면 언어{\footnotesize languages}나 
+튜링장치{\footnotesize Turing machines}가 그렇다. 그리고 정확한 형식주의는 별
+상관 없다. 다항시간 계산가능성{\footnotesize Polynomial-time computability}은
+계산 문제에서 바라는 성질로, 실용적인 해결가능성{\footnotesize practical
+solvability}의 직관적인 개념과 동질이다. 여러 상이한 계산 모델{\footnotesize
+models}은 효율성의 다항 손실{\footnotesize polynomial loss}로 또 다른 모델을 
+시뮬레이션할 수 있다---비결정론{\footnotesize nondeterminism}이라는 예외, 즉 제 
+시뮬레이션에 지수시간{\footnotesize exponential time}을 요구하는 것으로 보이는 
+예외를 제외하면 말이다. 그리고 알고리즘을 아예 지니지 않는 문제가 존재하는데, 
+아무리 비효율적인 것조차 지니지 않는다.
 }
 \cleardoublepage
 \chapter{문제와 알고리즘}
 \emph{알고리즘은 문제를 풀기 위한 자세한 스텝별{\footnotesize step-by-step}
-방법론이다. 다만 문제{\footnotesize problem}가 뭔가? 우리는 이 장에서 
+방법론이다. 다만 문제{\footnotesize problem}란 뭔가? 우리는 이 장에서 
 중요한 예시 세 개를 소개한다}
 \section{그래프 도달가능성}
 그래프 $G=(V,E)$는 노드{\footnotesize nodes} $V$와 선{\footnotesize edges}
@@ -76,12 +78,12 @@ REACHABILITY}\footnote[2]{복잡도 이론에서, 계산 문제는 단지 풀어
 아니라, 다만 그 자체로 흥미로운 수학적 객체이기도 하다. 문제가 수학적 객체로
 다뤄질 때, 그 이름을 대문자로 표기하겠다. [역자: 대문자 표기를 
 드러냄표(\texttt{circemph})로 대체한다.]}이라고 부른다. 가령, 그림 
-\ref{fig:1-1}에는 분명 노드 $1$에서 $n=5$까지 경로, 즉 $(1,4,3,5)$가 존재한다. 
-만약 이 대신 선 $(4,3)$의 방향을 역전하면, 그런 경로는 존재하지 않는다. 
+\ref{fig:1-1}에는 분명 노드 $1$에서 $n=5$까지 경로, $(1,4,3,5)$가 존재한다. 
+대신 만약 선 $(4,3)$의 방향을 역전하면, 그런 경로는 존재하지 않는다. 
 
-대다수의 흥미로운 문제와 마찬가지로, \circemph{도달가능성}은 가능한 
+흥미로운 문제가 대다수 그렇듯, \circemph{도달가능성}은 가능한 
 \emph{일례}{\footnotesize \emph{instances}}의 무한 집합을 지닌다. 각 일례는
-수학적인 객체로, (우리의 경우, 그래프와 그 두 노드로) 곧 우리가 질문을
+수학적인 객체 (우리의 경우, 그래프와 그 두 노드로), 곧 우리가 질문을
 묻고 답을 기대하는 대상이다. 이때 질문이 속한 특정 종류가 문제를 특징짓는다.
 \circemph{도달가능성}은 ``예'' 혹은 ``아니오'' 가운데 하나의 답안을 요구하는
 질문이라는 점에 유의하라. 이런 문제는 \emph{결정문제\footnotesize decision 
@@ -118,9 +120,9 @@ problems}라고 부른다. 복잡도 이론에서 보통 우리는 온갖 상이
 algorithm}으로 풀 수 있다. 이 알고리즘은 이렇게 작동한다. 알고리즘에
 걸쳐 우리는 노드의 집합을 지니는데, 이를 $S$라고 표기한다. 처음에는,
 $S=\{1\}$이다. 각 노드는 \emph{표시되거나\footnotesize marked} \emph{표시되지
-않는다\footnotesize unmarked}. 노드 $i$가 표시되었다는 말은 $i$가
+않는다\footnotesize unmarked}. 노드 $i$가 표시된다는 말은 $i$가
 과거 어느 지점 $S$에 있었다는 (혹은, 지금 $S$에 있다는) 뜻이다. 
-처음에는, 오직 $1$만 표시되었다. 알고리즘의 각 반복{\footnotesize iteration}에서,
+처음에는, 오직 $1$만 표시된다. 알고리즘의 각 반복{\footnotesize iteration}에서,
 우리는 노드 $i\in S$를 선택해 $S$에서 제거한다. 우리는 그런 다음 $i$로부터 하나씩
 모든 선 $(i,j)$를 처리한다. 노드 $j$가 표시되지 않았다면, 표시하고, $S$에
 추가한다. 이 과정은 $S$가 빌 때까지 계속된다. 이 지점에서, 우리는 노드 $n$이
@@ -128,9 +130,9 @@ $S=\{1\}$이다. 각 노드는 \emph{표시되거나\footnotesize marked} \emph{
 
 이 친숙한 알고리즘이 \circemph{도달가능성}을 해결한다는 사실은 분명할 것이다.
 증명은 $1$에서 노드까지 경로가 존재하는 경우 그리고 오직 그 경우{\footnotesize
-if and only if} 노드가 표시되었다고 확증할 것이다. 또 분명한 것은, 다만, 
-알고리즘에 대한 우리의 기술에 생략된 중요한 디테일이 있다는 사실이다. 가령,
-그래프는 어떻게 알고리즘에 대해 입력으로 표현되는가? 적절한 표현이 우리가
+if and only if} 노드가 표시된다고 확증할 것이다. 또 분명한 것은, 다만, 
+알고리즘에 대한 우리의 기술에는 중요한 디테일이 생략되었다는 사실이다. 가령,
+그래프는 어떻게 알고리즘에 입력으로 표현되는가? 이런 적절한 표현은 우리가
 사용하는 알고리즘의 특정 모델에 의존하기에, 이는 우리가 특정 모델을 지니기
 전까지는 미룰 사안이다. 이 논의의 요점은 (2.2절을 보라) 바로 \emph{정확한 표현이
 별로 상관 없다는 것이다}. 그동안 그래프가 인접행렬{\footnotesize adjacency
@@ -154,7 +156,7 @@ implicitly} 주어진다. 즉, 입력데이터로 그 인접행렬의 각 요소
 \end{figure}
 
 알고리즘 자체에도 불분명한 지점이 있다. 원소 $i\in S$는 어떻게 $S$의 모든 원소
-가운데 선택될 수 있는가? 이때 선택은 탐색의 스타일에 막대한 영향을 미칠 
+가운데 선택될 수 있는가? 이때 선택은 탐색 스타일에 막대한 영향을 미칠 
 것이다. 가령, 우리가 $S$에 가장 오래 머무른 노드를 항상 선택한다면, (달리 말해,
 우리가 $S$를 큐{\footnotesize queue}로 규현한다면) 탐색으로는 \emph{너비
 우선\footnotesize breadth-first}이 이어지고, 최소 경로가 확인될 것이다. (가장
@@ -163,17 +165,50 @@ implicitly} 주어진다. 즉, 입력데이터로 그 인접행렬의 각 요소
 $S$를 간수하는 다른 방법들은 완전히 상이한 종류의 탐색으로 이어질 것이다.
 그러나 알고리즘은 이들 선택 모두에 대해 올바로 작동한다. 
 
-뿐만 아니라, 효율적으로 작동한다. 그렇다는 것을 확인하기 위해, 인접행렬의 
+뿐만 아니라, 효율적으로 작동한다. 그렇다고 확인하기 위해, 인접행렬의 
 각 요소는 단 한 번, 행에 대응하는 꼭지점이 선택될 때 방문된다는 점에 유의하라.
 그리하여, 우리는 선택된 노드로부터 선을 처리하며 대략 $n^2$ 연산을 사용한다
 (결국, 그래프에는 최대 $n^2$개의 선이 있을 따름이다). 요구되는 다른 간단한
 (집합 $S$에서 원소 선택하기, 꼭지점 표시하기, 꼭지점이 표시됐는지 전하기 같은)
 연산은 각각 어떻게든 상수시간{\footnotesize constant time}에 끝날 수 있으니,
-우리는 탐색알고리즘이 $n$개의 노드를 지닌 그래프상의 두 노드가 연결되었느냐
+우리는 탐색알고리즘이 $n$개의 노드를 지닌 그래프상의 두 노드가 연결되느냐
 마느냐 하는 결정을 최대 $n^2$에 비례하는 시간 안에, 혹은 $\mathcal{O}(n^2)$ 안에
 내린다고 결론지을 수 있다.
 
-우리가 막 사용한 $\mathcal{O}$ 표기와 그 동족들은 복잡도 이론에서 아주 유용하니,
-우리는 여기 간략한 삽입구를 열어 이들을 형식적으로 정의한다.
+막 사용한 $\mathcal{O}$ 표기와 그 동족들은 복잡도 이론에서 아주 유용하니, 
+간략한 삽입구를 열어 이들을 형식적으로 정의한다.
+
+\begin{defn}\normalfont
+  우리는 $\mathbb{N}$으로 모든 음이 아닌 정수의 집합을 표기한다. 복잡도
+  이론에서 우리는 $\mathbb{N}$에서 $\mathbb{N}$으로 가는 함수를 다루는데,
+  이를테면 $n^2,2^n,n^3-2n+5$가 그렇다. 우리는 글자 $n$을 그런 함수의 표준
+  인수{\footnotesize arguemnt}로 사용하겠다. 정수가 아닌 것들이나 음의 
+  값---가령 $\sqrt{n},\log n, \sqrt{n}-4\log^2n$---을 용인하는 방식으로 
+  우리의 함수를 표기할 때라도, 우리는 언제나 그 값을 음이 아닌 정수로
+  생각할 것이다. 즉, 이들 예제처럼, $f(n)$으로 표기되는 모든 함수가 
+  우리에게 정말 뜻하는 바는 $\max\{\lceil f(n)\rceil,0\}$이다.
+
+  그리하여, $f$와 $g$는 $\mathbb{N}$에서 $\mathbb{N}$으로 가는 함수라고 하자.
+  우리는 양의 정수 $c$와 $n$이 존재하여 모든 $n\geq n_0$에 대해 $f(n)\leq c\cdot
+  g(n)$인 경우 $f(n)=\mathcal{O}(g(n))$이라고 쓴다 (``$f(n)$은 $g(n)$의
+  빅오{\footnotesize big oh}다'', 혹은 ``$f$는 $g$의 차수{\footnotesize 
+  order}다''라고 발음한다). $f(n)=\mathcal{O}(g(n))$은 $f$가 $g$만큼
+  자라거나 더 느리다는 것을 비형식적으로 뜻한다. 그 반대가 일어나면,
+  즉, $g(n)=\mathcal{O}(f(n))$이라면, 우리는 $f(n)=\Omega(g(n))$이라고 쓴다.  
+  끝으로, $f(n)=\theta(g(n))$은 $f=\mathcal{O}(g(n))$이고 $f(n)=\Omega(g(n))$임을
+  뜻한다. 후자는 $f$와 $g$가 정확히 똑같은 \emph{증가율\footnotesize rate of
+  growth}를 지닌다는 것을 뜻한다. 
+
+  보이기 쉬운 예를 들면,수학 $p(n)$이 계수{\footnotesize degree} $d$의
+  다항식인 경우, $p(n)=\theta(n^d)$다. 곧, 다항식의 증가율은 다항식의
+  첫 $0$이 아닌 항{\footnotesize non-zero term}으로 포착된다. 이어지는 바는
+  아마 복잡도 이론에 대한 함수의 증가에 관해 가장 중요하고 유용한 사실이다. 
+  $c>1$가 정수이고 $p(n)$이 모든 다항식이라면, $p(n)=\mathcal{O}(c^n)$이지만, 
+  이는 $p(n)=\Omega(c^n)$인 경우가 아니다. 곧, \emph{모든 다항식은 모든 지수식보다
+  엄격하게{\footnotesize strictly} 느리게 자란다} (증명으로는 문제 1.4.9를 보라).
+  지수가 하나 낮아지면, 같은 성질은 $\log n=\mathcal{O}(n)$이라는 것을 암시한다
+  ---실은, 모든 $k$승에 대해 $\log^k n=\mathcal{O}(n)$이라는 것을 암시한다. 
+  $\square$
+\end{defn}
 
 \end{document}
