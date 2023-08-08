@@ -16,28 +16,15 @@
 \usetikzlibrary{arrows.meta, decorations.markings}
 \usepackage[symbol]{footmisc}
 
-\headsep = 0.16in
 \makepagestyle{mystyle} 
-\setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
-\makerunningwidth{mystyle}{\headwidth}
-% DON'T USE \textsf HERE, USE ITS LONGFORM \sffamily
 \makeevenhead{mystyle}{\thepage}{}{\leftmark}
 \makeoddhead{mystyle}{\rightmark}{}{\thepage}
 \makeatletter
 \makepsmarks{mystyle}{%
   \createmark{chaptername chapter}{left}{shownumber}{}{}
   \createmark{section}{right}{shownumber}{}{ }
-  \clearmark{subsection}
-  \clearmark{subsubsection}
 }
 \makeatother
-% for pages where chapters begin
-% don't overwrite plain
-\makepagestyle{plainplain}
-\makerunningwidth{plainplain}{\headwidth}
-\makeevenfoot{plainplain}{}{}{}
-\makeoddfoot{plainplain}{}{}{}
-\aliaspagestyle{chapter}{plainplain}
 \pagestyle{mystyle}
 
 \title{계산복잡도\\Computational Complexity}
@@ -79,7 +66,7 @@ machines}가 그렇다. 그리고 정확한 형식주의는 그닥 중요하지 
 방법론이다. 다만 문제{\footnotesize problem}가 뭔가? 우리는 이 장에서 
 중요한 예시 세 개를 소개한다}
 \section{그래프 도달가능성}
-그래프 $G=(V,E)$는 노드{\footnotesize nodes} $V$와 선분{\footnotesize edges}
+그래프 $G=(V,E)$는 노드{\footnotesize nodes} $V$와 선{\footnotesize edges}
 $E$, 즉 노드 쌍의 집합이다 (이를테면 그림 \ref{fig:1-1}을 보라. 우리의 그래프는
 모두 유한하고 유향{\footnotesize directed}이겠다). 여러 계산 문제는 그래프를
 다룬다. 그래프에 관해 가장 기본적인 문제는 이것이다. 그래프 $G$와 두 노드
@@ -90,19 +77,17 @@ REACHABILITY}\footnote[2]{복잡도 이론에서, 계산 문제는 단지 풀어
 다뤄질 때, 그 이름을 대문자로 표기하겠다. [역자: 대문자 표기를 
 드러냄표(\texttt{circemph})로 대체한다.]}이라고 부른다. 가령, 그림 
 \ref{fig:1-1}에는 분명 노드 $1$에서 $n=5$까지 경로, 즉 $(1,4,3,5)$가 존재한다. 
-만약 이 대신 선분 $(4,3)$의 방향을 역전하면, 그런 경로는 존재하지 않는다. 
+만약 이 대신 선 $(4,3)$의 방향을 역전하면, 그런 경로는 존재하지 않는다. 
 
 대다수의 흥미로운 문제와 마찬가지로, \circemph{도달가능성}은 가능한 
 \emph{일례}{\footnotesize \emph{instances}}의 무한 집합을 지닌다. 각 일례는
 수학적인 객체로, (우리의 경우, 그래프와 그 두 노드로) 곧 우리가 질문을
 묻고 답을 기대하는 대상이다. 이때 질문이 속한 특정 종류가 문제를 특징짓는다.
-\circemph{도달가능성}은 ``네'' 혹은 ``아니오'' 가운데 하나의 답안을 요구하는
+\circemph{도달가능성}은 ``예'' 혹은 ``아니오'' 가운데 하나의 답안을 요구하는
 질문이라는 점에 유의하라. 이런 문제는 \emph{결정문제\footnotesize decision 
 problems}라고 부른다. 복잡도 이론에서 보통 우리는 온갖 상이한 답안을 요구하는 
 문제보단 결정문제만 다루는 편이 편리하게 통합적이고 단순하다고 본다. 그러니
 결정문제는 본고에서 중요한 역할을 맡겠다.
-
-\newpage
 
 \begin{figure}[h]\centering
 \begin{tikzpicture}[
@@ -125,6 +110,70 @@ problems}라고 부른다. 복잡도 이론에서 보통 우리는 온갖 상이
 \caption{\label{fig:1-1}그래프.}
 \end{figure}
 
-\newpage
-gg
+우리는 우리의 문제를 푸는 알고리즘에 관심이 있다. 다음 장에서 우리는 
+\emph{튜링장치{\footnotesize Turing machine}}를 다루겠는데, 이는 임의의
+알고리즘을 표현하기 위한 형식 모델{\footnotesize formal model}이다. 
+지금으로서는 우리의 알고리즘을 비형식적으로 기술하겠다. 가령 
+\circemph{도달가능성}은 이른바 \emph{탐색 알고리즘\footnotesize search 
+algorithm}으로 풀 수 있다. 이 알고리즘은 이렇게 작동한다. 알고리즘에
+걸쳐 우리는 노드의 집합을 지니는데, 이를 $S$라고 표기한다. 처음에는,
+$S=\{1\}$이다. 각 노드는 \emph{표시되거나\footnotesize marked} \emph{표시되지
+않는다\footnotesize unmarked}. 노드 $i$가 표시되었다는 말은 $i$가
+과거 어느 지점 $S$에 있었다는 (혹은, 지금 $S$에 있다는) 뜻이다. 
+처음에는, 오직 $1$만 표시되었다. 알고리즘의 각 반복{\footnotesize iteration}에서,
+우리는 노드 $i\in S$를 선택해 $S$에서 제거한다. 우리는 그런 다음 $i$로부터 하나씩
+모든 선 $(i,j)$를 처리한다. 노드 $j$가 표시되지 않았다면, 표시하고, $S$에
+추가한다. 이 과정은 $S$가 빌 때까지 계속된다. 이 지점에서, 우리는 노드 $n$이
+표시되었다면 ``예'', 표시되지 않았다면 ``아니오''라고 답한다.
+
+이 친숙한 알고리즘이 \circemph{도달가능성}을 해결한다는 사실은 분명할 것이다.
+증명은 $1$에서 노드까지 경로가 존재하는 경우 그리고 오직 그 경우{\footnotesize
+if and only if} 노드가 표시되었다고 확증할 것이다. 또 분명한 것은, 다만, 
+알고리즘에 대한 우리의 기술에 생략된 중요한 디테일이 있다는 사실이다. 가령,
+그래프는 어떻게 알고리즘에 대해 입력으로 표현되는가? 적절한 표현이 우리가
+사용하는 알고리즘의 특정 모델에 의존하기에, 이는 우리가 특정 모델을 지니기
+전까지는 미룰 사안이다. 이 논의의 요점은 (2.2절을 보라) 바로 \emph{정확한 표현이
+별로 상관 없다는 것이다}. 그동안 그래프가 인접행렬{\footnotesize adjacency
+matrix}로 (그림 \ref{fig:1-2}로) 주어진다고 가정할 수 있는데, 이는 모든 요소가
+랜덤 액세스{\footnotesize random access} 느낌으로 알고리즘에 의해 접근될 수 있는
+행렬이다.\footnote[2]{실은, 7장에서 복잡도 이론에 대한 \circemph{도달가능성}의
+중요한 쓰임새를 살필 예정인데, 거기서는 그래프가 \emph{암시적으로\footnotesize 
+implicitly} 주어진다. 즉, 입력데이터로 그 인접행렬의 각 요소를 계산할 수 있다.} 
+
+\begin{figure}[h]
+  \[
+    \begin{bmatrix}
+      0 & 0 & 0 & 1 & 0 \\
+      1 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 1 \\
+      0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 1 & 0
+    \end{bmatrix}
+  \]
+    \caption{\label{fig:1-2}인접 행렬.}
+\end{figure}
+
+알고리즘 자체에도 불분명한 지점이 있다. 원소 $i\in S$는 어떻게 $S$의 모든 원소
+가운데 선택될 수 있는가? 이때 선택은 탐색의 스타일에 막대한 영향을 미칠 
+것이다. 가령, 우리가 $S$에 가장 오래 머무른 노드를 항상 선택한다면, (달리 말해,
+우리가 $S$를 큐{\footnotesize queue}로 규현한다면) 탐색으로는 \emph{너비
+우선\footnotesize breadth-first}이 이어지고, 최소 경로가 확인될 것이다. (가장
+최근에 추가된 노드를 선택하여) $S$가 스택{\footnotesize stack}으로 정비되었다면, 
+우리는 일종의 \emph{깊이 우선\footnotesize depth-first} 탐색을 지니게 된다.
+$S$를 간수하는 다른 방법들은 완전히 상이한 종류의 탐색으로 이어질 것이다.
+그러나 알고리즘은 이들 선택 모두에 대해 올바로 작동한다. 
+
+뿐만 아니라, 효율적으로 작동한다. 그렇다는 것을 확인하기 위해, 인접행렬의 
+각 요소는 단 한 번, 행에 대응하는 꼭지점이 선택될 때 방문된다는 점에 유의하라.
+그리하여, 우리는 선택된 노드로부터 선을 처리하며 대략 $n^2$ 연산을 사용한다
+(결국, 그래프에는 최대 $n^2$개의 선이 있을 따름이다). 요구되는 다른 간단한
+(집합 $S$에서 원소 선택하기, 꼭지점 표시하기, 꼭지점이 표시됐는지 전하기 같은)
+연산은 각각 어떻게든 상수시간{\footnotesize constant time}에 끝날 수 있으니,
+우리는 탐색알고리즘이 $n$개의 노드를 지닌 그래프상의 두 노드가 연결되었느냐
+마느냐 하는 결정을 최대 $n^2$에 비례하는 시간 안에, 혹은 $\mathcal{O}(n^2)$ 안에
+내린다고 결론지을 수 있다.
+
+우리가 막 사용한 $\mathcal{O}$ 표기와 그 동족들은 복잡도 이론에서 아주 유용하니,
+우리는 여기 간략한 삽입구를 열어 이들을 형식적으로 정의한다.
+
 \end{document}
