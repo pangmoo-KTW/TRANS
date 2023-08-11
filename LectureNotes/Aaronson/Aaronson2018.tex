@@ -1,4 +1,4 @@
-\documentclass[a4paper,chapter,kosection,atbegshi,hidelinks,itemph]{oblivoir}
+\documentclass[a4paper,chapter,atbegshi,hidelinks]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
 \usepackage{caption}
@@ -7,13 +7,15 @@
 
 \renewcommand\chaptername{강}
 
-\makepagestyle{hf}
-\makeevenhead{hf}{\thepage}{}{\itshape\leftmark}
-\makeoddhead{hf}{}{}{\thepage}
-\makeevenfoot{hf}{}{}{}
-\makeoddfoot{hf}{}{}{}
-\makepsmarks{hf}{%
-\createmark{chapter}{left}{nonumber}{}{}}
+\makepagestyle{mystyle} 
+\makeevenhead{mystyle}{\thepage}{}{\leftmark}
+\makeoddhead{mystyle}{\rightmark}{}{\thepage}
+\makeatletter
+\makepsmarks{mystyle}{%
+  \createmark{chaptername chapter}{left}{shownumber}{}{}
+  \createmark{section}{right}{shownumber}{}{ }
+}
+\makeatother
 
 \begin{document}
 \title{양자정보학 개론\thanks{원문: \url{https://www.scottaaronson.com/qclec.pdf}}}
@@ -26,7 +28,7 @@
 \newpage
 \maketitle\thispagestyle{empty}\newpage
 
-\tableofcontents\pagestyle{plain}
+\tableofcontents\pagestyle{mystyle}
 
 \chapter{강의 개요 및 확장 처치-튜링 논제}
 \begin{itemize}[label=\(\blacktriangleright\)]
@@ -58,7 +60,7 @@
         \begin{align*}\bullet\\\bullet\\\bullet\end{align*}
 \end{description}
 
-\newpage\pagestyle{hf}
+\newpage
 
 \hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape``확률은 전부 우리 손 안에 있다"는
 관점이 존재한다. 우주에 관해 전부 (요컨대 태양계 속 모든 원자의 
@@ -340,4 +342,68 @@ $a\in\mathbb{C}$를 사용하기 시작했다. 진폭은 양일 수도 음일 �
 discrete energy levels}를 유도한다는 사실을 확인할 수 있다. 이산 에너지
 준위는 전자들이 자리할 수 있는 곳이다. 이산 에너지 준위라는 현상은 결과적으로
 화학을 요청한다.}}
+
+\section{선형대수학으로 보는 확률론}
+
+계의 상태와 격리계의 진화를 각각 벡터와 벡터 변환으로 모델링하기 위해 
+\textbf{선형대수학}을 사용한다. 두 상태를 지닌 계에 대해 가장 간단한
+경우로는 다음처럼 작성할 수 있다.
+
+\begin{equation}
+M \begin{bmatrix} a_1\\a_2 \end{bmatrix} = 
+\begin{bmatrix} a_1'\\ a_2' \end{bmatrix}
+\end{equation}
+
+당장은 고전 확률론을 다루겠다. 동전을 하나 던진다고 하자. 각 가능성에 
+확률을 배정하여 벡터로 모델링한다. $p = P(\textrm{앞})$, $q = P(\textrm{뒤})$.
+
+\begin{equation}
+  \begin{bmatrix}p\\q\end{bmatrix}\quad
+  \begin{aligned}
+    &p,q \geq 0 \\
+    &p+q = 1
+  \end{aligned}
+\end{equation}
+
+변환을 적용할 수도 있다. 이를테면 \underline{동전을 뒤집을 수 있다}.
+
+\begin{equation}
+  \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+  \begin{bmatrix} p \\ q \end{bmatrix} = 
+  \begin{bmatrix} q \\ p \end{bmatrix}
+\end{equation}
+
+동전을 뒤집는다는 말은 동전이 앞\emph{이었던} 확률은 이제 동전이 뒤\emph{인}
+확률이라는 뜻이다. 도움이 된다면 변환 행렬은 다음과 같다.
+
+\begin{equation}
+  \begin{bmatrix}
+    P(\textrm{앞}|\textrm{앞}) &P(\textrm{앞}|\textrm{뒤}) \\
+    P(\textrm{뒤}|\textrm{앞}) &P(\textrm{뒤}|\textrm{뒤})
+  \end{bmatrix}
+\end{equation}
+
+여기서 $P(a|b)$는 동전의 원래 상태가 ``$b$''인 경우 동전의 상태가 ``$a$''인 조건부 확률이다. 또한 \underline{동전을 공평하게 뒤집을} 수도 있다.
+
+\begin{equation}
+  \begin{bmatrix}
+    \frac{1}{2} & \frac{1}{2} \\
+    \frac{1}{2} & \frac{1}{2}
+  \end{bmatrix}
+  \begin{bmatrix}p\\q\end{bmatrix} =
+  \begin{bmatrix}\frac{1}{2}\\\frac{1}{2}\end{bmatrix}
+\end{equation}
+
+이전 상태와 무관하게 이제는 모든 가능성이 동일하게 그럴듯하다. 동전을 뒤집는다고
+하자. 그리고 앞이 나오면 다시 뒤집지만 뒤가 나오면 앞으로 돌린다고 하자.
+
+\begin{equation}
+  \begin{bmatrix}
+    \frac{1}{2} & 1 \\ \frac{1}{2} & 0
+  \end{bmatrix}
+  \begin{bmatrix} p \\ q \end{bmatrix} = 
+  \begin{bmatrix} q+\frac{p}{2} \\ \frac{p}{2} \end{bmatrix}
+\end{equation}
+\emph{말이 되는가?} 
+
 \end{document}
