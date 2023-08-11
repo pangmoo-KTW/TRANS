@@ -1,7 +1,15 @@
-\documentclass[a4paper,chapter,atbegshi,hidelinks]{oblivoir}
+\documentclass[a4paper,chapter,atbegshi,]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
 \usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=teal,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+\usepackage{nicematrix}
 \graphicspath{{./IMG/}}
 \setlist{nosep}
 
@@ -20,7 +28,8 @@
 \begin{document}
 \title{양자정보학 개론\thanks{원문: \url{https://www.scottaaronson.com/qclec.pdf}}}
 \author{
-    스콧 애론슨\thanks{코리 오스트로브와 파울로 알브스의 큰 도움을 받았다.}, 
+  스콧 애론슨\thanks{코리 오스트로브{\tiny Corey Ostrove}와 
+  파울로 알브스{\tiny Paulo Alves}의 큰 도움을 받았다.}, 
     2018년 가을\\
     번역: 김태원
 }
@@ -40,7 +49,10 @@
     \end{itemize}
     \item 애론슨 교수는 양자정보학 연구의 이론적인 극단에 헌신한다.
     \item 이론가들은 실험가들이 만드는 것을 알리고 이는 다시 이론가들의 질문에 영향을 미친다.
-\end{itemize}\hfill\break
+\end{itemize}
+
+\hfill
+
 오늘은 물리적 세계에 관해 ``자명한" 진술들을 명시하겠다.
 그런 다음 양자역학이 이들 진술 가운데 몇몇만 놔두고 나머지는 뒤엎어 버리는 광경을
 목도할 테다. 
@@ -173,7 +185,7 @@ monotone}라는 말로 이런 성질을 가리킬 수 있다.
 \hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape확장 처치-튜링 논제에 대해 다른
 반례도 생각해 볼 수 있다. 가령 어떤 이들은 시간 팽창{\footnotesize time 
 dilation}을 사용하면 미래로 수십억 년을 여행해 난해한 문제들{\footnotesize hard
-problems}에 대한 결과를 취할 수 있다고 제안했다. 재밌다! 하지만 \textbf{엄청난}
+problems}에 대한 결과를 취할 수 있다고 제안했다. 재밌다! 하지만 \underline{엄청난}
 에너지가 필요하겠다. 또 그만큼 에너지를 한 장소에 지니면 당신은 블랙홀로
 붕괴한다. 별로 재미없다!}}
 
@@ -270,9 +282,9 @@ group}에 대해 일어나는 일이다. 입자는 격리되어야 하며 이런
 
 \hfill
 
-\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape입자들이 \textbf{완벽하게}
-격리되지는 않았지만 거의 \textbf{대부분} 격리되었다면 어떤가? 훌륭한 질문이다!
-나중 강의에서 돌이키겠다.}}
+\hfill\parbox[t]{9cm}{\textcolor{gray}{\itshape입자들이 \underline{완벽하게}
+격리되지는 않았지만 거의 \underline{대부분} 격리되었다면 어떤가? 훌륭한 질문이다!
+강의 나중에 돌이키겠다.}}
 
 \hfill\break
 
@@ -309,6 +321,7 @@ $a\in\mathbb{C}$를 사용하기 시작했다. 진폭은 양일 수도 음일 �
 사용해 이중 슬릿 실험을 돌이키자.
 
 \hfill
+
 \hfill\parbox[t]{12cm}{
   $\alpha$는 스크린상 특정 지점에 안착하는 광자의 총 진폭,\\
   $\alpha_1$은 오직 1번 슬릿만 개방되었을 때 안착하는 광자의 진폭,\\
@@ -316,7 +329,8 @@ $a\in\mathbb{C}$를 사용하기 시작했다. 진폭은 양일 수도 음일 �
 }
 
 \hfill\break
-확률론에 빗대 다음을 취한다.
+
+\noindent확률론에 빗대 다음을 취한다.
 \begin{equation}
   \alpha = \alpha_1+\alpha_2.
 \end{equation}
@@ -343,6 +357,8 @@ discrete energy levels}를 유도한다는 사실을 확인할 수 있다. 이�
 준위는 전자들이 자리할 수 있는 곳이다. 이산 에너지 준위라는 현상은 결과적으로
 화학을 요청한다.}}
 
+\hfill
+
 \section{선형대수학으로 보는 확률론}
 
 계의 상태와 격리계의 진화를 각각 벡터와 벡터 변환으로 모델링하기 위해 
@@ -353,7 +369,6 @@ discrete energy levels}를 유도한다는 사실을 확인할 수 있다. 이�
 M \begin{bmatrix} a_1\\a_2 \end{bmatrix} = 
 \begin{bmatrix} a_1'\\ a_2' \end{bmatrix}
 \end{equation}
-
 당장은 고전 확률론을 다루겠다. 동전을 하나 던진다고 하자. 각 가능성에 
 확률을 배정하여 벡터로 모델링한다. $p = P(\textrm{앞})$, $q = P(\textrm{뒤})$.
 
@@ -374,7 +389,7 @@ M \begin{bmatrix} a_1\\a_2 \end{bmatrix} =
 \end{equation}
 
 동전을 뒤집는다는 말은 동전이 앞\emph{이었던} 확률은 이제 동전이 뒤\emph{인}
-확률이라는 뜻이다. 도움이 된다면 변환 행렬은 다음과 같다.
+확률이라는 뜻이다. 다음 같은 변환 행렬이 이해를 도울 수 있겠다.
 
 \begin{equation}
   \begin{bmatrix}
@@ -382,7 +397,6 @@ M \begin{bmatrix} a_1\\a_2 \end{bmatrix} =
     P(\textrm{뒤}|\textrm{앞}) &P(\textrm{뒤}|\textrm{뒤})
   \end{bmatrix}
 \end{equation}
-
 여기서 $P(a|b)$는 동전의 원래 상태가 ``$b$''인 경우 동전의 상태가 ``$a$''인 조건부 확률이다. 또한 \underline{동전을 공평하게 뒤집을} 수도 있다.
 
 \begin{equation}
@@ -393,9 +407,9 @@ M \begin{bmatrix} a_1\\a_2 \end{bmatrix} =
   \begin{bmatrix}p\\q\end{bmatrix} =
   \begin{bmatrix}\frac{1}{2}\\\frac{1}{2}\end{bmatrix}
 \end{equation}
-
-이전 상태와 무관하게 이제는 모든 가능성이 동일하게 그럴듯하다. 동전을 뒤집는다고
-하자. 그리고 앞이 나오면 다시 뒤집지만 뒤가 나오면 앞으로 돌린다고 하자.
+이전 상태와 무관하게 이제는 모든 가능성이 동일하게 그럴듯하다는 뜻이다. 
+동전을 뒤집는데, 앞이 나오면 다시 뒤집지만 뒤가 나오면
+앞으로 돌린다고 하자.
 
 \begin{equation}
   \begin{bmatrix}
@@ -412,8 +426,8 @@ $\frac{1}{2}$이라고 알 수 있다. 즉 $P(\textrm{앞}|\textrm{앞})= P(\tex
 $P(\textrm{앞}|\textrm{뒤})=1$이다. 
 
 \emph{그래서 변환으로는 어떤 행렬을 사용할 수 있는가?} 우선 \underline{모든
-요소는 음이 아니어야} 한다고 안다 (왜냐하면 확률은 음일 수 없기
-때문이다). 또 \underline{각 열은 합이 $1$이어야} 한다고 안다. 초기
+요소는 음이 아니어야} 하겠다 (왜냐하면 확률은 음일 수 없기
+때문이다). 또 \underline{각 열은 합이 $1$이어야} 하겠다. 초기
 확률의 합이 변환된 확률의 합과 일치해야 하기 때문이다 (즉 둘 다
 $1$과 같아야 한다). 이들 조건을 만족하는 행렬은 \textbf{확률 행렬}{\footnotesize
 Stochastic Matrix}이라고 부른다. 
@@ -436,4 +450,69 @@ Tensor Product}이다.
   \begin{bmatrix}P(00)\\P(01)\\P(10)\\P(11)\end{bmatrix} = 
   \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix}
 \end{equation}
+
+가능한 4원소 벡터 전부 두 2원소 벡터의 텐서곱으로 나타날 수는 없다. 주의할
+만한 사실이다. 가령 모순적으로 아래처럼 가정하자. 
+
+\begin{equation}
+  \begin{bmatrix}ac\\ad\\bc\\bc\end{bmatrix} = 
+  \begin{bmatrix}\frac{1}{2}\\0\\0\\\frac{1}{2}\end{bmatrix}
+\end{equation}
+그렇다면 첫째와 마지막 방정식의 곱은 $(ac)(bd)=\frac{1}{4}$이라고 암시하는
+반편 둘째와 셋째의 곱은 $(ad)(bc)=0$을 암시하여 모순이 잇따른다. 
+이처럼 우변의 4원소 벡터는 두 2원소 벡터의 텐서곱으로 작성될 수 없다.
+
+단일비트계에서 그랬듯 이중비트계의 확률변환도 확률행렬로 기술할 수 있다.
+가령 첫 비트가 $1$이면 두 번째 비트를 뒤집고 첫 비트가 $1$이 아닌 경우
+계에 아무것도 하지 않는다는 변환을 적용한다고 하자. 이를 성취하는
+$4\times4$ 행렬이 방정식 \ref{eq:212}에 있다. 통제된 NOT 혹은 CNOT 행렬이라고
+부른다. 양자컴퓨팅에서도 자주 나올 예정이다.  
+
+\begin{equation}
+  \textrm{CNOT } = 
+  \begin{bNiceMatrix}[first-col, first-row]
+    & \scriptstyle00 & \scriptstyle01 & \scriptstyle10 & \scriptstyle11 \\
+    \scriptstyle00 & 1 & 0 & 0 & 0 \\
+    \scriptstyle01 & 0 & 1 & 0 & 0 \\
+    \scriptstyle10 & 0 & 0 & 0 & 1 \\
+    \scriptstyle11 & 0 & 0 & 1 & 0
+  \end{bNiceMatrix}
+  \label{eq:212}
+\end{equation}
+CNOT 행렬을 다음 벡터에 적용한다고 하자. 다음 벡터는 계 하나를 나타내는데 여기서
+첫 비트는 $\frac{1}{2}$ 확률로 0이거나 1이며 두 번째 비트는 항상 0이다.
+\begin{equation}
+  \begin{bmatrix}
+    1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    \frac{1}{2} \\ 0 \\ \frac{1}{2} \\ 0
+  \end{bmatrix}
+  = 
+  \begin{bNiceMatrix}[first-col]
+    \scriptstyle00 & \frac{1}{2} \\ \scriptstyle01 & 0 \\
+    \scriptstyle10 & 0 \\ \scriptstyle11 & \frac{1}{2}
+  \end{bNiceMatrix}
+\end{equation}
+지금 출력된 분포는 앞서 텐서곱으로 나타날 수 없다고 증명한 것이다! 이런 분포를
+\textbf{상호연관}{\footnotesize correlated}되어 있다고 한다. 비트 하나를 학습하면 
+또 다른 비트에 관해서도 알 수 있다. 이 경우 두 비트는 항상 상등{\footnotesize
+equal}이다. $50\%$ 확률로 둘 다 $0$이고 $50\%$ 확률로 둘 다 $1$이다. 그리하여
+CNOT 행렬은 \emph{상호관계{\footnotesize correlations}를 만들}
+수 있다고 알 수 있다.
+
+양자역학은 본질적으로 똑같은 과정을 거쳐 벡터로 상태를 모델링하는데 \emph{딱
+하나 다른 바,} 확률 대신 진폭을 사용한다. 양자 상태를 표현하는 벡터변환은 
+행렬로 기술할 수 있다.
+\begin{equation}
+  \begin{bmatrix} & & \\ & U & \\ & &\end{bmatrix}
+  \begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix}=
+  \begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}
+\end{equation}
+여기서는 벡터 요소의 합 대신 진폭 제곱 $\sum_{i=1}^3 |a_i|^2 = \sum_{i=1}^3
+|b_i|^2 = 1$의 합을 보존한다. (보른 규칙) 방정식 \ref{eq:21}이
+암시하듯 결과 확률의 합은 1이기 때문이다. 이런 행렬을 \textbf{유니터리
+행렬}{\footnotesize Unitary Matrices}이라고 부른다. 다음 강에서는 
+유니터리 행렬의 성질과 더불어 양자 상태를 다루기 위한 기본적인
+수학 규칙을 훨씬 더 디테일하게 그리겠다.
 \end{document}
