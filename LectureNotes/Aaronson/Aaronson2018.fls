@@ -1180,21 +1180,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmb6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmb1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcd.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc4.tfm
-INPUT /usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-INPUT /usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-INPUT /usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-INPUT /usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/uwmj/uwmj02.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc3.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/uhc/uwmj/uwmj02.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/wmj/wmj05.tfm
-INPUT /usr/share/texmf-dist/fonts/vf/uhc/wmj/wmj05.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj02.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj00.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj03.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj01.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj04.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/uhc/umj/umj05.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmd2.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmd3.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
@@ -1221,6 +1207,7 @@ INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
 INPUT ./IMG//iqis1_006.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmaf.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmaf.tfm
 INPUT ./IMG//iqis1_007.png
 INPUT ./IMG//iqis1_007.png
@@ -1250,6 +1237,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb4.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb4.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd1.tfm
 OUTPUT Aaronson2018.toc
 INPUT Aaronson2018.aux
 INPUT ./Aaronson2018.out
@@ -1274,6 +1262,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmad.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmaf.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb0.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb1.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb
@@ -1325,6 +1314,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbce.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd2.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd3.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb
@@ -1375,4 +1365,3 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/uhc/umj/umj00.pfb

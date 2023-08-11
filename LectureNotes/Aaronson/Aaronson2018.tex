@@ -152,11 +152,11 @@ monotone}라는 말로 이런 성질을 가리킬 수 있다.
 \hfill
 
 \begin{itemize}[label=$\blacktriangleright$]
-    \item 확률을 쓰긴 한다. 다만 \circemph{연산}을 아예
+    \item 확률을 쓰긴 한다. 다만 \emph{연산}을 아예
         달리할 것이다. 그리고 단조의 공리를 위배하겠다. 즉 한 사건이
-        일어날 수 있는 방법의 \circemph{증가}에 의해 그 사건이 일어나는 확률은
-        \circemph{감소}할 수 있다.
-    \item 국소성은 놔둔다. 그러나 \circemph{국소적 실재론}은 타도하겠다. 이 두
+        일어날 수 있는 방법의 \emph{증가}에 의해 그 사건이 일어나는 확률은
+        \emph{감소}할 수 있다.
+    \item 국소성은 놔둔다. 그러나 \emph{국소적 실재론}은 타도하겠다. 이 두
         원리가 서로에 대한 재진술처럼 들렸다면 글쎄 양자역학은 이들 간의 차리를
         극적으로 묘사하리다!
     \item 앞으로 확인하겠지만 처치-튜링 논제는 양자역학이라는 역광에도 불구하고
@@ -222,12 +222,12 @@ $P=P_1+P_2$라고 생각하겠지만 실험에 따르면 사실이 아니다! �
     \begin{minipage}{0.48\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{iqis1_004}
-    \caption{\label{fig:figure21}\dotemph{단일 슬릿} 광자 간섭 실험 구성}
+    \caption{\label{fig:figure21}\emph{단일 슬릿} 광자 간섭 실험 구성}
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=.9\linewidth]{iqis1_005}
-        \caption{\label{fig:figure22}\dotemph{이중 슬릿} 광자 간섭 실험 구성}
+        \caption{\label{fig:figure22}\emph{이중 슬릿} 광자 간섭 실험 구성}
     \end{minipage}\vspace{0.25cm}
     \centering
     \includegraphics[width=.5\textwidth]{iqis1_006}\vspace{0.2cm}
@@ -240,7 +240,7 @@ $P=P_1+P_2$라고 생각하겠지만 실험에 따르면 사실이 아니다! �
 \newpage
 
 광자가 어느 슬릿을 지나갔는지 측정하고 싶을 수 있겠다. 하지만 그러다간 각 슬릿에
-하나씩 밝은 부분이 남는 더 말이 되는 쪽으로 측정결과를 \dotemph{바꾸고 만다}. 
+하나씩 밝은 부분이 남는 더 말이 되는 쪽으로 측정결과를 \emph{바꾸고 만다}. 
 의식을 지닌 관찰자가 있는지는 중요하지 않다는 사실에 유의하라. 지나간 슬릿의
 정보가 외부 환경에 아무튼 유출되면 결과는 고전 확률론을 따르는 꼴로 돌아간다. 
 
@@ -294,7 +294,7 @@ group}에 대해 일어나는 일이다. 입자는 격리되어야 하며 이런
 
 물리학은 $P\in[0,1]$라는 확률 대신 \textbf{진폭}{\footnotesize amplitudes}
 $a\in\mathbb{C}$를 사용하기 시작했다. 진폭은 양일 수도 음일 수도 있다. 더
-일반적으로는 (실수와 허수 부분에 따라) 복소수일 수도 있다. \dotemph{양자역학의
+일반적으로는 (실수와 허수 부분에 따라) 복소수일 수도 있다. \emph{양자역학의
 핵심 주장}은 바로 격리된 계의 상태를 충분하게 설명하려면 측정할 적의 계로
 발견되는 가능한 구성 각각에 대해 하나의 진폭을 부여해야 한다는 것이다.
 
@@ -404,6 +404,36 @@ M \begin{bmatrix} a_1\\a_2 \end{bmatrix} =
   \begin{bmatrix} p \\ q \end{bmatrix} = 
   \begin{bmatrix} q+\frac{p}{2} \\ \frac{p}{2} \end{bmatrix}
 \end{equation}
-\emph{말이 되는가?} 
+\emph{말이 되는가?} 동전의 상태가 앞이라고 밝혀지면 또 공평하게 던진다.
+그리하여 앞이라는 결과가 주어지면 이후 또 던질 때 앞이나 뒤가 나올 확률은
+$\frac{1}{2}$이라고 알 수 있다. 즉 $P(\textrm{앞}|\textrm{앞})= P(\textrm{뒤}|
+\textrm{앞})=\frac{1}{2}$이다. 그리고 아무리 앞으로 던져도 계속 다시 뒤로
+뒤집으니 $P(\textrm{뒤}|\textrm{뒤})=0$이고
+$P(\textrm{앞}|\textrm{뒤})=1$이다. 
 
+\emph{그래서 변환으로는 어떤 행렬을 사용할 수 있는가?} 우선 \underline{모든
+요소는 음이 아니어야} 한다고 안다 (왜냐하면 확률은 음일 수 없기
+때문이다). 또 \underline{각 열은 합이 $1$이어야} 한다고 안다. 초기
+확률의 합이 변환된 확률의 합과 일치해야 하기 때문이다 (즉 둘 다
+$1$과 같아야 한다). 이들 조건을 만족하는 행렬은 \textbf{확률 행렬}{\footnotesize
+Stochastic Matrix}이라고 부른다. 
+
+이제 동전을 두 개 던지고 싶다. 아니면 차라리 비트가 두 개 있다고 하자. 
+첫 번째 비트는 $a = P(0)$과 $b = P(1)$이다. 두 번째 비트는 $c = P(0)$과
+$d = P(1)$이다.
+
+\[
+  \begin{matrix}{\scriptstyle0} \\ {\scriptstyle1} \end{matrix}
+  \begin{bmatrix}a \\ b\end{bmatrix}\quad\quad
+  \begin{matrix}{\scriptstyle0} \\ {\scriptstyle1} \end{matrix}
+  \begin{bmatrix}c \\ d\end{bmatrix}
+\]
+두 벡터를 합병하려면 새 연산이 필요하다. 이른바 \textbf{텐서 곱}{\footnotesize
+Tensor Product}이다.
+
+\begin{equation}
+  \begin{bmatrix}a\\b\end{bmatrix} \otimes \begin{bmatrix}c\\d\end{bmatrix} =
+  \begin{bmatrix}P(00)\\P(01)\\P(10)\\P(11)\end{bmatrix} = 
+  \begin{bmatrix}ac\\ad\\bc\\bd\end{bmatrix}
+\end{equation}
 \end{document}
