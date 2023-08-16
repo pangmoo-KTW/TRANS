@@ -1,7 +1,8 @@
+%! TeX program = lualatex
 \documentclass[a4paper,chapter,atbegshi,]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
-\usepackage{caption}
+\usepackage{caption,braket,emoji,}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
@@ -515,4 +516,57 @@ CNOT 행렬은 \emph{상호관계{\footnotesize correlations}를 만들}
 행렬}{\footnotesize Unitary Matrices}이라고 부른다. 다음 강에서는 
 유니터리 행렬의 성질과 더불어 양자 상태를 다루기 위한 기본적인
 수학 규칙을 훨씬 더 디테일하게 그리겠다.
+\chapter{양자역학의 기본 규칙}
+\section{양자 상태와 켓 표기}
+\emph{양자 상태}는 (정확히 말해 ``순수 상태''는) 양자계의 상태를 묘사하는
+$\mathbb{C}^N$상의 단위 벡터다. 이론적으로는 차원 $N$이 무엇이든 될 수 있다. 
+물리학 강좌라면 위치 혹은 운동량 상태 같은 무한 차원 양자 상태를
+다루겠지만 우리는 이산 계를 고수할 것이다. (말하자면 관측할 때면
+오직 유한히 많은 결과만 있을 수 있다는 뜻이다) 
+
+\hfill
+
+\hfill\parbox[t]{9cm}{\itshape\textcolor{gray}{\underline{우주가 가장 기본적인
+  수준에서 이산이나 연속으로 존재하는} \underline{광경에 대해 양자역학은 
+  무슨 말을 할 수 있는가?} 양자역학은 이상한 하이브리드식 그림을 내놓는다.
+  단순한 2차원계이더라도 가능한 양자 상태의 연속체가 존재하지만, 모든
+관측은 이산적인 결과를 내놓는다. $[\alpha, \beta]^{\top}$라는 두 진폭으로
+이루어진 계는 ($|\alpha|^2+|\beta|^2=1$이라는 제한을 두더라도) 
+불가산적으로 무한하게 많은 가능한 상태를 지닌다. 그렇지만 고전 확률론으로 
+상태를 나타내더라도 참이라는 사실에 유의하라. 고전과 양자라는 두 경우 모두에
+대해 유한 차원 계를 고수하는 이상 연속체는 절대 직접적으로 관측되지
+않는다. 다만 연속체는 이산적인 결과의 확률을 계산할 때만 쓰일 뿐이다.}}
+
+\hfill\break
+
+\textbf{큐비트}{\footnotesize qubit}는 가장 간단하고 흥미로운 양자계다.
+(``$0$''과 ``$1$''이라는 레벨로 나타내는) 2레벨계{\footnotesize two-level
+system}로 $0$에 대한 진폭과 $1$에 대한 진폭을 지닌다.
+
+\hfill
+
+\hfill\parbox[t]{9cm}{\itshape\textcolor{gray}{$1$레벨 양자계는 그냥 $[1]$이겠다.
+그닥 흥미롭지 않다!}}
+
+\hfill
+
+폴 디락{\footnotesize Paul Dirac}이 도입한 표기를 따라 양자 상태 벡터는
+이른바 \textbf{켓 표기{\footnotesize Ket Notation}}로 작성한다. 
+\[
+  \begin{bmatrix}\alpha\\\beta\end{bmatrix} 
+  = \alpha\ket{0}+\beta\ket{1}=\ket{\psi}.
+\]
+$\ket0=\begin{bmatrix}1\\0\end{bmatrix}, \ket1=\begin{bmatrix}0\\1
+\end{bmatrix}$이며 양자 상태를 총칭적으로 지시하고자 $\ket{\psi}$를 종종
+사용하겠다.
+
+\emph{왜 켓 표기를 사용하는가?} 실용적으로 큰 이점 하나를 꼽는다면 (대다수 진폭이
+$0$인) 아주 희소한 행렬{\footnotesize sparse vectors}이 빈번하다는 것이다.
+켓 표기는 당장 화두인 값만 표현하기 쉽도록 한다. \emoji{grinning-cat}
+
+\hfill
+
+\hfill\parbox[t]{9cm}{\itshape\textcolor{gray}{사실 그냥 편하자고 도입하는
+형식주의다. 켓 표기에 뭐든 넣을 수 있다. 자, 켓 표기 속 슈뢰딩거의 고양이다.
+$\frac{1}{\sqrt2}\left(\ket{}\right)$}}
 \end{document}
