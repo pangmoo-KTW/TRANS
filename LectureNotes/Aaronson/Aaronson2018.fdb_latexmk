@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1692175776 "Aaronson2018.tex" "Aaronson2018.pdf" "Aaronson2018" 1692175781 0
+["lualatex"] 1692176218 "Aaronson2018.tex" "Aaronson2018.pdf" "Aaronson2018" 1692176223 0
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/hb/:usr:share:texmf-dist:fonts:truetype:public:unfonts-core:UnBatang.ttf:1:nil" 1692173827 1255639 c45fa5a0272bdbcb4624b8b20cc8a91f ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/hb/:usr:share:texmf-dist:fonts:truetype:public:unfonts-core:UnBatangBold.ttf:1:nil" 1692173827 1335247 0be8d9367c5a49c7076f10051ff9fe09 ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/hb/:usr:share:texmf-dist:fonts:truetype:public:unfonts-core:UnDinaru.ttf:1:nil" 1692173829 856439 28708db188245335f47d0cde46128a6b ""
@@ -18,7 +18,6 @@
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman17-regular.luc" 1692173834 128908 0de37ce1ccaa8c9079fc3e893588b7e9 ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc" 1692173833 125954 fa02a4e3515f228852bafb4df6f859dc ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1692173833 128503 1723f414a905edf6e96a60c37e906267 ""
-  "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-italic.luc" 1692175383 135978 559d11427afcfaaab8eb547db9c75553 ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1692173833 128362 8f0dce180e0cf2ff6c32d2a6434095d8 ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-bold.luc" 1692173834 128285 8264beea7515cb24f2b00aad3aa79707 ""
   "/home/ktw/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-italic.luc" 1692173835 135533 1b75b7755820d658aa0fb19450ec6f70 ""
@@ -300,10 +299,10 @@
   "/usr/share/texmf-dist/tex/luatex/luatexko/luatexko.sty" 1689853683 33039 b0d1ada8b93c19e8ea6871803df8cc24 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1690224450 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1692173667 11874749 89ecc1c5052c3f184748ff41950346cc ""
-  "Aaronson2018.aux" 1692175780 8083 cfcf3b1611482481aa01d107fa8dc43f "lualatex"
-  "Aaronson2018.out" 1692175780 814 bf39f645f947718198e71de9ddce0aba "lualatex"
-  "Aaronson2018.tex" 1692175768 28908 940fa7ed87eaaba3f41bf1b31680fb64 ""
-  "Aaronson2018.toc" 1692175780 570 32b4bf5292fde0925abf23d63e94d7d8 "lualatex"
+  "Aaronson2018.aux" 1692176222 8083 cfcf3b1611482481aa01d107fa8dc43f "lualatex"
+  "Aaronson2018.out" 1692176222 814 bf39f645f947718198e71de9ddce0aba "lualatex"
+  "Aaronson2018.tex" 1692176217 28914 6f74a1e7b8423bc18b3b8a1f6b9f9021 ""
+  "Aaronson2018.toc" 1692176222 570 32b4bf5292fde0925abf23d63e94d7d8 "lualatex"
   "IMG//iqis1_001.png" 1690885025 10201 9835e91429ad80ba225e96765b8c0a5d ""
   "IMG//iqis1_002.png" 1690897623 18741 369a7069bf241836b4664f147377723f ""
   "IMG//iqis1_003.png" 1690962425 94875 dedf81a204fa8c8493a246e1b3e18c2d ""
