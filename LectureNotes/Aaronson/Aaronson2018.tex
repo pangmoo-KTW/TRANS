@@ -2,7 +2,7 @@
 \documentclass[a4paper,chapter,atbegshi,]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,mdframed,enumitem,graphicx,wrapfig,xcolor}
-\usepackage{caption,braket,emoji,}
+\usepackage{fontspec,caption,braket,twemojis,}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
@@ -562,11 +562,12 @@ $\ket0=\begin{bmatrix}1\\0\end{bmatrix}, \ket1=\begin{bmatrix}0\\1
 
 \emph{왜 켓 표기를 사용하는가?} 실용적으로 큰 이점 하나를 꼽는다면 (대다수 진폭이
 $0$인) 아주 희소한 행렬{\footnotesize sparse vectors}이 빈번하다는 것이다.
-켓 표기는 당장 화두인 값만 표현하기 쉽도록 한다. \emoji{grinning-cat}
+켓 표기는 당장 화두인 값만 표현하기 쉽도록 한다.
 
 \hfill
 
 \hfill\parbox[t]{9cm}{\itshape\textcolor{gray}{사실 그냥 편하자고 도입하는
 형식주의다. 켓 표기에 뭐든 넣을 수 있다. 자, 켓 표기 속 슈뢰딩거의 고양이다.
-$\frac{1}{\sqrt2}\left(\ket{}\right)$}}
+$\frac{1}{\sqrt2}\left(\ket{\textrm{\twemoji{grinning cat with smiling eyes}}}
++\ket{\textrm{\twemoji{crying cat}}}\right)$}}
 \end{document}
