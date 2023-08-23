@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692832202 "ktw_qic_notes.tex" "ktw_qic_notes.pdf" "ktw_qic_notes" 1692832204 0
+["pdflatex"] 1692834594 "ktw_qic_notes.tex" "ktw_qic_notes.pdf" "ktw_qic_notes" 1692834595 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -25,6 +25,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1689853683 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1689853683 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1689853683 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1689853683 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmac.tfm" 1689853683 1264 ddee1f2afe0150ee5f02b48ad1cee897 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmad.tfm" 1689853683 1280 bd052625bc2da0c1d80e4ae0ad230cc2 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmae.tfm" 1689853683 1256 f1315597756b5ec9cc19c69d9ec8ea3b ""
@@ -126,10 +127,12 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1689853683 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1689853683 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1689853683 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1689853683 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1689853683 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1689853683 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1689853683 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1689853683 36607 d654cb3f2bc54f57509240071db3bffa ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1689853683 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb" 1689853683 81586 59a66717b44d5428216b002f6634a9ee ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmad.pfb" 1689853683 111182 27a4ee61070acde82ce880f361ba9cb8 ""
@@ -372,9 +375,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1690224450 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692173640 6768060 2fcda9cb4e187b56156b153319f8d079 ""
-  "ktw_qic_notes.aux" 1692832203 5310 e412360a244e344ef9af999f45b4a1bc "pdflatex"
-  "ktw_qic_notes.out" 1692832203 353 781f3cf5fc281b16f842e88b974dc8d4 "pdflatex"
-  "ktw_qic_notes.tex" 1692832202 22246 9efb99b8690bacf6c7676a6677bd8a29 ""
+  "ktw_qic_notes.aux" 1692834595 5310 e412360a244e344ef9af999f45b4a1bc "pdflatex"
+  "ktw_qic_notes.out" 1692834595 353 781f3cf5fc281b16f842e88b974dc8d4 "pdflatex"
+  "ktw_qic_notes.tex" 1692834593 22188 0046ae083b54511c8c20a8205afbecd5 ""
   "qis001.png" 1692711450 25168 ec4314dce0d4790d5115e95b527195cf ""
   (generated)
   "ktw_qic_notes.aux"
