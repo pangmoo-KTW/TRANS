@@ -3,7 +3,8 @@
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{graphicx,xcolor,caption}
 \usepackage{braket,hyperref,nicematrix}
-\usepackage{tikz,fourier}
+\usepackage{tikz,fourier,enumitem}
+\setlist{nosep}
 \hypersetup{
   colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
 }
@@ -35,8 +36,8 @@ $f$의 치역이 공역 $\Gamma$와 같다면 $f$는 전사{\tiny surjective}다
 단사{\tiny injective}다. $f$가 전사이고 단사라면 전단사{\tiny bijcetive}다.
 
 성질{\tiny property} $P$의 \emph{특성함수\tiny characteristic function}
-$c_P:\mathbb{N}\rightarrow\{0,1\}$로 $n=P\Rightarrow c_p(n)=0$을 만족한다. 
-이때 성질 $P$는 수를 두 집합으로 분할{\tiny partition}한다.
+$c_P:\mathbb{N}\rightarrow\{0,1\}$는 $n=P\Rightarrow c_p(n)=0$을 만족한다. 
+이때 성질 $P$는 $\mathbb{N}$을 두 집합으로 분할{\tiny partition}한다.
 
 집합 $\Sigma$가 \emph{열거가능\tiny enumerable} 혹은 \emph{가산}이라는
 필요충분조건{\tiny iff}은 $\Sigma$가 공집합이거나 전사 함수 $f:\mathbb{N}
@@ -135,166 +136,223 @@ $c_P:\mathbb{N}\rightarrow\{0,1\}$로 $n=P\Rightarrow c_p(n)=0$을 만족한다.
 가능성과 한계에 대해 내놓을 수 있는 모든 주장을 강화한다. 계산 모델로는
 튜링장치{\tiny Turing Machine}가 있을 수 있다.
 \begin{thes}[튜링 1936]
-  비형식적으로 말해 효과적으로 계산가능한 수치 함수는 실상 전부 적절한 튜링장치로
+  비형식적으로 말해 효과적으로 계산가능한 수치함수는 실상 전부 적절한 튜링장치로
   계산가능한 함수들이다.
 \end{thes}
 튜링 논제에서 유의해야 하는 표현은 \emph{수치함수\tiny numerical function}다. 
 모든 비수치{\tiny nonnumerical} 객체 $X$를 어떤 수로 사상 혹은 부호화할 수 있다.
 이런 $X$를 표준형식언어{\tiny standard formal languages}상의 
-\emph{표현식\tiny expressions}이라고 부른다.
-\begin{defn}
-  수치적인 성질 혹은 관계가 \underline{효과적으로 결정가능\tiny effectively
-  decidable}하다는 말의 필요충분조건{\tiny iff}은 그 특성함수가 효과적으로
-  계산가능하다는 것이다.
+\emph{표현식\tiny expressions}이라고 부른다. 튜링 논제는 일종의 공리이기에
+\emph{효과적으로 계산가능하다}라는 말을 \emph{튜링장치로 계산가능하다}라는
+말로 바꿔 생각해야 한다. 이와 같은 계산가능성 개념에 기초하여 결정가능성 개념을
+정의한다.
+\begin{defn}\label{defn:11}
+  성질이 \underline{효과적으로 결정가능\tiny effectively decidable}하다는 
+  필요충분조건은 그 특성함수가 효과적으로 계산가능하다는 것이다.
 \end{defn}
-\begin{defn}
-  집합 $\Sigma$가 \underline{효과적으로 결정가능}하다는 말의 필요충분조건{\tiny
-  iff}은 $\Sigma$의 성질에 대한 특성함수 $c_{\Sigma}$가 효과적으로 계산가능하다는
+\begin{defn}\label{defn:12}
+  집합 $\Sigma$가 \underline{효과적으로 결정가능}하다는 말의 필요충분조건은
+  $\Sigma$의 성질에 대한 특성함수 $c_{\Sigma}$가 효과적으로 계산가능하다는
   것이다.
 \end{defn}
+여기서 \emph{효과}란 성능 따위가 아니라 말 그대로 어떤 효과를 지닌다는
+뜻이다. 결정가능성은 특성함수의 계산가능성으로 정의되고 이는 $\mathbb{N}$의
+모든 유한 부분집합에 대해 번역될 수 있다. 또한 한 집합의 결정가능성은
+그 여집합의 결정가능성 또한 보장한다. 정리하면 아래와 같다.
 \begin{theo}
-  모든 자연수 집합은 효과적으로 결정가능하다.
+  모든 유한한 자연수 집합은 효과적으로 결정가능하다.
 \end{theo}
+\begin{proof}
+  $\Sigma\subseteq\mathbb{N}$이 유한하다면 특성함수 $c_{\Sigma}$는 항상 $1$이나
+  $0$의 값을 지닌다. 이런 함수는 무차별대입{\tiny brute-force} 알고리즘으로
+  $1$이나 $0$을 계산할 수 있다. 따라서 정의 \ref{defn:12}에 의해 모든 유한한
+  자연수 집합은 효과적으로 결정가능하다.
+\end{proof}
 \begin{theo}\label{theo:14}
   $\Sigma$가 효과적으로 결정가능한 집합이라면 그 여집합{\tiny complement}
   $\overline{\Sigma}$도 효과적으로 결정가능한 집합이다.
 \end{theo}
 \begin{proof}
-  $\Sigma\subseteq\mathbb{N}$이 유한하다면 특성함수 $c_{\Sigma}$는 항상 $1$이나
-  $0$의 값을 지닌다. 이런 함수는 무차별대입{\tiny brute-force} 알고리즘으로
-  $1$이나 $0$을 계산가능하다. 따라서 모든 자연수 집합은 효과적으로 결정가능하다.
-
-  또한 특성함수 $c_{\Sigma}$가 효과적으로 계산가능하다면 $\overline{\Sigma}$의
+  효과적으로 결정가능한 집합 $\Sigma$가 있다고 하자. 정의 \ref{defn:12}에 의해
+  $\Sigma$의 특성함수 $c_{\Sigma}$는 효과적으로 계산가능하다. $c_{\Sigma}$가
+  효과적으로 계산가능하기에 $\overline{\Sigma}$의
   특성함수 $\overline{c}$는 다음처럼 정의될 수 있다.
   \[
     \overline{c}(n) = 1-c_{\Sigma}(n)
   \]
   그리고 $c_{\Sigma}$의 계산가능성으로 $\overline{c}$ 또한 계산가능하다.
+  다시 정의 \ref{defn:12}에 의해 $\overline{\Sigma}$ 또한 효과적으로 결정가능한
+  집합이다.
 \end{proof}
-\begin{defn}
-  집합 $\Sigma$는 \underline{효과적으로 열거가능\tiny effectively 
-  enumerable}하다는 말의 필요충분조건은 $\Sigma$가 공집합이거나 
-  효과적인 계산가능 함수가 존재하여 $\Sigma$를 열겨한다는 것이다.
+이제 함수의 계산가능성을 이용해 집합의 열거가능성을 정의한다. 여기서
+`계산가능 함수'란 실상 \emph{알고리즘}과 같다.
+\begin{defn}\label{defn:13}
+  집합 $\Sigma$가 \underline{효과적으로 열거가능\tiny effectively 
+  enumerable}하다는 필요충분조건은 $\Sigma$가 공집합이거나 
+  효과적인 계산가능 함수가 존재하여 $\Sigma$를 열거한다는 것이다.
 \end{defn}
+집합의 결정가능성은 열거가능성을 보장한다.
 \begin{theo}\label{theo:15}
   $\Sigma$가 효과적으로 결정가능한 집합이라면 효과적으로 열거가능하다.
 \end{theo}
 \begin{proof}
-  $s\in\Sigma$가 있다고 하자. 그리고 입력 $n$에 대해 $n\in\Sigma$를 효과적으로
-  확인할 수 있는 알고리즘에 대해 $n\in\Sigma$라면 $n$을 출력하고
-  $n\notin\Sigma$라면 $s$를 출력한다고 하자. 이 알고리즘은 전사함수
-  $f:\mathbb{N}\rightarrow\Sigma$를 계산한다. 따라서 $\Sigma$는 효과적으로
-  열거가능하다.
-\end{proof}
-\begin{theo}
-  $\Sigma$와 그 여집합 $\overline{\Sigma}$가 모두 효과적으로 열거가능한
-  집합이라면 $\Sigma$는 효과적으로 결정가능하다.
-\end{theo}
-\begin{proof}
-  $\Sigma$가 계산가능함수 $f$에 의해 열거가능한 집합이며 $\overline{\Sigma}$가
-  계산가능함수 $g$에 의해 열거가능한 집합이라고 하자. 차례로 계산한다.
+  효과적으로 결정가능한 집합 $\Sigma$가 있다고 하자. $s\in\Sigma$를
+  고정하고 임의의 입력 $n$에 대해 $n$이 $\Sigma$에 속하는지
+  효과적으로 확인하는 알고리즘 $\Pi$를 구성한다. $\Pi$는
+  아래처럼 정의된다.
   \[
-    f(0),g(0),f(1),g(1),f(2),g(2),\ldots
+    \Pi(n) = \begin{cases}n\quad n\in\Sigma\textrm{인 경우}\\
+    s\quad n\notin\Sigma\textrm{인 경우}\end{cases}
   \]
-  임의로 주어진 $s$에 대해 $s\in\Sigma\iff s\notin\overline{\Sigma}$ 혹은
-  $s\in\overline{\Sigma}\iff s\notin\Sigma$이므로
-  $s$는 무조건 출력된다. 다시 말해 어떤 $m$이 존재하여 $f(m)=s$를 만족하거나
-  어떤 $n$이 존재하여 $g(n)=s$를 만족한다. 따라서 $f$ 혹은 $g$는 효과적으로
-  계산가능하기에 $\Sigma$ 혹은 $\overline{\Sigma}$가 결정가능한 집합이다. 그리고
-  $\overline{\overline{\Sigma}}=\Sigma$이므로 $\Sigma$는 효과적으로 결정가능하다.
+  여기서 $\Pi$는 전사함수 $f:\mathbb{N}\rightarrow\Sigma$를 계산한다. 
+  따라서 $\Sigma$는 효과적으로 열거가능하다.
 \end{proof}
-이쯤 알고리즘을 더 명확하게 정의한다.
-\begin{defn}
-  알고리즘의 정의역은 입력 $n\in\mathbb{N}$에 대해 알고리즘 실행이 언젠가는
-  종결하고 어떤 수를 출력으로 내놓는 자연수의 집합이다. 
-\end{defn}
+아래 정리는 집합과 그 여집합의 열거가능성에서 각 계산가능함수의 존재를
+추출해 집합 혹은 여집합의 여집합의 계산가능성을 유도한다.
 \begin{theo}
-  $W$가 효과적으로 열거가능한 집합인 필요충분조건은 $W$가 어떤 알고리즘의
-  정의역이라는 것이다.
+  $\Sigma$와 그 여집합 $\overline{\Sigma}$ 모두 효과적으로 열거가능한
+  집합이면 $\Sigma$는 효과적으로 결정가능하다.
 \end{theo}
 \begin{proof}
-  ($\Rightarrow$)
-  $W$가 열거가능한 집합이라고 하자. 그렇다면 정의상 (i) $W$가 공집합이거나
-  (ii) 계산가능함수 $f$가 존재하여 $W$를 열거한다.
-
-  (i)의 경우 아무 출력도 내놓지 않는 알고리즘 아무거나 고르면 된다.
-  (ii)의 경우 어떤 알고리즘 $\Pi$가 존재하여 함수 $f$를 계산한다. $\Pi$로
-  더 복잡한 알고리즘 $\Pi^+$를 구성할 수 있다. 주어진 입력 $n$에 대해 $\Pi$로
-  루프{\tiny loop}하며 $f(0),f(1),f(2),\ldots$를 계산하다가 어떤 $i$에 대해
-  $f(i)=n$인 경우 멈추고 $i$를 출력한다. 따라서 $\Pi^+$의 정의역은
-  $W$다. 
-
-  ($\Leftarrow$) $W$가 어떤 알고리즘 $\Pi$의 정의역이라고 하자. $W$가 공집합이라면
-  $W$는 열거가능하다. $W$가 공집합이 아니라고 하자. 정리 \ref{theo:11}에 의해
-  각각의 가능한 쌍 $\langle i,j\rangle$에 대해 $n\in\mathbb{N}$과 일대일대응이
-  존재한다. 그리고 이에 계산가능함수 $\textrm{fst}(n)$과 $\textrm{snd}(n)$이
-  존재하여 각각 $n$번째 쌍의 첫 번째 성분 $i$와 두 번째 성분 $j$를 반환한다. 
-  이들 함수로 $\Pi'$를 다음처럼 정의한다.
-
-  주어진 입력 $n$에 대해 $i=\textrm{fst}(n)$과 $j=\textrm{snd}(n)$를 계산한다.
-  그리고 $\Pi$를 입력 $i$에 대해 $j$번 실행한다. $\Pi$가 입력 $i$에
-  대해 어떤 출력 $j$로 정지{\tiny halt}하면 $\Pi'$는 $i$를 출력한다. 
-  그 외의 경우 $\Pi'$는 $o$를 출력한다.
-
-  $n$이 증가할 때마다 $\Pi'$는 모든 $i,j$에 대해 $\Pi$를 확인한다. 그리고 
-  $\Pi$가 결국 어떤 출력을 내놓는 $i$를 출력한다. 그리하여 $\Pi'$는
-  $\Pi$의 정의역 $W$를 치역으로 지니는 함수를 계산한다. 따라서 $W$는
-  열거가능하다.
+  열거가능 집합 $\Sigma$이 존재하며 그 여집합 $\overline{\Sigma}$ 또한
+  열거가능하다고 하자. 정의 \ref{defn:13}에 의해 $\Sigma$와 $\overline{\Sigma}$에
+  대해 각각 계산가능함수 $f$와 $g$가 존재한다. $f$와 $g$가 출력할 수 있는
+  있는 모든 $s$에 대해 아래와 같은 상황이 성립한다. 
+  \[
+    s\in\Sigma \iff s\notin\overline{\Sigma} 
+  \]
+  다시 말해 어떤 $m$이 존재하여 $f(m)=s$를 만족하거나 어떤 $n$이 존재하여
+  $g(n)=s$를 만족한다. 따라서 특성-알고리즘 $\Pi$를 $\Sigma$나
+  $\overline{\Sigma}$에 대해 구성할 수 있다. 아래는 $\Sigma$에 대해 구성한
+  $\Pi_{\Sigma}$다.
+  \[
+    \Pi_{\Sigma}(s)=
+    \begin{cases}
+      0\quad s\in\Sigma\textrm{인 경우} \\
+      1\quad s\notin\Sigma\textrm{인 경우}
+    \end{cases}
+  \]
+  그리고 임의의 공이 아닌 집합 $A$에 대해 $\overline{\overline{A}}=A$다.
+  따라서 $\Sigma$는 정의 \ref{defn:12}에 의해 효과적으로 결정가능한 집합이다.
 \end{proof}
-\begin{theo}
+이쯤 알고리즘의 정의역을 정의해 알고리즘을 더 분명하게 다룬다.
+\begin{defn}
+  알고리즘의 정의역은 입력 $n\in\mathbb{N}$에 대해 알고리즘이 언젠가는
+  종결하며 어떤 수를 출력으로 내놓도록 하는 자연수의 집합이다. 
+\end{defn}
+알고리즘의 정의역은 실상 효과적으로 열거가능한 집합과 같은 말이다. 이 사실을
+증명할 때는 알고리즘으로 알고리즘을 구성해 루프를 구성하는 기법이 유용하다.
+또한 알고리즘의 정의상 종결을 유도해야 하기에 꽤 복잡해 보일 수 있다.
+\begin{theo}\label{theo:17}
+  $W$가 효과적으로 효과적으로 열거가능한 집합인 필요충분조건은 $W$가
+  어떤 알고리즘의 정의역이라는 것이다.
+\end{theo}
+\begin{proof}
+  필요충분조건을 양방향으로 증명한다.
+
+  ($\Rightarrow$)
+  $W$가 열거가능한 집합이라고 하자. 정의 \ref{defn:13}에 의해 아래가
+  성립한다.
+  \begin{enumerate}
+    \item $W$가 공집합이거나
+    \item 계산가능 함수 $f$가 존재하여 $W$를 열거한다. 즉
+      \[
+        n\in W\iff f(i)=n
+      \]
+  \end{enumerate}
+  첫 번째 경우 아무 출력도 내놓지 않는 알고리즘 아무거나 고르면 된다.
+  두 번째 경우 함수 $f$를 계산하는 알고리즘 $\Pi$를 구성한다. 그리고 $\Pi$로
+  다시 알고리즘 $\Pi^+$를 구성한다. 알고리즘 $\Pi^+$는 입력 $n\in W$에 대해
+  $\Pi$로 루프{\tiny loop}하며 $f(0),f(1),f(2),\ldots$를 계산하다가 어떤 $i$에
+  대해 $f(i)=n$인 경우 멈추고 $i$를 출력한다. 여기서 $\Pi^+$가 입력으로
+  취하는 값 $n$은 $W$상의 임의의 원소다. 따라서 $W$는 $\Pi^+$의 정의역이다.
+
+  ($\Leftarrow$) $W$가 알고리즘 $\Pi$의 정의역이라고 하자. 정의 \ref{defn:13}에
+  의해 $W$가 공집합이라면 $W$는 열거가능하다. $W$가 공집합이 아니라고
+  가정하고 $o\in W$를 고정하자.
+  정리 \ref{theo:11}에 의해 $n\in\mathbb{N}$와 $\langle i,j\rangle$에 대해
+  일대일대응이 존재한다.
+  이 사실을 바탕으로 계산가능 함수 $\textrm{fst}(n)$과 $\textrm{snd}(n)$을 
+  구성한다. 각각 $n$번째 쌍의 첫 번째 성분 $i$와 두 번째 성분 $j$를 반환하는
+  함수다. 이들 함수로 새로운 알고리즘 $\Pi'$를 다음처럼 구성한다.
+  \begin{quote}
+  $\Pi'$는 우선 주어진 입력 $n\in\mathbb{N}$에 대해 $i=\textrm{fst}(n)$와
+  $j=\textrm{snd}(n)$를 계산한다. 그리고 $i\notin W$라면 $o$를 출력한다. 
+  $i\in W$라면 $i$를 입력으로 $\Pi$를 $j$번 루프한다. $\Pi$가 어떤 입력
+  $i$에 대해 어떤 출력 $j$로 정지하면 $\Pi'$는 $i\in W$를 출력한다.
+  \end{quote}
+  즉 $\Pi'$는 $\mathbb{N}$를 $\Pi$의 정의역 $W$로 사상한다. 따라서 정의 
+  \ref{defn:13}에 의해 $W$는 효과적으로 열거가능한 집합이다.
+\end{proof}
+아래는 당연한 사실이며 따로 증명하지 않겠다.
+\begin{theo}\label{theo:18}
   모든 효과적으로 열거가능한 자연수 집합들의 집합 $\mathcal{W}$는 열거가능하다.
 \end{theo}
-당연하다. 이는 아래 같은 따름정리를 유도한다.
-\begin{theo}
-  어떤 집합은 효과적으로 열거가능하지 않기에 효과적으로 결정가능하지 않다.
+그런데도 이 사실은 아래 따름정리를 유도하기에 중요하다.
+\begin{theo}\label{theo:19}
+  어떤 집합은 효과적으로 열거불가능하고 그래서 효과적으로 결정불가능하다.
 \end{theo}
 \begin{proof}
   정리 \ref{theo:12}에 의해 $\mathbb{N}$의 멱집합 $\mathcal{P}$는 열거가능하지
-  않다. 따라서 $\mathcal{W}\neq\mathcal{P}$다. 그러나 $\mathcal{W}\subset
-  \mathcal{P}$다. 그래서 $\mathcal{W}$에 없는 것들이 $\mathcal{P}$에는 존재한다.
-  즉 효과적으로 열거가능하지 않은 집합들이 존재하는 것이다.
-  정리 \ref{theo:15}의 대우에 의해 이들 집합은 결정불가능하다.
+  않다. 즉 효과적으로 열거불가능한 집합이 존재한다. 그리고 정리 \ref{theo:15}의
+  대우에 의해 $\mathcal{P}$는 효과적으로 결정불가능하다. 
+
+  더 강력하게 증명할 수도 있다. 정리 \ref{theo:18}에 의해 모든 효과적으로
+  열거가능한 자연수 집합들의 집합 $\mathcal{W}$는 열거가능하다. 그렇기에
+  당연히 $\mathcal{W}\neq\mathcal{P}$이지만 더 중요한 함의는 바로 $\mathcal{W}
+  \subset\mathcal{P}$다. 즉 $\mathcal{W}$의 원소가 아니라서 효과적으로 
+  열거불가능한 집합들이 존재하며 그렇기에 효과적으로 결정불가능한 집합들이
+  존재한다.
 \end{proof}
+아래 정리에는 대각화 구성을 비롯하여 지금까지 학습한 기법이 총동원된다. 
 \begin{theo}[열거가능집합의 근본 정리]
   효과적으로 열거가능한 집합 $K$가 존재하여 여집합 $\overline{K}$는
   효과적으로 열거불가능하다.
 \end{theo}
 \begin{proof}
-  $K$를 아래처럼 정의한다.
+    효과적으로 열거가능한 집합 $K$가 존재하면 그 여집합 $\overline{K}$가
+    효과적으로 열거불가능하다는 사실 (i)를 증명하고 이 사실에 기초해 효과적으로
+    열거가능한 집합 $K$의 존재성 (ii)를 증명한다.
+
+  (i) 
+  효과적으로 열거가능한 집합 $K$는 정리 \ref{theo:18}에서 구성한 모든 효과적으로
+  열거가능한 집합들의 집합 $\mathcal{W}$상 임의의 $e$번째 원소 $We$라는 집합이다.
+  이 사실을 아래처럼 나타낼 수 있다. 
   \[
     K:=\{e|e\in W_e\}.
   \]
-  정의상 모든 $e$에 대해 아래가 성립한다.
+  여집합의 정의상 모든 $e$에 대해 아래가 성립한다.
   \[
     e\in\overline{K}\iff e\notin W_e.
   \]
-  그래서 $\overline{K}$는 모든 $W_e$에 대해 다르다. 그래서 $\overline{K}$는
-  효과적으로 열거가능한 집합이 아니다. $W_e$가 전부이기 때문이다.
+  이 사실은 $e$ 뿐만 아니라 모든 $W_e$에 대해 성립한다. 즉 $\overline{K}$는
+  정리 \ref{theo:19}에서 언급한 $\mathcal{P}/\mathcal{W}$상의 원소다. 
+  다시 말해 $\overline{K}$는 효과적으로 열거불가능하다.
 
-  $\overline{K}$가 효과적으로 열거불가능하기에 $\overline{K}$는 $\mathbb{N}$
+  (ii)
+  $\overline{K}$가 효과적으로 열거불가능하므로 $\overline{K}$는 $\mathbb{N}$
   전체일 수 없다. 그리하여 $K$는 공이 아닌 집합이다. $o$를 $K$상의 어떤
-  원소로 두고 알고리즘 $\Pi''$를 아래처럼 정의한다.
+  원소로 고정하고 알고리즘 $\Pi''$를 아래처럼 정의한다.
   \begin{quote}
-    주어진 입력 $n$에 대해 $i=\textrm{fst}(n),j=\textrm{snd}(n)$을 계산한다.
-    그리고 알고리즘 $\Pi_i$를 찾아 입력 $i$에 대해 $j$번 실행한다.
-    $\Pi_i$가 입력 $i$에 대해 $j$로 출력하며 정지한다면
-    $\Pi''$는 $i$를 출력한다. 이외의 경우 $\Pi''$는 기본값 $o$를
-    출력한다.
+    주어진 입력 $n\in\mathbb{N}$에 대해 $i=\textrm{fst}(n),j=\textrm{snd}(n)$을
+    계산한다. 그리고 $i\notin K$라면 $o$를 출력한다. 
+    $i\in K$라면 알고리즘 $\Pi_i$를 찾아 입력 $i$에 대해 $j$번 루프한다.
+    $\Pi_i$가 입력 $i$에 대해 $j$를 출력하며 정지하면
+    $\Pi''$는 $i$를 출력한다.
   \end{quote}
-  $n$이 증가하며 $\Pi''$는 모든 쌍 $\langle i,j\rangle$에 대해 실행한다.
-  그래서 $\Pi''$의 출력은 $i$가 $\Pi_i$의 정의역인 모든 $i$의 집합이다.
-  즉 $i\in W_i$이며 다시 말해 $K$다. 따라서 $K$는 효과적으로 열거가능하다.
+  즉 $\Pi''$는 $\mathbb{N}$을 각 $\Pi_i$의 치역인 $K$로 사상한다. 
+  따라서 정의 \ref{defn:13}에 의해 $K$는 효과적으로 열거가능하다.
 \end{proof}
+이 증명을 통해 정리 \ref{theo:19}를 강화할 수 있다.
 \begin{theo}
   어떤 효과적으로 열거가능한 집합은 결정가능하지 않다.
 \end{theo}
 \begin{proof}
-  열거불가능한 여집합을 지니는 임의의 열거가능 집합 $K$를 취한다. $K$가
-  결정가능하다고 가정하자.
-  정리 \ref{theo:14}에 의해 $K$가 결정가능하면 그 여집합 $\overline{K}$ 또한
-  결정가능할 것이다. 하지만 그렇다면 정리 \ref{theo:15}에 의해 $\overline{K}$는
-  열거가능 집합일 것이다. 이는 모순이다. 따라서 어떤 열거가능 집합은 
-  결정불가능하다.
+  정리 \ref{theo:19}와 같이 효과적으로 열거불가능한 여집합을 지니는 임의의
+  효과적으로 열거가능한 집합 $K$를 구성한다. 이에 $K$가 효과적으로 결정가능하다고
+  가정하자. 그리고 $K$가 효과적으로 결정가능하면 정리 \ref{theo:14}에 의해
+  그 여집합 $\overline{K}$ 또한 효과적으로 결정가능할 것이다. 하지만 그렇다면
+  정리 \ref{theo:15}에 의해 $\overline{K}$가 효과적으로 열거가능한 집합일 것이다.
+  이는 모순이다. 따라서 어떤 열거가능 집합은 결정불가능하다.
 \end{proof}
-\chapter{튜링}
 \end{document}
