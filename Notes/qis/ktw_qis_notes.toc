@@ -1,4 +1,5 @@
 \contentsline {chapter}{차\nobreakspace {}례}{2}{section*.1}%
 \contentsline {chapter}{\chapternumberline {제\,1\,장}계산}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}대각화}{3}{section.1.1}%
-\contentsline {chapter}{\chapternumberline {제\,2\,장}튜링}{6}{chapter.2}%
+\contentsline {section}{\numberline {1.2}계산가능성}{5}{section.1.2}%
+\contentsline {chapter}{\chapternumberline {제\,2\,장}튜링}{9}{chapter.2}%
