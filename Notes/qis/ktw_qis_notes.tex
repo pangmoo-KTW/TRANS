@@ -1,0 +1,129 @@
+\documentclass[a4paper,chapter,atbegshi]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx,xcolor,caption}
+\usepackage{braket,hyperref,nicematrix}
+\usepackage{tikz}
+\hypersetup{
+  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
+}
+\newtheorem{defn}{정의}[chapter]
+\newtheorem{theo}{정리}[chapter]
+
+
+\title{양자계산복잡도이론 학습일지}
+\author{김태원}
+\date{최초 작성 : 2023년 8월 27일 \\ 최근 편집 : \today}
+
+\begin{document}
+\maketitle
+\break
+\tableofcontents
+\chapter{계산}
+\section{대각화}
+함수 $f$가 정의역{\tiny domain} $\Delta$상의 원소를 공역{\tiny codomain} 
+$\Gamma$상의 원소로 사상{\tiny maps to}한다는 말을 아래처럼 표기한다.
+\[
+  f:\Delta\rightarrow\Gamma.
+\]
+$f$의 치역{\tiny range}은 아래와 같다.
+\[
+  \{f(x)\in\Gamma|x\in\Delta\}.
+\]
+$f$의 치역이 공역 $\Gamma$와 같다면 $f$는 전사{\tiny surjective}다.
+그리고 $\Delta$상의 상이한 원소를 $\Gamma$상의 상이한 원소로 사상하는 $f$는
+단사{\tiny injective}다. $f$가 전사이고 단사라면 전단사{\tiny bijcetive}다.
+
+성질{\tiny property} $P$의 \emph{특성함수\tiny characteristic function}
+$c_P:\mathbb{N}\rightarrow\{0,1\}$로 $n=P\Rightarrow c_p(n)=0$을 만족한다. 
+이때 성질 $P$는 수를 두 집합으로 분할{\tiny partition}한다.
+
+집합 $\Sigma$가 \emph{열거가능\tiny enumerable} 혹은 \emph{가산}이라는
+필요충분조건{\tiny iff}은 $\Sigma$가 공집합이거나 전사 함수 $f:\mathbb{N}
+\rightarrow\Sigma$가 존재한다는 것이다. 
+\begin{theo}
+  자연수 순서쌍 $\langle i,j\rangle$의 집합은 가산이다.
+\end{theo}
+\begin{proof}
+  순서쌍을 그림 \ref{fig:11}과 같이 지그재그 꼴의 대각선으로 배열한다.
+  그리고
+  \[
+  \begin{matrix}
+     0\mapsto\langle0,0\rangle\quad
+     &1\mapsto\langle0,1\rangle\quad
+     &3\mapsto\langle0,2\rangle
+     &6\mapsto\langle0,3\rangle\\
+     &2\mapsto\langle1,0\rangle\quad
+     &4\mapsto\langle1,1\rangle
+     &7\mapsto\langle1,2\rangle\\
+     &&5\mapsto\langle2,0\rangle
+     &8\mapsto\langle 2,1\rangle\\
+     &&&9\mapsto\langle3,0\rangle
+  \end{matrix}
+  \quad\cdots
+  \]
+  와 같이 전단사 $f:\mathbb{N}\rightarrow\mathbb{N}^2$를 정의할 수 있다.
+\end{proof}
+\begin{figure}[h]
+\[
+\begin{matrix}
+\langle 0,0\rangle &\rightarrow &\langle 0,1\rangle & &\langle0,2\rangle & &\langle 0,3\rangle &\cdots \\
+&\swarrow & &\swarrow & &\swarrow & &\swarrow \\
+\langle 1,0\rangle & &\langle 1,1\rangle & &\langle 1,2\rangle &&\langle1,3\rangle&\cdots \\
+&\swarrow &&\swarrow &&\swarrow && \\
+\langle2,0\rangle&&\langle2,1\rangle&&\langle2,2\rangle&&\langle2,3\rangle&\cdots\\
+&\swarrow&&\swarrow&&&&\\
+\langle3,0\rangle&&\langle3,1\rangle&&\langle3,2\rangle&&\langle3,3\rangle&\cdots\\
+\vdots&\swarrow&\vdots&&\vdots&&\vdots&
+\end{matrix}
+\]
+\caption{\label{fig:11}대각 논법}
+\end{figure}
+\begin{theo}[칸토어 정리(1874)]
+  가산이 아닌 무한집합이 존재한다.
+\end{theo}
+\begin{proof}
+  $\mathbb{N}$의 멱집합 $\mathcal{P}$가 아래처럼 존재한다.
+  \[
+    X\in\mathcal{P}\iff X\subseteq\mathbb{N}.
+  \]
+  역으로 함수 $f:\mathbb{N}\rightarrow\mathcal{P}$가 존재하여
+  $\mathcal{P}$가 가산이라고 하자. 우선 $\mathbb{N}$의 부분집합 $D$를 아래처럼
+  둔다.
+  \[
+    D=\{n\in\mathbb{N}:n\notin f(n)\}.
+  \]
+  $D\in\mathcal{P}$이고 $f$가 $\mathcal{P}$상의 원소에 대해 가산이기에 어떤
+  $d\in\mathbb{N}$가 존재하여 $f(d)=D$를 만족할 것이다. 그리하여 모든 $n\in 
+  f(d)$에 대해 아래와 같다. 
+  \[
+    n\in f(d) \iff n \notin f(n).
+  \]
+  이는 모순이다. 따라서 $f$와 같은 열거 함수는 존재할 수 없다. 따라서
+  멱집합 $\mathcal{P}$는 가산일 수 없다. 즉 비가산{\tiny indenumerable}이다. 
+\end{proof}
+여기서 $D$를 대각{\tiny diagonal}집합이라고 한다. 대각집합을 직접 사용하지
+않고도 대각화의 발상으로 다시 증명할 수도 있다.
+\begin{proof}
+  무한 이진문자열{\tiny binary strings}의 집합 $\mathbb{B}$가 존재한다.
+  역으로 열거 함수 $f:\mathbb{N}\rightarrow\mathbb{B}$가 존재한다고 가정하자.
+  \[
+    \begin{matrix}
+      0\rightarrow b_0:\underline{0}110001010011\ldots\\
+      1\rightarrow b_1:1\underline{1}00101001101\ldots\\
+      2\rightarrow b_2:11\underline{0}0101100001\ldots\\
+      \vdots
+    \end{matrix}
+  \]
+  대각선을 따라 $n\in\mathbb{N}$을 $n$번째 문자열 $b_n\in\mathbb{B}$의 $n+1$번째
+  자릿수{\tiny digit}로 사상하는 것이다. 그리고 이제 그 $n$번째 자릿수에 대해
+  $0$과 $1$을 뒤바꾼다. 이렇게 대각자릿수를 뒤집은 문자열 $d$는 $b_0$과 $1$번째
+  자릿수에 대해 다르고, $b_1$은 $2$번째 자릿수에 대해 다르고, $b_2$는 $3$번째
+  자릿수에 대해 다르다. 따라서 모든 $n\in\mathbb{N}$을 $b_n\in\mathbb{B}$에
+  대해 사상한 집합은 $d\in\mathbb{B}$를 포함하지 않는다. 그리하여 $f:\mathbb{N}
+  \rightarrow\mathbb{B}$는 열거함수가 아니다. 이는 모순이다. 따라서 모든
+  함수 $f:\mathbb{N}\rightarrow\mathbb{B}$는 열거함수일 수 없고, 따라서
+  $\mathbb{B}$는 비가산이다.
+\end{proof}
+\chapter{튜링}
+\end{document}
