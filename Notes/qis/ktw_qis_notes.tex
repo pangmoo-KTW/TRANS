@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{graphicx,xcolor,caption}
 \usepackage{braket,hyperref,nicematrix}
-\usepackage{tikz,fourier,enumitem}
+\usepackage{tikz,euler,enumitem}
 \setlist{nosep}
 \hypersetup{
   colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
@@ -355,14 +355,15 @@ $c_P:\mathbb{N}\rightarrow\{0,1\}$는 $n=P\Rightarrow c_p(n)=0$을 만족한다.
   정리 \ref{theo:15}에 의해 $\overline{K}$가 효과적으로 열거가능한 집합일 것이다.
   이는 모순이다. 따라서 어떤 열거가능 집합은 결정불가능하다.
 \end{proof}
-\section{공리}
-\emph{효과적으로 공리화된 이론\tiny effectively axiomatized theory}은
+\section{공리화된 이론}
+\emph{효과적으로 공리화된 이론\tiny effectively axiomatized theory}은 
+구문론{\tiny syntax} $\mathcal{L}$과 의미론{\tiny semantics} $\mathcal{I}$에 대해
 결정가능성의 개념으로 정의된다.
 \begin{defn}\label{defn:15}
-  $T$는 아래를 만족하는 경우만 $($해석된{\tiny interpreted}$)$
+  $T$는 아래를 만족하는 경우만
   \underline{효과적으로 공리화된 이론}이다.
   \begin{enumerate}
-    \item $T$를 표현하는 (해석된) 형식화된 언어 $\langle\mathcal{L},\mathcal{I}
+    \item $T$를 표현하는 형식화된 언어 $\langle\mathcal{L},\mathcal{I}
       \rangle$가 존재하여 $\mathcal{L}$의 잘 형성된 형식 문장{\tiny well-formed
       formulae sentence} 혹은 $\mathcal{L}$-wffs가 무엇인지 효과적으로 
       결정가능하다.
@@ -370,7 +371,7 @@ $c_P:\mathbb{N}\rightarrow\{0,1\}$는 $n=P\Rightarrow c_p(n)=0$을 만족한다.
     \item $T$의 증명체계가 존재하여 $\mathcal{L}$-wffs 배열이 증명설계규칙을
       따르는지 효과적으로 결정가능하다.
     \item $\mathcal{L}$-wffs 배열이 $T$의 공리로 증명을 구성할 수 있는지
-      효과적으로 결정할 수 있다.
+      효과적으로 결정가능하다.
   \end{enumerate}
 \end{defn}
 이제 중요한 표현들을 정의한다. 
@@ -405,5 +406,153 @@ $c_P:\mathbb{N}\rightarrow\{0,1\}$는 $n=P\Rightarrow c_p(n)=0$을 만족한다.
   $\varphi$가 존재하여 $T\vdash\varphi$와 $T\vdash\neg\varphi$를 모두 지닌다는
   것이다.
 \end{defn}
-이어서 효과적인 열거가능성의 개념으로 아래 
+이어 효과적인 열거가능성의 개념으로 아래처럼 정리한다.
+\begin{theo}\label{theo:112}
+  $T$가 효과적으로 공리화된 이론일 때 이 집합들은 효과적으로 열거가능하다.
+  \begin{enumerate}
+    \item $T$의 wffs 집합
+    \item $T$의 문장들의 집합
+    \item $T$상에서 구성가능한 증명들의 집합
+    \item $T$의 정리들의 집합 
+  \end{enumerate}
+\end{theo}
+\begin{proof}
+  $T$가 효과적으로 공리화된 이론이라고 하자. 정의 \ref{defn:15}에 의해
+  $T$는 유한 알파벳로 구성된 형식 언어를 지닌다. 그리고 유한 알파벳상의
+  모든 문자열은 대각화 알고리즘을 통해 효과적으로 열거될 수 있다. 길이
+  $1$의 문자열, 길이 $2$의 문자열, $\cdots$ 길이 $n$의 문자열들에 대해 
+  각각 알파벳 순서로 효과적으로 열거하는 알고리즘 $\Pi_1$이다. 또한 다시
+  정의 \ref{defn:15}에 의해 wffs를 효과적으로 결정할 수 있는 알고리즘
+  $\Pi_2$가 존재한다. 따라서 $\Pi_1$이 가능한 모든 문자열을 대각화하는
+  가운데 $\Pi_2$로 wffs를 효과적으로 결정하여 이들만 효과적으로 열거하는
+  통합적인 알고리즘 $\Pi_3$을 구성한다. 여기서 `wffs'를 `문장'으로
+  대체하면 $1,2$의 증명이 끝난다.
+
+  $T$상에서 구성가능한 증명은 wffs의 배열과 같고 증명들의 집합은 wffs의
+  배열들의 집합과 같다. 각 배열 길이 $i$와 배열상의 wffs의 길이 $j$와
+  알파벳 순서로 효과적으로 열거하는 대각화 알고리즘 $\Pi_4$를 구성한다. 
+  그리고 wffs의 배열은 무차별대입 알고리즘과 wffs 결정 알고리즘 $\Pi_2$로
+  구성할 수 있다. 그리하여 $T$상에서 구성가능한 증명들이 효과적으로 
+  열거가능하므로 각 wffs 배열에 대해 증명설계규칙을 따르는지 효과적으로
+  결정가능한 알고리즘 $\Pi_5$를 구성한다. 따라서 정의 \ref{defn:16}에 의해
+  $3,4$의 증명이 끝난다.
+\end{proof}
+이론의 무모순성{\tiny consistency}과 부정완전성은 결정가능성을 보장한다.
+\begin{theo}\label{theo:113}
+  임의의 무모순적이고 효과적으로 공리화된 부정완전 이론 $T$는 효과적으로
+  결정가능하다.
+\end{theo}
+\begin{proof}
+  $T$가 임의의 무모순적이고 효과적으로 공리화된 부정완전 이론이라고 하자.
+  정리 \ref{theo:112}에 의해 $T$의 정리를 효과적으로 열거하는 알고리즘 $Pi_1$이
+  존재한다. $\Pi_1$에 따라 정리들을 효과적으로 열거하는 가운데 부정완전의 정의
+  \ref{defn:110}에 의해 $\phi$가 나타나면 $\neg\phi$는 정리가
+  아니라고 결정하고 $\neg\phi$가 나타면 $\phi$는 정리가 아니라고 결정하는
+  알고리즘 $\Pi_2$를 구성한다. 또한 무모순의 정의 \ref{defn:111}의 정의에
+  의해 위와 같은 $\Pi_2$는 정리와 정리가 아닌 문장을 전부 분할하는 알고리즘이다.
+  다시 말해 $T$의 언어로 주어진 임의의 문장 $\phi$에 대해 $T\vdash\phi$를
+  결정하는 알고리즘이 존재한다. 따라서 결정가능성의 정의 \ref{defn:18}에 의해
+  $T$는 효과적으로 결정가능하다.
+\end{proof}
+\section{표현과 포착}
+앞서 언급한 구문론과 의미론의 쌍 $\langle \mathcal{L},\mathcal{A}\rangle$의 
+의미를 명시할 필요가 있다. 이 쌍은 어떤 언어 $L_A$을 구성한다. $\mathcal{L}_A$는
+표준 1차논리 구문론을 지닌다. $\mathcal{L}_A$의 논리 어휘는 아래와 같은
+것들이다.
+\[
+  \wedge, \vee, \rightarrow, \leftrightarrow, a, b, \ldots, e, u, \ldots, z,
+  \forall, \exists, =
+\]
+$\mathcal{L}_A$의 비논리 어휘는 아래와 같다.
+\begin{enumerate}
+  \item 상수 $0$
+  \item 다음 수{\tiny successor} 함수 $S$
+  \item 함수표현식 $+, \times$
+\end{enumerate}
+$\mathcal{L}_A$의 항{\tiny term}은 `$0$'과 `$S$', `$+$', `$\times$'로 만들
+수 있는 변수다. 그 외 어떤 것도 항일 수 없다. 
+
+여기서 `$=$'는 $\mathcal{L}_A$의 유일한 술어{\tiny predicate}다. 따라서
+원자{\tiny atomic} wffs는 모두 임의의 항 `$\alpha$', `$\beta$'에 대해 
+`$\alpha = \beta$' 꼴로 서술된다. 일반적으로 wffs는 원자 wffs에 양화사와 
+연결사를 1차논리의 표준에 따라 사용한 것이다. 
+
+의미론 $\mathcal{I}_A$를 해석{\tiny interpretation}이라고 볼 수 있다.
+$\mathcal{I}_A$는 항에 대해 값을 배정하거나 모든 $\mathcal{L}_A$ 문장에 대해
+고유한 해석을 효과적으로 배정한다. 그리하여 $L_A$가 효과적으로 형식화된 언어일
+수 있다.
+
+아래 정의에서 $\varphi(\overline{n})$은 $\varphi(x)$상의
+`$x$'에 대해 수치 $n$을 부여한 것이다.
+\begin{defn}\label{defn:112}
+  성질 $P$가 하나의 자유변수를 지닌 언어 $L$상의 wff $\varphi(x)$로
+  \underline{표현된다{\tiny expressed}}는 필요충분조건은 모든 $n$에 대해 아래와
+  같다는 것이다.
+  \begin{itemize}
+    \item $n$이 성질 $P$를 지니면 $\varphi(\overline{n})$은 참이다.
+    \item $n$이 성질 $P$를 지니지 않는다면 $\neg\varphi(\overline{n})$은 참이다.
+  \end{itemize}
+\end{defn}
+수치함수 $f$는 형식 언어에 대해 아래처럼 정의된다.
+\begin{defn}\label{defn:113}
+  수치함수 $f$가 언어 $L$상의 wff $\varphi(x,y)$로 표현된다는 필요충분조건은
+  임의의 $m,n$에 대해 아래와 같다는 것이다.
+  \begin{itemize}
+    \item $f(m)=n$이면 $\varphi(\overline{m},\overline{n})$이 참이다.
+    \item $f(m)\neq n$이면 $\neg\varphi(\overline{m},\overline{n})$이 참이다.
+  \end{itemize}
+\end{defn}
+이를 간단하게 정리할 수 있다.
+\begin{theo}\label{theo:114}
+  $L$이 성질 $P$를 표현할 수 있는 필요충분조건은
+  $L$이 $P$의 특성함수 $c_P$를 표현할 수 있다는 것이다.
+\end{theo}
+\begin{proof}
+  아래 두 가지를 확인해야 한다. 
+  \begin{enumerate}
+    \item $\varphi(x)$가 $P$를 표현하면 $(\varphi(x)\wedge y=0)\vee (\neg
+      \varphi(x)\wedge y=1)$이 $c_p$를 표현한다.
+    \item $\psi(x,y)$가 $c_P$를 표현하면 $\psi(x,0)$이 $P$를 표현한다.
+  \end{enumerate}
+  우선 $\varphi(x)$가 $P$를 표현한다고 하자. 정의 \ref{defn:112}에 의해
+
+  $c_P(m)=0$이라면 $\varphi(\overline{m})$이 참이고 
+  $(\varphi(\overline{m})\wedge0=0)\vee
+  (\neg\varphi(\overline{m})\wedge0=1)$이 참이다.
+  
+  $c_P(m)\neq0$이라면 $\neg\varphi(\overline{m})$이 참이고
+  $(\varphi(\overline{m})\wedge0=0)\vee
+  (\neg\varphi(\overline{m})\wedge0=1)$은 거짓이다. 그리하여 아래 같은 부정이
+  참이다.
+  \begin{align*}
+  &\neg((\varphi(\overline{m})\wedge0=0)\vee(\neg\varphi(\overline{m})\wedge0=1))\\
+  \equiv&\neg(\varphi(\overline{m})\wedge0=0)\wedge\neg(\neg\varphi(\overline{m})\wedge0=1)
+  \end{align*}
+  따라서 정의 \ref{defn:113}에 의해 $L$은 $c_P$를 표현할 수 있다.
+  
+  $\psi(x,y)$가 $c_P$를 표현한다고 하자. 정의 \ref{defn:113}에 의해
+  \begin{align*}
+    c_P(m)=n\Rightarrow\psi(\overline{m},\overline{n}) \\
+    c_P(m)\neq n\Rightarrow \neg\psi(\overline{m},\overline{n})
+\end{align*}
+$m,n$은 임의로 주어지기에 $n=0$으로 둔다. 이에 아래가 성립한다.
+\begin{align*}
+  c_P(m)=0\Rightarrow\psi(\overline{m},0)\\
+  c_P(m)\neq0\Rightarrow\neg\psi(\overline{m},0)
+\end{align*}
+따라서 정의 \ref{defn:112}에 의해 $L$이 성질 $P$를 표현한다.
+\end{proof}
+다만 표현보다 중요한 것은 증명 혹은 어떤 성질의 \emph{포착\tiny capture}이다.
+\begin{defn}
+  이론 $T$가 성질 $P$를 wff $\varphi(x)$로 포착하는 필요충분조건은
+  임의의 $n$에 대해 아래가 성립하는 것이다.
+  \begin{itemize}
+    \item $n$이 성질 $P$를 지닌다면 $T\vdash\varphi(\overline{n})$이다.
+    \item $n$이 성질 $P$를 지니지 않는다면 $T\vdash\neg\varphi(\overline{n})$이다.
+  \end{itemize}
+\end{defn}
+포착과 표현의 차이를 명시하는 편이 낫겠다. 성질 $P$가 주어진 이론상 표현가능하다는
+말은 그 이론의 \emph{언어}의 풍부함에 의존하고 $P$가 이론에 의해 포착가능하다는
+말은 그 이론의 \emph{공리와 증명체계}의 풍부함에 의존한다. 즉 $\varphi(x)$가 
+타당한 이론 $T$상에서 성질 $P$를 포착한다면 $\varphi(x)$는 $P$를 표현한다.
 \end{document}
