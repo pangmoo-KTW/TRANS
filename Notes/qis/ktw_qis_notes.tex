@@ -355,4 +355,55 @@ $c_P:\mathbb{N}\rightarrow\{0,1\}$는 $n=P\Rightarrow c_p(n)=0$을 만족한다.
   정리 \ref{theo:15}에 의해 $\overline{K}$가 효과적으로 열거가능한 집합일 것이다.
   이는 모순이다. 따라서 어떤 열거가능 집합은 결정불가능하다.
 \end{proof}
+\section{공리}
+\emph{효과적으로 공리화된 이론\tiny effectively axiomatized theory}은
+결정가능성의 개념으로 정의된다.
+\begin{defn}\label{defn:15}
+  $T$는 아래를 만족하는 경우만 $($해석된{\tiny interpreted}$)$
+  \underline{효과적으로 공리화된 이론}이다.
+  \begin{enumerate}
+    \item $T$를 표현하는 (해석된) 형식화된 언어 $\langle\mathcal{L},\mathcal{I}
+      \rangle$가 존재하여 $\mathcal{L}$의 잘 형성된 형식 문장{\tiny well-formed
+      formulae sentence} 혹은 $\mathcal{L}$-wffs가 무엇인지 효과적으로 
+      결정가능하다.
+    \item 어떤 $\mathcal{L}$-wffs가 $T$의 공리인지 효과적으로 결정가능하다. 
+    \item $T$의 증명체계가 존재하여 $\mathcal{L}$-wffs 배열이 증명설계규칙을
+      따르는지 효과적으로 결정가능하다.
+    \item $\mathcal{L}$-wffs 배열이 $T$의 공리로 증명을 구성할 수 있는지
+      효과적으로 결정할 수 있다.
+  \end{enumerate}
+\end{defn}
+이제 중요한 표현들을 정의한다. 
+\begin{defn}\label{defn:16}
+  이론 $T$의 공리에서 \underline{문장\tiny sentence} $\varphi$로의 유도가
+  논리적 증명체계를 사용해 주어질 때 $\varphi$를 $T$의 \underline{정리\tiny 
+  theorem}라고 부르고 $T\vdash\varphi$라고 표기한다. 
+\end{defn}
+\begin{defn}\label{defn:17}
+  이론 $T$가 \underline{타당하다\tiny sound}는 필요충분조건은 $T$의 모든 정리가
+  참이라는 것이다. 타당성은 보통 참인 공리와 참을 보존하는 증명체계의 문제다.
+\end{defn}
+\begin{defn}\label{defn:18}
+  이론 $T$가 \underline{효과적으로 결정가능하다}는 필요충분조건은 $T$의 정리로
+  존재하는 성질이 효과적으로 결정가능한 성질이라는 것이다. 다시 말해
+  $T$의 언어로 주어진 임의의 문장 $\varphi$에 대해 $T\vdash\varphi$인지 결정하는
+  알고리즘이 존재한다는 것이다.
+\end{defn}
+\begin{defn}\label{defn:19}
+  이론 $T$가 문장 $\varphi$를 \underline{결정한다}는 필요충분조건은 
+  $T\vdash\varphi$이거나 $T\vdash\neg\varphi$라는 것이다. 이론 $T$가
+  $\varphi$를 \underline{올바르게 결정한다}는 말은 오직 $\varphi$가 참이라면
+  $T\vdash\varphi$이고 $\varphi$가 거짓이라면 $T\vdash\neg\varphi$라는 뜻이다.
+\end{defn}
+\begin{defn}\label{defn:110}
+  이론 $T$가 \underline{부정완전\tiny negation-complete}하다는 필요충분조건은
+  $T$가 제 언어의 모든 문장 $\varphi$를 결정한다는 것이다. 다시 말해 모든 문장
+  $\varphi$에 대해 $T\vdash\varphi$이거나 $T\vdash\neg\varphi$라는 것이다.
+\end{defn}
+\begin{defn}\label{defn:111}
+  $T$가 \underline{모순적\tiny inconsistent}이라는 필요충분조건은 어떤 문장
+  $\varphi$가 존재하여 $T\vdash\varphi$와 $T\vdash\neg\varphi$를 모두 지닌다는
+  것이다.
+\end{defn}
+이어서 효과적인 열거가능성의 개념으로 아래 
 \end{document}
