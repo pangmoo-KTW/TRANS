@@ -94,18 +94,16 @@ interference}이라는 현상이다. 간섭은 간단한 선형대수학으로 �
 또한 여기서 `유클리드 노름 단위 벡터'가 바로 \textbf{큐비트\tiny qubit}다. 
 
 물리학자들은 디락{\tiny Paul Dirac}이 도입한 브라-켓{\tiny bra-ket} 표기법으로
-큐비트를 나타낸다. 아래 같은 켓{\tiny ket} $\ket{\psi}$에 대해
+큐비트를 나타낸다. 켓{\tiny ket} $\ket{\psi}$과 브라{\tiny bra} $\bra{\psi}$는
+아래와 같다.
  \[
    \ket{\psi} = \alpha\ket0+\beta\ket1 = \begin{pmatrix}\alpha\\\beta\end{pmatrix}
-  =\alpha\begin{pmatrix}1\\0\end{pmatrix}+\beta\begin{pmatrix}0\\1\end{pmatrix} 
- \]
-$\alpha$는 $\ket{0}$이라는 결과에 대한 진폭이고 $\beta$는 $\ket{1}$이라는
-결과에 대한 진폭이다. 브라{\tiny bra} $\bra{\psi}$는 아래와 같다.
- \[
-   \bra{\psi} = \overline{\alpha}\bra0 +\overline{\beta}\bra1=
+  =\alpha\begin{pmatrix}1\\0\end{pmatrix}+\beta\begin{pmatrix}0\\1\end{pmatrix},
+  \quad
+  \bra{\psi} = \overline{\alpha}\bra0 +\overline{\beta}\bra1=
    \begin{pmatrix}\overline{\alpha}&\overline{\beta}\end{pmatrix}
  \]
- 이에 노름 $\|\psi\|^2$가 자연스럽게 정의될 수 있다. 
+이에 유클리드 노름 $\|\psi\|^2$가 자연스럽게 정의될 수 있다. 
  \[
    \|\psi\|^2 = \begin{pmatrix}\overline{\alpha}&\overline{\beta}\end{pmatrix}
    \begin{pmatrix}\alpha\\\beta\end{pmatrix}=|\alpha|^2+|\beta|^2
@@ -122,6 +120,12 @@ $\alpha$는 $\ket{0}$이라는 결과에 대한 진폭이고 $\beta$는 $\ket{1}
    \begin{pmatrix}\overline{\alpha_1}\\\overline{\beta_2}\end{pmatrix}
    = \overline{\braket{\phi|\psi}}
  \end{align*}
+ 여기서 $\alpha$는 $\ket{0}$이라는 결과에 대한 진폭이고 $\beta$는 $\ket{1}$이라는
+결과에 대한 진폭이다. 따라서 상태 $\ket\psi$에서 상태 $\ket\phi$에 이르는
+확률 $P(\ket\phi)$의 보른 규칙을 아래처럼 다시 쓸 수 있다.
+\[
+  P(\ket\phi)=|\braket{\psi|phi}|^2
+\]
 이에 행렬을 $45^{\circ}$ 즉 $\frac{\pi}{4}$만큼 회전하며 노름을 보존하는
 아래 같은 유니타리 행렬이 있다.
 \[
@@ -194,9 +198,9 @@ deterministic}으로 나온다. 여기 무작위 연산을 다시 적용하여 �
   \caption{직교 행렬\label{fig:1-2}}
 \end{center}
 \end{figure}
-$\{\ket+,\ket-\}$는 \emph{아다마르 기저\tiny Hadamard basis}라고 부르는데
+여기서 $\{\ket+,\ket-\}$는 \emph{아다마르 기저\tiny Hadamard basis}라는 것인데
 앞서 예로 든 $45^{\circ}$ 회전 유니타리 변환 과정 \ref{eq:1-2}에서 이미
-확인한 것들이다. 
+확인한 적 있다. 
 \[
   \begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix}=\ket+ =
   \frac{\ket0+\ket1}{\sqrt2},\quad\begin{pmatrix}\frac{1}{\sqrt2}\\
@@ -204,63 +208,47 @@ $\{\ket+,\ket-\}$는 \emph{아다마르 기저\tiny Hadamard basis}라고 부르
 \]
 아다마르 기저는 \textbf{아다마르 게이트}{\tiny gate}\footnote{양자정보론에서는
 작은 유니타리 변환을 게이트라고 부른다.} $H:\{\ket0,\ket1\} \rightarrow
-\{\ket+,\ket-\}$ 를 형성한다.
-\begin{align*}
-  H&=\frac{1}{\sqrt2}\begin{pmatrix}1 & 1 \\ 1 &-1\end{pmatrix}\\
-  H\ket0&=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+\{\ket+,\ket-\}$ 를 형성한다. 이를테면 $\ket0$에 $H$를 적용한 결과는 아래와 같다.
+\[
+  H\ket0=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
   \begin{pmatrix}1\\0\end{pmatrix} =
   \begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix}=\ket+
-\end{align*}
+\]
 그림 \ref{fig:1-2}에서 확인할 수 있는 사실은 $\frac{\pi}{4}$
-회전과 반사만으로 여덟 가지 상태를 나타낼 수 있다는 것이다. 이는
-\textbf{직교행렬}{\tiny ortoogonal matrix}이 지니는 성질이다.
-
-대표적인 유니타리 행렬로는 아래 같은 것들이 있다.
-\[\begin{matrix}
-  \textrm{ 항등변환 }&\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} 
-  \textrm{ NOT게이트 }&\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix} \\
-  \textrm{ 상대위상조정}&\begin{pmatrix}1&0\\0&i\end{pmatrix}
-  \textrm{ 2차원 회전 }&\begin{pmatrix}\cos\theta & -\sin\theta\\
-  \sin\theta &\cos\theta\end{pmatrix}
-  \end{matrix}\]
-또한 그림 \ref{fig:1-2}상의 원은 유클리드 노름을 보존한다. 따라서
-임의의 유니타리 행렬 $U$의 복소전치행렬 $U^{\dagger}$를 $U$로 변환하면
-항등행렬 $I$가 나온다.
+회전과 반사만으로 여덟 가지 상태를 나타낼 수 있다는 것과 원의 방정식에 의해
+유니타리 변환이 유클리드 노름을 보존한다는 것이다. 가령 임의의 유니타리 행렬
+$U$의 복소전치행렬 $U^{\dagger}$를 $U$로 변환하면 항등행렬 $I$가 나온다.
 \[
   \braket{\psi|\psi} = (\ket{\psi})^{\dagger}\ket{\psi} 
               = (U\ket{\psi})^{\dagger}U\ket{\psi}
               =\braket{\psi|U^{\dagger}U|\psi} 
   \iff\forall\ket{\psi},U^{\dagger}U= I
 \]
-유니타리 변환은 결국 선형변환이다. 그래서 $U(c\ket0)=cU\ket0$이 임의의 상수 $c$에 
+유니타리 변환은 선형변환이기도 해서 $U(c\ket0)=cU\ket0$이 임의의 상수 $c$에 
 대해 성립할 수 있다. 여기서 $c$가 어떤 $\theta$에 대해 오일러 공식 
 $e^{i\theta}=\cos\theta+i\sin\theta$\footnote{오일러 공식은 슈뢰딩거
 방정식을 비롯해 양자역학에서 중요한 파동-삼각함수를 지수함수로 변환할 수 있도록
 하는, 복소평면에서 일정한 속도로 원운동하는 물체의 위치 방정식이다.}를 만족하면 
-\textbf{전역위상\tiny global phase}이라고 한다. 요점은 $\ket{\psi}$와 
-$e^{i\theta}\ket{\psi}$가 물리적으로 구분될 수 없으므로 전역위상이
-관찰불가능하다는 것이다. 전역위상이 관찰가능하다는 말은 큐비트와 같은
+\textbf{전역위상\tiny global phase}이라고 한다. 다만 $\ket{\psi}$와 
+$e^{i\theta}\ket{\psi}$가 물리적으로 구분될 수 없기에 전역위상은
+관찰불가능하다. 전역위상이 관찰가능하다는 말은 큐비트와 같은
 양자계에 어떤 스칼라를 곱해서 우주 전체를 살짝 옮길 수 있다는
-소리와 같다.
-
-이에 반해 관찰 가능한 것은 바로 \textbf{상대위상\tiny relative
-phase}이다. 이를테면 $\ket+$와 $\ket-$라는 두 상태 간에는 상대위상차이가 관측될
-수 있다. $\ket-$에서 $\ket+$에 이르는 일련의 유니타리 연산들이 존재하기 때문이다.
+소리와 같다. 이에 반해 관찰 가능한 것은 바로 \textbf{상대위상\tiny relative
+phase}이다. 가령 $\ket+$와 $\ket-$라는 두 상태 간에는 상대위상차이가 관측될 수
+있는데, $\ket-$에서 $\ket+$에 이르는 일련의 유니타리 연산들이 존재하기 때문이다.
 
 관찰 혹은 측정{\tiny measurment}과 가능한 유니타리 연산들에는 차이가 존재하는
 셈이다. 유니타리 변환이 (그 복소전치행렬로 인해) 가역{\tiny invertible}이고
 결정론적이며 (복소수 행렬이기에 모든 $a$에 대해 $\sqrt{a}$를 내놓을 수 있어서)
-연속적인 반면, 정작 측정은 비가역{\tiny irreversible}이고 확률론적이고
-비연속적이다. 
-
-이처럼 판이한 유니타리 변환과 측정이 소통할 수 있는 매개는
-바로 유클리드 노름이다. 유니타리 변환은 유클리드 노름을 보존하고 측정은
-유클리드 노름으로 결정되는 확률을 제공한다. 그리고 이러한 연속과 비연속,
+연속적인 반면, 측정은 비가역{\tiny irreversible}이고 확률론적, 비연속적이다.
+이처럼 판이한 유니타리 변환과 측정을 이어주는 것이 바로 유클리드 노름이다.
+유니타리 변환은 유클리드 노름을 보존하고 측정은
+유클리드 노름으로 결정되는 확률을 제공한다. 그리고 이에 따른 연속과 비연속,
 결정론과 확률론의 상호작용을 극단적으로 소진하는 사고실험이 바로 \emph{튜링의
 역설} 혹은 \textbf{양자 제논 효과}다.
 
-$\ket0$이나 $\ket1$로 설정된 큐비트가 있다고 하겠다. 이 큐비트에 아무런
-유니타리 변환을 사용하지 않으면서 상태를 바꿀 수 있을까? 아주 작은 $\epsilon$에 
+$\ket0$이나 $\ket1$로 설정된 큐비트가 있다고 하겠다. 이 큐비트에 유니타리
+변환을 전혀 사용하지 않으면서 상태를 바꿀 수 있을까? 아주 작은 $\epsilon$에 
 대해 $\{\ket0,\ket1\}$에서 $\epsilon$만큼 회전한 기저는 아래처럼 측정할 수 있다.
 \begin{align*}
   \begin{aligned}
@@ -286,19 +274,18 @@ $\ket0$이나 $\ket1$로 설정된 큐비트가 있다고 하겠다. 이 큐비�
 큐비트가 $\epsilon$만큼 회전할 수 있는 확률은 $\epsilon$이 감소할수록 
 증가\footnote{근사값의 유도에 관해서는 \href{https://en.wikipedia.org/wiki/Small-angle_approximation}{작은 각도 근사}를 참고하라.}한다.
 그러니 이 절차를 대략 $\frac{1}{\epsilon}$번 반복하며 매번 $\epsilon$만큼 
-회전하면, $\ket0$을 아주 천천히 $\ket1$로 옮길 수 있을 것이다. 이 과정이
+회전하면, $\ket0$을 아주 천천히 $\ket1$로 옮길 수 있다. 이 과정이
 성공하지 \emph{않을} 확률은 $1-(1-\epsilon^2)=\epsilon^2$에 $\frac{1}{\epsilon}$을
-곱한 값 $\epsilon$이라는 값이다. 그리고 $\epsilon$은 앞서 언급한 것처럼 아주 
-작은 값이다. 따라서 유니타리 변환을 사용하지 않더라도 아주 높은 확률로
-상태를 바꿀 수 있다. 
+곱한 $\epsilon$이다. 그리고 $\epsilon$은 가정에 의해 극미량이다.
+따라서 유니타리 변환이 없어도 아주 높은 확률로 상태를 바꿀 수 있다. 
 
-그런데 이게 무슨 소리인가? 실생활에서 예를 들면, 홍길동이라는 사람이
-$\ket{\textrm{미혼}}$이라는 상태에서 $\ket{\textrm{기혼}}$이라는 상태로
-바뀔 수 있는 유니타리 변환 수준의 깔끔한 방법은 그냥 김철수와 서류상으로만
-계약 결혼하는 것이다. 이 방법이 아니라면 어떻게 결혼할 확률을 높일 수 있을까?
+그런데 이게 무슨 소리인가? 비유하자면, 홍길동의
+$\ket{\textrm{미혼}}$ 상태를 $\ket{\textrm{기혼}}$ 상태로 바꾸는
+유니타리 변환 수준의 깔끔한 방법은 당장 김철수와 서류상
+혼인신고하는 것이다. 이 방법은 지금 어렵다고 할 때,
 적어도 홍길동이 김철수를 1년간 그냥 지켜보다가 어느 날 갑자기 프로포즈하는
 쪽보다는 홍길동이 1년을 $\frac{1}{\epsilon}$ 정도로 아주 잘게 나눠 $\epsilon$
-만큼의 애정 표현을 반복하는 쪽이 확률적으로 나을 것이다.
+만큼의 애정 표현을 반복하는 쪽이 결혼 확률이 더 높을 것이다.
 
 다음 예는 \textbf{엘리추르-바이드만 폭탄\tiny Elitzur-Vaidman Bomb}이다.
 양자 공항이 배경이다. 화물 하나에 폭탄이 존재하는 것 같은데, 폭탄이 있다면
@@ -318,7 +305,7 @@ $\ket0$이라면 폭탄이 폭발하지 않은 것이다. 그리고 결과가 $\
 초기 상태 $\ket0$에 대해 화물을 한 번 확인-$R_{\epsilon}$한 결과는
 $\cos\epsilon\ket0+\sin\epsilon\ket1$이다. 폭탄이 존재할 때,
  폭탄이 폭발할 확률 $P(1)$은 $\cos\theta\ket0+\sin\epsilon\ket1$이
-$\ket1$로 관측될 확률과 같다. 아래와 같이 구할 수 있다. 
+$\ket1$로 관측될 확률과 같다. 
 \begin{align*}
   P(1) &= |\braket{b|1}|^2 \\
        &= \left|\begin{pmatrix}\cos\epsilon &\sin\epsilon\end{pmatrix}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1693395917 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693395918 0
+["pdflatex"] 1693398256 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693398258 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -101,6 +101,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm" 1689853683 1256 65e23cc1bcd2b64aca8af1f732fed042 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.tfm" 1689853683 1252 818c5e98aaef778763029f70d8876c68 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc3.tfm" 1689853683 1268 1364c73bafbd0d19f22e0484c465f663 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc4.tfm" 1689853683 1260 9b758ab7a4dde34b1a04a2b2aae66eac ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm" 1689853683 1240 519d105c3f882d4e81d993bd5669c5c8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm" 1689853683 1260 8036be1c5030d1ed0ea8755dd5820fff ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc7.tfm" 1689853683 1260 b0ea938725b0995b1f91c462ecbf4f1f ""
@@ -200,6 +201,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb" 1689853683 161865 4f209de35b3f8f8bf0c6bd2626c71039 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb" 1689853683 153768 774715bfa19c744cd0c61d8837698d54 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb" 1689853683 159636 95fe7c0526ffc7040309eb751cd4014d ""
+  "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb" 1689853683 179426 936e80fb1ebcb112ad90fb1e16e65352 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb" 1689853683 160980 bd8397c3a5098b5e923061af463cdc2f ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb" 1689853683 187129 6f90122b69ea350c302ecb7ec19b0cd5 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb" 1689853683 160872 59a8c8ebbe2a739f67efb454490bfe1a ""
@@ -420,10 +422,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "ktw_qis_notes.aux" 1693395918 2631 1f52e32586730ae629bc98cb0de702ee "pdflatex"
-  "ktw_qis_notes.out" 1693395918 143 4eba3e66f274aa89bc6f2fe73c81d71c "pdflatex"
-  "ktw_qis_notes.tex" 1693395913 20694 93df0a98b515f5704f57163a08d2298e ""
-  "ktw_qis_notes.toc" 1693395918 149 05ceedb7304f157e1e5b9a570b4b7fa0 "pdflatex"
+  "ktw_qis_notes.aux" 1693398258 2631 1f52e32586730ae629bc98cb0de702ee "pdflatex"
+  "ktw_qis_notes.out" 1693398258 143 4eba3e66f274aa89bc6f2fe73c81d71c "pdflatex"
+  "ktw_qis_notes.tex" 1693398254 20121 60f9608d79f32178a8fc9b13f2fa7b23 ""
+  "ktw_qis_notes.toc" 1693398258 149 05ceedb7304f157e1e5b9a570b4b7fa0 "pdflatex"
   (generated)
   "ktw_qis_notes.aux"
   "ktw_qis_notes.log"
