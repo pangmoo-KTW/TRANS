@@ -17,9 +17,9 @@
 \maketitle
 \break
 \tableofcontents
-\chapter{양자역학}
+\chapter{양자역학 기초}
 파인만{\tiny Richard Feynman}이 말하길 이중슬릿{\tiny double slit} 실험은
-양자역학 전체를 요약한다. 
+양자역학을 전부 요약한다. 
 
 광자{\tiny photons}를 두 개의 슬릿{\tiny slit}을 지닌 벽에 하나씩 쏜다고 하자.
 두 개의 슬릿 모두 개방될 때 광자가 특정 구간에 부딪히는 확률을 $P$, 1번 슬릿만
@@ -201,10 +201,20 @@ $\{\ket+,\ket-\}$는 \emph{아다마르 기저\tiny Hadamard basis}라고 부르
   \frac{\ket0+\ket1}{\sqrt2},\quad\begin{pmatrix}\frac{1}{\sqrt2}\\
   -\frac{1}{\sqrt2}\end{pmatrix} = \ket-=\frac{\ket0-\ket1}{\sqrt2}
 \]
+아다마르 기저는 \textbf{아다마르 게이트}{\tiny gate}\footnote{양자정보론에서는
+작은 유니타리 변환을 게이트라고 부른다.} $H:\{\ket0,\ket1\} \rightarrow
+\{\ket+,\ket-\}$ 를 형성한다.
+\begin{align*}
+  H&=\frac{1}{\sqrt2}\begin{pmatrix}1 & 1 \\ 1 &-1\end{pmatrix}\\
+  H\ket0&=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+  \begin{pmatrix}1\\0\end{pmatrix} =
+  \begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix}=\ket+
+\end{align*}
 그림 \ref{fig:1-2}에서 확인할 수 있는 사실은 $\frac{\pi}{4}$
 회전과 반사만으로 여덟 가지 상태를 나타낼 수 있다는 것이다. 이는
-\textbf{직교행렬}{\tiny ortoogonal matrix}이 지니는 성질이다. 
-이외에도 대표적인 유니타리 행렬로는 아래 같은 것들이 있다.
+\textbf{직교행렬}{\tiny ortoogonal matrix}이 지니는 성질이다.
+
+대표적인 유니타리 행렬로는 아래 같은 것들이 있다.
 \[\begin{matrix}
   \textrm{ 항등변환 }&\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} 
   \textrm{ NOT게이트 }&\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix} \\
@@ -213,7 +223,7 @@ $\{\ket+,\ket-\}$는 \emph{아다마르 기저\tiny Hadamard basis}라고 부르
   \sin\theta &\cos\theta\end{pmatrix}
   \end{matrix}\]
 또한 그림 \ref{fig:1-2}상의 원은 유클리드 노름을 보존한다. 따라서
-임의의 유니타리 행렬 $U$의 복소전치행렬 $U^{\dagger}$에 $U$로 변환하면
+임의의 유니타리 행렬 $U$의 복소전치행렬 $U^{\dagger}$를 $U$로 변환하면
 항등행렬 $I$가 나온다.
 \[
   \braket{\psi|\psi} = (\ket{\psi})^{\dagger}\ket{\psi} 
@@ -235,4 +245,15 @@ $e^{i\theta}\ket{\psi}$가 물리적으로 구분될 수 없으므로 전역위�
 이에 반해 관찰 가능한 것은 바로 \textbf{상대위상\tiny relative
 phase}이다. 이를테면 $\ket+$와 $\ket-$라는 두 상태 간에는 상대위상차이가 관측될
 수 있다. $\ket-$에서 $\ket+$에 이르는 일련의 유니타리 연산들이 존재하기 때문이다.
+
+관찰 혹은 측정{\tiny measurment}과 가능한 유니타리 연산들에는 차이가 존재하는
+셈이다. 유니타리 변환이 (그 복소전치행렬로 인해) 가역{\tiny invertible}이고
+결정론적이며 (복소수 행렬이기에 모든 $a$에 대해 $\sqrt{a}$를 내놓을 수 있어서)
+연속적인 반면, 정작 측정은 비가역{\tiny irreversible}이고 확률론적이고
+비연속적이다. 
+
+이처럼 판이한 유니타리 변환과 측정이 소통할 수 있는 매개는
+바로 유클리드 노름이다. 유니타리 변환은 유클리드 노름을 보존하고 측정은
+유클리드 노름으로 결정되는 확률을 제공한다.
+\chapter{양자역학 응용}
 \end{document}
