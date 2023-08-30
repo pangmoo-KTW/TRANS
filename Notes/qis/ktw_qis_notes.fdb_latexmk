@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1693395843 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693395845 0
+["pdflatex"] 1693395917 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693395918 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -420,10 +420,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "ktw_qis_notes.aux" 1693395845 2666 70bfcdd410c0f7d7a50cbffc109e671f "pdflatex"
-  "ktw_qis_notes.out" 1693395845 167 456c5ec44eb55a75ad1e20bbf5d80ee4 "pdflatex"
-  "ktw_qis_notes.tex" 1693395841 20701 947f0466d71e98d029ed40ba1e854102 ""
-  "ktw_qis_notes.toc" 1693395845 156 74ddca0929dcb23358bdcd35f27b38ae "pdflatex"
+  "ktw_qis_notes.aux" 1693395918 2631 1f52e32586730ae629bc98cb0de702ee "pdflatex"
+  "ktw_qis_notes.out" 1693395918 143 4eba3e66f274aa89bc6f2fe73c81d71c "pdflatex"
+  "ktw_qis_notes.tex" 1693395913 20694 93df0a98b515f5704f57163a08d2298e ""
+  "ktw_qis_notes.toc" 1693395918 149 05ceedb7304f157e1e5b9a570b4b7fa0 "pdflatex"
   (generated)
   "ktw_qis_notes.aux"
   "ktw_qis_notes.log"
