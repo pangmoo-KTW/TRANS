@@ -18,7 +18,7 @@
 \maketitle
 \break
 \tableofcontents
-\chapter{양자역학 기초}
+\chapter{양자역학}
 파인만{\tiny Richard Feynman}이 말하길 이중슬릿{\tiny double slit} 실험은
 양자역학을 전부 요약한다. 
 
@@ -255,31 +255,111 @@ phase}이다. 이를테면 $\ket+$와 $\ket-$라는 두 상태 간에는 상대�
 
 이처럼 판이한 유니타리 변환과 측정이 소통할 수 있는 매개는
 바로 유클리드 노름이다. 유니타리 변환은 유클리드 노름을 보존하고 측정은
-유클리드 노름으로 결정되는 확률을 제공한다.
-\chapter{양자역학 응용}
-아래는 \textbf{양자회로}로, $\ket1$ 상태의 초기화 이후 두 아다마르 게이트가
-적용되어 표준기저 $\{\ket0,\cdots,\ket{N-1}\}$상의 측정으로 종결한다. 
-\begin{figure}[h]\centering
+유클리드 노름으로 결정되는 확률을 제공한다. 그리고 이러한 연속과 비연속,
+결정론과 확률론의 상호작용을 극단적으로 소진하는 사고실험이 바로 \emph{튜링의
+역설} 혹은 \textbf{양자 제논 효과}다.
+
+$\ket0$이나 $\ket1$로 설정된 큐비트가 있다고 하겠다. 이 큐비트에 아무런
+유니타리 변환을 사용하지 않으면서 상태를 바꿀 수 있을까? 아주 작은 $\epsilon$에 
+대해 $\{\ket0,\ket1\}$에서 $\epsilon$만큼 회전한 기저는 아래처럼 측정할 수 있다.
+\begin{align*}
+  \begin{aligned}
+  \ket0\mapsto\ket{v}&= \cos\epsilon\ket0+\sin\epsilon\ket1\\
+  \Rightarrow 
+    P(\ket{v})&=|\braket{0|v}|^2 \\
+              &=\left|\begin{pmatrix}1,0\end{pmatrix}
+              \begin{pmatrix}\cos\epsilon\\\sin\epsilon\end{pmatrix}\right|^2 \\
+              &=|\cos\epsilon|^2 \approx{\biggl(1-\frac{\epsilon^2}{2}\biggr)^2}\\
+              &= 1-\epsilon^2+\frac{\epsilon^4}{4}
+              \approx 1-\epsilon^2 \\
+  \end{aligned}
+  \begin{aligned}
+  \ket1\mapsto\ket{w}&=-\sin\epsilon\ket0+\cos\epsilon\ket1\\
+    P(\ket w)&=|\braket{1|w}|^2 \\
+              &=\left|\begin{pmatrix}0,1\end{pmatrix}
+              \begin{pmatrix}-\sin\epsilon\\\cos\epsilon\end{pmatrix}\right|\\
+              &=|\cos\epsilon|^2 \approx \biggl(1-\frac{\epsilon^2}{2}\biggr)^2\\
+              &= 1-\epsilon^2+\frac{\epsilon^4}{4}
+              \approx1-\epsilon^2
+  \end{aligned}
+\end{align*}
+큐비트가 $\epsilon$만큼 회전할 수 있는 확률은 $\epsilon$이 감소할수록 
+증가\footnote{근사값의 유도에 관해서는 \href{https://en.wikipedia.org/wiki/Small-angle_approximation}{작은 각도 근사}를 참고하라.}한다.
+그러니 이 절차를 대략 $\frac{1}{\epsilon}$번 반복하며 매번 $\epsilon$만큼 
+회전하면, $\ket0$을 아주 천천히 $\ket1$로 옮길 수 있을 것이다. 이 과정이
+성공하지 \emph{않을} 확률은 $1-(1-\epsilon^2)=\epsilon^2$에 $\frac{1}{\epsilon}$을
+곱한 값 $\epsilon$이라는 값이다. 그리고 $\epsilon$은 앞서 언급한 것처럼 아주 
+작은 값이다. 따라서 유니타리 변환을 사용하지 않더라도 아주 높은 확률로
+상태를 바꿀 수 있다. 
+
+그런데 이게 무슨 소리인가? 실생활에서 예를 들면, 홍길동이라는 사람이
+$\ket{\textrm{미혼}}$이라는 상태에서 $\ket{\textrm{기혼}}$이라는 상태로
+바뀔 수 있는 유니타리 변환 수준의 깔끔한 방법은 그냥 김철수와 서류상으로만
+계약 결혼하는 것이다. 이 방법이 아니라면 어떻게 결혼할 확률을 높일 수 있을까?
+적어도 홍길동이 김철수를 1년간 그냥 지켜보다가 어느 날 갑자기 프로포즈하는
+쪽보다는 홍길동이 1년을 $\frac{1}{\epsilon}$ 정도로 아주 잘게 나눠 $\epsilon$
+만큼의 애정 표현을 반복하는 쪽이 확률적으로 나을 것이다.
+
+다음 예는 \textbf{엘리추르-바이드만 폭탄\tiny Elitzur-Vaidman Bomb}이다.
+양자 공항이 배경이다. 화물 하나에 폭탄이 존재하는 것 같은데, 폭탄이 있다면
+화물을 여는 순간 폭발할 것이 분명하다. 폭탄이 폭발할 확률을 최소화할 수 있을까?
+
+우선 $\ket0$을 초기 상태로 둔다. 화물 확인이라는 행동은 회전 
+$R_{\epsilon}$으로 정의한다. 
+\[
+  R_{\epsilon} = \begin{pmatrix}\cos\epsilon&-\sin\epsilon\\
+  \sin\epsilon &\cos\epsilon\end{pmatrix}
+\]
+폭탄이 없다면, 그대로 $\cos\epsilon\ket0+\sin\epsilon\ket1$이다. 폭탄이 있다면,
+폭탄은 $\{\ket0,\ket1\}$을 기저로 측정된다. 다시 말해 회전-확인의 결과가
+$\ket0$이라면 폭탄이 폭발하지 않은 것이다. 그리고 결과가 $\ket1$이라면
+폭탄이 폭발한 것이다. 
+
+초기 상태 $\ket0$에 대해 화물을 한 번 확인-$R_{\epsilon}$한 결과는
+$\cos\epsilon\ket0+\sin\epsilon\ket1$이다. 폭탄이 존재할 때,
+ 폭탄이 폭발할 확률 $P(1)$은 $\cos\theta\ket0+\sin\epsilon\ket1$이
+$\ket1$로 관측될 확률과 같다. 아래와 같이 구할 수 있다. 
+\begin{align*}
+  P(1) &= |\braket{b|1}|^2 \\
+       &= \left|\begin{pmatrix}\cos\epsilon &\sin\epsilon\end{pmatrix}
+       \begin{pmatrix}0\\1\end{pmatrix}\right|^2\\
+       &=|\sin\epsilon|^2 \approx \epsilon^2
+\end{align*}
+따라서 이 과정을 대략 $\frac{\pi}{2\epsilon}$번\footnote{여기서 
+$\frac{\pi}{2\epsilon}$은 $90^{\circ}$보다 아주 약간 작은 각도로, 그림 
+\ref{fig:1-2}의 원에서 `$\ket1$' 직전에 해당한다.} 
+반복하며 매번 $R_{\epsilon}$을 적용하면, 존재하는 폭탄이 터지는 확률은
+$\frac{\pi}{2\epsilon}\epsilon^2 =\frac{\pi}{2}\epsilon$에 불과하다. 따라서
+양자 공항에서는 대단히 높은 확률로 폭탄이 폭발하지 않는다.
+
+\section*{부록; 양자회로}
+그림 \ref{fig:1-3}은 $\ket1$로 초기 상태를 설정한 다음 두 아다마르 게이트를
+적용하여 표준기저 $\{\ket0,\cdots,\ket{N-1}\}$상의 측정으로 종결하는 
+양자회로\footnote{논리회로를 배울 때처럼 양자 게이트도 언젠간 다 외워야
+한다. \href{https://en.wikipedia.org/wiki/Quantum_logic_gate}{위키피디아}를
+참고하라.}다. 양자회로는 여러 큐비트에 대한 연산을 표기할 수도 있다. 
+그림 \ref{fig:1-4}는 이중 큐비트 게이트 $U$에 대해 첫 번째 큐비트로 
+아다마르 게이트를 적용한 다음 두 큐비트를 모두 측정하는 양자회로다.
+\begin{figure}[h]
+\begin{minipage}{0.48\textwidth}
+\centering
 \begin{quantikz}
   \lstick{$\ket1$}&\gate{H}&\gate{H}&\meter{} 
 \end{quantikz}
-\caption{양자 회로 예제\label{fig:2-1}}
-\end{figure}
-
-\noindent
-양자 회로는 여러 큐비트에 대한 연산을 표기할 수도 있다. 아래 회로는 이중 큐비트
-게이트 $U$에 대해 첫 번째 큐비트로 아다마르 게이트를 적용한 다음 두 큐비트를
-모두 측정한다.
-\begin{figure}[h]\centering
+\caption{양자 회로 예제\label{fig:1-3}}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
   \begin{quantikz}
     \lstick{$\ket0$}&\gate[2]{U}&\gate{H}&\meter{} \\
     \lstick{$\ket0$}& &\qw &\meter{} 
   \end{quantikz}
-  \caption{이중 양자 회로 예제\label{fig:2-2}}
+  \caption{이중 양자 회로 예제\label{fig:1-4}}
+\end{minipage}
 \end{figure}
 
 \noindent
-그림 \ref{fig:2-3} 좌측의 양자회로는 제어{\tiny controlled} 게이트를 사용한다. 
+그림 \ref{fig:1-5} 좌측의 양자회로는 제어{\tiny controlled} 게이트를 사용한다. 
 첫 줄에 놓인 $\bullet-\oplus$는 제어 NOT 혹은 CNOT 게이트를 나타내고 이는
 첫 비트 혹은 제어 큐비트가 $\ket1$이면 두 번째 큐비트를 반전{\tiny flip}한다. 그 다음 줄에 놓인 $\bullet- U$는 임의의 $U$에 대해 제어 $U$ 게이트를 
 나타내며 제어 큐비트가 $\ket1$이면 $U$를 적용한다.
@@ -297,11 +377,7 @@ phase}이다. 이를테면 $\ket+$와 $\ket-$라는 두 상태 간에는 상대�
     &\gate{H}&\ctrl{1}&\gate{h}&\qw\\
     &\gate{H}&\targ{}&\gate{h}&\qw
   \end{quantikz}
-  \caption{제어 양자 회로 예제\label{fig:2-3}}
+  \caption{제어 양자 회로 예제\label{fig:1-5}}
 \end{figure}
 마지막 줄은 우측 도면과 같다. 
-
-고전 회로이론을 배울 때처럼 양자 게이트들도 그냥 전부 외우는 게 마음이
-편하다. \href{https://en.wikipedia.org/wiki/Quantum_logic_gate}{위키피디아}를
-참고하라.
 \end{document}
