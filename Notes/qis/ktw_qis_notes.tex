@@ -4,6 +4,7 @@
 \usepackage{graphicx,xcolor,caption}
 \usepackage{braket,hyperref,nicematrix}
 \usepackage{euler,enumitem,tikz}
+\usepackage{quantikz}
 \usetikzlibrary{arrows.meta}
 \setlist{nosep}
 \hypersetup{
@@ -256,4 +257,51 @@ phase}이다. 이를테면 $\ket+$와 $\ket-$라는 두 상태 간에는 상대�
 바로 유클리드 노름이다. 유니타리 변환은 유클리드 노름을 보존하고 측정은
 유클리드 노름으로 결정되는 확률을 제공한다.
 \chapter{양자역학 응용}
+아래는 \textbf{양자회로}로, $\ket1$ 상태의 초기화 이후 두 아다마르 게이트가
+적용되어 표준기저 $\{\ket0,\cdots,\ket{N-1}\}$상의 측정으로 종결한다. 
+\begin{figure}[h]\centering
+\begin{quantikz}
+  \lstick{$\ket1$}&\gate{H}&\gate{H}&\meter{} 
+\end{quantikz}
+\caption{양자 회로 예제\label{fig:2-1}}
+\end{figure}
+
+\noindent
+양자 회로는 여러 큐비트에 대한 연산을 표기할 수도 있다. 아래 회로는 이중 큐비트
+게이트 $U$에 대해 첫 번째 큐비트로 아다마르 게이트를 적용한 다음 두 큐비트를
+모두 측정한다.
+\begin{figure}[h]\centering
+  \begin{quantikz}
+    \lstick{$\ket0$}&\gate[2]{U}&\gate{H}&\meter{} \\
+    \lstick{$\ket0$}& &\qw &\meter{} 
+  \end{quantikz}
+  \caption{이중 양자 회로 예제\label{fig:2-2}}
+\end{figure}
+
+\noindent
+그림 \ref{fig:2-3} 좌측의 양자회로는 제어{\tiny controlled} 게이트를 사용한다. 
+첫 줄에 놓인 $\bullet-\oplus$는 제어 NOT 혹은 CNOT 게이트를 나타내고 이는
+첫 비트 혹은 제어 큐비트가 $\ket1$이면 두 번째 큐비트를 반전{\tiny flip}한다. 그 다음 줄에 놓인 $\bullet- U$는 임의의 $U$에 대해 제어 $U$ 게이트를 
+나타내며 제어 큐비트가 $\ket1$이면 $U$를 적용한다.
+\begin{figure}[h]\centering
+  \begin{quantikz}
+    & \ctrl{1} & \ctrl{1} & \targ{} & \qw \\
+    & \targ{} & \gate{U} & \ctrl{-1} & \qw
+  \end{quantikz}
+  여기서
+  \begin{quantikz}
+    &\targ{}&\qw \\
+    &\ctrl{-1}&\qw
+  \end{quantikz}
+  =\begin{quantikz}
+    &\gate{H}&\ctrl{1}&\gate{h}&\qw\\
+    &\gate{H}&\targ{}&\gate{h}&\qw
+  \end{quantikz}
+  \caption{제어 양자 회로 예제\label{fig:2-3}}
+\end{figure}
+마지막 줄은 우측 도면과 같다. 
+
+고전 회로이론을 배울 때처럼 양자 게이트들도 그냥 전부 외우는 게 마음이
+편하다. \href{https://en.wikipedia.org/wiki/Quantum_logic_gate}{위키피디아}를
+참고하라.
 \end{document}
