@@ -1,6 +1,5 @@
 \contentsline {chapter}{차\nobreakspace {}례}{2}{section*.1}%
-\contentsline {chapter}{\chapternumberline {제\,1\,장}양자역학}{3}{chapter.1}%
-\contentsline {chapter}{\chapternumberline {제\,2\,장}양자상태}{10}{chapter.2}%
-\contentsline {chapter}{\chapternumberline {제\,3\,장}양자통신}{14}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {제\,4\,장}양자화폐}{15}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {제\,5\,장}양자암호}{16}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {제\,1\,장}양자기초}{3}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {제\,2\,장}양자얽힘}{10}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {제\,3\,장}양자화폐}{17}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {제\,4\,장}양자암호}{18}{chapter.4}%
