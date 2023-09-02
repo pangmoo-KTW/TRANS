@@ -4,7 +4,7 @@
 \usepackage{graphicx,xcolor,caption}
 \usepackage{braket,hyperref,nicematrix}
 \usepackage{euler,enumitem,tikz}
-\usepackage{quantikz,wrapfig}
+\usepackage{quantikz,wrapfig,mdframed}
 \usetikzlibrary{arrows.meta}
 \setlist{nosep}
 \hypersetup{
@@ -18,7 +18,7 @@
 \maketitle
 \break
 \tableofcontents
-\chapter{기초}
+\chapter{간섭}
 파인만{\tiny Richard Feynman}이 말하길 이중슬릿{\tiny double slit} 실험으로
 양자역학을 전부 요약할 수 있다.
 
@@ -364,18 +364,16 @@ $\frac{\pi}{2\epsilon}\epsilon^2 =\frac{\pi}{2}\epsilon$에 불과하다. 따라
   \caption{제어 양자 회로 예제\label{fig:1-5}}
 \end{figure}
 마지막 줄은 우측 도면과 같다.
-\chapter{얽힘}
-두 개의 큐비트로 $\ket{\psi}$를 구성할 때
-\[
-  \ket{\psi} = \alpha\ket{00}+\beta\ket{01}+\gamma\ket{10}+\delta\ket{11}
-\]
-각 결과는 보른 규칙 \ref{eq:11}에 의해 아래 확률을 지닌다. 
-\[\begin{matrix}
-  P(\ket{00})=|\alpha|^2 & P(\ket{01})=|\beta|^2 \\
-  P(\ket{10})=|\gamma|^2 & P(\ket{11})=|\delta|^2
-\end{matrix}\]
-그리고 첫 번째 큐비트가 $\ket{0}$이라는 정보에 대해 두 번째 큐비트는 아래
-같은 중첩으로 주어진다.
+\chapter{복사불능}
+두 개의 큐비트로 구성한 $\ket{\psi} = \alpha\ket{00}+\beta\ket{01}+
+\gamma\ket{10}+\delta\ket{11}$가 있다. 
+첫 큐비트는 $\ket0$이라는 정보가 주어지면 두 번째
+큐비트는 $\ket0$과 $\ket1$ 가운데 하나일 수밖에 없다.
+다시 말해 $\ket{00}$과 $\ket{01}$만 $\ket{\psi}$를 구성할 수 있다.
+그리고 두 번째 큐비트를 아래 중첩으로
+나타낼 수 있다. 이처럼 한 양자정보가 주어지면 나머지 양자정보만
+따로 뗴어내서 측정할 수 있다는 규칙을 
+\textbf{부분측정규칙\tiny partial measurement rule}이라고 부른다.
 \begin{equation}\label{eq:2-1}
   \ket0\otimes\frac{\alpha\ket0+\beta\ket1}{\sqrt{|\alpha|^2+|\beta|^2}}
   = \begin{bmatrix}1\\0\end{bmatrix}\otimes
@@ -384,43 +382,27 @@ $\frac{\pi}{2\epsilon}\epsilon^2 =\frac{\pi}{2}\epsilon$에 불과하다. 따라
 \end{equation}
 여기서 $\sqrt{|\alpha|^2+|\beta|^2}$로 나누는 과정을 
 정규화{\tiny normalization}라고
-부른다. \emph{노름}화라고 이해할 수도 있는데 왜냐하면 $\alpha$와 $\beta$ 서로만
-있어도 유클리드 노름의 조건을 유지하도록 보조하는 과정이기 때문이다. 
+부른다. $\ket{\psi}$는 $\alpha,\beta$가 아니라 $\alpha,\beta,\gamma,\delta$에
+대해 노름의 조건 $\sqrt{|\alpha|^2+|\beta|^2+|\gamma|^2+|\delta|^2}=1$을 지키도록
+정의되었다. 따라서 $\alpha$와 $\beta$만 있어도 아래처럼 노름의 조건이 
+지켜져야 한다. 
 \[
   \Bigg\lvert\frac{\alpha}{\sqrt{|\alpha|^2+|\beta|^2}}\Bigg\rvert^2 +
   \Bigg\lvert\frac{\beta}{\sqrt{|\alpha|^2+|\beta|^2}}\Bigg\rvert^2
   =
   \frac{|\alpha|^2+|\beta|^2}{|\alpha|^2+|\beta|^2}=1
 \]
-중첩 \ref{eq:2-1}은 \textbf{부분측정규칙\tiny partial measurement rule}이라고
-부르는 양자역학의 기본 규칙이다. 1장에서 다룬 양자역학 기초와 부분측정규칙만으로
-학부 수준 양자정보학은 전부 유도할 수 있다. 부분측정규칙의 용례로는
-얽힘을 꼽을 수 있다.
-
-첫 큐비트에 아무것도 하지 않고 두 번째 큐비트에 NOT 게이트를
-적용\footnote{가령 $\ket{a0}$에 대해 $\ket{a}$는 가만히 놔두고 두 번째 
-큐비트만 반전하여 $\ket{a1}$을 출력하는 식이다. 또한 행렬 주변의
-첨자 $00, 01, 10, 11$은 행에서 입력을 나타내고 열에서 출력을 나타낸다.
-가령 CNOT 게이트는 $11$이라는 입력에 대해 $10$을 출력한다.}하는 게이트가 있다. 
-\[
-  \begin{bNiceMatrix}[first-col, first-row]
-    & \scriptstyle00 & \scriptstyle01 & \scriptstyle10 & \scriptstyle11 \\
-    \scriptstyle00 & 0 & 1 & 0 & 0 \\
-    \scriptstyle01 & 1 & 0 & 0 & 0 \\
-    \scriptstyle10 & 0 & 0 & 0 & 1 \\
-    \scriptstyle11 & 0 & 0 & 1 & 0
-  \end{bNiceMatrix}
-\]
-이 게이트를 텐서곱{\tiny tensor product}으로 나타낼 수도 있다.
+가령 ``두 번째 큐비트에 NOT 게이트를 적용하라''는
+말을 아래처럼 나타낼 수 있고
 \[
   I\otimes \textrm{NOT} = \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}
-  \otimes \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}
+  \otimes \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}=
+  \begin{bmatrix}0&1&0&0\\1&0&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix}
 \]
-감으로 텐서곱이 어떤 연산인지 파악하길 바란다. 핵심은 ``두 번째 큐비트에 NOT
-게이트를 적용''과 같은 표현의 뜻이다. ``첫 번째 큐비트에 아다마르 게이트를
-적용하고 두 번째 큐비트에 다시 아다마르 게이트를 적용하라''는 말은 텐서곱으로는
-$H\otimes H$와 같으며 게이트로는 아래와 같다.
+``모든 큐비트에 아다마르 게이트를 적용하라''는 말은 아래처럼 나타낼 수 있다.
+
 \[
+  H\otimes H=
   \frac{1}{\sqrt2}\begin{bmatrix}1&1\\1&-1\end{bmatrix}\otimes
   \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix}=\frac{1}{2}
   \begin{bNiceMatrix}[first-col, first-row]
@@ -431,9 +413,9 @@ $H\otimes H$와 같으며 게이트로는 아래와 같다.
     \scriptstyle11 & 1 & -1 & -1 & 1
   \end{bNiceMatrix}
 \]
-여기서 $00$이라는 첨자를 지니는 첫 번째 행이 구성되는 방식을 $H\otimes H\ket{00}=
+여기서 $00$이라는 첨자를 지니는 행을 $H\otimes H\ket{00}=
 \ket{++}$이라는 텐서곱으로 생각할 수 있다. 마찬가지로 $01$이라는 첨자를 지니는
-두 번째 행이 구성되는 방식을 $H\otimes H\ket{01}=\ket{+-}$이라는 텐서곱으로
+두 번째 행을 $H\otimes H\ket{01}=\ket{+-}$이라는 텐서곱으로
 받아들일 수 있다.
 \[
   \ket{+-}=\ket{+}\otimes\ket{-}=
@@ -445,10 +427,10 @@ $H\otimes H$와 같으며 게이트로는 아래와 같다.
   \scriptstyle01\\1\\-1\\1\\-1\end{bNiceMatrix}
 \]
 이처럼 2-큐비트 유니터리를 1-큐비트 유니터리의 텐서곱으로 구성할 수 있다.
-다만 CNOT 게이트는 예외다. 첫 번째 큐비트가 $0$이면 두 번째 큐비트를 놔두고
-첫 번째 큐비트가 $1$이면 두 번째 큐비트를 반전하는 CNOT 게이트는 이렇게 생겼다.
+다만 CNOT 게이트는 예외다. CNOT은 첫 번째 큐비트가 $0$이면 두 번째
+큐비트를 놔두고 첫 번째 큐비트가 $1$이면 두 번째 큐비트를 반전하는 게이트다.
 \[
-  \begin{bNiceMatrix}[first-col, first-row]
+  CNOT = \begin{bNiceMatrix}[first-col, first-row]
     & \scriptstyle00 & \scriptstyle01 & \scriptstyle10 & \scriptstyle11 \\
     \scriptstyle00 & 1 & 0 & 0 & 0 \\
     \scriptstyle01 & 0 & 1 & 0 & 0 \\
@@ -456,18 +438,22 @@ $H\otimes H$와 같으며 게이트로는 아래와 같다.
     \scriptstyle11 & 0 & 0 & 1 & 0
   \end{bNiceMatrix}
 \]
-다시 말해 CNOT은 한 큐비트가 다른 큐비트한테 영향을 미치는 게이트다. CNOT의
+즉 CNOT은 한 큐비트가 다른 큐비트한테 영향을 미친다. CNOT의
 이런 성질을 사용하는 특이한 상태가 있다. 바로 \textbf{벨 쌍\tiny
 Bell Pair} 혹은 \textbf{EPR 쌍} 혹은 \textbf{싱글렛\tiny singlet}이다.
 \[
-  (CNOT)(H\otimes I)\begin{bmatrix}1\\0\\0\\0\end{bmatrix}
+  (CNOT)(H\otimes I)
+  \begin{bmatrix}1\\0\\0\\0\end{bmatrix}
+    =CNOT \frac{1}{\sqrt{2}}
+    \begin{bmatrix}1&0&1&0\\0&1&0&1\\1&0&-1&0\\0&1&0&-1\end{bmatrix}
+    \begin{bmatrix}1\\0\\0\\0\end{bmatrix}
   \longrightarrow 
   CNOT\begin{bmatrix}\frac{1}{\sqrt2}\\0\\\frac{1}{\sqrt2}\\0\end{bmatrix}
   \longrightarrow
   \begin{bmatrix}\frac{1}{\sqrt{2}}\\0\\0\\\frac{1}{\sqrt2}\end{bmatrix}
 \]
 CNOT의 첫 큐비트와 두 번째 큐비트를 텐서곱으로 분해할 수 없으므로 벨 쌍
-또한 첫 큐비트와 두 번째 큐비트의 상태가 텐서곱으로 분해되지 않는다. 이런 
+또한 첫 큐비트와 두 번째 큐비트를 텐서곱으로 분해할 수 없다. 이런 
 상태를 \textbf{얽힘\tiny entanglement} 혹은 \emph{순수 상태}라고 부른다. EPR 쌍은
 이름만 무려 세 개인 만큼 중요한 상태이기 때문에 회로와 브라켓도 기억해 둔다.
 
@@ -487,55 +473,59 @@ CNOT의 첫 큐비트와 두 번째 큐비트를 텐서곱으로 분해할 수 �
 \end{minipage}
 \caption{EPR 쌍}
 \end{figure}
+\noindent
+얽힘은 지금껏 설명한 기초개념들의 필연적인 귀결이다. 또한 얽힘은 (EPR 쌍에서
+`E'를 맡은) 아인슈타인이 양자역학에 신경질을 부린 이유다. 여타 물리학자와
+다르게 아인슈타인, 포돌스키{\tiny Boris Podolsky}, 로젠{\tiny Nathan Rosen}의
+신경을 긁은 이야기는 아래와 같다.
 
-얽힘은 양자역학을 구성하는 수학의 필연적인 귀결이다. 또한 얽힘은 (EPR 쌍에서 `E'에
-해당하는) 아인슈타인이 양자역학에 신경질을 부린 이유다. 
+\begin{mdframed}
+달에 앨리스가 있고 지구에 밥이 있다고 하자. 앨리스와 밥은 각각 큐비트를
+하나씩 지닌다. 그리하여 두 큐비트에 EPR 쌍 $\frac{\ket{00}+\ket{11}}{\sqrt2}$으로
+얽힘을 부여한다. 그렇다면 앨리스가 자신의 큐비트의 상태를 측정한
+\textbf{바로 그때} 앨리스는 밥이 관측할 큐비트의 상태가 $\ket{+}$이거나
+$\ket{-}$이라는 사실을 알 수 있다. 얽힘 탓이다.
+\end{mdframed}
 
-달에는 철수가 있고 지구에는 영희가 있다고 하자. 철수와 영희는 입자의 쌍에
-얽힘을 부여할 수 있다. EPR 쌍 $\frac{\ket{00}+\ket{11}}{\sqrt2}$로 상태를
-설정하는 것이다. 그리고 철수가 입자의 상태를 측정한 \underline{바로 그때}
-철수는 영희가 관측할 상태가 $\ket{0}$인지 $\ket{1}$인지 알 수 있다. 
+1935년 EPR 삼인방은 이를 \snm{물리적 실재에 대한 양자역학적 기술이
+완전하다고 여길 수 있는가?}{\tiny Can Quantum-Mechanical Description of
+Physical Reality be Considered Complete?}라는 논문으로 발표한다. 
+달에서 앨리스가 자신의 큐비트를 측정한 바르 그 순간 지구에서 밥이
+측정할 큐비트의 상태에 관한 지식을 취할 수 있다. 일종의 통신{\tiny 
+communication}이다. 다만 즉각적인 통신이다. 그래서 빛보다 빠르다. 
+하지만 상대성이론에 따르면 빛보다 빠른 것은 없다. 따라서 얽힘이라는
+개념에는 문제가 있다.
 
-여타 물리학자와 다르게 아인슈타인은 이 이야기가 아주 거슬렸다. 1935년,
-아인슈타인, 포돌스키{\tiny Boris Podolsky}, 로젠{\tiny Nathan Rosen}은
-이 문제를 확대하는 논문을 발표한다. 이 논문은
-철수가 $\{\ket0,\ket1\}$이 아니라 $\{\ket+,
-\ket1\}$을 기저로 측정하면 어떻게 되냐고 묻는다.
-
-이 물음은 철수가 자신의 큐비트에 아다마르 게이트를 적용한 다음 $\{\ket0,\ket1\}$을
-기저로 측정하는 상황을 통해 나타낼 수 있다.
+EPR 삼인방은 논증을 강화하기 위해 앨리스가 얽힘을 측정하는 기저를 바꾼
+즉시 밥의 큐비트도 그 기저에 따라 붕괴한다는 예를 든다. 앨리스가 EPR 쌍에
+아다마르 게이트를 적용해서 $\{\ket0,\ket1\}$을 기저로 측정한다고 하자.
 \begin{align*}
-  (H\otimes I)\left(\frac{\ket{00}+\ket{11}}{\sqrt2}\right)
-  =\;&
+  &(H\otimes I)\left(\frac{\ket{00}+\ket{11}}{\sqrt2}\right)
+  =\frac{1}{\sqrt2}
+  \begin{bmatrix}
+    1&0&1&0 \\ 0&1&0&1 \\ 1&0&-1&0 \\0&1&0&-1
+  \end{bmatrix}
+  \frac{1}{\sqrt2}\begin{bmatrix}1\\0\\0\\1\end{bmatrix}
+  =
+  \frac{1}{2}\begin{bmatrix}1\\1\\1\\-1\end{bmatrix}\\=&\;
   \frac{\ket{00}+\ket{01}+\ket{10}-\ket{11}}{2} 
 \end{align*}
-부분측정규칙 \ref{eq:2-1}에 의해 철수가 $\ket0$을 보면 영희의 큐비트는
-아래처럼 붕괴하고\footnote{$\frac{1}{\sqrt2}$는 
-$\sqrt{\left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^2}$로 정규화하는
-값이다.}
-\[
-  \frac{\ket0+\ket1}{\sqrt2}=\ket+
-\]
-철수가 $\ket1$을 보면 영희의 큐비트는 아래처럼 붕괴한다.
-\[
-  \frac{\ket0-\ket1}{\sqrt2}=\ket-
-\]
-아인슈타인, 포돌스키, 로젠은 이게 왜 거슬렸는가? 철수가 $\{\ket0,
-\ket1\}$을 기저로 EPR 상태를 측정하면 영희가 $\ket0$이나 $\ket1$을 보고, 철수가
-$\{\ket+,\ket-\}$를 기저로 측정하면 영희가 $\ket+$이나 $\ket-$을 보는데, 이런
-통신{\tiny communication}이 \underline{즉각적으로} 혹은 \underline{바로 그때}
-이루어진다는 사실 때문이었다.
-따라서 빛보다 빠른 의사소통이 존재한다는 말인데, 이는 얽힘이라는
-양자역학적 현상이 상대성이론을 근본부터 전면 부인하다는 소리다.
+부분측정규칙 \ref{eq:2-1}에 의해 앨리스가 $\ket0$을 보면 밥의 큐비트는
+$\ket0$이나 $\ket1$로 붕괴하고 앨리스가 $\ket1$을 보면 영희의 큐비트는 
+$\ket0$이나 $\ket1$로 붕괴한다. 반면 앨리스가 EPR 쌍을 $\{\ket+,\ket-\}$로
+측정했을 때 $\ket+$를 보면 밥의 큐비트는 $\ket+$나 $\ket-$로 붕괴하고
+앨리스가 $\ket-$를 보면 밥의 큐비트는 $\ket+$나 $\ket-$로 붕괴한다.
 
-다행히 이들을 화해시킬 수 있다. 순수상태 뿐만 아니라 
-\textbf{혼합상태\tiny mixed states}도 논의에 끌어들이는 방법이다. 혼합상태란
-양자 상태 $\ket{\psi}$에 대한 확률 $p_i$의 분포 $\{p_i,\ket{\psi_i\}}$이다.
-핵심은 바로 상이한 확률분포를 지니는 순수상태들을 정확히
-서로 같은 혼합상태로 나타낼 수 있다는 사실에 달렸다. 
+즉 얽힘이 상대성이론을 뿌리부터 전면 부인하다는 소리다.
+하지만 얽힘 혹은 순수상태가 양자역학적 상태의 전부는 아니다. 순수상태는
+\textbf{혼합상태\tiny mixed states}의 일종일 따름이다. 혼합상태란
+양자 상태 $\ket{\psi}$에 대한 확률 $p_i$의 분포 $\{p_i,\ket{\psi_i\}}$인데,
+확률 $p_i$가 $1$이나 $0$인 혼합상태가 바로 순수상태인 것이다. 결정적인 점은
+확률분포상 상이한 순수상태들이 정확히 동일한 혼합상태로 나타낼 수 있다는
+사실이다.
 
-우선 \textbf{밀도행렬\tiny density matrix}이라는 도구를 쥔다. 혼합상태 
-$\{p_i,\ket{\psi}\}$에 대한 밀도행렬 표현은 아래처럼 주어진다. 
+우선 \textbf{밀도행렬\tiny density matrix}로 혼합상태를 고유하게 나타낸다.
+혼합상태 $\{p_i,\ket{\psi}\}$에 대한 밀도행렬 표현은 아래처럼 주어진다. 
 \begin{equation}
   \rho = \sum_i p_i\ket{\psi_i}\bra{\psi_i}
 \end{equation}
@@ -569,67 +559,37 @@ $\{\ket+,\ket-\}$에 대해서는 아래와 같다.
   \ket-\bra-=\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}\\-\frac{1}{2}&\frac{1}{2}\end{bmatrix}
   \Rightarrow\frac{\ket+\bra++\ket-\bra-}{2}=\begin{bmatrix}\frac{1}{2}&0\\0&\frac{1}{2}\end{bmatrix}=\frac{I}{2}
 \]
-서로 다른 중첩을 지닌 두 기저에 대해 밀도행렬이 일치한다. 임의의
-기저에 대해서도 마찬가지라는 사실도 쉽게 확인할 수 있다. 따라서 철수가
-EPR 쌍에서 기저를 바꿔도 영희 측에서는 상태의 밀도행렬 표현이 유지되는데,
-밀도행렬은 확률을 표현하기 때문이다. $\rho$를 기저 
-$\{\ket0,\ldots,\ket{N-1}\}$상에서 측정하면 $\ket{i}$가
-출력되며 확률 $P(\ket{i})=\rho_{ii}=\braket{i|\rho|i}$가 잇따른다. 말이 어려우니
-예를 들면, 아래 $M$은 밀도행렬일 수 없다.
-\begin{align*}
-  M &= \begin{bmatrix}\frac{1}{2} &-10 \\ -10 &\frac{1}{2}\end{bmatrix}\\
-  \Rightarrow\braket{+|M|+}&=
-  \begin{bmatrix}-\frac{1}{\sqrt2}&-\frac{1}{\sqrt2}\end{bmatrix}
-\begin{bmatrix}\frac{1}{2} &-10 \\ -10 &\frac{1}{2}\end{bmatrix}\cdot
-\begin{bmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{bmatrix}\\&=
-  \begin{bmatrix}-\frac{1}{2\sqrt2}&\frac{10}{\sqrt2}\\
-  \frac{10}{\sqrt2}&-\frac{1}{2\sqrt2}\end{bmatrix}
-   \begin{bmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{bmatrix}
-   =-\frac{1}{4}+5+5-\frac{1}{4}=\frac{19}{2}
-\end{align*}
+상이한 두 기저에 대해 밀도행렬이 일치한다. 임의의
+기저에 대해 마찬가지라는 사실도 쉽게 확인할 수 있다. 따라서 애초에
+앨리스와 밥이 통신했다고 말하기 어렵다. 왜냐하면 복합상태의 밀도행렬이라는
+광의로는 결국 똑같기 때문이다. 
+
+이때 밀도행렬이 표현하는 것은 어떤 확률이다. 밀도행렬
+$\rho$를 기저 $\{\ket0,\ldots,\ket{N-1}\}$로 측정했을 때
+$\ket{i}$가 관측될 확률 $P(\ket{i}$는 아래와 같다.
+\[
+  P(\ket{i})=\rho_{ii}=\braket{i|\rho|i}
+\]
 밀도행렬 $\frac{I}{2}$로 예를 들면, 임의의 기저 
 $\{v,w\}$에 대한 확률은 아래와 같다.
 \[
   \braket{v|\frac{I}{2}|v}=\frac{1}{2}\braket{v|v}=\frac{1}{2},\quad
   \braket{w|\frac{I}{2}|w}=\frac{1}{2}\braket{w|w}=\frac{1}{2}
 \]
-이처럼 균등하게 기저들이 혼합된 밀도행렬을 \textbf{최대혼합상태\tiny Maximally Mixed
-State}라고 부른다. 최대혼합상태는 말 그대로 최대이기 때문에 철수든 영희든
-똑같은 최대혼합상태다. 따라서 실상 철수와 영희 간에는 통신이 이루어지지 않았다.
-이를 \textbf{무통신정리\tiny No-Communication theorem}이라고 한다.
+이처럼 정확히 균등하게 기저들이 혼합된 밀도행렬을 \textbf{최대혼합상태\tiny 
+Maximally Mixed State}라고 부른다. 최대혼합상태는 말 그대로 최대다.
+그러니 고유하다. 따라서 앨리스와 밥 간에는 통신이 존재하지 않는다고
+더 강하게 \textbf{무통신정리\tiny No-Communication theorem}로 정리할
+수 있다.
 
-한편 계의 순수상태에서 계의 혼합된 상태로 추적해 나갈{\tiny tracing out} 수
-있다.  큐비트 두 개의 순수상태에 대해, 철수한테 첫 번째 큐비트를
-주고 영희한테 두 번째 큐비트를 준다고 하겠다.
-\[
-  \frac{\ket{00}+\ket{01}+\ket{10}}{\sqrt3}
-\]
-이때 \emph{영희}가 계산해야 하는 밀도행렬을 \textbf{축소밀도행렬\tiny reduced density
-matrix} 혹은 \textbf{국소밀도행렬\tiny local density matrix}이라고 부른다.
-국소밀도행렬을 계산하기 위해 우선 철수 쪽으로 가서 직교 기저를 골라,
-위 상태를 아래처럼 다시 나타낸다.
-\[
-  \frac{\sqrt2}{\sqrt3}\ket0\ket++\frac{1}{\sqrt3}\ket1\ket0
-\]
-보른 규칙에 의해 $P(\ket{0+})=\frac{2}{3}, P(\ket{10})=\frac{1}{3}$이므로
-영희의 밀도행렬은 아래와 같다.
-\[
-  \frac{2}{3}\ket+\bra++\frac{1}{3}\ket0\bra0=\frac{2}{3}\begin{bmatrix}
-  \frac{1}{2} &\frac{1}{2} \\ \frac{1}{2} &\frac{1}{2}\end{bmatrix}+
-  \frac{1}{3}\begin{bmatrix}1&0\\0&0\end{bmatrix}=
-  \begin{bmatrix}\frac{2}{3} &\frac{1}{3} \\ \frac{1}{3} &\frac{1}{3}\end{bmatrix}
-\]
+그런데 이때 밥이 자신의 큐비트에 대해 복사본{\tiny copy}을 무한히 지닐 수 있다면,
+사본 가운데 하나는 앨리스가 측정한 기저를 따를 수밖에 없다. 따라서 빛보다 빠른
+통신이 가능할지도 모른다. 확률 혹은 밀도행렬을 고려할 필요가 사라지기 때문이다.
+이런 복사는 가능한가? 한 번 시도해 보자. 
 
-정리하면 철수가 빛보다 빠르게 통신할 수 없는 이유는 영희가 큐비트의 상태가
-어느 기저에 있는지 확실하게 알 수 없기 때문이다. 그런데 이때 영희가 자신의
-큐비트에 대해 복사본{\tiny copy}을 무한히 지닐 수 있다면, 사본 가운데 하나는
-철수가 측정한 기저를 따를 수밖에 없다. 따라서 빛보다 빠른 통신이 가능하겠다만, 
-이런 복사는 불가능하다. 앞서 언급하기도 했지만 무통신정리를 위배한다는
-것이 하나의 이유다. 
-
-그래도 한 번 시도해 볼 수 있다. 큐비트 $\ket{\psi}=\alpha\ket0+\beta\ket1$에
-대해 $\ket{\psi}$ 하나와 더미 큐비트 하나를 입력 삼아 
-$\ket{\psi}$ 두 개를 출력하는 양자회로다. 다시 말해 $\ket{\psi}$의 사본을 만든다.
+큐비트 $\ket{\psi}=\alpha\ket0+\beta\ket1$에 대해 $\ket{\psi}$ 하나와 더미 
+큐비트 하나를 입력 삼아 $\ket{\psi}$ 두 개를 출력하는 양자회로가 있다고 하자.
+다시 말해 이 양자회로는 $\ket{\psi}$의 사본을 만든다.
 
 \begin{figure}[h]
 \begin{minipage}{0.48\textwidth}
@@ -642,7 +602,7 @@ $\ket{\psi}$ 두 개를 출력하는 양자회로다. 다시 말해 $\ket{\psi}$
 \begin{minipage}{0.48\textwidth}
 \noindent여기서 $U$는 아래 변환을 구현해야 한다.
 \begin{align*}
-  &(\alpha+\ket0+\beta\ket1)\otimes\ket0\\\rightarrow&
+  &(\alpha\ket0+\beta\ket1)\otimes\ket0\\\rightarrow&
   (\alpha\ket0+\beta\ket1)\otimes(\alpha\ket0+\beta\ket1)\\
   =&\alpha^2\ket{00}+\alpha\beta\ket{01}+\alpha\beta\ket{10}+\beta^2\ket{11}
 \end{align*}
@@ -650,16 +610,12 @@ $\ket{\psi}$ 두 개를 출력하는 양자회로다. 다시 말해 $\ket{\psi}$
 \end{figure}
 \noindent
 이런 변환--복사가 불가능한 이유는 $\alpha^2$를 통해 알 수 있듯이 애초에
-이 변환이 선형적이지 않고, 따라서 유니타리 변환일 수 없기 때문이다. 따라서
-\textbf{복사불능정리\tiny No-Cloning Theorem}\footnote{CNOT 같은 게이트가
-큐비트를 복사하는 것처럼 보일 수 있지만, CNOT은 오직 입력 상태가 $\ket0$이나
-$\ket1$일 때만 복사하는 것으로, 이때는 \emph{고전적인 정보}가 복사된다. 즉,
-임의의 정규직교 기저에 대해 자신의 입력 상태가 기저 벡터라는 정보를
-안다면, 기저 벡터를 복사할 수 있다.}가 성립한다. 이 정리 하나에 기초해서
+이 변환이 선형적이지 않아서 유니타리일 수 없기 때문이다. 따라서
+\textbf{복사불능정리\tiny No-Cloning Theorem}가 성립한다. 이 정리 하나에 기초해서
 양자화폐와 양자암호라는 분야가 탄생할 만큼 복사불능정리는 대단히 강력하다.
-\chapter{켤레 코딩}
+\chapter{양자암호}
 와이즈너{\tiny Steven Weisner}와 베넷{\tiny Charles Bennett}은 대학교에서
-처음 만났다. 둘은 친구였다. 둘은 다른 대학원으로 진학했다. 연락은 끊지
+처음 만났다. 둘은 친구였지만 다른 대학원으로 진학했다. 연락은 끊지
 않았다. 와이즈너가 베넷의 집으로 자주 놀러갔다. 1960년대 후반에서
 1970년대 초반쯤 와이즈너는 베넷이랑 양자역학으로 만든 지폐에 관해
 이야기했다. 이 지폐는 절대 위조할 수 없다. 자연이 허락하지 않는다. 
@@ -670,87 +626,104 @@ $\ket1$일 때만 복사하는 것으로, 이때는 \emph{고전적인 정보}�
 
 \noindent
 와이즈너는 이 이야기를 \snm{켤레 코딩}{\tiny Conjugate Coding}이라는 논문으로
-정리해 유명한 정보이론 저널에 투고했다. 저널은 \snm{켤레 코딩}을 거절했다.
+정리해 유명한 정보이론 저널에 보냈다. 저널은 \snm{켤레 코딩}을 거절했다.
 정보학자들이 물리학자의 어투를 낯설게 여긴 탓이다. 와이즈너는 머지 않아 학계를
 떠났다. 그리고 베유{\tiny Simon Weil}처럼 육체 노동의 가치를 찬미하며 건설
 노동자로 여생을 보냈다.
 
-하지만 베넷은 와이즈의 이야기를 잊지 않았다. 계속 이야기하고 다녔다. 그러다 
+한편 베넷은 와이즈의 이야기를 잊지 않았다. 계속 이야기하고 다녔다. 그러다 
 몬트리올 출신 암호학자 브라사르{\tiny Gilles Brassard}가 재밌게 들었다. 
-베넷과 브라사르는 상이한 배경에도 불구하고 미친듯이 이야기를 나눴다. 
+베넷과 브라사르는 상이한 배경에도 불구하고 즐겁게 이야기를 나눴다. 
 그리고 1982년 \snm{양자 암호학, 혹은 복제 불가능한 지하철 승차권}{\tiny
 Quantum Cryptography, or Unforgeable Subway Tokens}이라는 논문을 내놓았다. 
-이 논문이 이룬 업적 가운데 하나는 바로 \snm{켤레 코딩}을 1983년 ACM 뉴스레터에
+이 논문이 이룬 업적 가운데 하나는 바로 1983년 ACM 뉴스레터가 \snm{켤레 코딩}을
 싣도록 유도한 것이다. 
 
 \snm{켤레 코딩}에 따르면 해커는 어느 미지의 큐비트와 동일한 양자 상태의
 두 번째 큐비트를 생산할 수 없다. 또 위조할 수 없는 화폐가 존재할 수 있다.
-양자 상태는 복사 불가능하기 때문이다. 다시 말해 양자정보라는 
-분야는 커녕 `큐비트'라는 말조차 없던 시절 복사불능정리를 당연하게
-받아들이고 양자화폐와 양자암호라는 응용 분야를 개척한 10쪽 짜리 논문이
-바로 \snm{켤레 코딩}이다.
+복사불능정리 덕이다. 다시 말해 양자정보라는 분야는 커녕 `큐비트'라는 말조차
+없던 시절 복사불능정리를 당연하게 받아들이고 양자화폐와 양자암호라는 응용
+분야를 개척한 10쪽 짜리 논문이 바로 \snm{켤레 코딩}이다.
 
-양자은행이 존재하여 양자지폐를 찍어낸다고 하겠다. 각 양자지폐는 고전적인 
-일련번호 $s\in\{0,1\}^n$와 양자 상태 $\ket{\psi_{f(s)}}$를 지닌다. 이때
+양자은행이 존재하여 양자지폐를 찍어낸다고 하자. 각 양자지폐는 고전적인 
+일련번호 $s\in\{0,1\}^n$와 양자상태 $\ket{\psi_{f(s)}}$를 지닌다. 이때
 $\ket{\psi_{f(s)}}$상의 큐비트들은 얽혀있지 않고 각각 아래 네 상태 가운데
-하나다.
+하나다. 얽혀있지 않다는 조건을 부여하는 이유는 $\ket{\psi_{00}}$을 
+알더라도 얽힘에 의해 나머지 $\ket{\psi_{ij}}$는 알 수 없도록 하기 위해서다.
 \[
   \ket{\psi_{00}}=\ket0,\ket{\psi_{01}}=\ket1,\ket{\psi_{10}}=\ket+,
   \ket{\psi_{11}}=\ket-
 \]
-양자은행에는 초거대 데이터베이스가 존재하여 각 양자지폐에 대해 일련번호 $S$와
-양자지폐가 지녀야 하는 큐비트에 대해 그 기저를 부호화한 문자열 $f(s)$를 저장한다.
-문제는 양자지폐를 어떻게 검증{\tiny verify}하냐는 것이다.
+양자은행은 일련번호 $s$와 양자지폐가 지녀야 하는 양자상태상의 각 큐비트들의
+기저를 부호화한 문자열 $f(s)$를 저장하고 있다. 당연히 복사불능정리로 인해
+양자상태 $\ket{\psi_{f(s)}}$를 복사하여 위조하는 작업은 불가능하다. 
+여기서 문제는 양자지폐를 어떻게 검증{\tiny verify}하냐는 것이다.
 
-우선 양자지폐를 양자은행에 갖다준다. 양자은행은 일련번호로 양자지폐를 검증한다.
-그리고 양자지폐 속 각 큐비트를 앞서 부호화한 기저로 측정한다. 큐비트가 $\ket0$
-혹은 $\ket1$이어야 할 때 측정은 $\{\ket0,\ket1\}$을 기저로 이루어진다. 이제 각
-측정에 대해 예상한 결과가 나오는지 확인하면 끝이다. 위조범이 각 큐비트가 요구하는
-기저를 모른다면 무작위로 기저를 찍을 테다. $n$번 찍을 때 이게 먹힐 확률은
-$\left(\frac{1}{2}\right)^n$이다.
+우선 양자지폐를 양자은행에 갖다준다. 양자은행은 검증하려는 양자지폐의 일련번호
+$s$에 따른 $f(s)$를 준비한다. 그리고 검증하려는 양자지폐의 양자상태상의 각
+큐비트를 차례로 $f(s)$로 관측한다. 양자지폐가 진짜라면 관측이 매끄럽게 진행될
+것이고 양자지폐가 가짜라면 관측 도중 특정 큐비트 $\ket{\phi_x}$에 대해 이상한
+관측 결과가 나올 것이다. 물론 위폐범이 그냥 기저를 찍어서 위조 양자지폐를
+만들 수 있겠지만 이게 먹힐 확률은 $n$번 찍는다고 했을 때 
+$\left(\frac{1}{2}\right)^n$이다. 사실상 불가능하다.
 
 그러나 바로 이게 문제다. 양자지폐를 사용하려고 할 때마다 양자은행의 검증이
-필요하다면 애초에 양자지폐를 사용할 이유가 없다. 거래 과정상 은행의 개입을
+필요하다면 애초에 양자지폐를 사용할 이유가 없다. 거래 과정에서 은행의 개입을
 요구하지 않는다는 현금의 최대 장점이 쏙 빠진 셈이다. 
 
-그리하여 \textbf{공개키\tiny public-key}를 도입할 수도 있겠다. 모든 사람이
+그리하여 \emph{공개키\tiny public-key}를 도입할 수도 있겠다. 모든 사람이
 \emph{공개키}로 양자지폐를 검증할 수 있도록 허락하고 \emph{개인키}를 지닌
-양자은행만 양자지폐를 생산할 수 있도록 제한하는 방법이다. 물론 위조범이
-엄청난 계산 능력을 지녀서 그냥 있을 수 있는 양자 상태를 다 때려박으면
-공개키 검증 절차를 통과하는 양자 상태를 찾아낼 수도 있다. 이론적으로
-따져도 나쁜 상황이다.
+양자은행만 양자지폐를 생산할 수 있도록 제한하는 방법이다. 
+하지만 위조범이 엄청난 계산 능력을 지녀서 그냥 있을 수 있는 양자 상태를
+다 때려박으면 공개키 검증 절차를 통과하는 양자 상태를 찾아낼 수도 있다. 
 
-이에 1984년 베넷과 브라사드는 \textbf{양자 키 분배\tiny quantum key
-distribution}를 고안한다. 베넷과 브라사드가 1984년 발표한 방법이라
-\textbf{BB84 프로토콜}이라고 부른다. 지난 장에서 만난 철수와 영희를 
-이제 (암호학의 전통에 따라) 앨리스와 밥이라고 부르겠다.
-BB84의 골자는 공유 기밀 지식을 엿듣든 말든 상관 없다는 것이다.
-
-\begin{enumerate}[label=(\roman*)]
+마침내 1984년 베넷과 브라사드는 \snm{켤레 코딩}의 유산인 \textbf{양자 키
+분배\tiny quantum key distribution}를 고안한다. 베넷과 브라사드가 1984년
+발표한 방법이라 \textbf{BB84 프로토콜}이라고 부른다. BB84는 아래와 같은 
+프로토콜이다.
+\begin{mdframed}
+\begin{enumerate}[label=(\Alph*)]
   \item 앨리스가 문자열의 쌍 $x,y\in\{0,1\}^n$를 무작위로 고른다. 가령 $x$가
     $010\cdots010$이고 $y$가 $111\cdots110$일 수 있다.
-  \item 앨리스는 $n$개의 큐비트로 구성된 양자 상태 $\ket{\psi}$를 생성한다. 여기서
-    앨리스는 $y$의 비트를 사용해 큐비트를 부호화할 기저를 결정한다. 
-    $0$에는 $\{\ket0,\ket1\}$, $1$에는 $\{\ket+,\ket-\}$ 같은 식이다. 
-    가령 $y=111\cdots110$에 대해 첫 번째, 두 번째, 세 번째 큐비트는 $\{\ket+,
-    \ket-\}$을 기저로 부호화하고 마지막 큐비트는 $\{\ket0,\ket1\}$을 기저로 
-    부호화한다.
-  \item 앨리스는 밥에게 양자 상태 $\ket{\psi}$를 보낸다. $\ket{\psi}$만으로는
-    $\ket{\psi}$상의 각 큐비트가 무엇을 기저로 지니는지 알 수 없다.
-  \item 밥은 $\{0,1\}^n$에서 무작위로 문자열 $y'$을 고른다. 가령 $y'=001\cdots
-    100$일 때
-  \item 밥은 $y'$의 비트를 사용해 앨리스가 보낸 $\ket{\psi}$의 각 큐비트를 측정할
-    기저를 결정한다. 이에 측정 결과가 나타나겠다. 측정 결과를 문자열 $x'$에
-    $\ket0$이나 $\ket+$에 대해 $0$을, $\ket1$이나 $\ket-$에 대해 $1$을 기록하는
-    식이다.
-  \item 이제 앨리스와 밥은 양자 상태 $\ket{\psi}$의 부호화와 측정에 대해
-    사용한 기저를 공유한다. 문자열 $y$와 $y'$를 공유하는 것이다. 그리고
-    앨리스와 밥은 자신들이 같은 기저를 고르지 않은 $x$와 $x'$의 비트를
-    전부 버린다. 이게 대략 절반의 비트일 것이다. 이제 $x$와 $x'$로
-    남은 것이 공유된 비밀키다. 
+  \item 앨리스는 $n$개의 큐비트로 구성된 양자상태 $\ket{\psi}$를 다음과
+    같은 절차로 생성한다. 
+    \begin{enumerate}[label=(\roman*)]
+      \item 큐비트를 부호화할 기저는 $y$로 결정한다. 
+    $0$에는 $\{\ket0,\ket1\}$, $1$에는 $\{\ket+,\ket-\}$로 결정한다.
+    가령 $y=111\cdots110$에 대해 첫 세 큐비트는 $\{\ket+,
+    \ket-\}$를 기저로 부호화하고 마지막 큐비트는 $\{\ket0,\ket1\}$를 기저로 
+    부호화하는 식이다. 
+      \item 그리고 $x$로 주어진 기저에 대해 원소를 결정한다.
+    $0$에는 기저에 따라 $\ket0$ 혹은 $\ket+$, $1$에는 기저에 따라 $\ket1$ 혹은
+    $\ket-$로 결정한다. 가령 $x=010\cdots010$에 대해 첫 번째 큐비트는 $\ket+$로,
+    두 번째 큐비트는 $\ket-$로, 마지막 큐비트는 $\ket0$으로 결정하는 식이다.
+  \end{enumerate}
+  \item 이제 앨리스는 밥에게 양자상태 $\ket{\psi}$를 송신한다. 
+  \item 밥은 $\{0,1\}^n$에서 무작위로 문자열 $y'$을 고른다. 그리고 
+    \begin{enumerate}[label=(\roman*)] 
+      \item 수신한 $\ket{\psi}$의 각 큐비트를 측정할 기저를
+  $y'$로 결정한다. $0$에는 $\{\ket0,\ket1\}$로 측정하고, $1$에는 $\ket+,\ket-\}$로
+  측정하는 것이다. 
+    \item 측정 결과가 나타나면 $\ket0$이나 $\ket+$에
+    대해 $0$을, $\ket1$이나 $\ket-$에 대해 $1$을 문자열 $x'$로 기록한다.
+  \end{enumerate}
+  \item 이제 앨리스와 밥은 $y$와 $y'$를 공유한다. 그리고 둘은 같은 기저를
+    고르지 않은 $y$와 $y'$의 성분에 대한 $x$와 $x'$의 성분을 전부 버린다.
+    대략 절반의 비트이며, 그리하여  $x$와 $x'$로 남는 것이 공유 비밀키다.
+  \item 공유 비밀키가 존재하며 그 보안이 물리학적으로 보장된다. 그리하여 
+    공유 비밀키를 일회성 패드 같은 고전적인 암호 체계에 사용하면 된다.
 \end{enumerate}
-염탐자 이브가 있다고 하자. 이브는 앨리스와 밥이 전송하는 큐비트를 관찰한다.
-하지만 이브가 큐비트를 측정하려고 할 때마다 밥이 수신하는 큐비트를
-본질적으로 바꿔 버린다. 물론 이브가 $\ket0$이나 $\ket1$을 측정하고 큐비트가
-$\{\ket0,\ket1\}$ 기저상에 준비되어 있다면 큐비트가 변하지는 않겠다. 
+\end{mdframed}
+염탐자 이브가 있다고 하자. 일단 이브는 복사불능정리에 의해 $\ket{\psi}$를
+갈취할 수 없다. 그러니 이브는 $\ket{\psi}$를 면밀히 관측할
+것이다. 그러나 이브는 각 $\ket{\psi_i}$의 기저를 모른다. 한 번
+정도는 때려 맞힐 수 있겠지만 한 번이라도 틀리면 $\ket{\psi}$ \emph{자체}가
+변모한다. 그리하여 염탐자가 존재하거나 존재하지 않는다는 사실을 보장할
+수 있다. $y$와 $\ket{\psi}$의 분포가 판이하면 염탐자가 존재했다는 뜻이기 때문이다.
+
+그리고 $y$는 고전적인 문자열이니까 이브가 갈취하거나 면밀히 관찰해도 무방하다.
+상관 없다. $y$와 $y'$의 교환은 $\ket{\psi}$를 보낸 다음에 이루어지기
+때문이다. 열심히 갈취한 $y$는 아무 짝에도 쓸모가 없다. BB84의 골자는
+누가 기밀을 엿듣든 말든 양자역학에 의해 상관 없다는 것이다.
+\chapter{얽힘}
 \end{document}

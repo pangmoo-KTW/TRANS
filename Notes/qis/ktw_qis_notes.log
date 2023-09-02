@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  2 SEP 2023 04:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  3 SEP 2023 07:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1231,6 +1231,106 @@ File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 \WF@box=\box77
 \WF@everypar=\toks57
 Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
+ (/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count403
+Package zref Info: New property: abspage on input line 65.
+)
+\mdf@templength=\skip278
+\c@mdf@globalstyle@cnt=\count404
+\mdf@skipabove@length=\skip279
+\mdf@skipbelow@length=\skip280
+\mdf@leftmargin@length=\skip281
+\mdf@rightmargin@length=\skip282
+\mdf@innerleftmargin@length=\skip283
+\mdf@innerrightmargin@length=\skip284
+\mdf@innertopmargin@length=\skip285
+\mdf@innerbottommargin@length=\skip286
+\mdf@splittopskip@length=\skip287
+\mdf@splitbottomskip@length=\skip288
+\mdf@outermargin@length=\skip289
+\mdf@innermargin@length=\skip290
+\mdf@linewidth@length=\skip291
+\mdf@innerlinewidth@length=\skip292
+\mdf@middlelinewidth@length=\skip293
+\mdf@outerlinewidth@length=\skip294
+\mdf@roundcorner@length=\skip295
+\mdf@footenotedistance@length=\skip296
+\mdf@userdefinedwidth@length=\skip297
+\mdf@needspace@length=\skip298
+\mdf@frametitleaboveskip@length=\skip299
+\mdf@frametitlebelowskip@length=\skip300
+\mdf@frametitlerulewidth@length=\skip301
+\mdf@frametitleleftmargin@length=\skip302
+\mdf@frametitlerightmargin@length=\skip303
+\mdf@shadowsize@length=\skip304
+\mdf@extratopheight@length=\skip305
+\mdf@subtitleabovelinewidth@length=\skip306
+\mdf@subtitlebelowlinewidth@length=\skip307
+\mdf@subtitleaboveskip@length=\skip308
+\mdf@subtitlebelowskip@length=\skip309
+\mdf@subtitleinneraboveskip@length=\skip310
+\mdf@subtitleinnerbelowskip@length=\skip311
+\mdf@subsubtitleabovelinewidth@length=\skip312
+\mdf@subsubtitlebelowlinewidth@length=\skip313
+\mdf@subsubtitleaboveskip@length=\skip314
+\mdf@subsubtitlebelowskip@length=\skip315
+\mdf@subsubtitleinneraboveskip@length=\skip316
+\mdf@subsubtitleinnerbelowskip@length=\skip317
+ (/usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box78
+\mdf@footnotebox=\box79
+\mdf@splitbox@one=\box80
+\mdf@splitbox@two=\box81
+\mdf@splitbox@save=\box82
+\mdfsplitboxwidth=\skip318
+\mdfsplitboxtotalwidth=\skip319
+\mdfsplitboxheight=\skip320
+\mdfsplitboxdepth=\skip321
+\mdfsplitboxtotalheight=\skip322
+\mdfframetitleboxwidth=\skip323
+\mdfframetitleboxtotalwidth=\skip324
+\mdfframetitleboxheight=\skip325
+\mdfframetitleboxdepth=\skip326
+\mdfframetitleboxtotalheight=\skip327
+\mdffootnoteboxwidth=\skip328
+\mdffootnoteboxtotalwidth=\skip329
+\mdffootnoteboxheight=\skip330
+\mdffootnoteboxdepth=\skip331
+\mdffootnoteboxtotalheight=\skip332
+\mdftotallinewidth=\skip333
+\mdfboundingboxwidth=\skip334
+\mdfboundingboxtotalwidth=\skip335
+\mdfboundingboxheight=\skip336
+\mdfboundingboxdepth=\skip337
+\mdfboundingboxtotalheight=\skip338
+\mdf@freevspace@length=\skip339
+\mdf@horizontalwidthofbox@length=\skip340
+\mdf@verticalmarginwhole@length=\skip341
+\mdf@horizontalspaceofbox=\skip342
+\mdfsubtitleheight=\skip343
+\mdfsubsubtitleheight=\skip344
+\c@mdfcountframes=\count405
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count406
+\c@mdf@env@i=\count407
+\c@mdf@env@ii=\count408
+\c@mdf@zref@counter=\count409
+Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 
@@ -1278,16 +1378,16 @@ Package hyperref Info: Link coloring ON on input line 17.
 
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count403
+\scratchcounter=\count410
 \scratchdimen=\dimen390
-\scratchbox=\box78
-\nofMPsegments=\count404
-\nofMParguments=\count405
+\scratchbox=\box83
+\nofMPsegments=\count411
+\nofMParguments=\count412
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count406
+\MPscratchCnt=\count413
 \MPscratchDim=\dimen391
-\MPnumerator=\count407
-\makeMPintoPDFobject=\count408
+\MPnumerator=\count414
+\makeMPintoPDFobject=\count415
 \everyMPtoPDFconversion=\toks59
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1298,10 +1398,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@tabularnotesi=\count409
-\enitdp@tabularnotes=\count410
-\c@tabularnotes*i=\count411
-\enitdp@tabularnotes*=\count412
+\c@tabularnotesi=\count416
+\enitdp@tabularnotes=\count417
+\c@tabularnotes*i=\count418
+\enitdp@tabularnotes*=\count419
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmr/m/up on input line 17.
@@ -1346,10 +1446,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/up' undefined
 
 ]
 \g__nicematrix_max_cell_width_dim=\dimen392
-\c@iRow=\count413
-\c@jCol=\count414
-\l__nicematrix_cell_box=\box79
-\l__nicematrix_the_array_box=\box80
+\c@iRow=\count420
+\c@jCol=\count421
+\l__nicematrix_cell_box=\box84
+\l__nicematrix_the_array_box=\box85
 \l__nicematrix_left_delim_dim=\dimen393
 \l__nicematrix_right_delim_dim=\dimen394
 \g__nicematrix_dp_row_zero_dim=\dimen395
@@ -1358,39 +1458,73 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/up' undefined
 \g__nicematrix_dp_ante_last_row_dim=\dimen398
 \g__nicematrix_ht_last_row_dim=\dimen399
 \g__nicematrix_dp_last_row_dim=\dimen400
-\g__nicematrix_ddots_int=\count415
-\g__nicematrix_iddots_int=\count416
+\g__nicematrix_ddots_int=\count422
+\g__nicematrix_iddots_int=\count423
 \g__nicematrix_delta_x_one_dim=\dimen401
 \g__nicematrix_delta_y_one_dim=\dimen402
 \g__nicematrix_delta_x_two_dim=\dimen403
 \g__nicematrix_delta_y_two_dim=\dimen404
-\l__nicematrix_initial_i_int=\count417
-\l__nicematrix_initial_j_int=\count418
-\l__nicematrix_final_i_int=\count419
-\l__nicematrix_final_j_int=\count420
- [11]
-Overfull \hbox (13.22328pt too wide) detected at line 486
+\l__nicematrix_initial_i_int=\count424
+\l__nicematrix_initial_j_int=\count425
+\l__nicematrix_final_i_int=\count426
+\l__nicematrix_final_j_int=\count427
+
+Overfull \hbox (1.9574pt too wide) detected at line 454
+\U/euf/m/n/10 (\U/eur/m/n/10 CNOT\U/euf/m/n/10 )(\U/eur/m/n/10 H \OMS/cmsy/m/n/10 
+ \U/eur/m/n/10 I\U/euf/m/n/10 ) [] = \U/eur/m/n/10 CNOT[] [] [] [][]\U/euex/m/n/10 ! \U/eur/m/n/10 CNOT [] [][]\U/euex/m/n/10 ! []
+ []
+
+[11]
+Overfull \hbox (13.22328pt too wide) detected at line 472
 [] [][]\U/euex/m/n/10 ! [] \OMS/cmsy/m/n/10 
  [] \U/euf/m/n/10 = [] [][]\U/euex/m/n/10 ! []
  []
 
-[12]
-Overfull \hbox (9.00856pt too wide) in paragraph at lines 552--556
+Package mdframed Info: mdframed works in twoside mode on input line 483.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 483.
+LaTeX Font Info:    Trying to load font information for LUC+uhcmj on input line 491.
+(/usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
+File: lucuhcmj.fd 2013/09/26 UHC Myeongjo font definitions
+) [12]
+Overfull \hbox (9.00856pt too wide) in paragraph at lines 542--546
 \LUC/nanummj/m/n/10/bc ô\LUC/nanummj/m/n/10/c2 Ü\LUC/nanummj/m/n/10/b2 ä\LUC/nanummj/m/n/10/c2 Ü\LUC/nanummj/m/n/10/d5 < \LUC/nanummj/m/n/10/d6 <\LUC/nanummj/m/n/10/d5 i\LUC/nanummj/m/n/10/c0 Á\LUC/nanummj/m/n/10/d0 Ü\LUC/nanummj/m/n/10/c7 X \LUC/nanummj/m/n/10/bc ^^@\LUC/nanummj/m/n/10/b3 Ä\LUC/nanummj/m/n/10/d5 ‰\LUC/nanummj/m/n/10/b8 , $\U/eur/m/n/10 ^^Z$ \LUC/nanummj/m/n/10/b2 ” $\U/eur/m/n/10 ^^Z$ \LUC/nanummj/m/n/10/c7 \LUC/nanummj/m/n/10/c2 à\LUC/nanummj/m/n/10/ac ü \LUC/nanummj/m/n/10/cf $\LUC/nanummj/m/n/10/b8 ^^H \LUC/nanummj/m/n/10/c8 ^^D\LUC/nanummj/m/n/10/ce X $\U/eur/m/n/10 ^^Z[]$ \LUC/nanummj/m/n/10/ac ^^@ ^^Y\LUC/nanummj/m/n/10/c7 @ \LUC/grem/m/it/10/c5 Ð\LUC/grem/m/it/10/b9 t\LUC/grem/m/it/10/bb ø\LUC/grem/m/it/10/d2 ¸ \LUC/grem/m/it/10/d5 ‰\LUC/grem/m/it/10/b8 ,\OT1/cmr/m/it/6 Hermitian
  []
 
-[13] [14] [15]
-<weizner.jpg, id=290, 1084.05pt x 866.23625pt>
+
+Overfull \hbox (0.40916pt too wide) in paragraph at lines 567--570
+[]\LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/b5 L \LUC/nanummj/m/n/10/bc ^^@\LUC/nanummj/m/n/10/b3 Ä\LUC/nanummj/m/n/10/d5 ‰\LUC/nanummj/m/n/10/b8 ,\LUC/nanummj/m/n/10/c7 t \LUC/nanummj/m/n/10/d4 \\LUC/nanummj/m/n/10/d6 ^^D\LUC/nanummj/m/n/10/d5 X\LUC/nanummj/m/n/10/b2 ” \LUC/nanummj/m/n/10/ac ƒ\LUC/nanummj/m/n/10/c7 @ \LUC/nanummj/m/n/10/c5 ´\LUC/nanummj/m/n/10/b5 ¤ \LUC/nanummj/m/n/10/d6 U\LUC/nanummj/m/n/10/b9 `\LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/b2 ä[] \LUC/nanummj/m/n/10/bc ^^@\LUC/nanummj/m/n/10/b3 Ä\LUC/nanummj/m/n/10/d5 ‰\LUC/nanummj/m/n/10/b8 , $\U/eur/m/n/10 ^^Z$ \LUC/nanummj/m/n/10/b9 | \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/c8 ^^@ $\U/eus/m/n/10 f[] \U/eur/m/n/10 ; [] ; []\U/eus/m/n/10 g$
+ []
+
+[13]
+Overfull \hbox (0.64474pt too wide) in paragraph at lines 578--584
+\LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/cc ˜\LUC/nanummj/m/n/10/b7 ü \LUC/nanummj/m/n/10/c8 ^^U\LUC/nanummj/m/n/10/d6 U\LUC/nanummj/m/n/10/d7 ˆ \LUC/nanummj/m/n/10/ad à\LUC/nanummj/m/n/10/b4 ñ\LUC/nanummj/m/n/10/d5 X\LUC/nanummj/m/n/10/ac Œ \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/c8 ^^@\LUC/nanummj/m/n/10/b4 ä\LUC/nanummj/m/n/10/c7 t \LUC/nanummj/m/n/10/d6 <\LUC/nanummj/m/n/10/d5 i\LUC/nanummj/m/n/10/b4 ^^\ \LUC/nanummj/m/n/10/bc ^^@\LUC/nanummj/m/n/10/b3 Ä\LUC/nanummj/m/n/10/d5 ‰\LUC/nanummj/m/n/10/b8 ,\LUC/nanummj/m/n/10/c7 D \LUC/nanummj/bx/n/10/cd \\LUC/nanummj/bx/n/10/b3 ^^@\LUC/nanummj/bx/n/10/d6 <\LUC/nanummj/bx/n/10/d5 i\LUC/nanummj/bx/n/10/c0 Á\LUC/nanummj/bx/n/10/d0 Ü\OT1/cmr/bx/n/6 Maximally Mixed State
+ []
+
+[14]
+<weizner.jpg, id=279, 1084.05pt x 866.23625pt>
 File: weizner.jpg Graphic file (type jpg)
 <use weizner.jpg>
-Package pdftex.def Info: weizner.jpg  used on input line 667.
+Package pdftex.def Info: weizner.jpg  used on input line 623.
 (pdftex.def)             Requested size: 216.80615pt x 173.24417pt.
-LaTeX Font Info:    Trying to load font information for LUC+uhcmj on input line 672.
- (/usr/share/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-File: lucuhcmj.fd 2013/09/26 UHC Myeongjo font definitions
-) [16
+ [15
 
- <./weizner.jpg>] [17] [18]
+ <./weizner.jpg>]
+Package mdframed Info: mdframed works in twoside mode on input line 685.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 685.
+
+Overfull \hbox (8.34175pt too wide) in paragraph at lines 691--696
+[]\LUC/nanummj/m/n/10/d0 P\LUC/nanummj/m/n/10/be D\LUC/nanummj/m/n/10/d2 ¸\LUC/nanummj/m/n/10/b9 | \LUC/nanummj/m/n/10/bd €\LUC/nanummj/m/n/10/d6 8T\LUC/nanummj/m/n/10/d5 ` \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/c8 ^^@\LUC/nanummj/m/n/10/b2 ” $\U/eur/m/n/10 y$ \LUC/nanummj/m/n/10/b8 \ \LUC/nanummj/m/n/10/ac °\LUC/nanummj/m/n/10/c8 ^^U\LUC/nanummj/m/n/10/d5 \\LUC/nanummj/m/n/10/b2 ä[] $\U/eur/m/n/10 0$ \LUC/nanummj/m/n/10/c5 Ð\LUC/nanummj/m/n/10/b2 ” $\U/eus/m/n/10 f[] \U/eur/m/n/10 ; []\U/eus/m/n/10 g$\OT1/cmr/m/up/10 , $\U/eur/m/n/10 1$ \LUC/nanummj/m/n/10/c5 Ð\LUC/nanummj/m/n/10/b2 ” $\U/eus/m/n/10 f[] \U/eur/m/n/10 ; []\U/eus/m/n/10 g$
+ []
+
+[16]
+Package mdframed Info: Not enough space on this page on input line 716.
+ [17] [18
+
+]
 \tf@toc=\write6
 \openout6 = `ktw_qis_notes.toc'.
 
@@ -1399,25 +1533,25 @@ File: lucuhcmj.fd 2013/09/26 UHC Myeongjo font definitions
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `ktw_qis_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 49AB813F6ADFE430978A35D8814BB9B6;269.
+(rerunfilecheck)             Checksum: 0A1511BCF6CFF9783038C52D0D23086E;336.
  ) 
 Here is how much of TeX's memory you used:
- 36842 strings out of 477985
- 739740 string characters out of 5840058
- 1918388 words of memory out of 5000000
- 56088 multiletter control sequences out of 15000+600000
- 584193 words of font info for 285 fonts, out of 8000000 for 9000
+ 37227 strings out of 477985
+ 747806 string characters out of 5840058
+ 1919388 words of memory out of 5000000
+ 56468 multiletter control sequences out of 15000+600000
+ 581703 words of font info for 276 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,21n,117p,1210b,1613s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbb.pfb></usr/share/
-texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbe.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjbc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb>
-</usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/share/texmf-dist/fonts/type1/uhc/umj/umj02.pfb>
-Output written on ktw_qis_notes.pdf (18 pages, 4166749 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc1.pfb></usr/share/t
+exmf-dist/fonts/type1/public/nanumtype1/nanumgtmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texmf-dist/fonts/type1/public
+/nanumtype1/nanummjbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb><
+/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/share/texmf-dist/fonts/
+type1/uhc/umj/umj02.pfb>
+Output written on ktw_qis_notes.pdf (18 pages, 4152672 bytes).
 PDF statistics:
- 727 PDF objects out of 1000 (max. 8388607)
- 509 compressed objects within 6 object streams
- 48 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 712 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
