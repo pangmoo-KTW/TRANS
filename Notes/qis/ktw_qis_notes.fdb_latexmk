@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1693694433 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693694436 0
+["pdflatex"] 1693697161 "ktw_qis_notes.tex" "ktw_qis_notes.pdf" "ktw_qis_notes" 1693697164 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -475,10 +475,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "ktw_qis_notes.aux" 1693694435 9193 89877438d50996ba1ed0225cb9f940ed "pdflatex"
-  "ktw_qis_notes.out" 1693694435 336 0a1511bcf6cff9783038c52d0d23086e "pdflatex"
-  "ktw_qis_notes.tex" 1693694430 40587 221bee55d133e650c4c4c8152cc8fb4a ""
-  "ktw_qis_notes.toc" 1693694435 395 f60306c832b0695ae4784b069c2cc429 "pdflatex"
+  "ktw_qis_notes.aux" 1693697164 9298 b1b24a679833d3ced3e9c11ff3bc0090 "pdflatex"
+  "ktw_qis_notes.out" 1693697164 456 3d2085562f6b44ea5a704babe2cc8bad "pdflatex"
+  "ktw_qis_notes.tex" 1693697158 40612 44677465aca8c0a58902ee4214f15330 ""
+  "ktw_qis_notes.toc" 1693697164 432 5390a76302c675025f03c013d4fa8452 "pdflatex"
   "weizner.jpg" 1693573298 102844 0b43fda2895985e0c5f8966c812e3d12 ""
   (generated)
   "ktw_qis_notes.aux"
