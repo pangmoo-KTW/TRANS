@@ -1,0 +1,103 @@
+\documentclass[a4paper,atbegshi,chapter]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx,xcolor,caption}
+\usepackage{braket,hyperref,nicematrix}
+\usepackage{euler,enumitem,mdframed}
+\setlist{nosep}
+\hypersetup{
+  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
+}
+\title{A quantum-inspired classical algorithm for recommendation systems (Tang,
+2019) 해설}
+\author{Kim Taewon}
+\date{최초 작성 : September 3, 2023 \\ 최근 편집 : \today}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{서론}
+\section{양자기계학습}
+저자{\tiny Ewin Tang}에 따르면 본고는 Kerenidis와 Prakash의 양자 추천
+시스템 알고리즘{\tiny quantum recommendation system algorithm}이 고전
+알고리즘에 비해 지수적인{\tiny exponential} 가속{\tiny speedup}\footnote{지수적인
+가속은 문제 해결 시간이 입력 크기에 대해 기하급수적으로 줄어드는 경우를 뜻한다.}을
+보인다는 사실을 증명하려다 반증해 버린 결과물이다. 
+
+Kerenedis와 Prakash의 양자 추천 알고리즘은 대표적인 양자기계학습{\tiny QML}
+알고리즘으로, QML의 진전은 2008년 Harrow, Hassidim, Lloyd가 제 이름을 따서
+만든 연립방정식{\tiny linear systems} 풀이 알고리즘인 HHL 알고리즘에서 
+비롯한다. 다만 Aaronson이 \emph{Read the Fine Print}에서 지적하듯
+이들 QML 알고리즘이 고전 알고리즘에 대해 실질적으로 지수적인 가속을 보이냐는
+문제는 명백하지 않다. 본고의 목적은 양자 추천 시스템 알고리즘과 같은 작업을
+오직 다항적인 감속{\tiny polynomialy slower}으로 수행할 수 있는 고전 알고리즘을
+서술하여 이런 물음에 명백하게 아니라고 답할 수 있도록 하는 것이다.
+\subsection{양자 알고리즘이 작동하는 방법}
+양자 알고리즘은 입력 행렬 분해{\tiny low-rank approximation of an input matrix}로
+표본을 취한다. 
+\begin{mdframed}
+  \textbf{Low-rank approximation}이 무엇이며, 애초에 \textbf{Rank}는 무엇인가?
+  \begin{itemize}
+    \item Rank-1 행렬은 영이 아닌 $m\times n$ 행렬로 $m$벡터 $u$와 $n$벡터 $v$의
+      외적 $uv^{\top}$으로 정의된다.
+      \[
+        A=uv^{\top}
+      \]
+    \item Rank-2 행렬은 두 Rank-1 행렬의 합 혹은 중첩이다.
+      \[
+        A=uv^{\top}+wz^{\top}
+      \]
+  \end{itemize}
+  그리하여 임의의 $k$에 대해 Rank-$k$ 행렬은 $k$개의 Rank-1 행렬의 합 혹은
+  중첩이다. 그리고 low-rank matrix approximation은 주어진 행렬 $A$를 Rank-$k$
+  행렬로 근사하는 과정이다.  
+\end{mdframed}
+입력 행렬에 대한 low-rank approximation으로 표본을 취한다는 말은 아래와 같다.
+우선, 양자 위상 추정{\tiny quantum phase estimation} 알고리즘으로 단일 값을
+추정하고 입력상의 단일 벡터를 배정한다. 
+\begin{mdframed}
+  \textbf{Quantum phase estiamtion}은 유니타리 연산자의 고윳값에 대한 근사다.
+\end{mdframed}
+그런 다음 양자 사영{\tiny quantum projection} 과정은 이 정보를 통해 
+Kerenidis와 Prakash에 따르면 고전 알고리즘으로 이와 같은 분포로 표본을
+생성하려면 입력 차원에 대해 선형인 시간이 요구된다. 하지만 저자가 보기에
+입력 전체를 처리하지 않고 low-rank matrix approximation을 사용한다는 판단은
+이상하다. 입력 데이터에 대해 강한 가정 내지 조건이 부여되는 것이기 때문이다.
+\chapter{정의}
+\begin{itemize}
+  \item 입력 데이터에 대한 기본적인 연산, 이를테면 덧셈, 곱셈, 읽기, 쓰기는
+$O(1)$ 시간이 걸린다고 가정한다.
+\item $[n]:=\{1,\ldots,n\}.$
+\item $f \lesssim g$는 $f=O(g)$를 나타낸다.
+\item 행렬 $A$에 대해, $A_i$와 $A^{(i)}$는 각각 $i$번째 행과 열을 나타낸다. 
+\item $\|A\|_F$는 Frobenius norm을 나타낸다. Frobenius norm이란 $m\times n$
+  행렬 $A$의 노름으로, $A$의 성분의 절댓값을 합하여 제곱근을 구한 것이다.
+  \[
+    \|A\|_F = \sqrt{\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|^2}
+  \]
+\item $\|A\|_2$는 spectral norm을 나타낸다. 정방행렬 $A$와 복소전치 
+  $A^{\dagger}$에 대해 spectral norm은 $A^{\dagger}A$의 최대 고윳값의
+  제곱근으로 정의된다.
+  \begin{align*}
+    \|A\|_2 &=  (A^{\dagger}A\textrm{의 최대 고윳값})^{1/2} \\
+            &= \max_{|x|_2\neq0}\frac{|Ax|_2}{|x|_2}
+  \end{align*}
+\item 벡터 $v$의 노름은 $\|v\|$으로 나타내고 항상 $l^2$노름을 가리킨다.
+  \[
+    \|x\|=\sqrt{\sum_{k=1}^n|x_k|^2}\quad\textrm{복소 벡터 }x\textrm{에 대해}
+  \]
+\item 종종 $\|x-y\|\leq\epsilon$ 꼴의 행렬 부등식을 $\|E\|\leq\epsilon$에
+  대해 $x=y+E$로 나타낸다. $E$는 오류에 대한 근사를 나타낸다.
+\item 행렬 $A\in\mathbb{R}^{m\times n}$에 대해 아래가 $A$의 SVD가 되도록 한다.
+  \[
+    A = U\Sigma V^T = \sum_{i=1}^{\min_{m,n}}\sigma_i u_i v_i^{T}
+  \]
+  여기서 $U\in\mathbb{R}^{m\times n}$과 $V\in\mathbb{R}^{n\times n}$은 각각
+  열 $\{u_i\}_{i\in[m]}$과 $\{v_i\}_{i\in[m]}$을 지니는 유니타리 행렬로,
+  좌측과 우측 singular 벡터다. $\Sigma\in\mathbb{R}^{m\times n}$은
+  증가하거나 음이 아닌 $\sigma_i:=\Sigma_{ii}$와 대각이다.
+\item 함수 $\ell$은 singular 벡터를 singular 벡터로 쪼개는 함수다.
+  \[
+    \ell(\lambda):=\max\{i|\sigma_i\geq\lambda\}
+  \]
+\end{itemize}
+\end{document}
