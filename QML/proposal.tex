@@ -8,28 +8,28 @@
   \textbf{\large역양자화 알고리즘 및 양자 선형대수} \\ 
   \today\; 김태원 작성
 \end{center}
-\emph{역양자화\footnotesize dequantizing} 혹은 \emph{양자-영향 하의
+\emph{역양자화\footnotesize dequantizing} 혹은 \emph{양자적 영향상의
 고전 알고리즘\footnotesize quantum-inspired classical algorithm}은 추천
-시스템이나 위상학적 데이터 분석을 비롯한 양자기계학습{\footnotesize QML}
-알고리즘이 취한다고들 하는 종래 기계학습 알고리즘에 대한 계산상의 
-이점{\footnotesize computational advantage}의 정체를 밝히는 분야다.
+시스템이나 위상학적 데이터 분석 같은 양자 기계학습{\footnotesize QML}
+알고리즘이 취한다고들 하는 고전 기계학습 알고리즘에 대한 계산적인 
+우위{\footnotesize computational advantage}의 정체를 밝히는 분야다.
 
-애론슨{\footnotesize Scott Aaronson}의 서베이 \snm{세부조항을 
-읽어라}{\footnotesize(Read the fine print, Nature Physics 2015)}에 따르면
+애론슨{\footnotesize Scott Aaronson}의 서베이 \snm{세부 조항을 
+읽으시오}{\footnotesize(\emph{Read the fine print}, Nature Physics 2015)}에 따르면
 HHL{\footnotesize Harrow-Hassidim-Lloyd} 알고리즘처럼 지수적인 가속{\footnotesize
-exponential speedup}을 보인다고 주장하는 양자기계학습 알고리즘들은 `아주
-작은 글자로 적힌 주의사항'마냥 결정적인 가정 내지 조건을 요구하고 있었다.
-이들 가정은 양자기계학습 알고리즘과 종래 기계학습 알고리즘 간의 정당한 비교를
-어렵게 만든다.
+exponential speedup}을 보인다고 주장하는 양자 기계학습 알고리즘들은 아주
+작은 글자로 적힌 주의사항처럼 결정적인 가정 내지 조건을 은연중에 요구한다.
+이들 가정은 양자 기계학습 알고리즘과 고전 기계학습 알고리즘 간의 정당한
+비교를 어렵게 만든다.
 
 2018년 애론슨은 학부연구생 탕{\footnotesize Ewin Tang}에게
 양자 기계학습 추천 알고리즘\footnote{\emph{Quantum recommendation systems},
   Kerenidis \& Prakash, Innovations in Theoretical Computer Science, 
-2017.}이 종래 기계학습 추천 알고리즘에 대해 취한다는 지수적인 가속을 
-계산복잡도이론으로 증명하라는 연구 주제를 제시한다. 대신 탕은
-그 반증을 내놓는다. 양자 기계학습 추천 알고리즘에서 요구하는 \emph{양자 위상
-예측\footnotesize quantum phase estimation}이라는 가정이 종래 혹은
-고전 기계학습 알고리즘에서 가정할 수 있는 \emph{특이값 분해{\footnotesize
+2017.}이 종래 기계학습 추천 알고리즘에 대해 취한다는 지수적인 가속의
+계산복잡도이론적 증명을 연구 주제로 제시한다. 하지만 탕은 그 반증을
+내놓는다. 양자 기계학습 추천 알고리즘에서 요구하는 \emph{양자 위상
+예측\footnotesize quantum phase estimation}이라는 가정이 고전 기계학습
+알고리즘에서 가정할 수 있는 \emph{특이값 분해{\footnotesize
 singular value estimation} 꼴의 $\ell^2$ 노름 샘플링}\footnote{\emph{Fast
 Monte-Carlo Algorithms for finding Low-Rank Approximations}, Frieze \& Kannan
 \& Vempala, Journal of the ACM, 2004.}과 본질적으로 다르지 않다는 사실을 포착한
@@ -38,26 +38,26 @@ Monte-Carlo Algorithms for finding Low-Rank Approximations}, Frieze \& Kannan
 알고리즘은 양자 판본에 대해 오직 다항시간상의{\tiny polynomial} 감속을 보일
 뿐이었다.
 
-탕은 위와 같은 내용을 담은 학부 졸업논문 \snm{추천 시스템에 대한 양자적 영향상의
+탕은 위와 같은 내용을 학부 졸업논문 \snm{추천 시스템에 대한 양자적 영향상의
 고전 알고리즘}{\footnotesize(A quantum-inspired classical algorithm for
 reccommendation systems, STOC 2019)}으로 담았고 오늘날은 역양자화라는 핵심
 기법을 여타 양자 기계학습 알고리즘에 대해 일반화하고자 한다. 여기서 양자 기계학습 
-알고리즘이란 사실상 양자 선형대수 알고리즘과 같은 말이다. 그러니 역양자화의
+알고리즘이라는 말은 사실상 양자 선형대수 알고리즘을 뜻한다. 그러니 역양자화의
 핵심 함의란 어떤 양자 선형대수 알고리즘은 고전 알고리즘에 의한 (다항시간 내의) 
 모사가 어렵지 않으므로 이들 양자 선형대수 알고리즘에서 `양자'라는 표현의 본질이
-무엇이냐는 질문이다. 
+무엇이냐는 물음이다. 
 
-위와 같은 질문을 소화하려면 유니타리를 몇 개의 게이트로 구현하는 양자 회로인 
+위와 같은 물음을 소화하려면 유니타리를 몇 개의 게이트로 구현하는 양자 회로인 
 `블록 인코딩{\footnotesize block-encoding}', 블록 인코딩에 대한 자료구조, 이들
 자료구조를 중첩{\tiny superposition}으로 질의{\tiny query}할 수 있는 양자 RAM
-혹은 `QRAM'이라는 가정 등, 또 무엇보다 특이값 분해에 대한 이해가 필요하다.
+혹은 `QRAM'이라는 가정 등, 또 무엇보다 특잇값 분해에 대한 이해가 필요하다.
 거칠게 말해 양자 기계학습 알고리즘의 성능은 양자 실험으로 생성한 훈련 데이터에
 의존하며 이는 대개 QRAM 덕분에 중첩상의 입력으로 접근할 수 있기 
 때문\footnote{\emph{Quantum advantage in learning from experiements}, Huang \&
 Broughton \& Cotler \& Chen \& Li \& Mohseni \& Neven \& Babbush \& Kueng \&
 Preskill \& Mcclean, Science, 2022.}이라고 한다.
 
-본 과제를 통해 해결하고자 하는 구체적인 문제는 양자 기계학습 알고리즘 관련 논문,
-양자 선형대수 관련 강의록, 그리고 행렬이론 일반에 관한 교재를 학습하며 부딪히는
-물음으로 결정하고자 한다.
+본 과제를 통해 해결하고자 하는 문제는 양자 기계학습 알고리즘 관련 논문,
+양자 선형대수 관련 강의록, 행렬이론 일반 관련 교재를 학습하며 부딪히는
+구체적인 질문으로 결정하고자 한다.
 \end{document}

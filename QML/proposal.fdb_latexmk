@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1693857960 "proposal.tex" "proposal.pdf" "proposal" 1693857961 0
+["pdflatex"] 1693859443 "proposal.tex" "proposal.pdf" "proposal" 1693859443 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1689853683 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1689853683 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -89,7 +89,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1689853683 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1689853683 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1689853683 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1689853683 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1689853683 35660 fb24af7afbadb71801619f1415838111 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb" 1689853683 81586 59a66717b44d5428216b002f6634a9ee ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmaf.pfb" 1689853683 124458 e84c355e42105e6495eccd04349b37b5 ""
@@ -233,9 +232,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "proposal.aux" 1693857961 649 66fff78c712bacd18916efa26a6c7736 "pdflatex"
-  "proposal.out" 1693857960 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "proposal.tex" 1693857960 4531 18b9051b9f5b55a990809164830cde06 ""
+  "proposal.aux" 1693859443 649 66fff78c712bacd18916efa26a6c7736 "pdflatex"
+  "proposal.out" 1693859443 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "proposal.tex" 1693859441 4504 35f4e89de6827f3ad80c60a4081dddd7 ""
   (generated)
   "proposal.aux"
   "proposal.log"
