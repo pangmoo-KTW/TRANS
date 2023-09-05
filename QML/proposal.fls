@@ -769,6 +769,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/uhc/uwmj/uwmj30.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmba.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmce.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmad.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbe.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -787,7 +788,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd4.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd2.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcf.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmce.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/vf/uhc/uwmj/uwmj30.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/uhc/wmj/wmj05.tfm
