@@ -720,8 +720,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmae.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd0.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc8.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc5.tfm
@@ -734,12 +732,12 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbbc.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbb3.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc2.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmc7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmd6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmc8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmc6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmd5.tfm
@@ -754,6 +752,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb0.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb3.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbd.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb2.tfm
