@@ -8,13 +8,40 @@
 \hypersetup{
   colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
 }
-\title{A quantum-inspired classical algorithm for recommendation systems (Tang,
-2019) 해설}
-\author{Kim Taewon}
-\date{최초 작성 : September 3, 2023 \\ 최근 편집 : \today}
+\title{Read the fine print(Aaronson, 2015) 해설}
+\author{김태원}
+\date{최초 작성 : 2023년 9월 6일\\ 최근 편집 : \today}
 \begin{document}
 \maketitle
-\tableofcontents
+양자기계학습{\tiny quantum machine learning}은 HHL이라는 알고리즘에 바탕을
+둔다. HHL은 Aram Harrow, Avinatan Hassidim, Seth Lloyd가 2008년에 공개한
+알고리즘으로, 이후 나타난 양자기계학습 알고리즘은 대부분 HHL의 연장선에
+있거나 HHL을 서브루틴으로 사용한다. HHL이 다루는 문제는 간단하다. 
+바로 \textbf{연립일차방정식\tiny system of linear equations}을 푸는 것이다.
+$n\times n$ 실수 행렬 $A$와 벡터 $b$에 대해 아래 식에서 $x$를 구하면 된다.
+\[
+  Ax=b.
+\]
+HHL은 \emph{$n$의 로그에 비례하는 연산}만으로 $Ax=b$를 풀 수 있다고 주장한다. 
+고전적으로는 $A$의 성분을 확인하는 작업에만 $n^2$ 스텝이 요구되기 때문에
+믿기지 않는 결과다. (어떻게 하는지는 나중에 살펴보고) 실제로 HHL은
+$Ax=b$를 \textbf{로그시간\footnotesize logarithmic time} 안에 풀지만, 몇
+가지 조건이 있다.
+
+첫째, $Ax=b$상의 벡터 $b=(b_0,\ldots,b_{n-1})$가 양자컴퓨터의 메모리에 아무튼
+재빠르게 로드되어야 한다. 아래 같은 양자상태를 미리 준비해야 하기 때문이다.
+\[
+  \ket{b} = \sum_{i=0}^{n-1} b_i\ket{i} = 
+  \begin{bmatrix}b_0\\b_1\\\vdots\\b_{n-1}\end{bmatrix}
+\]
+이를 이론상 가능케 하는 것이 이른바 ``양자 RAM'' 혹은 \textbf{QRAM}이다. 즉 QRAM은
+수치들 $b_0,\ldots,b_{n-1}$를 양자중첩, 다시 말해 일차결합으로 한 번에 읽을
+수 있도록 하는 장치다. 
+
+하지만 이런 QRAM이 있다고 가정하더라도 별개 조건이 또 필요하다. 바로 벡터 $b$가
+\textbf{대체로 균일\footnotesize relatively uniform}해야 한다는 것이다. 그러니까
+어떤 $b_i$가 나머지보다 지나치게 크면 안 된다. 
+
 \chapter{서론}
 \section{양자기계학습}
 저자{\tiny Ewin Tang}에 따르면 본고는 Kerenidis와 Prakash의 양자 추천
