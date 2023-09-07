@@ -1,25 +1,24 @@
-\documentclass[a4paper,atbegshi,chapter]{oblivoir}
+\documentclass[a4paper,atbegshi,chapter,itemph,hidelinks]{oblivoir}
 \usepackage[dbl4x6]{fapapersize}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
-\usepackage{graphicx,xcolor,caption}
 \usepackage{braket,hyperref,nicematrix}
 \usepackage{euler,enumitem,mdframed}
+\usepackage{ob-chapstyles}
+\chapterstyle{chappell}
 \setlist{nosep}
-\hypersetup{
-  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
-}
-\title{\small Quantum algorithm for linear system of equations 
-(Harrow, Hassidim, Lloyd, 2008) 해설}
-\author{계산과학 2: 노현민-김태원 조}
+\title{계산과학2 (1)}
+\author{노현민-김태원 조}
 \date{\today}
 \begin{document}
 \maketitle
-$N\times N$ 에르미트{\footnotesize Hermitian} 행렬 $A$가 있다고 하자. 에르미트
-행렬이란 켤레전치{\footnotesize conjugate transpose}가 자기 자신과 같은
-복소정방행렬{\footnotesize complex square matrix}이다. 또한 단위벡터{\footnotesize
-unit vector} $\mathbf{b}$가 있다고 하자. 단위벡터란 길이 혹은 노름{\footnotesize
-norm}이 $1$인 벡터다. 이에 연립일차방정식을 $\mathbf{x}$에 대해 푼다. 다시 말해
-아래 식에서 $\mathbf{x}$를 구한다.
+\tableofcontents
+\chapter{HHL}
+\section{$\pmb{Ax=b}$}
+$N\times N$ 에르미트{\footnotesize Hermitian} 행렬 $A$와 벡터 $\mathbf{b}$가 
+있다. 여기서 에르미트 행렬이란 켤레전치{\footnotesize conjugate transpose}가
+자기 자신과 같은 복소정방행렬{\footnotesize complex square matrix}을 뜻한다. 이에 
+연립일차방정식을 $\mathbf{x}$에 대해 푼다. 다시 말해 아래 식에서
+$\mathbf{x}$를 구한다.
 \[
   A\mathbf{x}=\mathbf{b}
 \]
@@ -48,34 +47,35 @@ norm}이 $1$인 벡터다. 이에 연립일차방정식을 $\mathbf{x}$에 대�
   1&0&0\\0&1&0\\0&0&1
 \end{bmatrix}
 \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
-  =&\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}\\\longrightarrow
-  A\mathbf{x}=&\;\mathbf{b}
+  =&\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}\longrightarrow
+  A\mathbf{x}=\mathbf{b}
 \end{align*}
+\section{양자상태 표현과 브라-켓 표기}
 $\mathbf{b}$를 아래와 같은 양자상태로 나타낸다.
 \[
   \ket{b}=\sum_{i=1}^N b_i\ket{i}
 \]
-앞선 예시로 켓{\footnotesize ket} 표기 $\ket{}$을 설명하면 아래와 같다.
+앞선 예시로 켓{\footnotesize ket} 표기 `$\ket{\cdot}$'를 도입하면 아래와 같다.
 \[
   \ket{b}=\sum_{i=1}^{N=3}b_i\ket{i}=b_1\ket1+b_2\ket2+b_3\ket3=
   b_1\begin{bmatrix}1\\0\\0\end{bmatrix}+b_2\begin{bmatrix}0\\1\\0\end{bmatrix}+
   b_3\begin{bmatrix}0\\0\\1\end{bmatrix}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}
 \]
+\section{해밀토니언 시뮬레이션: 오일러 공식, 위상 인자, 유니타리}
 여기에 \textbf{해밀토니언 시뮬레이션\tiny Hamiltoniam simulation}이라는 기법을
 적용한다.
 \begin{mdframed}
   \begin{center}\textbf{해밀토니언 시뮬레이션}\end{center}\noindent
   해밀토니언 시뮬레이션이란 양자정보학의 기초 문제 가운데 하나로, 
   양자계{\footnotesize quantum systems}의 시뮬레이션에 요구되는 계산복잡도와
-  알고리즘을 묻는다. 다시 말해 양자계의 (시간의 흐름을 따른) 진화 혹은
+  알고리즘을 묻는다. 다시 말해 양자계의 (시간의 흐름에 따른) 진화 혹은
   변화{\footnotesize evolution}를 구현하는 알고리즘을 구하는 문제다. 
-  유명한 파인만{\footnotesize Richard Feynman} 씨가 1982년에 고안했으며,
-  해밀토니안의 고전적 시뮬레이션에는 계의 상태에 따른 
-  지수적인{\footnotesize exponential} 감속이 잇따르기 때문에 아무래도
-  양자컴퓨터 같은 게 필요하지 않겠냐는 맥락이었다. 
+  파인만{\footnotesize Richard Feynman}이 해밀토니안의 고전적 시뮬레이션은 
+  계의 상태에 따른 지수적인{\footnotesize exponential} 감속을 요구하니
+  아무래도 양자컴퓨터 같은 게 필요하지 않겠냐며 1982년 고안한 문제다.
 
-  여기서 해밀토니안 $H$란 수학적으로 말하면 그냥 큐비트의 개수 $n$에 대한
-  $2^n\times 2^n$ 에르미트 행렬이고, 물리학적으로 말하면 어느 계의 총 에너지에
+  여기서 해밀토니안 $H$란 수학적으로 말하면 큐비트의 개수 $n$에 대한
+  $2^n\times 2^n$ 에르미트 행렬이고, 물리학적으로 말하면 계의 총 에너지에
   대응하는 연산자다. 시간 $t$에 따른 해밀토니안 $H$의 이상적인 변화를
   $e^{-iHt}$로 나타낸다. 
   \begin{mdframed}
@@ -87,45 +87,39 @@ $\mathbf{b}$를 아래와 같은 양자상태로 나타낸다.
     \[
       z=re^{\theta}=r(\cos\theta+i\sin\theta)
     \]
-    대충 말하면 복소평면상의 한 단위를 $\theta$만큼 돌리고 $r$만큼 늘리면
+    대충 말해 복소평면상의 한 단위를 $\theta$만큼 돌리고 $r$만큼 늘리면
     모든 $z$를 나타낼 수 있고 이런 $z$가 평면상에서는 $\cos\theta+i\sin\theta$를
-    $r$만큼 늘린 꼴이다. ($\cos\theta+i\sin\theta$가 평면상의 한 점을
-    나타낸다는 사실은 그림으로 그리면 효과적으로 이해할 수 있고 아무튼)
-    이를 복소수의 \textbf{극 형식\footnotesize polar form}이라고 한다.
-    또한 여기서 단위 복소수 $e^{i\theta}$는 따로 \textbf{위상 인자\footnotesize
-    phase factor}라고 부른다.
+    $r$만큼 늘린 꼴이라는 뜻이다. 이를 복소수의 \textbf{극 형식\footnotesize
+    polar form}이라고 한다. 또 여기서 단위 복소수 $e^{i\theta}$는 따로
+    \textbf{위상 인자\footnotesize phase factor}라고 부른다.
     \begin{mdframed}
       \begin{center}\textbf{위상 인자}\end{center}\noindent
       양자역학에서 위상 인자란 $\ket{\psi}$와 $\bra{\phi}$에 곱하는
-      복소 계수 $e^{i\theta}$다. 단위 복소수이기 때문에 곱하더라도 
+      복소 계수 $e^{i\theta}$다. 단위 복소수이므로 곱하더라도 
       \emph{전역 위상\footnotesize global phase}에서는 아무 일이 일어나지
-      않는다. 다시 말해 아래가 성립한다.
-      \[
-        e^{i\theta}(\ket0+\ket1)=\ket0+\ket1
-      \]
-      하지만 \emph{상대 위상\emph relative phase}
-      $e^{i(\theta-\theta')}$가 있을 수 있으므로 아래 또한 성립한다.
-      \[
-        e^{i\theta}\ket0+e^{i\theta'}\ket1 \neq \ket0+\ket1
-      \]
+      않는다. 다시 말해 $e^{i\theta}(\ket0+\ket1)$와 $\ket0+\ket1$이 동치다.
+      하지만 이른바 \emph{상대 위상\emph relative phase}
+      $e^{i(\theta-\theta')}$이 있을 수 있으므로 
+      $e^{i\theta}\ket0+e^{i\theta'}\ket1$와 $\ket0+\ket1$은 동치가 아니다.
     \end{mdframed}
   \end{mdframed}
   이 $e^{-iHt}$와
-  최대 오류 $\epsilon$에 대해 $\|U-e^{-iHt}\|\leq\epsilon$을 만족하는
-  유니타리 변환 $U$에 근사하는 알고리즘을 찾는 문제가 바로 해밀토니안
+  최대 오류 $\epsilon$에 대해 $\|U-e^{-iHt}\|\leq\epsilon$인
+  유니타리 변환 $U$과 근사하는 알고리즘을 찾는 문제가 바로 해밀토니안
   시뮬레이션이다.
   \begin{mdframed}
     \begin{center}\textbf{유니타리}\end{center}
     \noindent 복소정방행렬 $U$는 켤레전치 $U^{\dagger}$와 곱할 때 항등행렬
-    $I$가 나오면 유니타리라고 한다. 다시 말해 $U^{\dagger}U=UU^{\dagger}=I$를
+    $I$가 나오면 유니타리라고 한다. 즉 $U^{\dagger}U=UU^{\dagger}=I$를
     만족하는 $U$는 유니타리다.
   \end{mdframed}
 \end{mdframed}
-다시 말해 $\ket{b}$를 시간 $t$에 따른 (일종의) 해밀토니안 $A$의 이상적인 변화
+그리하여 $\ket{b}$를 시간 $t$에 따른 (일종의) 해밀토니안 $A$의 이상적인 변화
 $e^{iAt}$로 다룬다. (아무튼 $A$라는 계에 $\mathbf{x}$라는 변환을 취한 결과가 
-$\mathbf{b}$이기 때문이고) 여기서 핵심은 $A$를 지수로 다뤘다는 사실이다.
-이 사실은 \textbf{위상 추정\footnotesize phase estimation}이라는 기법을 통해
-$\ket{b}$를 분해할 수 있도록 한다.
+$\mathbf{b}$이기 때문이고) 여기서 핵심은 $A$를 지수로 다룰 수 있다는 사실이다.
+\section{위상 추정 알고리즘: 유니타리 행렬의 고윳값}
+이 사실은 \textbf{위상 추정\footnotesize phase estimation}이라는 기법으로
+$\ket{b}$를 분해하도록 한다.
 \begin{mdframed}
   \begin{center}\textbf{위상 추정 알고리즘}\end{center}
   \noindent 주어진 유니타리 연산자의 고윳값에 대응하여 위상을 추정하는
@@ -139,13 +133,14 @@ $\ket{b}$를 분해할 수 있도록 한다.
     \]
     를 만족하면 $v$는 $T$의 고유벡터이며 $\lambda$는 $T$의 고윳값이다.
   \end{mdframed}
-  또한 유니타리 행렬에 대한 스펙트럼 정리에 (\url{https://www.math.purdue.edu/~eremenko/dvi/lect3.26.pdf}) 
-  따르면, 유니타리 행렬의 모든 고윳값은 절댓값 $1$, 다시 말해 단위율{\footnotesize
-  unit modulus}을 지닌다. 따라서 고윳값은 위상으로 특징 지어지고, 알고리즘이
-  고윳값을 통해 위상을 추정할 수 있다.
+  또한 유니타리 행렬에 대한 스펙트럼 정리에 따르면, (그렇다는 사실을 그냥
+  받아들이면) 유니타리 행렬의 모든 고윳값은 절댓값 $1$, 다시 말해 
+  단위율{\footnotesize unit modulus}을 지닌다. 따라서 고윳값이 위상을 특성으로
+  지녀 알고리즘은 고윳값으로 위상을 추정할 수 있다.
 \end{mdframed}
-$A$의 고유기저 $u_j$와 그 고윳값 $\lambda_j$ 그리고 $\ket{b}=
-\sum_{j=1}^N\beta_j\ket{u_j}$에 대해 $Ax$를 아래처럼 나타낼 수 있다.
+$A$의 (고유벡터로 구성한 기저인) 고유기저 $u_j$와 그 고윳값 $\lambda_j$
+그리고 $\ket{b}=\sum_{j=1}^N\beta_j\ket{u_j}$에 대해 $Ax$를 아래처럼 나타낼 수
+있다.
 \[
   \sum_{j=1}^N\beta_j\ket{u_j}\ket{\lambda_j}
 \]
@@ -156,17 +151,18 @@ $\ket{x}$를 구할 수 있다.
   \sum_{j=1}^N\beta\lambda_j^{-1}\ket{u_j}=A^{-1}\ket{b}=\ket{x}.
 \]
 물론 여기서 $f$는 선형사상일 뿐 유니타리 변환이 아니다. 따라서 실패할 수도 있다.
-또한 HHL 알고리즘의 성능을 결정하는 요인은 $A$의 최대 고윳값과 최소 고윳값 간의
+\section{조건수 $\pmb{k}$와 HHL의 로그시간 성능}
+HHL 알고리즘의 성능을 결정하는 요인은 $A$의 최대 고윳값과 최소 고윳값 간의
 비율을 나타내는 $A$의 조건수{\footnotesize condition number} $k$다. $k$가 증가하면
 $A$에 역행렬이 존재하지 않을 확률도 증가한다. 이에 HHL 알고리즘은
-$A$에서 역행렬이 존재하는 이른바 특이행렬{\footnotesize singular matrix}들의 값이
-$1/k$와 $1$ 사이의 값이라고 가정한다. 다시 말해 다음을 가정한다.
+역행렬이 존재하는 이른바 특이행렬{\footnotesize singular matrix}들의 값을
+$1/k$와 $1$ 사이의 값으로 가정한다. 즉 다음을 가정한다.
 \[
   \frac{I}{k^2}\leq A^{\dagger}A \leq I
 \]
 그리하여 HHL 알고리즘의 실행시간은 $\ket{x}$ 상태의 출력 과정상 취할 수 있는
-오류 $\epsilon$에 대해 $k^2\log(N)/\epsilon$에 비례한다.
-
+오류 $\epsilon$에 대해 $k^2\log(N)/\epsilon$와 비례한다.
+\section{HHL의 결정적인 가정들과 ``양자''기계학습의 기초}
 여기까지 HHL 알고리즘이 취하는 로그시간 해법을 개괄했다. 애론슨{\footnotesize
 Scott Aaronson}은 몇 가지 결정적인 가정을 지적한다.
 
@@ -174,11 +170,12 @@ Scott Aaronson}은 몇 가지 결정적인 가정을 지적한다.
 재빠르게 읽어들여야 한다. 벡터상의 성분들을 양자중첩으로 한 번에 읽는
 ``양자 RAM'' 혹은 QRAM 같은 장치를 가정해서 어떻게든 재빠르게 읽어들이지
 않으면 결국 $\ket{b}$를 준비하는 작업에만 어떤 상수 $c$에 대해 $N^c$ 스텝이
-걸린다. 이미 로그시간 해법에서 벗어났다. 
+걸린다. 이미 로그시간 해법에서 벗어났다. 그리고 QRAM이 있더라도 $\mathbf{b}$는
+대체로 균일한 벡터여야 한다. 즉 어떤 $b_i$가 나머지보다 특별히 커서는 안 된다.
 
-둘째, 마찬가지로 $\ket{b}$를 시간 $t$에 따른 해밀토니안 $A$의 이상적인 변화
-$e^{iAt}$로 다루는 작업에 $N^c$ 스텝이 걸리지 않으려면  각 $i$에 대해 QRAM이
-존재하여 재빠르게 저장해야 하며, $A$가 희소{\footnotesize sparse} 행렬, 다시
+둘째, $\ket{b}$를 시간 $t$에 따른 해밀토니안 $A$의 이상적인 변화
+$e^{iAt}$로 다루는 작업은 $N^c$ 스텝이 걸리지 않으려면 각 $i$에 대해 QRAM이
+존재하여 재빠르게 저장해야 하며 $A$가 희소{\footnotesize sparse} 행렬, 다시
 말해 $A$가 어떤 고정된 정수 $s$에 대해 행마다 $0$이 아닌 성분은 $s$개만 지녀야
 한다.
 
@@ -189,7 +186,7 @@ $N^c$ 꼴을 보이면 말짱 도루묵이다.
 넷째, 해 벡터 $x=(x_1,\ldots,x_n)$을 나타내는 작업에만 $n$ 스텝이 요구된다.
 HHL 알고리즘은 $x$ 자체가 아니라 $\log n$ 큐비트의 양자상태 $\ket{x}$를
 출력하는데, 특정 성분 $x_i$를 측정하려면 알고리즘을 대략 $n$번 반복해야
-하기에, 지수적인 가속이 실패한다.
+하기에 지수적인 가속이 실패한다.
 
 요약하면, 이들 조건을 전부 지키면서 HHL 자체를 응용할 구석은 많지 않다. 다만
 HHL은 여타 양자기계학습 알고리즘에 대해 템플릿 역할을 맡을 수 있다. $\ket{b}$를
