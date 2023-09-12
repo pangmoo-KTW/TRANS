@@ -10,6 +10,7 @@
 \hypersetup{
   colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
 }
+\newtheorem{prob}{문제}[chapter]
 \newtheorem{defn}{정의}[chapter]
 \newtheorem{theo}{정리}[chapter]
 \newtheorem{thes}{논제}[chapter]
@@ -20,6 +21,28 @@
 \date{최초 작성 : 2023년 9월 4일 \\ 최근 편집 : \today}
 \begin{document}
 \maketitle
+\chapter{블록인코딩 개론}
+양자컴퓨터 개발의 초기 동기는 양자계{\footnotesize quantum systems}의
+시뮬레이션이다. 그리고 이들 시뮬레이션 가운데 가장 간단한 것이 \textbf{해밀토니언
+시뮬레이션}이다.
+\begin{prob}[해밀토니언 시뮬레이션]
+  $H$가 $m$개의 파울리 항으로 구성한 해밀토니언이라고 하자. 즉 파울리 행렬의
+  텐서곱 $E_a$에 대해 $H$는 아래와 같다.
+  \[
+    H=\sum_{a=1}^m\lambda_aE_a
+  \]
+  $e^{iHt}$에 근사하여 $\|U-e^{iHt}\|\leq\epsilon$인 유니타리 $U$를 구현하는
+  알고리즘을 찾아라.
+\end{prob}
+$H$는 말하자면 상호작용하는 항인 $E_a$들의 합으로, $\lambda_a$는 이런 상호작용의
+강도를 결정한다. 트로터 근사{\footnotesize Trotter approximations}에 따르면
+충분히 큰 $r$에 대해 아래가 성립한다.
+\[
+  e^{-iHt}\approx(e^{-iE_1t/r}e^{-iE_2t/r},\cdots e^{-iE_mt/r})^r
+\]
+하지만 이 해법은 최적이 아니다. 왜냐하면 위와 같은 근사를 구현하는 게이트 
+복잡도{\footnotesize gate complexity}는 $\textrm{poly}(1/\epsilon)$이기 
+때문이다.
 \chapter{블록 인코딩 개요}
 해밀토니언 $H$는 계의 전체 에너지에 대응하는 연산자이며, 해밀토니언 시뮬레이션은
 1982년 파인만{\tiny Richard Feynman}이 고안한 양자정보학 문제다. 파인만의 요지는

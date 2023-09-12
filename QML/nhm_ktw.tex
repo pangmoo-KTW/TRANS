@@ -1,0 +1,42 @@
+\documentclass[a4paper,atbegshi,chapter,itemph,hidelinks]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{braket,hyperref,nicematrix}
+\usepackage{euler,enumitem,mdframed}
+\setlist{nosep}
+\title{계산과학2 (1)\\\textbf{주제: 역양자화}}
+\author{노현민-김태원 조}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\chapter{개요}
+\textbf{역양자화\footnotesize dequantization}란 양자 기계학습{\footnotesize
+quantum machine learning} 알고리즘을 분석하는 이론적인 도구로, 양자 판본보다 
+오직 다항시간상으로만{\footnotesize polynomially} 느린 고전 (데이터에 대한) 
+기계학습 알고리즘을 제시하여 양자 기계학습 알고리즘이 취한다고 알려진
+지수적인 양자 우위{\footnotesize exponential quantum advantage}를 의문에
+부치는 작업이다. 여기서 양자 기계학습 혹은 `QML'은 Harrow, Hassidim,
+Lloyd의 \snm{선형방정식계에 대한 양자 알고리즘}{\footnotesize Quantum Algorithm
+for Linear Systems of Equations, 2009}, 이른바 \emph{HHL 알고리즘}으로 발아한
+분야다. 이에 Aaronson 같은 이론가는 \snm{세부조항을 읽으시오}{\tiny Read the
+fine print, 2015}와 같은 비평을 남겼는데, HHL 알고리즘과 이를 바탕으로 삼은
+온갖 QML 알고리즘들이 너무 많은 조건을 요구한다는 요지였다. 3년 지나, Tang은
+HHL 알고리즘과 마찬가지로 `양자 위상 예측{\footnotesize quantum phase 
+estimation}'을 사용하는 Kerenidis와 Prakash의 양자 추천 알고리즘{\tiny Quantum
+recommendation systems, 2017}을 역양자화하여, 다시 말해 양자 위상 예측을 `특잇값
+분해에 의한 $\ell^2$ 노름 샘플링'과 대치하여 이 양자 추천 알고리즘에 대한
+고전 추천 알고리즘으로 내놓는다. \snm{추천 시스템에 대한 양자 알고리즘의 영향을
+받은 고전 알고리즘}{\tiny A quantum-inspired classical algorithm for 
+reccommendation systems, 2019}에 따르면 이 역양자화 알고리즘은 양자 판본에
+대해 오직 다항시간상의 감속을 보일 뿐이었다. 역양자화는 일견 기예처럼
+보이기도 하지만, 결정적인 함의는 대단히 기초적인 성격을 지닌다. 요컨대, 어떤 양자
+선형대수 알고리즘을 고전 알고리즘으로 (다항시간상의) 모사하기 어렵지 않다면, 이들
+양자 선형대수 알고리즘에서 `양자적인 것'이 무엇이냐고 반문할 수 있다. 한편
+이처럼 `양자적인 것'을 탐구하고자 한다면 역양자화가 제시하는 한계를 적극
+사용할 수 있을 테며, 조만간 양자컴퓨터를 기계학습이라는 분야에 도입하고자 한다면
+이러한 의사결정에 역양자화의 결과가 경제적인 영향을 미칠 수 있다.
+
+\chapter{HHL}
+\end{document}
