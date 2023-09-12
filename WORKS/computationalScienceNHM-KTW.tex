@@ -10,30 +10,48 @@
 \chapterstyle{chappell}
 \setlist{nosep}
 \title{Computational Science II}
-\author{Kim Taewon}
+\author{Noh Hyeonmin and Kim Taewon}
 \date{\today}
 \begin{document}
 \maketitle\thispagestyle{empty}
 \newpage
 \tableofcontents
 \chapter{Introduction}
-\emph{Dequantization}, a process involving the presentation of classical 
-counterparts to specific quantum machine learning (QML) algorithms with only a
-polynomial slowdown, raises questions about the exponential quantum advantage
-of QML algorithms. 
+\emph{Dequantization}, the process of presenting classical counterparts to 
+specific quantum machine learning (QML) algorithms while incurring only a
+polynomial slowdown, raises questions about the claimed exponential quantum
+advantage of QML algorithms. At the core of QML and its asserted advantages
+lies HHL algorithm, developed by Harrow, Hassidim and Lloyd \cite{HHL2009}.
+It's noteworthy that Aaronson \cite{Aaronson2015} critiqued the HHL algorithm for
+its intricate `fine print' conditions, which also influence QML algorithms
+rooted in the HHL approach. 
 
-The bedrock of QML, as well as its claimed advantages,
-hinges upon the so-called HHL algorithm developed by Harrow, Hassidim
-and Lloyd \cite{HHL2009}. Notably, Aaronson \cite{Aaronson2015} critiqued the
-HHL algorithm for its numerous `fine print' conditions, which also impact QML
-algorithms influenced by the HHL approach. 
+A few years later, Tang \cite{Tang2019} dequantified the quantum recommendation
+algorithm initially proposed by Kerenidis and Prakash \cite{KP2017} with just
+a polynomial slowdown. This achievement was facilitated by the inherent
+similarities between quantum techniques, such as `quantum phase estimation',
+and classical linear algebra methods, exemplified by techniques like 
+`$\ell^2$-norm sampling through singular decomposition,' introduced several
+years ago \cite{Frieze2004}.
 
-Only a few years later, Tang 
-\cite{Tang2019} accomplished the dequantization of the quantum recommendation
-algorithm proposed by Kerenidis and Prakash \cite{KP2017}, while incurring merely
-a polynomial slowdown. This achievement was enabled by the inherent similarities
-between quantum techniques like `quantum phase estimation' and classical linear
-algebraic methods, such as `$\ell^2$-norm sampling through singular decmoposition'.
+The central implication of this outcome is that if quantum linear algebra
+algorithms can be efficiently dequantized, it prompts us to reevaluate the 
+fundamental concept and applicability of the term ``quantum'' itself concerning
+algorithms. However, as Cotler, Huang, and McClean \cite{Cotler2021} assert,
+such skepticism loses its significance when dequantization is applied to data
+originating from quantum systems. In cases where classical computation cannot
+accurately capture experimental quantum data, QML undeniably offers large
+speedups. Therefore, such doubt may be resolved through the accumulation of an
+extensive amount of experimental quantum data, often referred as a matter of 
+`Quantum Random Access Memory' (QRAM). This is the direction of above three
+with Preskill and others \cite{Huang2022} take.
+
+Nevertheless, the uncharted territory at the intersection of quantum linear 
+algebra and classical linear algebra remains an area ripe for exploration. This
+paper delves with clarity into the historical overview provided above and 
+ultimately underscores its significance by addressing a recently suggested 
+problem on `classical and quantum singular value transformation' by Bakshi and
+Tang \cite{Bakshi2023}.
 \bibliography{ref}
 \bibliographystyle{plain}
 \end{document}

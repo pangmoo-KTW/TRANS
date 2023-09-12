@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  12 SEP 2023 20:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  12 SEP 2023 22:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -990,18 +990,18 @@ Package rerunfilecheck Info: File `computationalScienceNHM-KTW.out' has not chan
 (rerunfilecheck)             Checksum: 1195E37EF5F5220A96ED0ED338CCF175;291.
  ) 
 Here is how much of TeX's memory you used:
- 24121 strings out of 477985
- 452231 string characters out of 5840058
- 1856388 words of memory out of 5000000
- 43962 multiletter control sequences out of 15000+600000
+ 24129 strings out of 477985
+ 452337 string characters out of 5840058
+ 1859388 words of memory out of 5000000
+ 43966 multiletter control sequences out of 15000+600000
  520530 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,11n,90p,481b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on computationalScienceNHM-KTW.pdf (5 pages, 99301 bytes).
+Output written on computationalScienceNHM-KTW.pdf (5 pages, 103796 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 102 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

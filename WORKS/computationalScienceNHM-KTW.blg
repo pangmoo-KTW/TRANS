@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: computationalScienceNHM-KTW.aux
 The style file: plain.bst
 Database file #1: ref.bib
-You've used 4 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            537 strings with 4845 characters,
-and the built_in function-call counts, 1667 in all, are:
-= -- 178
-> -- 49
+            567 strings with 5585 characters,
+and the built_in function-call counts, 3186 in all, are:
+= -- 313
+> -- 156
 < -- 3
-+ -- 20
-- -- 15
-* -- 104
-:= -- 251
-add.period$ -- 14
-call.type$ -- 4
-change.case$ -- 19
++ -- 63
+- -- 53
+* -- 232
+:= -- 515
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 50
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 81
-empty$ -- 135
-format.name$ -- 15
-if$ -- 378
+cite$ -- 8
+duplicate$ -- 120
+empty$ -- 234
+format.name$ -- 53
+if$ -- 678
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 10
-pop$ -- 17
+int.to.str$ -- 8
+missing$ -- 7
+newline$ -- 42
+num.names$ -- 18
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 42
 quote$ -- 0
-skip$ -- 69
+skip$ -- 100
 stack$ -- 0
-substring$ -- 127
-swap$ -- 36
+substring$ -- 208
+swap$ -- 40
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 32
 warning$ -- 0
-while$ -- 15
-width$ -- 5
-write$ -- 52
+while$ -- 25
+width$ -- 9
+write$ -- 93
