@@ -1,0 +1,39 @@
+\documentclass[a4paper,atbegshi]{memoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{braket,hyperref,nicematrix}
+\usepackage{enumitem,mdframed,}
+\hypersetup{
+  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
+  citecolor=magenta,
+}
+\chapterstyle{chappell}
+\setlist{nosep}
+\title{Computational Science II}
+\author{Kim Taewon}
+\date{\today}
+\begin{document}
+\maketitle\thispagestyle{empty}
+\newpage
+\tableofcontents
+\chapter{Introduction}
+\emph{Dequantization}, a process involving the presentation of classical 
+counterparts to specific quantum machine learning (QML) algorithms with only a
+polynomial slowdown, raises questions about the exponential quantum advantage
+of QML algorithms. 
+
+The bedrock of QML, as well as its claimed advantages,
+hinges upon the so-called HHL algorithm developed by Harrow, Hassidim
+and Lloyd \cite{HHL2009}. Notably, Aaronson \cite{Aaronson2015} critiqued the
+HHL algorithm for its numerous `fine print' conditions, which also impact QML
+algorithms influenced by the HHL approach. 
+
+Only a few years later, Tang 
+\cite{Tang2019} accomplished the dequantization of the quantum recommendation
+algorithm proposed by Kerenidis and Prakash \cite{KP2017}, while incurring merely
+a polynomial slowdown. This achievement was enabled by the inherent similarities
+between quantum techniques like `quantum phase estimation' and classical linear
+algebraic methods, such as `$\ell^2$-norm sampling through singular decmoposition'.
+\bibliography{ref}
+\bibliographystyle{plain}
+\end{document}
