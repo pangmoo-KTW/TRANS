@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1694271443 "lloyd2008hhl.tex" "lloyd2008hhl.pdf" "lloyd2008hhl" 1694271444 0
+["pdflatex"] 1695121627 "lloyd2008hhl.tex" "lloyd2008hhl.pdf" "lloyd2008hhl" 1695121629 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -364,10 +364,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "lloyd2008hhl.aux" 1694271444 2796 9e3a8a8bcca9ce0eaf2825434aa1c9af "pdflatex"
-  "lloyd2008hhl.out" 1694271444 1511 ae8a8938dd6850a721c5ef45eb96848f "pdflatex"
-  "lloyd2008hhl.tex" 1694271441 11067 8d5c1f6cbb919d3b58777babcf697cd5 ""
-  "lloyd2008hhl.toc" 1694271444 898 d231839310b3893ef426c9bfec21e95e "pdflatex"
+  "lloyd2008hhl.aux" 1695121628 2681 947a861074fba1cf81494e405f13d182 "pdflatex"
+  "lloyd2008hhl.out" 1695121628 1422 e80490dd1dcdcd943c50ea5c5f893c3d "pdflatex"
+  "lloyd2008hhl.tex" 1695121625 14733 fb660ab7bb7673241887369ef79d5a78 ""
+  "lloyd2008hhl.toc" 1695121628 825 4e8aa459381f3c429dc0837075ae42df "pdflatex"
   (generated)
   "lloyd2008hhl.aux"
   "lloyd2008hhl.log"

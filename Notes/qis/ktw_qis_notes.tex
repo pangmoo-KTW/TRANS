@@ -31,7 +31,7 @@
 
 고전적인 확률론이 자연을 충분하게 설명하지 못하는데도 자연스러워 보이는 이유는 
 \textbf{결어긋남\tiny decoherence}이라는 현상에서 비롯한다. 이를테면 상자를
-열었을 때 슈뢰딩거의 고양이는 생과 사의 \emph{중첩\tiny superposition}으로
+열었을 때 슈뢰딩거의 고양이는 생과 사의 \textbf{중첩\tiny superposition}으로
 나타나지 않는다. 고양이가 제 환경과 끊임없이 상호작용하기 때문이다. 고양이와
 환경 간의 상호작용은 고양이 계{\tiny system}의 정보를 누설하는 반면 양자
 중첩은 입자나 입자들의 군이 환경과 \emph{고립\tiny isolated}될 때 일어난다.
@@ -104,7 +104,8 @@ interference}이라는 현상이다. 간섭은 간단한 선형대수학으로 �
  \]
 이에 유클리드 노름 $\|\psi\|^2$가 자연스럽게 정의될 수 있다. 
  \[
-   \|\psi\|^2 = \begin{pmatrix}\overline{\alpha}&\overline{\beta}\end{pmatrix}
+   \|\psi\|^2 = \braket{\psi|\psi} =
+   \begin{pmatrix}\overline{\alpha}&\overline{\beta}\end{pmatrix}
    \begin{pmatrix}\alpha\\\beta\end{pmatrix}=|\alpha|^2+|\beta|^2
  \]
  내적 $\braket{\psi|\phi}$는 아래 성질을 만족한다.
@@ -123,7 +124,7 @@ interference}이라는 현상이다. 간섭은 간단한 선형대수학으로 �
 결과에 대한 진폭이다. 따라서 상태 $\ket\psi$에서 상태 $\ket\phi$에 이르는
 확률 $P(\ket\phi)$에 대해 보른 규칙을 다시 서술할 수 있다.
 \[
-  P(\ket\phi)=|\braket{\psi|phi}|^2
+  P(\ket\phi)=|\braket{\psi|\phi}|^2
 \]
 이에 행렬을 $45^{\circ}$ 즉 $\frac{\pi}{4}$만큼 회전하며 노름을 보존하는
 아래 같은 유니타리 행렬이 있다고 하자.
@@ -728,12 +729,12 @@ $\left(\frac{1}{2}\right)^n$이다. 사실상 불가능하다.
 \chapter{얽힘}
 정보이론에 따르면 $n$비트를 보낼 때 $n$비트 이상의 정보를 송신할 수는
 없다. 한편 앨리스와 밥은 큐비트 하나로 고전 비트 두 개를 보낼 수 있다.
-물론 우선 앨리스와 밥이 얽힘을 공유해야 한다. 이런 얽힘을 미리
+물론 우선 앨리스와 밥은 얽힘을 공유해야 한다. 이런 얽힘을 미리
 공유하지 않았다면 앨리스는 큐비트 하나당 하나의 비트만 보낼 수 있다. 이를
 \textbf{홀레보{\tiny Holevo}의 정리}라고 부른다. 만약 앨리스가 $\ket{\psi}=
 \alpha\ket0+\beta\ket1$을 밥에게 보낸다면 밥은 $\ket{\psi}$를 오직 한 번만
 측정할 수 있고 $\ket{\psi}$상의 나머지 정보는 유실된다.
 
 앨리스와 밥이 벨 쌍 $\ket=\frac{\ket{00}+\ket{11}}{\sqrt2}$를 미리 공유한다고
-하자.
+하자. 
 \end{document}

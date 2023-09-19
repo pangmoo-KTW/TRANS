@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  9 SEP 2023 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  19 SEP 2023 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1281,225 +1281,141 @@ Overfull \hbox (2.7778pt too wide) detected at line 7
  \OT1/cmr/m/up/10 1.5  
  []
 
-
-Overfull \hbox (2.7778pt too wide) detected at line 8
- \OT1/cmr/m/up/10 1.6  
- []
-
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimen@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\wd' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern -0.55736pt
-(hyperref)                removed on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\copy' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 0.27867pt
-(hyperref)                removed on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\raise' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ex@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\copy' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 0.27867pt
-(hyperref)                removed on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\box' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 14.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 14.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/b/up' undefined
-(Font)              using `OT1/cmr/b/n' instead on input line 15.
+(Font)              using `OT1/cmr/b/n' instead on input line 31.
 
 [2
 
-]
-Package mdframed Info: mdframed works in twoside mode on input line 66.
+] [3]
+Package mdframed Info: mdframed works in twoside mode on input line 119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 66.
+(mdframed)              on input line 119.
 
-Overfull \hbox (2.63892pt too wide) in paragraph at lines 66--74
+Overfull \hbox (2.63892pt too wide) in paragraph at lines 119--127
 \LUC/nanummj/m/n/10/d5 t\LUC/nanummj/m/n/10/bc ^^@\LUC/nanummj/m/n/10/d1 †\LUC/nanummj/m/n/10/b2 »\LUC/nanummj/m/n/10/c5 ∏ \LUC/nanummj/m/n/10/c2 ‹\LUC/nanummj/m/n/10/bb ¨\LUC/nanummj/m/n/10/b8 ^^H\LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/c1 X\LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/n/10/b7 Ä \LUC/nanummj/m/n/10/c5 ë\LUC/nanummj/m/n/10/c7 ê\LUC/nanummj/m/n/10/c8 ^^U\LUC/nanummj/m/n/10/bc Ù\LUC/nanummj/m/n/10/d5 Y\LUC/nanummj/m/n/10/c7 X \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/cd ^^H \LUC/nanummj/m/n/10/bb 8\LUC/nanummj/m/n/10/c8 ^^\ \LUC/nanummj/m/n/10/ac ^^@\LUC/nanummj/m/n/10/c6 ¥\LUC/nanummj/m/n/10/b3 p \LUC/nanummj/m/n/10/d5 X\LUC/nanummj/m/n/10/b0 ò\LUC/nanummj/m/n/10/b8 \\OT1/cmr/m/up/10 , \LUC/nanummj/m/n/10/c5 ë\LUC/nanummj/m/n/10/c7 ê\LUC/nanummj/m/n/10/ac ƒ\OT1/cmr/m/up/8 quantum
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 80.
+Package mdframed Info: mdframed works in twoside mode on input line 133.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 80.
-Package mdframed Info: mdframed works in twoside mode on input line 94.
+(mdframed)              on input line 133.
+Package mdframed Info: mdframed works in twoside mode on input line 147.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 94.
+(mdframed)              on input line 147.
 LaTeX Font Info:    Font shape `LUC/nanummj/m/it' in size <10> not available
-(Font)              Font shape `LUC/nanummj/m/sl' tried instead on input line 97.
+(Font)              Font shape `LUC/nanummj/m/sl' tried instead on input line 150.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 102.
+ mdframed uses option nobreak mdframed on input line 155.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 103.
-Package mdframed Info: mdframed works in twoside mode on input line 109.
+ mdframed uses option nobreak mdframed on input line 156.
+Package mdframed Info: mdframed works in twoside mode on input line 162.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 109.
+(mdframed)              on input line 162.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 113.
-[3]
-Package mdframed Info: mdframed works in twoside mode on input line 122.
+ mdframed uses option nobreak mdframed on input line 166.
+[4]
+Package mdframed Info: mdframed works in twoside mode on input line 175.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 122.
-Package mdframed Info: mdframed works in twoside mode on input line 126.
+(mdframed)              on input line 175.
+Package mdframed Info: mdframed works in twoside mode on input line 179.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 126.
+(mdframed)              on input line 179.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 133.
- [4]
-Overfull \hbox (1.59683pt too wide) in paragraph at lines 139--142
+ mdframed uses option nobreak mdframed on input line 186.
+ [5]
+Overfull \hbox (1.59683pt too wide) in paragraph at lines 192--195
 $\U/eur/m/n/10 A$ \LUC/nanummj/m/n/10/c7 X \OT1/cmr/m/up/10 (\LUC/nanummj/m/n/10/ac ‡\LUC/nanummj/m/n/10/c7  \LUC/nanummj/m/n/10/bc °\LUC/nanummj/m/n/10/d1 0\LUC/nanummj/m/n/10/b8 \ \LUC/nanummj/m/n/10/ad l\LUC/nanummj/m/n/10/c1 1\LUC/nanummj/m/n/10/d5 \ \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/c8 ^^@\LUC/nanummj/m/n/10/c7 x\OT1/cmr/m/up/10 ) \LUC/nanummj/m/n/10/ac ‡\LUC/nanummj/m/n/10/c7  \LUC/nanummj/m/n/10/ae 0\LUC/nanummj/m/n/10/c8 ^^@ $\U/eur/m/n/10 u[]$ \LUC/nanummj/m/n/10/c6 @ \LUC/nanummj/m/n/10/ad ¯ \LUC/nanummj/m/n/10/ac ‡\LUC/nanummj/m/n/10/c7 3\LUC/nanummj/m/n/10/ac ^^R $\U/eur/m/n/10 ^^U[]$ \LUC/nanummj/m/n/10/ad ¯\LUC/nanummj/m/n/10/b9 ¨\LUC/nanummj/m/n/10/ac ‡ $[] \U/euf/m/n/10 = [][] \U/eur/m/n/10 ^^L[] []$
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
+(hyperref)                removing `math shift' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 152.
+(hyperref)                removing `\setbox' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 152.
+(hyperref)                removing `\z@' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 152.
+(hyperref)                removing `\hbox' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimen@' on input line 152.
+(hyperref)                removing `\dimen@' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\wd' on input line 152.
+(hyperref)                removing `\wd' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 152.
+(hyperref)                removing `\z@' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern -0.55736pt
-(hyperref)                removed on input line 152.
+(hyperref)                removed on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\copy' on input line 152.
+(hyperref)                removing `\copy' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 152.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 0.27867pt
-(hyperref)                removed on input line 152.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\raise' on input line 152.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ex@' on input line 152.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\copy' on input line 152.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 152.
+(hyperref)                removing `\z@' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 0.27867pt
-(hyperref)                removed on input line 152.
+(hyperref)                removed on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\box' on input line 152.
+(hyperref)                removing `\raise' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 152.
+(hyperref)                removing `\ex@' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
+(hyperref)                removing `\copy' on input line 205.
 
-[5] [6] [7
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 0.27867pt
+(hyperref)                removed on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\box' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 205.
+
+[6] [7] [8
 
 ]
 \tf@toc=\write6
@@ -1510,13 +1426,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `lloyd2008hhl.out' has not changed.
-(rerunfilecheck)             Checksum: AE8A8938DD6850A721C5EF45EB96848F;1511.
+(rerunfilecheck)             Checksum: E80490DD1DCDCD943C50EA5C5F893C3D;1422.
  ) 
 Here is how much of TeX's memory you used:
- 26383 strings out of 477985
- 494113 string characters out of 5840058
- 1878388 words of memory out of 5000000
- 45905 multiletter control sequences out of 15000+600000
+ 26382 strings out of 477985
+ 494095 string characters out of 5840058
+ 1887388 words of memory out of 5000000
+ 45904 multiletter control sequences out of 15000+600000
  567801 words of font info for 229 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,15n,106p,469b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1524,10 +1440,10 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nan
 umtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr
 /share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb>
-Output written on lloyd2008hhl.pdf (7 pages, 3512996 bytes).
+Output written on lloyd2008hhl.pdf (8 pages, 3528129 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
+ 550 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
  17 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
