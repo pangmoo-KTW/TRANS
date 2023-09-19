@@ -1,8 +1,10 @@
 \documentclass[a4paper,atbegshi,chapter,itemph,hidelinks]{oblivoir}
-\usepackage[dbl4x6]{fapapersize}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{braket,hyperref,nicematrix}
-\usepackage{euler,enumitem,mdframed}
+\usepackage{euler,enumitem,mdframed,ob-chapstyles}
+\chapterstyle{chappell}
 \setlist{nosep}
 \title{계산과학2 (1)}
 \author{노현민-김태원 조}
@@ -11,244 +13,83 @@
 \maketitle
 \tableofcontents
 \chapter{HHL}
-HHL은 양자기계학습이라는 분야 일반과 더불어 양자기계학습이 고전기계학습에 대해
-속도 증진을 취한다는 주장의 바탕을 이루는 양자 알고리즘으로, 연립일차방정식의
-해가 지니는 특성을 추정한다.
-
-고전 알고리즘은 선형방정식 $N$개의 해를 근사하는 작업에만 $N$에 비례하는
-시간을 요구하고 해를 작성하는 시간에는 $N$에 따른 시간을 요구한다. 하지만
-부분집합의 가중합만이 필요한 기계학습에서 그렇듯이 우리는 연립일차방정식의 전체
-해가 아니라 해의 어느 함수를 계산하고자 할 수도 있다. HHL의 요는 양자컴퓨터가
-그러한 함수의 값을 $N$의 로그에 비례하는 시간과 조건수에 대해 다항시간으로 
-근사할 수 있다는 것이다. 이때 조건수는 시스템이 불량하거나 민감한 정도를
-나타내는 척도로, HHL의 경우 $N$에는 지수적인 속도 증진을 취하며 조건수에는
-비슷하고 오류에는 고전 컴퓨터보다 더 나쁜 성능을 보인다. 따라서 HHL은 $N$이
-크고 조건수가 작다면 충분히 유용한 양자 알고리즘이라는 것이 Harrold, Hassidim,
-Lloyd의 주장이다.
-
+\section{HHL 알고리즘}
 에르미트 $N\times N$ 행렬 $A$, 단위 벡터 $\pmb{b}$가 있다고 하자. 이때 에르미트
-행렬이란 켤레 전치가 자기 자신과 같은 복소정방행렬을 말한다. 연립일차방정식의
-해를 구하는 문제는 아래와 같은 $\mathbf{x}$를 찾는 것이다.
-\[
-  A\pmb{x}=\pmb{b}
-\]
-우선 $\pmb{b}$를 아래와 같은 양자 상태로 나타낸다.
+행렬이란 켤레 전치가 자기 자신과 같은 복소정방행렬이다. 연립일차방정식의
+해를 구하는 문제는 $A\pmb{x}=\pmb{b}$를 만족하는 $\mathbf{x}$를 찾는 것이다. 우선
+$\pmb{b}$를 아래와 같은 양자 상태로 나타낸다.
 \[
   \ket{b} = \sum_{i=1}^N b_i\ket{i}
 \]
-이에 해밀토니언 시뮬레이션이라는 기법을 사용해 $e^{iAt}$를 상이한 시간 $t$의 중첩
+이에 해밀토니언 시뮬레이션이라는 기법을 사용해 $e^{-iAt}$를 상이한 시간 $t$의 중첩
 $\ket{b}$에 적용한다. $e^{-iHt}$는 계의 총 에너지에 대응하는 연산자인 해밀토니언
 $H$의 시간 $t$에 따른 이상적인 변화를 말하는데, 해밀토니언 시뮬레이션은 최대
 오류 $\epsilon$에 대해 $\|U-e^{-iHt}\|\leq\epsilon$인 유니타리 변환 $U$에 
-근사하는 알고리즘을 찾는 문제다. 따라서 행렬 $A$를 해밀토니언으로 두고
+근사하는 알고리즘을 찾는 문제다. 그리하여 행렬 $A$를 해밀토니언으로 두고
 시간 $t$에 따른 복소평면상의 매끄럽고 이상적인 변화 결과 $e^{-iAt}$를 $\ket{b}$에
 적용하는 것, 다시 말해 $\ket{b}$를 $A$의 고유벡터 $u_j=e^{-iAt}$로 분해하여 이에
-대응하는 고윳값 $\lambda_j$를 취하는 것이다. 이후 $\ket{b}=\sum_{j=1}^N
-\beta_j\ket{u_j}$에 대해 연립일차방정식은 아래와 같은 꼴을 보인다.
+대응하는 고윳값 $\lambda_j$를 취하는 것이 HHL 알고리즘의 핵심 기법이다.
+
+이후 $\ket{b}=\sum_{j=1}^N\beta_j\ket{u_j}$에 대해 연립일차방정식은 아래와
+같은 꼴을 보인다.
 \[
-  \sum_{j=1}^N\beta_j\ket{u_j}\ket{\lambda_j}
+  \sum_{j=1}^N\beta_j\lambda_j\ket{u_j}
 \]
-이어서 정규화 상수 $C$에 대해 $\ket{\lambda_j}$를 $C\lambda^{-1}\ket{\lambda_j}$로
-보내는 선형사상을 적용한다. 물론 이때 이 연산이 유니타리가 아니기 때문에 
-이 과정에서 실패가 발생할 수 있다. 앞서 $e^{-iAt}$를 고유벡터 삼아 고윳값
-$\lambda_j$를 추정하는 기법을 위상 추정이라고 부르는데, 이 기법이 성립하려면
-연산자가 유니타리여(서 단위율을 지녀)야 하기 때문이다. 아무튼 성공하면 
-$\ket{\lambda_j}$ 항목을 uncompute해서 아래에 상응하는 상태를 취한다.
+물론 여기서 $\ket{u_j}$가 유니타리라는 보장은 없다. 따라서 이 과정에서 실패가
+발생할 수 있다. 이처럼 $e^{-iAt}$를 고유벡터 $\ket{u_j}$ 삼아서 고윳값
+$\lambda_j$를 추정하는 기법을 위상 추정이라고 부르는데, 위상 추정은 유니타리(라서
+단위율을 지니는) 연산자를 요구하기 때문이다. 
+
+아무튼 성공하면 $\ket{\lambda_j}$ 항목을 uncompute해서 $\ket{x}$에 상응하는
+상태를 취할 수 있다.
 \[
   \sum_{j=1}^N\beta_j\lambda_j^{-1}\ket{u_j}=A^{-1}\ket{b}=\ket{x}
 \]
-이때 유니타리 행렬의 모든 고윳값은 절댓값 $1$, 단위율을 지니기
-때문에 유니타리 연산자의 고윳값에 위상을 대응시킬 수 있다. 그리하여 $A$의 
-고유기저 $u_j$와 고윳값 $\lambda_j$ 그리고 $\ket{b}=\sum_{j=1}^N
-\beta_j\ket{u_j}$에 대해 $Ax$를 아래처럼 나타낼 수 있다. 
+이와 같은 역산에서 결정적인 역할을 맡는 것이 바로 조건수 $k$다. $k$는 $A$의 최대
+고윳값과 최소 고윳값의 비율이라고 보면 된다. 조건수가 크면 역산을 수행하기
+어렵고 그만큼 결과가 불안정하다. 이때 HHL은 $A$의 특잇값, 다시 말해 고윳값의
+제곱근이 $1/k$와 $1$ 가운데 있다고 아래처럼 가정한다.
 \[
-  \sum_{j=1}^N\beta_j\ket{u_j}\ket{\lambda_j}
+  k^{-2}I\leq A^{\dagger}A \leq I
 \]
+이러한 가정 아래 실행시간은 $k^2\log(N)/\epsilon$에 비례한다. 따라서 HHL은
+$k$와 $1/\epsilon$이 $\textrm{poly}\log(N)$일 때 지수적인 속도 증진을 보인다.
+\section{HHL의 `세부 조항'}
+HHL 알고리즘의 로그시간 해법을 개괄했다. HHL 알고리즘은 이후 양자기계학습이라는
+분야 자체의 초석이자 양자기계학습이 지수적인 속도 증진을 취한다는 주장의 근거로
+자리 잡았다. 이에 애론슨{\tiny Scott Aaronson}은 HHL의 결정적인 `세부 조항'{\tiny
+fine print}들을 지적한다.
+\hfill\break
+\begin{enumerate}[label=(\alph*)]
+  \item 벡터 $\pmb{b}$를 재빠르게 양자컴퓨터의 매모리에 적재해야 한다. 그래야
+    양자 상태 $\ket{b}=\sum_{i=1}^n b_i\ket{i}$를 마련할 수 있다. 이론상으로는
+    이른바  ``양자 RAM''을 사용하면 그만이다. 중첩을 통해 $b_i$를 전부 한꺼번에
+    읽는 장치다. 이런 QRAM이 있더라도 $\pmb{b}$는 대체로 균일해야 한다. 즉
+    어떤 $b_i$가 여타 성분보다 지나치게 크면 안 된다. $\pmb{b}$가 균일하지
+    않다면 QRAM이 $\pmb{b}$의 큰 성분에 대한 포인터를 지녀야 한다. 아무튼
+    $\ket{b}$를 마련하려면 어떤 상수 $c$에 대해 $n^c$ 스텝이 소요된다.
+  \item 양자컴퓨터가 여러 $t$ 값에 대해 $e^{-iAt}$ 꼴의 유니타리 변환을 적용할
+    수 있어야 한다. 이때 $A$가 희소행렬인 경우처럼 특수한 상황이 아니라면
+    $e^{-iAt}$를 적용하는 작업에만 $n^c$ 시간이 든다.
+  \item $A$가 가역행렬이어야 할 뿐 아니라 `가역하기 쉬운' 행렬이어야 한다.
+    앞서 언급했듯이 $k$가 $n^c$꼴로 늘어나면 지수적인 속도 증진이 사라진다.
+  \item $\pmb{x}$를 작성하는 작업에만 $n$ 스텝이 소요된다.
+    HHL은 $\pmb{x}$ 자체가 아니라 $\log_2n$ 큐비트로 구성된 양자 상태 $\ket{x}$를
+    내놓는데 이는 $\pmb{x}$의 성분을 진폭으로 근사하여 나타낸다. 이후
+    양자컴퓨터는 $\ket{x}$를 측정해 $\pmb{x}$에 관한 통계적인 정보를 취할 수 있다.
+    다만 특정 성분 $x_i$에 관한 정보를 취하려면 알고리즘을 대략 $n$번 반복해야
+    한다.
+\end{enumerate}
+\hfill\break
+애론슨의 의문은 HHL의 지수적인 속도 증진을 위해 이들 조건을 전부 지킬 일이
+많겠냐는 것이다. 
 
-$N\times N$ 에르미트{\footnotesize Hermitian} 행렬 $A$와 벡터 $\mathbf{b}$가 
-있다. 여기서 에르미트 행렬이란 켤레전치{\footnotesize conjugate transpose}가
-자기 자신과 같은 복소정방행렬{\footnotesize complex square matrix}을 뜻한다. 이에 
-연립일차방정식을 $\mathbf{x}$에 대해 푼다. 다시 말해 아래 식에서
-$\mathbf{x}$를 구한다.
-\[
-  A\mathbf{x}=\mathbf{b}
-\]
-이를테면 아래 연립일차방정식에서 $\mathbf{x}$는 $(b_1,b_2,b_3)$이다. 보통
-기초선형대수학 수업에서는 대각화와 가우스-조르단 소거법을 사용해 푼다.
-\begin{align*}
-  \begin{matrix}
-  1x_1+0x_2+0x_3 &= b_1 \\
-  0x_1+1x_2+0x_3 &= b_2\\
-  0x_1+0x_2+1x_3 &= b_3
-\end{matrix}\longrightarrow
-\begin{bmatrix}
-  1\\0\\0
-\end{bmatrix}x_1+
-\begin{bmatrix}
-  0\\1\\0
-\end{bmatrix}x_2+
-\begin{bmatrix}
-  0\\0\\1
-\end{bmatrix}x_3=&
-\begin{bmatrix}
-  b_1\\b_2\\b_3
-\end{bmatrix}
-  \\\longrightarrow
-\begin{bmatrix}
-  1&0&0\\0&1&0\\0&0&1
-\end{bmatrix}
-\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
-  =&\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}\longrightarrow
-  A\mathbf{x}=\mathbf{b}
-\end{align*}
-\section{양자상태 표현과 브라-켓 표기}
-$\mathbf{b}$를 아래와 같은 양자상태로 나타낸다.
-\[
-  \ket{b}=\sum_{i=1}^N b_i\ket{i}
-\]
-앞선 예시로 켓{\footnotesize ket} 표기 `$\ket{\cdot}$'를 도입하면 아래와 같다.
-\[
-  \ket{b}=\sum_{i=1}^{N=3}b_i\ket{i}=b_1\ket1+b_2\ket2+b_3\ket3=
-  b_1\begin{bmatrix}1\\0\\0\end{bmatrix}+b_2\begin{bmatrix}0\\1\\0\end{bmatrix}+
-  b_3\begin{bmatrix}0\\0\\1\end{bmatrix}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}
-\]
-\section{해밀토니언 시뮬레이션: 오일러 공식, 위상 인자, 유니타리}
-여기에 \textbf{해밀토니언 시뮬레이션\tiny Hamiltoniam simulation}이라는 기법을
-적용한다.
-\begin{mdframed}
-  \begin{center}\textbf{해밀토니언 시뮬레이션}\end{center}\noindent
-  해밀토니언 시뮬레이션이란 양자정보학의 기초 문제 가운데 하나로, 
-  양자계{\footnotesize quantum systems}의 시뮬레이션에 요구되는 계산복잡도와
-  알고리즘을 묻는다. 다시 말해 양자계의 (시간의 흐름에 따른) 진화 혹은
-  변화{\footnotesize evolution}를 구현하는 알고리즘을 구하는 문제다. 
-  파인만{\footnotesize Richard Feynman}이 해밀토니안의 고전적 시뮬레이션은 
-  계의 상태에 따른 지수적인{\footnotesize exponential} 감속을 요구하니
-  아무래도 양자컴퓨터 같은 게 필요하지 않겠냐며 1982년 고안한 문제다.
-
-  여기서 해밀토니안 $H$란 수학적으로 말하면 큐비트의 개수 $n$에 대한
-  $2^n\times 2^n$ 에르미트 행렬이고, 물리학적으로 말하면 계의 총 에너지에
-  대응하는 연산자다. 시간 $t$에 따른 해밀토니안 $H$의 이상적인 변화를
-  $e^{-iHt}$로 나타낸다. 
-  \begin{mdframed}
-    \begin{center}\textbf{오일러 공식} $\pmb{e^{i\theta}=\cos\theta+
-    i\sin\theta}$ \end{center}
-    복소평면, 다시 말해 $x$좌표가 복소수 $z$의 실수부분($\textrm{Re}(z)$)을
-    나타내고 $y$좌표가 $z$의 허수부분($\textrm{Im}(z)$)인 좌표평면상에서
-    모든 복소수 $z$를 아래처럼 나타낼 수 있다.
-    \[
-      z=re^{\theta}=r(\cos\theta+i\sin\theta)
-    \]
-    대충 말해 복소평면상의 한 단위를 $\theta$만큼 돌리고 $r$만큼 늘리면
-    모든 $z$를 나타낼 수 있고 이런 $z$가 평면상에서는 $\cos\theta+i\sin\theta$를
-    $r$만큼 늘린 꼴이라는 뜻이다. 이를 복소수의 \textbf{극 형식\footnotesize
-    polar form}이라고 한다. 또 여기서 단위 복소수 $e^{i\theta}$는 따로
-    \textbf{위상 인자\footnotesize phase factor}라고 부른다.
-    \begin{mdframed}
-      \begin{center}\textbf{위상 인자}\end{center}\noindent
-      양자역학에서 위상 인자란 $\ket{\psi}$와 $\bra{\phi}$에 곱하는
-      복소 계수 $e^{i\theta}$다. 단위 복소수이므로 곱하더라도 
-      \emph{전역 위상\footnotesize global phase}에서는 아무 일이 일어나지
-      않는다. 다시 말해 $e^{i\theta}(\ket0+\ket1)$와 $\ket0+\ket1$이 동치다.
-      하지만 이른바 \emph{상대 위상\emph relative phase}
-      $e^{i(\theta-\theta')}$이 있을 수 있으므로 
-      $e^{i\theta}\ket0+e^{i\theta'}\ket1$와 $\ket0+\ket1$은 동치가 아니다.
-    \end{mdframed}
-  \end{mdframed}
-  이 $e^{-iHt}$와
-  최대 오류 $\epsilon$에 대해 $\|U-e^{-iHt}\|\leq\epsilon$인
-  유니타리 변환 $U$과 근사하는 알고리즘을 찾는 문제가 바로 해밀토니안
-  시뮬레이션이다.
-  \begin{mdframed}
-    \begin{center}\textbf{유니타리}\end{center}
-    \noindent 복소정방행렬 $U$는 켤레전치 $U^{\dagger}$와 곱할 때 항등행렬
-    $I$가 나오면 유니타리라고 한다. 즉 $U^{\dagger}U=UU^{\dagger}=I$를
-    만족하는 $U$는 유니타리다.
-  \end{mdframed}
-\end{mdframed}
-그리하여 $\ket{b}$를 시간 $t$에 따른 (일종의) 해밀토니안 $A$의 이상적인 변화
-$e^{iAt}$로 다룬다. (아무튼 $A$라는 계에 $\mathbf{x}$라는 변환을 취한 결과가 
-$\mathbf{b}$이기 때문이고) 여기서 핵심은 $A$를 지수로 다룰 수 있다는 사실이다.
-\section{위상 추정 알고리즘: 유니타리 행렬의 고윳값}
-이 사실은 \textbf{위상 추정\footnotesize phase estimation}이라는 기법으로
-$\ket{b}$를 분해하도록 한다.
-\begin{mdframed}
-  \begin{center}\textbf{위상 추정 알고리즘}\end{center}
-  \noindent 주어진 유니타리 연산자의 고윳값에 대응하여 위상을 추정하는
-  알고리즘이다. 
-  \begin{mdframed}
-    \begin{center}\textbf{고윳값}\end{center}
-    \noindent 체 혹은 스칼라 집합 $K$에 대해 벡터공간 $V$상의 선형변환
-    $T:V\rightarrow V$가 주어질 때, $v\in V$와 $\lambda\in K$가 존재하여
-    \[
-      v\neq 0\quad\&\quad Tv=\lambda v
-    \]
-    를 만족하면 $v$는 $T$의 고유벡터이며 $\lambda$는 $T$의 고윳값이다.
-  \end{mdframed}
-  또한 유니타리 행렬에 대한 스펙트럼 정리에 따르면, (그렇다는 사실을 그냥
-  받아들이면) 유니타리 행렬의 모든 고윳값은 절댓값 $1$, 다시 말해 
-  단위율{\footnotesize unit modulus}을 지닌다. 따라서 고윳값이 위상을 특성으로
-  지녀 알고리즘은 고윳값으로 위상을 추정할 수 있다.
-\end{mdframed}
-$A$의 (고유벡터로 구성한 기저인) 고유기저 $u_j$와 그 고윳값 $\lambda_j$
-그리고 $\ket{b}=\sum_{j=1}^N\beta_j\ket{u_j}$에 대해 $Ax$를 아래처럼 나타낼 수
-있다.
-\[
-  \sum_{j=1}^N\beta_j\ket{u_j}\ket{\lambda_j}
-\]
-그리고 정규화 상수 $C$에 대한 선형사상 
-$f:\ket{\lambda_j}\mapsto C\lambda_j^{-1}\ket{\lambda_j}$를 적용하면 아래처럼
-$\ket{x}$를 구할 수 있다.
-\[
-  \sum_{j=1}^N\beta\lambda_j^{-1}\ket{u_j}=A^{-1}\ket{b}=\ket{x}.
-\]
-물론 여기서 $f$는 선형사상일 뿐 유니타리 변환이 아니다. 따라서 실패할 수도 있다.
-\section{조건수 $\pmb{k}$와 HHL의 로그시간 성능}
-HHL 알고리즘의 성능을 결정하는 요인은 $A$의 최대 고윳값과 최소 고윳값 간의
-비율을 나타내는 $A$의 조건수{\footnotesize condition number} $k$다. $k$가 증가하면
-$A$에 역행렬이 존재하지 않을 확률도 증가한다. 이에 HHL 알고리즘은
-역행렬이 존재하는 이른바 특이행렬{\footnotesize singular matrix}들의 값을
-$1/k$와 $1$ 사이의 값으로 가정한다. 즉 다음을 가정한다.
-\[
-  \frac{I}{k^2}\leq A^{\dagger}A \leq I
-\]
-그리하여 HHL 알고리즘의 실행시간은 $\ket{x}$ 상태의 출력 과정상 취할 수 있는
-오류 $\epsilon$에 대해 $k^2\log(N)/\epsilon$와 비례한다.
-\section{HHL의 결정적인 가정들과 ``양자''기계학습의 기초}
-여기까지 HHL 알고리즘이 취하는 로그시간 해법을 개괄했다. 애론슨{\footnotesize
-Scott Aaronson}은 몇 가지 결정적인 가정을 지적한다.
-
-첫째, $\mathbf{b}$라는 벡터를 양자상태 $\ket{b}=\sum_{i=1}^Nb_i\ket{i}$로 어떻게든
-재빠르게 읽어들여야 한다. 벡터상의 성분들을 양자중첩으로 한 번에 읽는
-``양자 RAM'' 혹은 QRAM 같은 장치를 가정해서 어떻게든 재빠르게 읽어들이지
-않으면 결국 $\ket{b}$를 준비하는 작업에만 어떤 상수 $c$에 대해 $N^c$ 스텝이
-걸린다. 이미 로그시간 해법에서 벗어났다. 그리고 QRAM이 있더라도 $\mathbf{b}$는
-대체로 균일한 벡터여야 한다. 즉 어떤 $b_i$가 나머지보다 특별히 커서는 안 된다.
-
-둘째, $\ket{b}$를 시간 $t$에 따른 해밀토니안 $A$의 이상적인 변화
-$e^{iAt}$로 다루는 작업은 $N^c$ 스텝이 걸리지 않으려면 각 $i$에 대해 QRAM이
-존재하여 재빠르게 저장해야 하며 $A$가 희소{\footnotesize sparse} 행렬, 다시
-말해 $A$가 어떤 고정된 정수 $s$에 대해 행마다 $0$이 아닌 성분은 $s$개만 지녀야
-한다.
-
-셋째, $A$는 역행렬의 존재에 의해 그저 가역행렬이기만 해서는 안 된다. 말하자면,
-강력하게 가역이어야 한다. 즉 앞서 언급한 $k=|\lambda_{\max}/\lambda_{\min}|$가
-$N^c$ 꼴을 보이면 말짱 도루묵이다.
-
-넷째, 해 벡터 $x=(x_1,\ldots,x_n)$을 나타내는 작업에만 $n$ 스텝이 요구된다.
-HHL 알고리즘은 $x$ 자체가 아니라 $\log n$ 큐비트의 양자상태 $\ket{x}$를
-출력하는데, 특정 성분 $x_i$를 측정하려면 알고리즘을 대략 $n$번 반복해야
-하기에 지수적인 가속이 실패한다.
-
-요약하면, 이들 조건을 전부 지키면서 HHL 자체를 응용할 구석은 많지 않다. 다만
-HHL은 여타 양자기계학습 알고리즘에 대해 템플릿 역할을 맡을 수 있다. $\ket{b}$를
-\emph{어떻게} 마련할 것인가? $e^{-iAt}$를 \emph{어떻게} 적용할 것인가? 
-$\ket{x}$를 \emph{어떻게} 측정할 것인가? 이들 물음에 답하는 것이 HHL 이후
-양자기계학습 알고리즘들의 과업이다. 
-
-HHL의 요는 실상 $Ax=b$의 해를 구하는 로그시간 방법이 아니라 임의의 양자알고리즘을
-$2^n$개의 선형방정식으로 이루어진 연립일차방정식으로 \emph{시뮬레이션}하여  
-속도 증진을 이룰 수 있다는 것이다. 이에 탕{\footnotesize Ewin Tang}이 반문하기를,
-이런 시뮬레이션을 고전 컴퓨터가 시뮬레이션할 수 있다면, 여기서 ``양자''라는 
-표현에는 무슨 의미가 있는가?
-\chapter{추천 알고리즘}
+물론 HHL은 여타 양자 기계학습 알고리즘을 작성하기 위한 템플릿으로 기능할 수 있다.
+$\ket{b}$의 마련 방법, $e^{-iAt}$의 적용 방법, $\ket{x}$의 측정 방법 같은 부분
+물음을 제시한 셈이다. 실상 $A\pmb{x}=\pmb{b}$의 해를 구하는 로그시간 실질적인
+방법보다는 $A\pmb{x}= \pmb{b}$를 양자 시뮬레이션하여 속도 증진을 이룰 수 있다는
+쪽이 HHL의 요지에 가깝다. 이에 탕{\tiny Ewin Tang}이 반문한다. 이런 양자
+시뮬레이션을 고전 컴퓨터로 다시 큰 감속 없이 시뮬레이션할 수 있다면 ``양자''는
+무슨 뜻인가?
+\chapter{추천}
 \end{document}
