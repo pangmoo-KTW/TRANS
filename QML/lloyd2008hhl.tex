@@ -1,4 +1,4 @@
-\documentclass[a4paper,atbegshi,chapter,itemph,hidelinks]{oblivoir}
+\documentclass[a4paper,atbegshi,chapter,itemph,hidelinks,14pt]{oblivoir}
 \usepackage{fapapersize}
 \usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -10,8 +10,31 @@
 \author{노현민-김태원 조}
 \date{\today}
 \begin{document}
-\maketitle
+\maketitle\pagestyle{empty}\newpage
 \tableofcontents
+\chapter{개요}
+\emph{역양자화\footnotesize dequantization}는 특정 양자 기계학습 알고리즘의
+고전 기계학습 판본을 오직 다항 감속과 함께 제시하는 기법이다. 
+
+양자 기계학습과 양자 기계학습이 취한다고들 하는 계산적인 우위는 HHL 알고리즘에
+바탕한다. 그러나 혹자가 보기에 여기에는 몇 가지 치명적인 가정이 존재하며 HHL
+알고리즘에 따라 발전한 여타 양자 기계학습 알고리즘도 마찬가지였다.
+
+이후 탕{\tiny Ewin Tang}은 양자 추천 알고리즘 하나를 오직 다항 감속과 함께
+역양자화한다. 양자 위상 추정과 같은 양자 기법과 종래의 선형 대수 기법 간의
+긴밀한 관계를 포착한 결과였다. 이 결과의 핵심 함의는 양자 선형대수 알고리즘을
+효율적으로 역양자화할 수 있으니 ``양자''라는 용어의 근본 개념과 용래를 재고해야
+한다는 것이다. 
+
+그러나 이후 일군의 연구자들이 주장하기를 역양자화는 양자계에서 비롯하는
+데이터에 적용하기 어려운 기법이다. 양자 실험으로 취한 양자 데이터에 대해 양자
+기계학습 알고리즘은 부인할 수 없는 속도 증진을 일으키기 때문이다. 따라서 
+실질적으로 QRAM을 비롯하여 실험 양자 데이터를 개발 및 연구해서 이런 의문을 
+해소할 수 있다는 것이다. 
+
+그런데도 양자 선형대수와 고전 선형대수의 알고리즘적인 관계는 아직 미지의
+영역이다. 본고는 상술한 과정을 일별하고 역양자화 기법의 의의를 탕이 최근
+제안한 구체적인 문제로 명시한다. 
 \chapter{HHL}
 \section{HHL 알고리즘}
 에르미트 $N\times N$ 행렬 $A$, 단위 벡터 $\pmb{b}$가 있다고 하자. 이때 에르미트
@@ -40,7 +63,7 @@ $H$의 시간 $t$에 따른 이상적인 변화를 말하는데, 해밀토니언
 $\lambda_j$를 추정하는 기법을 위상 추정이라고 부르는데, 위상 추정은 유니타리(라서
 단위율을 지니는) 연산자를 요구하기 때문이다. 
 
-아무튼 성공하면 $\ket{\lambda_j}$ 항목을 uncompute해서 $\ket{x}$에 상응하는
+아무튼 성공하면 $\lambda_j$ 항목을 역산해서 $\ket{x}$에 상응하는
 상태를 취할 수 있다.
 \[
   \sum_{j=1}^N\beta_j\lambda_j^{-1}\ket{u_j}=A^{-1}\ket{b}=\ket{x}
@@ -88,8 +111,6 @@ fine print}들을 지적한다.
 $\ket{b}$의 마련 방법, $e^{-iAt}$의 적용 방법, $\ket{x}$의 측정 방법 같은 부분
 물음을 제시한 셈이다. 실상 $A\pmb{x}=\pmb{b}$의 해를 구하는 로그시간 실질적인
 방법보다는 $A\pmb{x}= \pmb{b}$를 양자 시뮬레이션하여 속도 증진을 이룰 수 있다는
-쪽이 HHL의 요지에 가깝다. 이에 탕{\tiny Ewin Tang}이 반문한다. 이런 양자
-시뮬레이션을 고전 컴퓨터로 다시 큰 감속 없이 시뮬레이션할 수 있다면 ``양자''는
-무슨 뜻인가?
+쪽이 HHL의 요지에 가깝다. 
 \chapter{추천}
 \end{document}
