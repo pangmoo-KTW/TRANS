@@ -1,0 +1,112 @@
+\documentclass[a4paper,atbegshi,chapter,itemph,]{oblivoir}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{braket,hyperref,nicematrix,graphicx,xcolor,caption}
+\usepackage{euler,enumitem,mdframed,ob-chapstyles}
+\hypersetup{colorlinks=true,linkcolor=magenta,citecolor=magenta,urlcolor=cyan,}
+\chapterstyle{chappell}
+\newtheorem{defn}{정의}[chapter]
+\newtheorem{theo}{정리}[chapter]
+\newtheorem{thes}{논제}[chapter]
+\newtheorem{axio}{공리}[chapter]
+\setlist{nosep}
+\title{계산과학2}
+\author{노현민-김태원 조}
+\date{\today}
+\begin{document}
+\maketitle\pagestyle{empty}\newpage
+\tableofcontents
+\chapter{스펙트럼 정리}
+\begin{defn}\normalfont
+  내적공간상의 연산자가 자신의 켤레전치와 가환이면 \textbf{정규\tiny normal}라고
+  한다. 즉 아래를 만족하는 연산자 $T\in\mathcal{L}(V)$는 정규다.
+  \[
+    TT^{\dagger}=T^{\dagger}T
+  \]
+\end{defn}
+\begin{defn}\normalfont
+  연산자 $T\in\mathcal{L}(V)$가 $T=T^{\dagger}$를 만족하는 경우 
+  \textbf{에르미트\tiny Hermitian}라고 한다.
+\end{defn}
+\begin{theo}\normalfont
+  모든 에르미트 연산자는 정규다.
+\end{theo}
+\begin{theo}\normalfont
+  $\mathbb{F}=\mathbb{C}$이며 $T\in\mathcal{L}(V)$라고 하면, 아래
+  명제들은 동치다.
+  \begin{enumerate}[label=(\alph*)]
+    \item $T$는 정규다.
+    \item $V$는 $T$의 고유벡터를 정규직교 기저로 지닌다. 
+    \item $T$는 $V$의 어떤 정규직교 기저에 대해 대각행렬이다.
+  \end{enumerate}
+\end{theo}
+\chapter{해밀토니언}
+아래와 같은 유니타리 변환은 연속적일까?
+\[
+  \ket{\psi} \rightarrow U\ket{\psi}
+\]
+아니다. 다만 물리학에서 시간(에 따른 변환)은 연속적인 대상이다. 따라서 위와
+같은 변환을 어떤 시간 구간상 상태가 진화 혹은 변화하는 연속적인 프로세스의
+결과로 소화해야한다. 이를 가능하게 하는 것이 바로 \textbf{해밀토니언\tiny
+hamiltonian}이다. 해밀토니언은 슈뢰딩거 방정식에 등장하며 계의 총 에너지를
+나타내는 연산자로 쓰인다. 
+\[
+  i\frac{d}{dt}\ket{\psi} = H\ket{\psi}
+\]
+슈뢰딩거 방정식을 풀어 $t$만큼의 시간이 흐른 뒤의 상태를 나타내면 아래와 같다.
+\[
+  \ket{\psi(t)} = e^{-iHt}\ket{\psi(0)}
+\]
+그런데 여기서 (에르미트) 행렬 $H$를 지수로 다루는 표기를 이해하는 것이 문제다.
+정석은 지수함수에 대한 테일러 급수로 이해하는 것이다.
+\[
+  e^A=\sum_{k=o}^{\infty}\frac{A_k}{k!}
+\]
+혹은 임의의 대각행렬에 대해 아래와 같이 $\textrm{exp}$를 적용하는 것으로 생각할
+수 있다.
+\[
+  \textrm{exp}\left(\begin{bmatrix}\lambda_0&&\\&\ddots&\\&&\lambda_{n-1}\end{bmatrix}\right) =\begin{bmatrix}e^{\lambda_0}&&\\&\ddots&\\&&e^{\lambda_{n-1}}\end{bmatrix}
+\]
+\chapter{블록-인코딩 개요}
+양자계의 시뮬레이션은 양자 컴퓨터 개발의 주요 \cite{Feynman1982} 동기 가운데
+하나였다. 이들 시뮬레이션 가운데 가장 간단한 것이 바로 해밀토니언 시뮬레이션이다.
+해밀토니언이란 무엇인가?
+\begin{defn}\normalfont
+  해밀토니언 $H$는 파울리 행렬의 텐서곱 $E_a$에 대해 아래와 같다.
+  \[
+    H=\sum_{a=1}^m\lambda_a E_a
+  \]
+  즉 $H$는 상호작용하는 항{\tiny term} $E_a$의 합이며 $\lambda_a$는 상호작용의
+  강도를 결정한다. 
+\end{defn}
+물리학에서는 아래와 같은 유니타리 변환 $U$, 혹은 시간(에 따른 변화)가 연속적이어야
+한다.
+\[
+  \ket{\psi}\rightarrow U\ket{\psi}
+\]
+그래서 $\ket{\psi}\rightarrow U\ket{\psi}$를 이산적인 점프로 보지 말고 어떤
+시간 구간에 대해 진화-변화하는 연속적인 프로세스의 결과로 볼 필요가 있다. 
+유니타리 변환에 대해 이러한 시간을 생성해 주는 것이 바로 해밀토니언이다.
+물리학적으로 해밀토니언은 계의 총 에너지를 나타내는 연산자로, 슈뢰딩거 방정식에
+등장한다.
+\[
+  i\frac{d}{dt}\ket{\psi}=H\ket{\psi}
+\]
+파울리 행렬은 아래와 같은 $\sigma_x,\sigma_y,\sigma_z$로, 모든 $2\times2$
+에르미트 행렬을 파울리 행렬과 더불어 항등 행렬로 나타낼 수 있다.
+\[
+  I=\begin{pmatrix}1&0\\0&1\end{pmatrix},
+  \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+  \sigma_y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},
+  \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+\]
+하나의 큐비트에 대해 파울리 행렬로 생성한 군{\tiny group}을 파울리 군 $P_1$이라고
+부르기도 한다. 파울리 행렬의 텐서곱은 $n$개의 큐비트에 대한 파울리 군 $P_n$의
+원소다.
+\[
+  b(P_1\otimes P_2\otimes\cdots\otimes P_n)\quad [b\in\{1,-1,i,-i\}]
+\]
+\bibliography{ref}
+\bibliographystyle{plain}
+\end{document}

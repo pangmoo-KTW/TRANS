@@ -1,0 +1,246 @@
+\documentclass[a4paper,atbegshi,chapter,]{oblivoir}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{braket,hyperref,nicematrix,graphicx,xcolor,caption}
+\usepackage{euler,enumitem,mdframed,ob-chapstyles,tikz,quantikz}
+\hypersetup{colorlinks=true,linkcolor=magenta,citecolor=magenta,urlcolor=cyan,}
+\chapterstyle{chappell}
+\newtheorem{defn}{정의}[chapter]
+\newtheorem{theo}{정리}[chapter]
+\newtheorem{lemm}{따름정리}[chapter]
+\newtheorem{thes}{논제}[chapter]
+\newtheorem{axio}{공리}[chapter]
+\newtheorem{prob}{문제}[chapter]
+\setlist{nosep}
+\title{계산과학2}
+\author{노현민-김태원 조}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+Ewin Tang의 2023년 Parc City Mathematics Institute 대학원생 대상 강의
+{\slshape Quantum and quantum-inspired linear algebra}(\url{https://ewintang.com/pcmi/})를
+중심으로 블록인코딩, QSVT, 양자 시뮬레이션, 양자 선형대수의 개념을 익힌다. 
+\end{abstract}\pagestyle{empty}\newpage
+\tableofcontents
+\setcounter{chapter}{-1}
+\chapter{기초 양자역학}
+\section{에르미트 연산자}
+양자역학에 따르면 우주는 복소 공간이다. 하지만 우리의 직관 혹은 실험 및 관측 결과는
+실수여야 한다. 그래서 우리가 측정할 수 있는 대상인 관측량을 표현하는 수학적인 도구는
+이들 두 공간을 잘 이어줘야 한다. 그것이 바로 \textbf{에르미트 연산자}다. 선형 연산자
+$M$은 다음 성질을 만족하는 경우 에르미트 연산자다. 
+\[
+  M = M^{\dagger}
+\]
+관측량은 관측량을 나타내는 연산자의 고윳값과 대응하는데, 요컨대 에르미트 연산자의
+고윳값은 모두 실수다. 임의의 에르미트 연산자 $L$과 고윳값 $\lambda$와 고유벡터
+$\ket{\lambda}$에 대해 아래가 성립한다.
+\begin{align*}
+  &\;L\ket{\lambda} = \lambda\ket{\lambda} \\
+  \Rightarrow & \bra{\lambda}L^* = \bra{\lambda}\lambda^* \\
+  \Rightarrow & \bra{\lambda}L=\bra{\lambda}\lambda^* \\
+  \Rightarrow & \bra{\lambda}L\ket{\lambda} =\bra{\lambda}\lambda\ket{\lambda} \&
+  \bra{\lambda}L\ket{\lambda} = \bra{\lambda}\lambda^*\ket{\lambda} \\
+  \Rightarrow&\bra{\lambda}\lambda\ket{\lambda} - \bra{\lambda}\lambda^*\ket{\lambda} = 0\\
+  \Rightarrow & \lambda = \lambda^* \Longrightarrow \lambda\in\mathbb{R}
+\end{align*}
+또한 명확히 구분할 수 있는 결과를 표현하는 고유벡터는 서로 다른 고윳값을 가져야 한다.
+다시 말해 상이한 대상에 대해 상이한 실험 결과가 보증되어야 한다. $\lambda_1\neq\lambda_2$에
+대해 아래가 성립한다.
+\begin{align*}
+  &\;L\ket{\lambda_1}=\lambda_1\ket{\lambda_1}\&L\ket{\lambda_2}=\lambda_2\ket{\lambda_2}\\
+  \Rightarrow&\braket{\lambda_1|L|\lambda_2} = \lambda_1\braket{\lambda_1|\lambda_2} \&
+  \braket{\lambda_1|L|\lambda_2}=\lambda_2\braket{\lambda_1|\lambda_2}\\
+  \Rightarrow & 0 = (\lambda_1-\lambda_2)\braket{\lambda_1|\lambda_2}
+  \Longrightarrow \braket{\lambda_1|\lambda_2} = 0
+\end{align*}
+즉 두 고유벡터는 직교한다. 
+\section{스핀과 파울리 행렬}
+이를 비롯 에르미트 연산자는 양자역학적인 세계와 우리의 관측 및 실험을 적절하게 잇는 좋은
+성질을 여럿 지닌다. 여기서 우리가 관측하고자 하는 주요 대상은 바로 전자{\tiny electron}의
+운동이다. 전자의 운동을 설명하는 데는 일련의 변수가 필요하다. 위치 좌표와 별개로
+전자는 \textbf{스핀}이라는 부가적인 변수 혹은 자유도를 지닌다. 
+
+스핀이란 완전히 양자역학적인 개념으로, 고전 역학 및 우리의 직관에 대응되는 개념을 찾기
+어렵다. 거칠게 스핀은 $x,y,z$ 축에 따라 아래처럼 구성된다고 할 수도 있다.
+\[
+  \sigma_x, \sigma_y, \sigma_z
+\]
+위와 같은 스핀의 성분을 일종의 연산자로 보면, 고유벡터와 고유값이 존재할 것이다.
+이를테면 $\sigma_z$는 아래와 같은 연산자다. 
+\begin{align*}
+  &\sigma_z\begin{pmatrix}1\\0\end{pmatrix} = +1\begin{pmatrix}1\\0\end{pmatrix} \\
+  &\sigma_z\begin{pmatrix}0\\1\end{pmatrix} = -1\begin{pmatrix}0\\1\end{pmatrix}
+\end{align*}
+여기서 고윳값 $\pm1$은 $(1,0),(0,1)$에 대한 $\sigma_z$의 관측 결과다. 그렇다면 $\sigma_z$는
+어떻게 생겼을까?
+\[
+\begin{aligned}
+  &\begin{pmatrix}\sigma_{z11}&\sigma_{z12}\\\sigma_{z21}&\sigma_{z22}\end{pmatrix}
+  \begin{pmatrix}1\\0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix} \\
+  &\begin{pmatrix}\sigma_{z11}&\sigma_{z12}\\\sigma_{z21}&\sigma_{z22}\end{pmatrix}
+  \begin{pmatrix}0\\1\end{pmatrix}=-\begin{pmatrix}0\\1\end{pmatrix}
+\end{aligned}
+\Longrightarrow
+\sigma_z = \begin{pmatrix}1&0\\0&-1\end{pmatrix}
+\]
+여기서 $(1,0),(0,1)$을 $\ket{0},\ket{1}$로 표기하여 상태 $\ket{A}$를 일반화하면
+아래와 같다.
+\[
+  \ket{A} = \alpha_0\ket{0}+\alpha_1\ket{1}
+\]
+여기서 $\alpha_1,\alpha_2$는 이른바 진폭이며, 이를 제곱한 것이 바로 확률이다. 따라서
+임의의 $\alpha_i\in\mathbb{C}$는 아래와 같은 보른 규칙을 만족해야 한다. 
+\[
+  |\alpha_1|^2+|\alpha_2|^2+\cdots+|\alpha_n|^2=1
+\]
+그리하여 $\ket{0},\ket{1}$의 일차결합으로 아래와 같은 벡터를 나타낼 수 있다.
+\[
+  \ket{r} = \frac{1}{\sqrt{2}}\ket{0}+\frac{1}{\sqrt2}\ket{1}_,\quad
+  \ket{l} = \frac{1}{\sqrt2}\ket{0}-\frac{1}{\sqrt2}\ket{1}
+\]
+$\sigma_x$가 고윳값 $\pm1$에 대해 위와 같은 $\ket{r},\ket{l}$을 고유벡터로 지닌다고 하면,
+$\sigma_x$는 아래와 같을 것이다.
+\[
+  \begin{pmatrix}
+    \sigma_{x11}&\sigma_{x12}\\\sigma_{x21}&\sigma_{x22}
+  \end{pmatrix}
+  \begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix}
+  =\begin{pmatrix}\frac{1}{\sqrt2}\\\frac{1}{\sqrt2}\end{pmatrix}_,
+  \begin{pmatrix}
+    \sigma_{x11}&\sigma_{x12}\\\sigma_{x21}&\sigma_{x22}
+  \end{pmatrix}
+  \begin{pmatrix}\frac{1}{\sqrt2}\\-\frac{1}{\sqrt2}\end{pmatrix}
+  =-\begin{pmatrix}\frac{1}{\sqrt2}\\-\frac{1}{\sqrt2}\end{pmatrix}
+  \Longrightarrow \sigma_x = \begin{pmatrix}0&1\\1&0\end{pmatrix}
+\]
+$\alpha_2$를 $\pm\frac{1}{\sqrt2}$가 아니라 $\pm\frac{i}{\sqrt2}$로 일반화하면
+$\sigma_y$를 얻을 수 있다. 이들 스핀 연산자를 모두 모은 것이 바로 \textbf{파울리 행렬}이다.
+\[
+  \sigma_x = \begin{pmatrix}0&1\\1&0\end{pmatrix}_,
+  \sigma_y = \begin{pmatrix}0&-i\\i&0\end{pmatrix}_,
+  \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+\]
+또한 이때 스핀을 제 전자로부터 고립시켜 파울리 행렬로 구성한 것이 바로 \textbf{큐비트}다.
+
+\chapter{블록-인코딩}
+양자 계{\tiny quantum systems}의 시뮬레이션은 양자 컴퓨터 개발의 주요 동기 가운데 하나다.
+이들 양자 계 시뮬레이션 가운데 가장 간결한 것이 이른바 \textbf{해밀토니언 시뮬레이션}이다.
+
+\textbf{해밀토니언}은 자신의 환경과 상호작용하는 관측량 혹은 파울리 행렬들의 텐서곱
+$E_a$에 그러한 상호작용의 강도를 결정하는 $\lambda_a$를 곱한 것의 총합 $H$로 볼 수 있다.
+\[
+  H = \sum_{a=1}^m\lambda_a E_a
+\]
+그리고 해밀토니언 시뮬레이션은 아래와 같이 정의되는 문제다.
+\begin{prob}
+  $\|U-e^{iHt}\|\leq\epsilon$이도록 $e^{-iHt}$에 가까운 유니터리 $U$를 구현하는
+  알고리즘을 찾아라.
+\end{prob}
+우선 \textbf{유니터리}와 $\pmb{e^{-iHt}}$라는 표기가 무슨 뜻인지 알 필요가 있다.
+시간 $t$에 상태 $\ket{\psi}$에 있는 닫힌계가 있으며 $\ket{\psi}$가 특정한 시간 $t$에
+$\ket{\psi}$였다는 사실을 $\ket{\psi(t)}$로 표기하자. 초기 상태 $\ket{\psi(0)}$에서
+계의 시간이 전개되어 $\ket{\psi(t)}$에 이르렀다는 사실은 아래처럼 나타낸다.
+\[
+  \ket{\psi(t)}=U(t)\ket{\psi(0)}
+\]
+앞서 언급했듯 직교성으로 인해 2개의 다른 기저 벡터는 2개의 구분 가능한 상태를 나타낸다.
+이처럼 구분 가능한 두 개의 상태를 $\ket{\psi(0)},\ket{\phi(0)}$이라고 하자. 
+\[
+  \braket{\psi(0)|\phi(0)}=0
+\]
+임의의 시간이 흐른 이후에도 이 둘은 구분될 것이다. 이런 성질을 만족하는 것이 
+유니터리 $U$다. 
+\[
+  \braket{\psi(t)|\phi(t)}=0 \Rightarrow \braket{\psi(0)|U^{\dagger}(t)U(t)|\phi(0)}=0
+                             \Rightarrow U^{\dagger}U=I
+\]
+유니터리 변환은 $t=\epsilon=0$인 경우 그냥 $I$다. 그런데 $\epsilon$이 극미량이면
+아래처럼 쓸 수 있다.
+\[
+  U(\epsilon)=I-i\epsilon H,\quad U^{\dagger}(\epsilon)=I+i\epsilon H^{\dagger}
+\]
+극소 시간 $t=\epsilon$으로 특정하여 시간 전개식을 다시 쓰면 아래와 같다.
+\begin{align*}
+  \ket{\psi(\epsilon)}=\ket{\psi(0)}-i\epsilon H\ket{\psi(0)}
+  \Rightarrow &\frac{\ket{\psi(\epsilon)}-\ket{\psi(0)}}{\epsilon}=-iH\ket{\psi(0)} \\
+  \Rightarrow & i\frac{d}{dt}\ket{\psi} = H\ket{\psi}\\
+  \Rightarrow &\ket{\psi(t)}=e^{-iHt}\ket{\psi(0)}
+\end{align*}
+정리하면, 해밀토니언 시뮬레이션은 문제는 말 그대로 해밀토니언을 시뮬레이션하는
+문제다. 대표적인 해법은 \textbf{트로터 근사}다. 충분히 큰 $r$에 대해 아래가 
+성립한다.
+\[
+  e^{-iHt} \approx \left(e^{-iE_1t/r}e^{-iE_2t/r}\cdots e^{-iE_mt/r}\right)^r
+\]
+여기서 $m=\frac{1}{\epsilon}$이다. 따라서 이 근사를 구현하기 위해서는
+$\frac{1}{\epsilon}$에 비례하는 게이트가 필요하다. 즉 게이트 복잡도가 
+$\textrm{poly}(1/\epsilon)$이다. 결코 최적해가 아니다. 이후 개선된 알고리즘들이
+나타났으며 이들은 아래 프레임워크로 이어진다.
+\begin{mdframed}
+\begin{enumerate}[label=(\roman*)]
+  \item ``블록-인코딩''이라는 유형의 양자 회로를 정의한다.
+  \item $\lambda_a, E_a$가 주어질 때 $H$의 효율적인 블록-인코딩을 구성할 수
+    있다는 사실을 보인다.
+  \item $H$의 블록-인코딩을 적게 사용하여 $e^{-iHt}$의 (근사의) 블록-인코딩을
+    취할 수 있다는 사실을 보인다.
+  \item 이 블록-인코딩을 사용해 상태에 대한 근사에 적용한다.
+\end{enumerate}
+\end{mdframed}
+\section{블록-인코딩}
+\begin{defn}
+  $A\in\mathbb{C}^{r\times c}$가 주어질 때, $U\in\mathbb{C}^{d\times d}$는
+  $U$가 $\mathcal{O}(Q)$ 게이트로 구현가능하고 항등행렬의 첫 $r$열과 $c$열인
+  $B_{L,1}\in\mathbb{C}^{d\times r},B_{R,1}\in\mathbb{C}^{d\times c}$에 대해
+  \begin{equation}
+    B_{L,1}^{\dagger}UB_{R,1} = A
+  \end{equation}
+  를 만족하면 $A$의 $Q$-블록 인코딩이라고 부른다. 다시 말해 아래와 같다.
+  \[
+    U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix}
+  \]
+  여기서 $\cdot$ 은 $U$의 임의의 원소를 나타낸다. 
+\end{defn}
+여기서 $d,r,c$를 $2^n$으로 고려하면 위 항들을 큐비트로 받아들일 수 있다.
+\begin{equation}\label{equ:1-2}
+  (\bra0^{\otimes a_L}\otimes I)U(\ket0^{\otimes a_R}\otimes I) = A
+\end{equation}
+즉 블록-인코딩은 유니타리 양자 회로의 일반화다.
+\begin{figure}[h]
+  \centering
+  \begin{quantikz}
+    \lstick{$\ket0^{\otimes a}$}  &\gate[2]{U}&\meter{}\\
+    \lstick{$\ket{\psi}$}   &\qw         &\qw
+  \end{quantikz}
+  \caption{기본적인 블록-인코딩 회로. $U$가 행렬 $A\in\mathbb{C}^{r\times r}$의
+  블록-인코딩이라면 첫 번째 와이어의 측정 결과가 $\ket0^{\otimes a}$인 경우
+회로의 출력은 $A\ket{\psi}$다.\label{fig:1-1}} 
+\end{figure}
+\begin{lemm}
+  유니타리 $U$를 $Q$ 게이트로 구현하는 양자 회로는 $U$의 $Q$-블록 인코딩이다.
+\end{lemm}
+$\ket{\psi}\mapsto U\ket{\psi}$와 같은 사상을 위해 유니타리 $U$를
+구현하는 회로에 대해, $A$의 블록-인코딩 또한 $\ket{\psi}\mapsto A\ket{\psi}$와
+같은 사상을 수행하기 위해 쓰일 수 있다. 물론 실패할 확률이 존재하지만, 이는
+유니타리 회로가 제공하는 것보다 더 일반적인 유형의 선형대수학적 연산을
+수행할 수 있도록 한다.
+\begin{lemm}
+  $A\in\mathbb{C}^{r\times c}$의 $Q$-블록 인코딩 $U\in\mathbb{C}^{d\times d}$와
+  상태 $\ket{\psi}\in\mathbb{C}^c$가 주어질 때, 상태
+  $\frac{A\ket{\psi}}{\|A\ket{\psi}\|}$를 $\mathcal{O}(Q)$ 게이트와 
+  $\|A\ket{\psi}\|^2$의 확률로 생산하는 양자 회로가 존재한다.
+\end{lemm}
+\begin{proof}
+  그림 \ref{fig:1-1}상의 회로를 보라. 우리는 상태 $\ket{\psi}$를 취해
+  $\ket{0}$으로 초기화된 $a_R$ 큐비트를 더한다. 그런 다음, 블록-인코딩 $U$를
+  적용하고 첫 $a_L$ 큐비트를 측정한다. 이들 모두 $0$이라는 결과를 지닌다면,
+  방정식 \ref{equ:1-2}에 의해 최종 상태는 $A\ket{\psi}$다. 이는 확률
+  $\|A\ket{\psi}\|^2$로 일어난다.
+\end{proof}
+\chapter{양자 특잇값 변환}
+\chapter{다항식에 의한 근사}
+\chapter{양자 선형대수}
+\chapter{양자적 영향상의 알고리즘}
+\end{document}
