@@ -4,6 +4,7 @@
 \contentsline {section}{\numberline {0.2}스핀과 파울리 행렬}{3}{section.0.2}%
 \contentsline {chapter}{\chapternumberline {제\,1\,장}블록-인코딩}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}블록-인코딩}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}블록-인코딩의 확장가능성}{7}{section.1.2}%
 \contentsline {chapter}{\chapternumberline {제\,2\,장}양자 특잇값 변환}{8}{chapter.2}%
 \contentsline {chapter}{\chapternumberline {제\,3\,장}다항식에 의한 근사}{9}{chapter.3}%
 \contentsline {chapter}{\chapternumberline {제\,4\,장}양자 선형대수}{10}{chapter.4}%

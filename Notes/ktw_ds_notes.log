@@ -1,0 +1,1066 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  1 OCT 2023 20:00
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**ktw_ds_notes.tex
+(./ktw_ds_notes.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/oblivoir.cls
+Document Class: oblivoir 2023/03/09 v3.2.1
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+ (/usr/share/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count185
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count186
+\l__pdf_internal_box=\box51
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+) (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/oblivoir-utf.cls
+Document Class: oblivoir-utf 2020/02/10 v0.8.2 article-like class to typeset UTF-8 korean using memoir.
+\fa@setheight=\skip48
+\fa@setwidth=\skip49
+(/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+Document Class: memoir 2022/11/17 v3.7.19 configurable book, report, article document class
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count187
+)
+\onelineskip=\skip50
+\lxvchars=\skip51
+\xlvchars=\skip52
+\@memcnta=\count188
+\c@@memmarkcntra=\count189
+\stockheight=\dimen140
+\stockwidth=\dimen141
+\trimtop=\skip53
+\trimedge=\skip54
+ (/usr/share/texmf-dist/tex/latex/memoir/mem10.clo
+File: mem10.clo 2022/07/29 v0.5 memoir class 10pt size option
+)
+\binding=\skip55
+\spinemargin=\skip56
+\foremargin=\skip57
+\uppermargin=\skip58
+\lowermargin=\skip59
+\headdrop=\skip60
+\normalrulethickness=\skip61
+\mem@maxheadheight=\skip62
+\mem@maxfootheight=\skip63
+\headwidth=\skip64
+\c@storedpagenumber=\count190
+\memPD=\dimen142
+\m@mabparskip=\skip65
+\thanksmarkwidth=\skip66
+\thanksmarksep=\skip67
+\droptitle=\skip68
+\c@book=\count191
+\c@part=\count192
+\c@chapter=\count193
+\c@section=\count194
+\c@subsection=\count195
+\c@subsubsection=\count196
+\c@paragraph=\count197
+\c@subparagraph=\count198
+\beforechapskip=\skip69
+\midchapskip=\skip70
+\afterchapskip=\skip71
+\chapindent=\skip72
+\bottomsectionskip=\skip73
+\secindent=\skip74
+\beforesecskip=\skip75
+\aftersecskip=\skip76
+\subsecindent=\skip77
+\beforesubsecskip=\skip78
+\aftersubsecskip=\skip79
+\subsubsecindent=\skip80
+\beforesubsubsecskip=\skip81
+\aftersubsubsecskip=\skip82
+\paraindent=\skip83
+\beforeparaskip=\skip84
+\afterparaskip=\skip85
+\subparaindent=\skip86
+\beforesubparaskip=\skip87
+\aftersubparaskip=\skip88
+\pfbreakskip=\skip89
+\c@@ppsavesec=\count199
+\c@@ppsaveapp=\count266
+\ragrparindent=\dimen143
+\everylistparindent=\dimen144
+\parsepi=\skip90
+\topsepi=\skip91
+\itemsepi=\skip92
+\parsepii=\skip93
+\topsepii=\skip94
+\topsepiii=\skip95
+\itemsepii=\skip96
+\itemsepiii=\skip97
+\partopsepii=\skip98
+\partopsepiii=\skip99
+\m@msavetopsep=\skip100
+\m@msavepartopsep=\skip101
+\@enLab=\toks18
+\abstitleskip=\skip102
+\absleftindent=\skip103
+\abs@leftindent=\dimen145
+\absrightindent=\skip104
+\absparindent=\skip105
+\absparsep=\skip106
+\c@vslineno=\count267
+\c@poemline=\count268
+\c@modulo@vs=\count269
+\c@memfvsline=\count270
+\vleftskip=\skip107
+\vrightskip=\skip108
+\stanzaskip=\skip109
+\versewidth=\skip110
+\vgap=\skip111
+\vindent=\skip112
+\vleftmargin=\dimen146
+\c@verse=\count271
+\c@chrsinstr=\count272
+\beforepoemtitleskip=\skip113
+\afterpoemtitleskip=\skip114
+\c@poem=\count273
+\beforePoemTitleskip=\skip115
+\midPoemTitleskip=\skip116
+\afterPoemTitleskip=\skip117
+ (/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen147
+\ar@mcellbox=\box52
+\extrarowheight=\dimen148
+\NC@list=\toks19
+\extratabsurround=\skip118
+\backup@length=\skip119
+\ar@cellbox=\box53
+) (/usr/share/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+) (/usr/share/texmf-dist/tex/latex/tools/delarray.sty
+Package: delarray 2014/10/28 v1.01 array delimiter package (DPC)
+) (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen149
+\TX@old@table=\dimen150
+\TX@old@col=\dimen151
+\TX@target=\dimen152
+\TX@delta=\dimen153
+\TX@cols=\count274
+\TX@ftn=\toks20
+)
+\heavyrulewidth=\dimen154
+\lightrulewidth=\dimen155
+\cmidrulewidth=\dimen156
+\belowrulesep=\dimen157
+\belowbottomsep=\dimen158
+\aboverulesep=\dimen159
+\abovetopsep=\dimen160
+\cmidrulesep=\dimen161
+\cmidrulekern=\dimen162
+\defaultaddspace=\dimen163
+\@cmidla=\count275
+\@cmidlb=\count276
+\@aboverulesep=\dimen164
+\@belowrulesep=\dimen165
+\@thisruleclass=\count277
+\@lastruleclass=\count278
+\@thisrulewidth=\dimen166
+\ctableftskip=\skip120
+\ctabrightskip=\skip121
+\abovecolumnspenalty=\count279
+\@linestogo=\count280
+\@cellstogo=\count281
+\@cellsincolumn=\count282
+\crtok=\toks21
+\@mincolumnwidth=\dimen167
+\c@newflo@tctr=\count283
+\mem@margin@floatbox=\box54
+\@contcwidth=\skip122
+\@contindw=\skip123
+\abovecaptionskip=\skip124
+\belowcaptionskip=\skip125
+\subfloattopskip=\skip126
+\subfloatcapskip=\skip127
+\subfloatcaptopadj=\skip128
+\subfloatbottomskip=\skip129
+\subfloatlabelskip=\skip130
+\subfloatcapmargin=\dimen168
+\c@@contsubnum=\count284
+\m@mscap@capbox=\box55
+\m@mscap@fbox=\box56
+\sidecapsep=\dimen169
+\sidecapwidth=\dimen170
+\m@m@tempdima=\dimen171
+\m@mscapraise=\dimen172
+\sidecapraise=\dimen173
+\m@mscapmainwidth=\dimen174
+\m@mscaplkern=\dimen175
+\beforeepigraphskip=\skip131
+\afterepigraphskip=\skip132
+\epigraphwidth=\skip133
+\epigraphrule=\skip134
+LaTeX Info: Redefining \em on input line 7655.
+LaTeX Info: Redefining \emph on input line 7663.
+\tocentryskip=\skip135
+\tocbaseline=\skip136
+\cftparskip=\skip137
+\cftbeforebookskip=\skip138
+\cftbookindent=\dimen176
+\cftbooknumwidth=\dimen177
+\cftbeforepartskip=\skip139
+\cftpartindent=\skip140
+\cftpartnumwidth=\skip141
+\cftbeforechapterskip=\skip142
+\cftchapterindent=\skip143
+\cftchapternumwidth=\skip144
+\cftbeforesectionskip=\skip145
+\cftsectionindent=\skip146
+\cftsectionnumwidth=\skip147
+\cftbeforesubsectionskip=\skip148
+\cftsubsectionindent=\skip149
+\cftsubsectionnumwidth=\skip150
+\cftbeforesubsubsectionskip=\skip151
+\cftsubsubsectionindent=\skip152
+\cftsubsubsectionnumwidth=\skip153
+\cftbeforeparagraphskip=\skip154
+\cftparagraphindent=\skip155
+\cftparagraphnumwidth=\skip156
+\cftbeforesubparagraphskip=\skip157
+\cftsubparagraphindent=\skip158
+\cftsubparagraphnumwidth=\skip159
+\prechapterprecisshift=\dimen178
+\c@maxsecnumdepth=\count285
+\bibindent=\dimen179
+\bibitemsep=\skip160
+\indexcolsep=\skip161
+\indexrule=\skip162
+\indexmarkstyle=\toks22
+\@indexbox=\insert252
+\glossarycolsep=\dimen180
+\glossaryrule=\dimen181
+\sideparvshift=\skip163
+\sideins=\insert251
+\sidebartopsep=\skip164
+\sidebarhsep=\skip165
+\sidebarvsep=\skip166
+\sidebarwidth=\skip167
+\footmarkwidth=\skip168
+\footmarksep=\skip169
+\footparindent=\skip170
+\footinsdim=\skip171
+\footinsv@r=\insert250
+\@mpfootinsv@r=\insert249
+\m@m@k=\count286
+\m@m@h=\dimen182
+\m@mipn@skip=\skip172
+\sidefootins=\insert248
+\sidefootadjust=\skip173
+\sidefootheight=\skip174
+\sidefoothsep=\skip175
+\sidefootvsep=\skip176
+\sidefootwidth=\skip177
+\m@mdownsf=\skip178
+\c@sidefootnote=\count287
+\sidefootmarkwidth=\skip179
+\sidefootmarksep=\skip180
+\sidefootparindent=\skip181
+\c@pagenote=\count288
+\c@pagenoteshadow=\count289
+\mem@pn@lastkern=\skip182
+\every@verbatim=\toks23
+\afterevery@verbatim=\toks24
+\verbatim@line=\toks25
+\tab@position=\count290
+\verbatim@in@stream=\read2
+\verbatimindent=\skip183
+\verbatim@out=\write3
+\bvboxsep=\skip184
+\c@memfbvline=\count291
+\c@bvlinectr=\count292
+\bvnumlength=\skip185
+\fb@frw=\dimen183
+\fb@frh=\dimen184
+\FrameRule=\dimen185
+\FrameSep=\dimen186
+\c@cp@cntr=\count293
+\c@ism@mctr=\count294
+\c@xsm@mctr=\count295
+\c@csm@mctr=\count296
+\c@ksm@mctr=\count297
+\c@xksm@mctr=\count298
+\c@cksm@mctr=\count299
+\c@msm@mctr=\count300
+\c@xmsm@mctr=\count301
+\c@cmsm@mctr=\count302
+\c@bsm@mctr=\count303
+\c@workm@mctr=\count304
+\c@sheetsequence=\count305
+\c@lastsheet=\count306
+\c@lastpage=\count307
+ (/usr/share/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2022/07/10 v1.03 Text only upper/lower case changing (DPC)
+Package textcase Info: Defining Legacy names on input line 20.
+)
+\c@figure=\count308
+\c@lofdepth=\count309
+\cftbeforefigureskip=\skip186
+\cftfigureindent=\skip187
+\cftfigurenumwidth=\skip188
+\c@table=\count310
+\c@lotdepth=\count311
+\cftbeforetableskip=\skip189
+\cfttableindent=\skip190
+\cfttablenumwidth=\skip191
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package booktabs [2016/05/16] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memhangul-ucs.sty
+Package: memhangul-ucs 2014/06/12UCS Hangul Package for memoir class
+
+memhangul-ucs v1.7.7 2014/06/12
+(/usr/share/texmf-dist/tex/latex/kotex-utf/dhucs.sty
+Package: dhucs 2015/08/21 v5.4 typesetting UTF-8 Korean documents
+ (/usr/share/texmf-dist/tex/latex/kotex-utf/kotexutf.sty
+Package: kotexutf 2022/06/22 v3.0.0 typesetting UTF-8 Korean documents
+ (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
+) (/usr/share/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex
+\unih@ngulpoint=\count312
+\dhucs@emph@raise=\dimen187
+)
+Now handling font encoding LUC ...
+... processing UTF-8 mapping file for font encoding LUC
+ (/usr/share/texmf-dist/tex/latex/kotex-utf/lucenc.dfu
+File: lucenc.dfu 2007/09/05 UTF-8 support for dhucs
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+3001 (decimal 12289)
+   defining Unicode char U+3002 (decimal 12290)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+300A (decimal 12298)
+   defining Unicode char U+300B (decimal 12299)
+   defining Unicode char U+300C (decimal 12300)
+   defining Unicode char U+300D (decimal 12301)
+   defining Unicode char U+300E (decimal 12302)
+   defining Unicode char U+300F (decimal 12303)
+   defining Unicode char U+3010 (decimal 12304)
+   defining Unicode char U+3011 (decimal 12305)
+   defining Unicode char U+3014 (decimal 12308)
+   defining Unicode char U+3015 (decimal 12309)
+   defining Unicode char U+3016 (decimal 12310)
+   defining Unicode char U+3017 (decimal 12311)
+   defining Unicode char U+3018 (decimal 12312)
+   defining Unicode char U+3019 (decimal 12313)
+   defining Unicode char U+301A (decimal 12314)
+   defining Unicode char U+301B (decimal 12315)
+   defining Unicode char U+FF01 (decimal 65281)
+   defining Unicode char U+FF08 (decimal 65288)
+   defining Unicode char U+FF09 (decimal 65289)
+   defining Unicode char U+FF0C (decimal 65292)
+   defining Unicode char U+FF0E (decimal 65294)
+   defining Unicode char U+FF1A (decimal 65306)
+   defining Unicode char U+FF1B (decimal 65307)
+   defining Unicode char U+FF1C (decimal 65308)
+   defining Unicode char U+FF1D (decimal 65309)
+   defining Unicode char U+FF1E (decimal 65310)
+   defining Unicode char U+FF1F (decimal 65311)
+   defining Unicode char U+FF3B (decimal 65339)
+   defining Unicode char U+FF3D (decimal 65341)
+   defining Unicode char U+FF5B (decimal 65371)
+   defining Unicode char U+FF5D (decimal 65373)
+   defining Unicode char U+FF61 (decimal 65377)
+   defining Unicode char U+FF62 (decimal 65378)
+   defining Unicode char U+FF63 (decimal 65379)
+   defining Unicode char U+FF64 (decimal 65380)
+   defining Unicode char U+FF65 (decimal 65381)
+)
+\@josa=\count313
+\josatoks=\toks28
+ (/usr/share/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty
+Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
+)))
+\memh@hu=\dimen188
+\t@nch@ars=\skip192
+\tmp@XXbox=\box57
+\tmp@XXdim=\dimen189
+ (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-common/memhangul-common.sty
+Package: memhangul-common 2022/11/04
+\togetheightoffont=\box58
+\htoffnt=\skip193
+\divnoteskip=\skip194
+ (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-common/memhangul-patch.sty) (/usr/share/texmf-dist/tex/generic/hologo/hologo.sty
+Package: hologo 2021-11-16 v1.15 A logo collection with bookmark support (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+)
+Package hologo Info: Using driver `pdftex'.
+)
+\pghgheadwidth=\dimen190
+\c@APPchapter=\count314
+\c@APPsection=\count315
+\c@APPsubsection=\count316
+\memucsadjustwidthtopsep=\dimen191
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-interword.sty
+Package: memucs-interword 2007/09/22
+\BASE@FONTsize=\dimen192
+\ORIG@spaceskip=\skip195
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-common/memucs-setspace.sty
+Package: memucs-setspace 2021/03/03 6.7-mu9 Contributed and Supported LaTeX2e package
+
+Package: `memucs-setspace', a modified version of `setspace', 6.7-mu9 <2021/03/03>
+)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+02D0 (decimal 720)
+   defining Unicode char U+2025 (decimal 8229)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2312 (decimal 8978)
+\raisedotdim=\dimen193
+\dhucs@emph@width=\dimen194
+\useremphraisedim=\dimen195
+\tmp_user_emph_dim=\dimen196
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/nanumfontsel.sty
+Package: nanumfontsel 
+) (/usr/share/texmf-dist/tex/generic/pdftex/glyphtounicode.tex) (/usr/share/texmf-dist/tex/latex/kotex-utf/contrib/dhucs-cmap.sty
+Package: dhucs-cmap 2021/03/01 searchable PDF for dhucs upon pdftex
+)
+\ob@hu=\dimen197
+ (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+ (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+ (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count317
+)
+\@linkdim=\dimen198
+\Hy@linkcounter=\count318
+\Hy@pagecounter=\count319
+ (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count320
+ (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4060.
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count321
+ (/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen199
+ (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count322
+\Field@Width=\dimen256
+\Fld@charsize=\dimen257
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count323
+\c@Item=\count324
+\c@Hfootnote=\count325
+)
+Package hyperref Info: Driver: hpdftex.
+ (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+ (/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count326
+\c@bookmark@seq@number=\count327
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip196
+) (/usr/share/texmf-dist/tex/latex/memoir/memhfixc.sty
+Package: memhfixc 2022/11/17 v1.20 nameref/hyperref package fixes for memoir class
+
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 106.
+\c@memhycontfloat=\count328
+\c@Hpagenote=\count329
+)
+\@ensp=\skip197
+ (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-common/ob-koreanappendix.sty))
+HANGUL DRIVER: kotex-utf
+) (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-common/fapapersize.sty
+Package: fapapersize 2022/03/08 v0.3
+\fa@stockheight=\skip198
+\fa@stockwidth=\skip199
+\fa@paperheight=\skip256
+\fa@paperwidth=\skip257
+\fa@leftmargin=\skip258
+\fa@rightmargin=\skip259
+\fa@uppermargin=\skip260
+\fa@lowermargin=\skip261
+\fa@tmplenwd=\skip262
+\fa@tmplenht=\skip263
+\tmp@dim=\dimen258
+)
+
+******************************************************
+Stock height and width: 845.04684pt by 597.50787pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 845.04684pt by 597.50787pt
+Text height and width: 665.83234pt by 426pt
+Spine and edge margins: 85.35826pt and 85.35826pt
+Upper and lower margins: 85.35826pt and 93.85625pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 71.35826pt
+Sidecapsep and sidecapwidth: 7pt and 117pt
+Sidebarhsep and sidebarwidth: 7pt and 117pt
+Sidebarvsep and sidebartopsep: 12pt and 0pt
+Sidebarheight: 596.39996pt
+Sidefoothsep and sidefootwidth: 7pt and 117pt
+Sidefootvsep and sidefootheight: 12pt and 596.39996pt
+******************************************************
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip264
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks29
+\ex@=\dimen259
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen260
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count330
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count331
+\leftroot@=\count332
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count333
+\DOTSCASE@=\count334
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen261
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count335
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count336
+\dotsspace@=\muskip17
+\c@parentequation=\count337
+\dspbrk@lvl=\count338
+\tag@help=\toks30
+\row@=\count339
+\column@=\count340
+\maxfields@=\count341
+\andhelp@=\toks31
+\eqnshift@=\dimen262
+\alignsep@=\dimen263
+\tagshift@=\dimen264
+\tagwidth@=\dimen265
+\totwidth@=\dimen266
+\lineht@=\dimen267
+\@envbody=\toks32
+\multlinegap=\skip265
+\multlinetaggap=\skip266
+\mathdisplay@stack=\toks33
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen268
+\Gin@req@width=\dimen269
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen270
+\captionmargin=\dimen271
+\caption@leftmargin=\dimen272
+\caption@rightmargin=\dimen273
+\caption@width=\dimen274
+\caption@indent=\dimen275
+\caption@parindent=\dimen276
+\caption@hangindent=\dimen277
+Package caption Info: memoir document class detected.
+ (/usr/share/texmf-dist/tex/latex/caption/caption-memoir.sto
+File: caption-memoir.sto 2022/03/02 v2.2b Adaption of the caption package to the memoir document class (AR)
+))
+\c@caption@flags=\count342
+\c@continuedfloat=\count343
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen278
+\caption@adjustwidth@linewidth=\dimen279
+Package caption Info: hyperref package is loaded.
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\enitkv@toks@=\toks34
+\labelindent=\skip267
+\enit@outerparindent=\dimen280
+\enit@toks=\toks35
+\enit@inbox=\box61
+\enit@count@id=\count344
+\enitdp@description=\count345
+) (/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
+ (/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count346
+Package zref Info: New property: abspage on input line 65.
+)
+\mdf@templength=\skip268
+\c@mdf@globalstyle@cnt=\count347
+\mdf@skipabove@length=\skip269
+\mdf@skipbelow@length=\skip270
+\mdf@leftmargin@length=\skip271
+\mdf@rightmargin@length=\skip272
+\mdf@innerleftmargin@length=\skip273
+\mdf@innerrightmargin@length=\skip274
+\mdf@innertopmargin@length=\skip275
+\mdf@innerbottommargin@length=\skip276
+\mdf@splittopskip@length=\skip277
+\mdf@splitbottomskip@length=\skip278
+\mdf@outermargin@length=\skip279
+\mdf@innermargin@length=\skip280
+\mdf@linewidth@length=\skip281
+\mdf@innerlinewidth@length=\skip282
+\mdf@middlelinewidth@length=\skip283
+\mdf@outerlinewidth@length=\skip284
+\mdf@roundcorner@length=\skip285
+\mdf@footenotedistance@length=\skip286
+\mdf@userdefinedwidth@length=\skip287
+\mdf@needspace@length=\skip288
+\mdf@frametitleaboveskip@length=\skip289
+\mdf@frametitlebelowskip@length=\skip290
+\mdf@frametitlerulewidth@length=\skip291
+\mdf@frametitleleftmargin@length=\skip292
+\mdf@frametitlerightmargin@length=\skip293
+\mdf@shadowsize@length=\skip294
+\mdf@extratopheight@length=\skip295
+\mdf@subtitleabovelinewidth@length=\skip296
+\mdf@subtitlebelowlinewidth@length=\skip297
+\mdf@subtitleaboveskip@length=\skip298
+\mdf@subtitlebelowskip@length=\skip299
+\mdf@subtitleinneraboveskip@length=\skip300
+\mdf@subtitleinnerbelowskip@length=\skip301
+\mdf@subsubtitleabovelinewidth@length=\skip302
+\mdf@subsubtitlebelowlinewidth@length=\skip303
+\mdf@subsubtitleaboveskip@length=\skip304
+\mdf@subsubtitlebelowskip@length=\skip305
+\mdf@subsubtitleinneraboveskip@length=\skip306
+\mdf@subsubtitleinnerbelowskip@length=\skip307
+ (/usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box62
+\mdf@footnotebox=\box63
+\mdf@splitbox@one=\box64
+\mdf@splitbox@two=\box65
+\mdf@splitbox@save=\box66
+\mdfsplitboxwidth=\skip308
+\mdfsplitboxtotalwidth=\skip309
+\mdfsplitboxheight=\skip310
+\mdfsplitboxdepth=\skip311
+\mdfsplitboxtotalheight=\skip312
+\mdfframetitleboxwidth=\skip313
+\mdfframetitleboxtotalwidth=\skip314
+\mdfframetitleboxheight=\skip315
+\mdfframetitleboxdepth=\skip316
+\mdfframetitleboxtotalheight=\skip317
+\mdffootnoteboxwidth=\skip318
+\mdffootnoteboxtotalwidth=\skip319
+\mdffootnoteboxheight=\skip320
+\mdffootnoteboxdepth=\skip321
+\mdffootnoteboxtotalheight=\skip322
+\mdftotallinewidth=\skip323
+\mdfboundingboxwidth=\skip324
+\mdfboundingboxtotalwidth=\skip325
+\mdfboundingboxheight=\skip326
+\mdfboundingboxdepth=\skip327
+\mdfboundingboxtotalheight=\skip328
+\mdf@freevspace@length=\skip329
+\mdf@horizontalwidthofbox@length=\skip330
+\mdf@verticalmarginwhole@length=\skip331
+\mdf@horizontalspaceofbox=\skip332
+\mdfsubtitleheight=\skip333
+\mdfsubsubtitleheight=\skip334
+\c@mdfcountframes=\count348
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count349
+\c@mdf@env@i=\count350
+\c@mdf@env@ii=\count351
+\c@mdf@zref@counter=\count352
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (./ob-chapstyles.sty) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count353
+\lst@gtempboxa=\box67
+\lst@token=\toks36
+\lst@length=\count354
+\lst@currlwidth=\dimen281
+\lst@column=\count355
+\lst@pos=\count356
+\lst@lostspace=\dimen282
+\lst@width=\dimen283
+\lst@newlines=\count357
+\lst@lineno=\count358
+\lst@maxwidth=\dimen284
+ (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count359
+\lst@skipnumbers=\count360
+\lst@framebox=\box68
+) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count361
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip335
+ (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count362
+LaTeX Info: Redefining \checkoddpage on input line 45.
+) (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/share/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip336
+\skiplinenumber=\skip337
+\skiprule=\skip338
+\skiphlne=\skip339
+\skiptext=\skip340
+\skiplength=\skip341
+\algomargin=\skip342
+\skipalgocfslide=\skip343
+\algowidth=\dimen285
+\inoutsize=\dimen286
+\inoutindent=\dimen287
+\interspacetitleruled=\dimen288
+\interspacealgoruled=\dimen289
+\interspacetitleboxruled=\dimen290
+\algocf@ruledwidth=\skip344
+\algocf@inoutbox=\box69
+\algocf@inputbox=\box70
+\AlCapSkip=\skip345
+\AlCapHSkip=\skip346
+\algoskipindent=\skip347
+\algocf@nlbox=\box71
+\algocf@hangingbox=\box72
+\algocf@untilbox=\box73
+\algocf@skipuntil=\skip348
+\algocf@capbox=\box74
+\algocf@lcaptionbox=\skip349
+\algoheightruledefault=\skip350
+\algoheightrule=\skip351
+\algotitleheightruledefault=\skip352
+\algotitleheightrule=\skip353
+\c@algocfline=\count363
+\c@algocfproc=\count364
+\c@algocf=\count365
+\algocf@algoframe=\box75
+\algocf@algobox=\box76
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 7.
+
+
+LaTeX Warning: Unused global option(s):
+    [atbegshi].
+
+(./ktw_ds_notes.aux)
+\openout1 = `ktw_ds_notes.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 36.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 36.
+ (/usr/share/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
+File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
+)
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+   defining Unicode char U+00B7 (decimal 183)
+ (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph.sty
+Package: memucs-gremph 
+LaTeX Info: Redefining \itshape on input line 74.
+LaTeX Info: Redefining \slshape on input line 78.
+)
+Package hyperref Info: Link coloring ON on input line 36.
+ (./ktw_ds_notes.out) (./ktw_ds_notes.out)
+\@outlinefile=\write4
+\openout4 = `ktw_ds_notes.out'.
+
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count366
+\scratchdimen=\dimen291
+\scratchbox=\box77
+\nofMPsegments=\count367
+\nofMParguments=\count368
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count369
+\MPscratchDim=\dimen292
+\MPnumerator=\count370
+\makeMPintoPDFobject=\count371
+\everyMPtoPDFconversion=\toks38
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count372
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Package mdframed Info: mdframed works in twoside mode on input line 39.
+ (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 54.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 74.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 80.
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 99.
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 136.
+[4] [5] (./ktw_ds_notes.aux)
+Package rerunfilecheck Info: File `ktw_ds_notes.out' has not changed.
+(rerunfilecheck)             Checksum: E50A27A94D44E4F913328E11EBDD48D2;72.
+ ) 
+Here is how much of TeX's memory you used:
+ 20629 strings out of 477985
+ 330040 string characters out of 5840058
+ 2025388 words of memory out of 5000000
+ 40353 multiletter control sequences out of 15000+600000
+ 539521 words of font info for 130 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 108i,14n,117p,491b,2125s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
+c0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
+Output written on ktw_ds_notes.pdf (5 pages, 1804641 bytes).
+PDF statistics:
+ 362 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+

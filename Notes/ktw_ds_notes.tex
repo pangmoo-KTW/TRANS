@@ -1,0 +1,195 @@
+\documentclass[a4paper,chapter,atbegshi]{oblivoir}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
+\usepackage{amsmath, amsfonts, graphicx, xcolor, caption, enumitem, mdframed}
+\usepackage{ob-chapstyles, listings,}
+\usepackage[longend,ruled,vlined]{algorithm2e}
+\hypersetup{colorlinks=true, linkcolor=magenta, citecolor=magenta, urlcolor=cyan,}
+\chapterstyle{chappell}
+\setlist{nosep}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{C}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\normalsize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+\title{자료구조}
+\author{김태원}
+\date{\today}
+\begin{document}
+\maketitle
+\chapter{\texttt{C} 리뷰}
+\begin{mdframed}\textbf{1. }
+  입력으로 하나의 양의 정수를 받은 후 $0$이 될 때까지 연속적으로 $2$로 나눈 몫을
+  출력하는 프로그램을 작성하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+int main(){
+  int n;
+  scanf("%d", &n);
+  for(int i=n; i!=0; i/=2)
+    printf("%d ", i);
+}
+\end{lstlisting}
+쉬운 문제다. \colorbox{yellow}{\ttfamily i/=2}는 그냥 멋내는 용이다.
+\hfill\break
+\begin{mdframed}\textbf{2. }
+  입력으로 하나의 양의 정수 $n$을 받은 후 다음의 합을 구하여 출력하는 프로그램을
+  작성하라. 단, 소수점 $4$자리까지만 출력하라.
+  \[
+    1 + \frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}
+  \]
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+int main(){
+  int n;
+  double sum = 0;
+  for(double r=1; r<=n; r++)
+    sum = sum + 1/r;
+  printf("%.4f\n", sum);
+}
+\end{lstlisting}
+5번 라인의 \texttt{for}문에서 \texttt{r}을 \colorbox{yellow}{\ttfamily double}로
+선언했다. \texttt{int}로 선언하면 모든 입력에 대해 출력은 1이기 때문이다.
+\hfill\break
+\begin{mdframed}\textbf{3. }
+  입력으로 하나의 양의 정수 $n$을 받은 후 다음의 합을 구하여 출력하는 프로그램을
+  작성하라. 단, 소수점 4자리까지만 출력하라.
+  \[
+    1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}
+  \]
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+int main(){
+  int n;
+  double sum = 0;
+  scanf("%d", &n);
+  for(double i=1; i<=n; i++){
+    double frac = 1;
+    for(double j=i; j>0; j--)
+      frac *= j;
+    sum += 1/frac;
+  }
+  printf("%.4f\n", sum);
+}
+\end{lstlisting}
+순서대로 해결했다. 9번 라인이 아니라 7번 라인에서 \texttt{frac}을 선언한
+이유는 10번 라인에서 \texttt{frac}이 쓰이기 때문이다.
+\hfill\break
+\begin{mdframed}\textbf{4. }
+  먼저 입력될 정수의 개수 $n\leq100$을 입력받고, 이어서 $n$개의 정수를 받아
+  평균과 표준편차를 계산하여 소수점 이하 4번째 자리까지 출력하는 프로그램을
+  작성하라. 표준편차는 다음과 같이 정의된다. 루트를 계산하기 위해서 
+  \texttt{math.h}를 \texttt{include}하고 \texttt{sqrt}함수를 사용하라.
+  \[
+    SD = \sqrt{\frac{1}{N}\sum_{i=1}^N(x_i-\bar{x})^2}
+  \]
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(){
+  int n;
+  int *arr;
+  double avg = 0;
+  double sum = 0;
+  scanf("%d", &n);
+  arr = (int *)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++){
+    int p;
+    scanf("%d", &p);
+    arr[i] = p;
+    avg += arr[i];
+  }
+  for(int i=0; i<n; i++)
+    sum += pow(arr[i]-avg/n, 2.0);
+  printf("%.5g\n", sqrt(sum/n));
+  free(arr);
+}
+\end{lstlisting}
+\colorbox{yellow}{\ttfamily .5g}라는 formant specifier를
+사용했는데, 가령 $4.5000\ldots$를 $4.5$로 잘라서 출력하기 위해서다. 참고로
+\texttt{math.h} 라이브러리를 포함한 파일을 컴파일하려면 \texttt{-lm} 명령어를
+덧붙여야 한다.
+\hfill\break
+\begin{mdframed}\textbf{5. }
+  먼저 입력될 정수의 개수 $2\leq n\leq 100$을 입력받고, 이어서 $n$개의 정수를
+  입력받는다. 입력된 정수들 중에서 최소값과 두 번째로 작은 값을 찾아
+  출력하는 프로그램을 작성하라. 만약 최소값이 2개 이상 중복되어 존재하면
+  그 중 하나를 최소값으로, 다른 하나를 두 번째로 작은 값으로 간주한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int n, key;
+  int *arr;
+  scanf("%d", &n);
+  arr = (int*)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++)
+    scanf("%d", &arr[i]);
+  for(int i=1; i<n; i++){
+    key = arr[i];
+    int j;
+    for(j=i-1; j>=0 && arr[j]>key; j--)
+      arr[j+1] = arr[j];
+    arr[j+1] = key;
+  }
+  printf("%d %d\n", arr[0], arr[1]);
+  free(arr);
+}
+\end{lstlisting}
+10번 라인에서 시작되는 \texttt{for} 블록은 삽입정렬 알고리즘을 구현한 것이다.
+\begin{algorithm}
+  \caption{Insertion Sort}
+  \KwIn{$A$: Array}
+  \For{$i\in\lbrace2,\ldots, A.length\rbrace$}{
+    $key \gets A[i]$\\
+    $j\gets i-1$ \\
+    \While{$j>0\;\&\; A[j]>key$}{
+      $A[j+1]\gets A[j]$ \\
+      $j\gets j-1$ 
+    }
+    $A[j+1]\gets key$
+  }
+\end{algorithm}
+삽입 정렬 알고리즘은 아래와 같은 방식으로 작동한다.
+\begin{align*}
+  A =
+  [7,3,1,2,4,6]\quad &\textrm{ 첫 번째 for 루프: }7=A[1]>key=A[2]=3 \\ 
+                &\mapsto [3,7,1,2,4,6]\\
+                & \textrm{ 두 번째 for 루프: }7=A[2]>key=A[3]=1\\
+                &\mapsto [3,1,7,2,4,6] \\
+                & \textrm{ 두 번째 for 루프: }3=A[1]>key=A[3]=1 \\
+                &\mapsto [1,3,7,2,4,6] \\
+                &\textrm{ 세 번째 for 루프: }7=A[3]>key=A[4]=2\\
+                &\mapsto [1,3,2,7,4,6] \\
+                &\textrm{ 세 번째 for 루프: }3=A[2]>key=A[4]=2\\
+                &\mapsto [1,2,3,7,4,6] \\
+                &\textrm{ 네 번째 for 루프: }7=A[4]>key=A[5]=4\\
+                &\mapsto [1,2,3,4,7,6]\\
+                &\textrm{ 다섯 번째 for 루프: }7=A[5]>key=A[6]=6\\
+                &\mapsto [1,2,3,4,6,7]
+\end{align*}
+\end{document}

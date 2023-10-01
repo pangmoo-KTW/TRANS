@@ -1,0 +1,110 @@
+\documentclass[a4paper,chapter,atbegshi]{oblivoir}
+\usepackage[dbl4x6]{fapapersize}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx,xcolor,caption,hyperref}
+\usepackage{braket,hyperref,nicematrix,quantikz}
+\usepackage{euler,enumitem,tikz,wrapfig}
+\usepackage{ob-chapstyles}
+\chapterstyle{chappell}
+\setlist{nosep}
+\hypersetup{
+  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
+}
+\newtheorem{defn}{정의}[chapter]
+\newtheorem{theo}{정리}[chapter]
+\newtheorem{thes}{논제}[chapter]
+\newtheorem{axio}{공리}[chapter]
+\title{\texttt{Quantum Algorithms (Childs)} 학습일지}
+\author{김태원}
+\date{\today}
+\begin{document}
+\maketitle
+\chapter{선형대수}
+\section{스펙트럼 이론}
+스펙트럼{\footnotesize spectral} 이론은 선형 연산자의 구조를 파악하기 위한
+개념이다. 벡터공간 $V$에 대해 아래와 같은 선형변환이 존재하여 자기 자신과
+곱할 수도 있고 제곱이나 다항식을 취할 수도 있다고 하자.
+\[
+  A:V\rightarrow V
+\]
+스펙트럼 이론은 연산자를 작은 부분으로 나눠 각 부분을 따로 분석하자는 발상이다.
+아래와 같은 식이 있다고 하자.
+\[
+  x_{n+1}=Ax_n,\quad n=0,1,2,\ldots,
+\]
+여기서 $A:V\rightarrow V$는 선형변환이고 $x_n$은 시간 $n$상의 계가 지니는 상태다.
+초기 상태 $x_0$이 주어질 때 시간 $n$상의 상태 $x_n$을 알고자 한다거나
+$x_n$의 장기간 행태를 분석하고자 할 수 있다. 물론 $x_n=A^n x_0$이다.
+하지만 $n$이 조금만 커져도 $A^n x_0$을 계산하기 어렵다. 이에 대한 도구가
+바로 \emph{고윳값\footnotesize eigenvalues}과 \emph{고유벡터}다. 스칼라
+$\lambda$가 존재하여 아래를 만족한다고 하자.
+\[
+  Ax_0=\lambda x_0
+\]
+그렇다면 아래가 성립하며 $\lambda$는 스칼라이기에 계산이 어렵지 않다.
+\[
+  A^nx_0=\lambda^nx_0
+\]
+\begin{defn}\normalfont
+  스칼라 $\lambda$는 $0$이 아닌 벡터 $v\in V$가 존재하여 아래를 만족하는 경우
+  \[
+    Av=\lambda v
+  \]
+  연산자 $A:V\rightarrow V$의 \emph{고윳값}이라고 하며 $v$는 $A$의 
+  \emph{고유벡터}라고 한다.
+\end{defn}
+$\lambda$가 고윳값이라는 사실을 안다면 고유벡터를 어렵지 않게 찾을 수 있다.
+그냥 아래를 풀면 된다.
+\begin{align*}
+  \;& Ax=\lambda x \\
+  \Leftrightarrow\; &(A-\lambda I)x=0
+\end{align*}
+\begin{defn}\normalfont
+  $A$의 \emph{스펙트럼} $\sigma(A)$는 $A$의 모든 고윳값의 집합이다.
+\end{defn}
+\chapter{기초}
+\section{양자 데이터}
+큐비트는 복소벡터공간상의 $\ell_2$-정규화 벡터로 나타낼 수 있는 상태다. 이를테면
+$n$ 큐비트의 상태는 아래처럼 적는다.
+\[
+  \ket{\psi} = \sum_{x\in\{0,1\}^n}a_x\ket{x}
+\]
+이때 $\ell_2$-정규화 벡터란 $a_x\in\mathbb{C}$가 아래를 만족한다는 뜻이다.
+\[
+  \sum_x|a_x|^2=1
+\]
+상태 $\ket{x}$의 기저를 \emph{계산기저\footnotesize{computational basis}}라고
+부른다고 한다.
+군 $G$에 대해 $g\in G$에 대응하는 기저 상태를 $\ket{g}$라고 나타내고, 군에 대한
+임의의 중첩은 아래처럼 나타낸다.
+\[
+  \ket{\phi}=\sum_{g\in G}b_g\ket{g}
+\]
+양자컴퓨터가 상태 $\ket{\psi}$와 $\ket{\phi}$를 저장할 때 총 상태는 이들 두
+상태의 텐서곱으로 아래처럼 나타낼 수 있다.
+\section{양자 회로}
+양자 상태에 대해 가할 수 있는 연산은 정규화된 상태에서 정규화된 상태로 사상하는
+것이 있다. 이를 \emph{유니타리 연산자} $U$라고 부르고 $U$는 아래를 만족한다.
+\[
+  UU^{\dagger}=U^{\dagger}U=I
+\]
+\section{보편 게이트 집합}
+원리상 $n$ 큐비트에 대한 유니타리 연산은 모두 하나 혹은 두 개의 큐비트로 구성된
+게이트만으로 구현할 수 있다. 따라서 이들 하나 혹은 두 개의 큐비트로 구성된
+게이트의 집합은 \emph{보편적}이라고 한다. 
+
+회로는 유니타리 연산에 적절하게 근사해야 한다. 게이트 $U_1,U_2,\ldots,U_t$로
+구성된 회로는 아래를 만족하는 경우 $U$에 정밀도 $\epsilon$으로 근사한다.
+\[
+  \|U-U_t\cdots U_2U_1\|\leq\epsilon
+\]
+여기서 $\|\;\cdot\;\|$은 노름 가운데 하나로 $\|U-V\|$가 작을 때 $U$를 $V$와
+구분하기 어려워야 한다는 조건을 지닌다. 이런 노름 가운데 하나로 
+스펙트럼{\footnotesize spectral} 노름을 꼽을 수 있다.
+\[
+  \|A\|:=\max_{\ket{\phi}}\frac{\|A\ket{\psi}\|}{\|\ket{\psi}\|}
+\]
+여기서 $\|\ket{\psi}\|=\sqrt{\braket{\psi|\psi}}$는 $\ket{\psi}$의 2-노름을
+나타낸다. 스펙트럼 노름은 $A$의 최대 특잇값{\footnotesize singular value}으로
+볼 수 있다. 벡터를 최대한 늘릴 수 있는 행렬로 생각하면 된다.
+\end{document}

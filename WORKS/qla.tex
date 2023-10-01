@@ -8,7 +8,7 @@
 \chapterstyle{chappell}
 \newtheorem{defn}{정의}[chapter]
 \newtheorem{theo}{정리}[chapter]
-\newtheorem{lemm}{따름정리}[chapter]
+\newtheorem{lemm}{보조정리}[chapter]
 \newtheorem{thes}{논제}[chapter]
 \newtheorem{axio}{공리}[chapter]
 \newtheorem{prob}{문제}[chapter]
@@ -239,6 +239,45 @@ $\ket{\psi}\mapsto U\ket{\psi}$와 같은 사상을 위해 유니타리 $U$를
   방정식 \ref{equ:1-2}에 의해 최종 상태는 $A\ket{\psi}$다. 이는 확률
   $\|A\ket{\psi}\|^2$로 일어난다.
 \end{proof}
+\section{블록-인코딩의 확장가능성}
+행렬의 효율적인 블록-인코딩을 만들 수 있는 조건은 무엇인가? 이에 해밀토니언
+시뮬레이션 문제를 재고한다. 
+\begin{prob}
+  $\{E_a\}_{a\in[m]}$의 $1$-블록 인코딩이 주어져 해밀토니언 
+  $H=\sum_{a=1}^m\lambda_aE_a$를 정의할 때, $e^{-iHt}$의 $($근사의$)$
+  블록-인코딩을 취할 수 있는가?
+\end{prob}
+블록-인코딩은 여러 \textbf{확장 성질\tiny extensibility properties}을 지닌다.
+즉, $A$와 $B$의 블록-인코딩이 주어질 때, $AB$와 $c_0A+c_1B$의 블록-인코딩을
+취할 수 있다. 마찬가지로 크기 조정 상수 $\alpha$에 대해 $H/\alpha$의 블록-인코딩을
+취할 수 있다.
+\begin{lemm}
+  $U$와 $V$가 $A\in\mathbb{C}^{r\times s}$와 $B\in\mathbb{C}^{s\times t}$의
+  $Q_U$ 및 $Q_v$ 블록-인코딩이라고 하자. 이에 $AB$의 $(Q_u+Q_v)$-블록 인코딩을
+  구성할 수 있다.
+\end{lemm}
+\begin{figure}[h]\centering
+  \begin{quantikz}
+    \lstick{$\ket0^{\otimes a_V}$} & \qw &\qw &\gate[3,nwires=2]{V}&\qw&\\
+    \lstick{$\ket0^{\otimes a_U}$} &\gate[2]{U}\arrow[r] & &\\
+    \lstick{$\ket{\psi}$} &\qw &\qw &\qw &\qw &
+  \end{quantikz}
+  \caption{$U$가 $A$의 블록-인코딩이고 $V$가 $B$의 블록-인코딩이라면 이 회로는
+  $AB$의 블록-인코딩이다. 여기서 $a_U$와 $a_V$는 각각의 블록-인코딩에 필요한
+패딩이다.\label{fig:1-2}}
+\end{figure}
+\begin{proof}
+  $AB$를 구현하는 회로가 그림 \ref{fig:1-2}에 있다. 이는 그림 \ref{fig:1-1}의
+  회로 두 개의 합성{\tiny composition}이므로 $AB$의 블록-인코딩이다.
+\end{proof}
+\textbf{유니타리의 선형 결합\tiny Linear Combination of Unitaries (LCU)}
+알고리즘으로 블록-인코딩의 선형결합의 블록-인코딩을 구성할 수 있다.
+\begin{lemm}
+  모든 $i=0,\ldots,k-1$에 대해 $U^{(i)}$가 $A^{(i)}$의 $Q^{(i)}$-블록-인코딩이라고
+  하자. 이에 모든 $\alpha_i\in\mathbb{C}$에 대해 $\sum|\alpha_i|\leq1$인 
+  $\sum\alpha_iU^{(i)}$의 $\left(k+\sum_{i=0}^{k-1}Q^{(i)}\right)$-블록인코딩을 
+  구성할 수 있다.
+\end{lemm}
 \chapter{양자 특잇값 변환}
 \chapter{다항식에 의한 근사}
 \chapter{양자 선형대수}
