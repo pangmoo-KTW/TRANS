@@ -192,4 +192,243 @@ int main(){
                 &\textrm{ 다섯 번째 for 루프: }7=A[5]>key=A[6]=6\\
                 &\mapsto [1,2,3,4,6,7]
 \end{align*}
+\begin{mdframed}\textbf{6. }
+  수열에서 큰 값이 작은 값보다 앞서 나오는 경우 두 값을 역전된 쌍이라고 부른다.
+  예를 들어 수열 $4,2,1,1,3$에는 $(4,2),(4,1),(4,1),(4,3),(2,1),(2,1)$의 총
+  6개의 역전된 쌍이 있다. 수열을 입력으로 받아서 역전된 쌍의 개수를 카운트하여
+  출력하는 프로그램을 작성하라. 키보드로부터 먼저 정수의 개수 $N$을 입력받고,
+  이어서 $N$개의 정수를 입력 받는다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int n, gncount;
+  int* arr;
+  scanf("%d", &n);
+  arr = (int*)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++)
+    scanf("%d", &arr[i]);
+  for(int i=0; i<n; i++){
+    int gn = arr[i];
+    for(int j=i; j<n; j++){
+      if(gn > arr[j])
+        gncount++;
+    }
+  }
+  free(arr);
+  printf("%d\n", gncount);
+}
+\end{lstlisting}
+\texttt{for}문을 돌면서 각 성분에 대해 그 성분보다 큰 것들을 세는 단순무식한
+코드다.
+\hfill\break
+\begin{mdframed}\textbf{7. }
+  키보드로부터 연속해서 음이 아닌 정수들을 입력받는다. 정수가 하나씩 입력될
+  때마다 현재까지 입력된 정수들을 오름차순으로 정렬하여 화면에 출력한다. 단,
+  새로 입력된 정수가 이미 이전에 입력된 정수라면 \texttt{duplicate}라고 출력하고
+  저장하지 않고 버린다. 사용자가 $-1$을 입력하면 프로그램을 종료한다. 입력되는
+  정수의 개수는 100개를 넘지 않는다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+int check(int* arr, int size, int n);
+void insertionSort(int* arr, int size);
+int main(){
+  int arr[100];
+  scanf("%d", &arr[0]);
+  printf("%d\n\n", arr[0]);
+  for(int i=1; i<100; i++){
+    int n;
+    scanf("%d", &n);
+    if(n==-1)
+      break;
+    if(check(arr, i, n)){
+      arr[i] = n;
+      insertionSort(arr, i);
+      for(int j=0; j<=i; j++)
+        printf("%d ", arr[j]);
+    }
+    else{
+      i--;
+      printf("duplicate");
+    }
+    printf("\n\n");
+  }
+}
+int check(int* arr, int size, int n){
+  int result;
+  for(int i=0; i<size; i++){
+    if(arr[i]==n){
+      result = 0;
+      break;
+    }
+    else
+      result = 1;
+  }
+  return result;
+}
+void insertionSort(int* arr, int size){
+  for(int i=1; i<=size; i++){
+    int key = arr[i];
+    int j;
+    for(j=i-1; j>=0 && arr[j]>key; j--)
+      arr[j+1] = arr[j];
+    arr[j+1] = key
+  }
+}
+\end{lstlisting}
+\hfill\break
+\begin{mdframed}\textbf{8. }
+  먼저 입력될 정수의 개수 $n\leq 100$을 입력받고, 이어서 $n$개의 정수를 받아
+  순서대로 배열에 저장한다. 그런 다음 키보드로부터 다시 하나의 정수 $k$를
+  입력받은 후 $n$개의 정수들 중에서 $k$에 가장 가까운, 즉 $k$와의 차이의
+  절대값이 가장 작은 정수를 찾아 출력하는 프로그램을 작성하라. 
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int n, k, diff;
+  int* arr;
+  scanf("%d", &n);
+  arr = (int*)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++)
+    scanf("%d", &arr[i]);
+  scanf("%d", &k);
+  diff = arr[0];
+  for(int i=0; i<n; i++){
+    if(abs(k-diff) > abs(k-arr[i]))
+      diff = arr[i];
+  }
+  free(arr);
+  printf("%d\n", diff);
+}
+\end{lstlisting}
+\colorbox{yellow}{\ttfamily abs} 함수를 사용한 단순무식한 방법이다.
+\hfill\break
+\begin{mdframed}\textbf{9. }
+  사용자로부터 $n<100$개의 정수를 입력받아 크기순으로 정렬한 후 중복된 수를
+  제거하는 프로그램을 작성하라. 입력 형식은 먼저 $n$의 값이 주어지고 이어서
+  $n$개의 정수들이 주어진다. 예를 들어 $n=8$이고 입력된 정수들이 $4,7,4,12,4
+  10,9,7$이라면 중복을 제거하고 남은 정수들은 $4,7,9,10,12$이다. 그러면 먼저
+  남은 정수의 개수 $5$를 출력하고 콜론을 출력한 후 남은 정수들을 오름차순으로
+  출력한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+void insertionSort(int* arr, int size);
+int main(){
+  int n;
+  int count = 0;
+  int index = 0;
+  int *temp, *arr;
+  scanf("%d", &n);
+  temp = (int*)malloc(sizeof(int)*n); 
+  arr = (int*)malloc(sizeof(int)*count);
+  for(int i=0; i<n; i++)
+    scanf("%d", &temp[i]);
+  for(int i=0; i<n; i++){
+    int check = 0;
+    for(int j=0; j<i; j++){
+      if(temp[i]==temp[j]){
+        check = 1;
+        break;
+      }
+    }
+    if(check == 0){
+      count++;
+      arr[index] = temp[i];
+      index++;
+    }
+  }
+  free(temp);
+  insertionSort(arr, count);
+  printf("%d: ", count);
+  for(int i=0; i<count; i++)
+    printf("%d ", arr[i]);
+  printf("\n");
+  free(arr);
+}
+void insertionSort(int* arr, int size){
+  for(int i=1; i<size; i++){
+    int key = arr[i];
+    int j;
+    for(j=i-1; j>=0 && arr[j]>key; j--)
+      arr[j+1] = arr[j];
+    arr[j+1] = key;
+  }
+}
+\end{lstlisting}
+다양한 불변항을 사용했다.
+\hfill\break
+\begin{mdframed}\textbf{10. }
+  정렬을 하는 가장 간단한 방법 중의 하나는 다음과 같이 하는 것이다. 배열
+  \texttt{data}에 \texttt{data[0]}에서 \texttt{data[n-1]}까지 $n$개의 정수가
+  저장되어 있다. 먼저 \texttt{data[0]}와 \texttt{data[n-1]} 사이의 정수들
+  중에서 가장 큰 정수를 찾는다. 그것을 \texttt{data[k]}라고 가정해보자.
+  그러면 \texttt{data[k]}와 \texttt{data[n-1]}을 교환한다. 이제 가장 큰
+  정수가 \texttt{data[n-1]}, 즉 맨 마지막 위치에 저장되었으므로 그 값에 대해서는
+  더 이상 생각할 필요가 없다. 이제 \texttt{data[0] - data[n-2]} 중에서 최대값을
+  찾는다. 그 값을 \texttt{data[p]}라고 하자. 그러면 다시 \texttt{data[p]}와
+  \texttt{data[n-2]}를 교환하고 \texttt{data[n-2]}에 대해서는 잊어버려도 된다.
+  이런 식으로 계속하면 마지막에는 \texttt{data[0]}과 \texttt{data[1]} 중에
+  최대값을 \texttt{data[1]}과 교환하면 전체의 정렬이 완료된다. 이 알고리즘을
+  구현하라. 입력은 먼저 정렬할 개수 $n\leq 100$이 주어지고 이어서 $n$개의
+  정수들이 주어진다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+void selectionSort(int* arr, int size);
+void swap(int* a, int* b);
+int main(){
+  int n;
+  int* data;
+  scanf("%d", &n);
+  data = (int*)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++)
+    scanf("%d", &data[i]);
+  selectionSort(data, n);
+  for(int i=0; i<n; i++)
+    printf("%d ", data[i]);
+  printf("\n");
+  free(data);
+}
+void selectionSort(int* arr, int size){
+  int i, j, max;
+  for(i=size-1; i>0; i--){
+    max = i;
+    for(j=i-1; j>=0; j--)
+      if(arr[j] > arr[max])
+        max=j;
+      swap(&arr[max], &arr[i]);
+  }
+}
+void swap(int* a, int* b){
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+\end{lstlisting}
+선택정렬 알고리즘에 대한 문제다. 배열 성분 자체를 최대값으로 두지 않고
+최대값의 성분에 대응하는 인덱스로 정렬한다는 점에 유의하라. 보통 선택
+정렬은 최대값이 아니라 최소값을 기준으로 한다. 불변항만 살짝 바꾸면 된다.
+\begin{algorithm}
+  \caption{Selection Sort}
+  \KwIn{$A$: Array}
+  \For{$i\in\lbrace1,\ldots, A.length-1\rbrace$}{
+    $min \gets i$\\
+    \For{$j\in\lbrace i+1, A.length-1$}{
+      \If{$A[j]<A[min]$}{
+        $min\gets j$
+      }
+    }
+  \If{$min\neq i$}{
+    swap($A[i],A[min]$)
+    }
+  }
+\end{algorithm}
+
 \end{document}
