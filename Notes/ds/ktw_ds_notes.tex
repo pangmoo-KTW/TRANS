@@ -430,5 +430,213 @@ void swap(int* a, int* b){
     }
   }
 \end{algorithm}
-
+\begin{mdframed}\textbf{11. }
+  입력으로 하나의 문자열을 받은 후 뒤집어서 출력하는 프로그램을 작성하라. 예를
+  들어 \texttt{hello}를 입력하면 \texttt{olleh}가 출력된다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+void revstr(char *str);
+int main(){
+  char* str;
+  scanf("%s", str);
+  revstr(str);
+  printf("%s\n", str);
+  return 0;
+}
+void revstr(char *str){
+  int len = strlen(str);
+  for(int i=0; i<len/2; i++){
+    int temp = str[i];
+    str[i] = str[len-i-1];
+    str[len-i-1] = temp;
+  }
+}
+\end{lstlisting}
+단순하게 swap하여 해결했다.
+\hfill\break
+\begin{mdframed}\textbf{12. }
+  영문 소문자로 구성된 하나의 문자열을 입력받은 후 문자열을 구성하는 문자들을
+  알파벳 순으로 정렬하여 만들어지는 문자열을 출력하라. 예를 들어 \texttt{hello}가
+  입력되면 \texttt{ehllo}를 출력한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+void alphabetOrder();
+int main(){
+  char *ch;
+  scanf("%s", ch);
+  alphabetOrder(ch);
+  puts(ch);
+}
+void alphabetOrder(char *ch){
+  char temp;
+  int i, j, length = strlen(ch);
+  for(i=0; i<length; i++){
+    for(j=i+1; j<length; j++){
+      if(ch[i] > ch[j]){
+        temp = ch[i];
+        ch[i] = ch[j];
+        ch[j] = temp;
+      }
+    }
+  }
+}
+\end{lstlisting}
+기본적으로 선택정렬 알고리즘의 응용이다.
+\hfill\break
+\begin{mdframed}\textbf{13. }
+  아나그램이란 문자들의 순서를 재배열하여 동일하게 만들 수 있는 문자열을
+  말한다. 대소문자는 구분하지 않는다. 예를 들어서 \texttt{Silent}와
+  \texttt{Listen}은 아나그램이다. 입력으로 두 문자열을 받아서 아나그램인지
+  판단하는 프로그램을 작성하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+void cnvt_lwr(char *str);
+int anagram(char *str1, char *str2);
+int main(){
+  char *words[2];
+  for(int i=0; i<2; i++){
+    char buf[100];
+    scanf("%s", buf);
+    words[i] = strdup(buf);
+    cnvt_lwr(words[i]);
+  }
+  if(anagram(words[0], words[1]))
+    puts("yes");
+  else
+    puts("no");
+}
+void cnvt_lwr(char *str){
+  for(int i=0; i<strlen(str); i++){
+    if(str[i] >= 65 && str[i] <= 90)
+      str[i] = str[i]+32;
+  }
+}
+int anagram(char *str1, char *str2){
+  if(strlen(str1)!=strlen(str2))
+    return 0;
+  int count = 0;
+  for(int i=0; i<strlen(str1); i++){
+    for(int j=0; j<strlen(str1); j++){
+      if(str1[i]==str2[j]){
+        count++;
+        break;
+      }
+    }
+  }
+  if(count==check)
+    return 1;
+  else
+    return 0;
+}
+\end{lstlisting}
+\texttt{main}에서 중요한 것은 \colorbox{yellow}{\texttt{buf}와 \texttt{strdup}을
+이용한 입력}이다. \texttt{anagram}은 단순무식한 논리를 \texttt{break}로
+구현한 것이고 \texttt{cnvt\_lwr}는 ASCII 값을 활용하는 함수이므로
+그냥 외워두는 편이 나을 것 같다.
+\begin{mdframed}\textbf{14. }
+  영문 소문자로 구성된 2개의 단어를 입력받은 후 두 단어가 동일한 문자집합으로
+  구성되었는지 검사하여 \texttt{yes} 혹은 \texttt{no}를 출력하는 프로그램을
+  작성하라. 예를 들어 \texttt{ababc}와 \texttt{cba}는 문자집합 
+  \texttt{\{a,b,c\}}로 구성되었으므로 \texttt{yes}다. 입력 단어의 길이는 20이하다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+int alphSet(int* wordA, int* wordB);
+int main(){
+  char* words[2];
+  char alphabet[26];
+  int firstAlphCount[26], secAlphCount[26];
+  for(int i=0; i<2; i++){
+    char buf[20];
+    scanf("%s", buf);
+    words[i] = strdup(buf);
+  }
+  for(int i=0; i<26; i++){
+    alphabet[i] = 'a'+i;
+    firstAlphCount[i] = 0;
+    secAlphCount[i] = 0;
+  }
+  for(int i=0;i<strlen(words[0]);i++){
+    for(int j=0;j<26;j++){
+      if(words[0][i] == alphabet[j])
+        firstAlphCount[i] = 1;
+    }
+  }
+  for(int i=0;i<strlen(words[1]);i++){
+    for(int j=0;j<26;j++){
+      if(words[1][i] == alphabet[j])
+        secAlphCount[i] = 1;
+    }
+  }
+  if(alphSet(firstAlphCount, secAlphCount))
+    puts("yes");
+  else
+    puts("no");
+}
+int alphSet(int* wordA, int* wordB){
+  for(int i=0; i<26; i++){
+    if(wordsA[i] != wordsB[i])
+      return 0;
+  }
+  return 1;
+}
+\end{lstlisting}
+단순무식하지만 뭘 하려는지 잘 보인다. 아무튼 14번 라인인
+\colorbox{yellow}{\texttt{alphabet[i] = 'a'+i}}가 핵심이다.
+\hfill\break
+\begin{mdframed}\textbf{15. }
+  입력으로 $n<100$개의 영문 문자열을 받는다. 각 문자열의 길이는 20이하다. 이
+  문자열들을 문자열의 길이가 짧은 것부터 긴 것 순서로 정렬하여 출력하라. 단,
+  길이가 동일한 문자열들은 그들끼리 사전식 순서로 정렬해야 한다. 입력 형식은
+  먼저 문자열의 개수 $n$이 주어지고, 이어서 $n$개의 문자열이 한 줄에 하나씩
+  주어진다. 
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+  int n;
+  char **words;
+  scanf("%d", &n);
+  words = (char **)malloc(sizeof(char[101])*n);
+  for(int i=0; i<n; i++){
+    char buf[101];
+    scanf("%s", buf);
+    words[i] = strdup(buf);
+  }
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      if(strlen(words[j])>strlen(words[i])){
+        char* temp1;
+        temp1 = words[i];
+        words[i] = words[j];
+        words[j] = temp1;
+      }
+      else if(strlen(words[j])==strlen(words[i])){
+        if(words[j][0] > words[i][0]){
+          char* temp2;
+          temp2 = words[i];
+          words[i] = words[j];
+          words[j] = temp2;
+        }
+      }
+    }
+  }
+  printf("\n");
+  for(int i=0; i<n; i++)
+    printf("%s\n", words[i]);
+  free(words);
+}
+\end{lstlisting}
+8번 라인의 동적 할당에서 쓰인 이중 포인터를 이해하는 것이 관건이다. 다시 말해
+14번 라인 이하의 \texttt{for} 블록에서 swap되는 \texttt{words[]}는 문자가 아니라
+문자열 자체다.
 \end{document}
