@@ -765,6 +765,7 @@ INPUT ./ktw_ent_notes.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
@@ -777,4 +778,5 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

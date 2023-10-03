@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696239161 "ktw_ent_notes.tex" "ktw_ent_notes.pdf" "ktw_ent_notes" 1696239161 0
+["pdflatex"] 1696326030 "ktw_ent_notes.tex" "ktw_ent_notes.pdf" "ktw_ent_notes" 1696326031 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -41,6 +41,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1689853683 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1689853683 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1689853683 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1689853683 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1689853683 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1689853683 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb" 1689853683 35022 e40946b20bfdcd1099eafb2bcd9f25dd ""
@@ -53,6 +54,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb" 1689853683 22644 de44b1031364c5f57164f2249f1302c5 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb" 1689853683 22927 31e776418d6f3753a749eafbf9a8a2bf ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb" 1689853683 10538 4c913b4f5af64465058317e624ed5562 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1689853683 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1689853683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1689853683 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -126,10 +128,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "ktw_ent_notes.aux" 1696239161 1087 4b7a1a9c46421f9ed235445ef1662d10 "pdflatex"
-  "ktw_ent_notes.out" 1696239161 359 ed51c00c5b03a4cd00c3b083090b8247 "pdflatex"
-  "ktw_ent_notes.tex" 1696239159 5296 87f1ff1f4f5b6e8900395a1c102a1bf3 ""
-  "ktw_ent_notes.toc" 1696239161 208 15add81345a520909f06a8e4c1aa2c2c "pdflatex"
+  "ktw_ent_notes.aux" 1696326031 1208 b3d183782935cc98b13c5e11e2ae4223 "pdflatex"
+  "ktw_ent_notes.out" 1696326031 519 142dc72fc3d733a2a4bff3839c8e472e "pdflatex"
+  "ktw_ent_notes.tex" 1696326030 12281 a94c5b144be861c11869f80067b0699c ""
+  "ktw_ent_notes.toc" 1696326031 288 0ba3d5246cb0e8a088cca89276dc2849 "pdflatex"
   (generated)
   "ktw_ent_notes.aux"
   "ktw_ent_notes.log"
