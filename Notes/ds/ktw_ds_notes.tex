@@ -639,4 +639,798 @@ int main(){
 8번 라인의 동적 할당에서 쓰인 이중 포인터를 이해하는 것이 관건이다. 다시 말해
 14번 라인 이하의 \texttt{for} 블록에서 swap되는 \texttt{words[]}는 문자가 아니라
 문자열 자체다.
+\hfill\break
+\begin{mdframed}\textbf{16. }
+  입력으로 텍스트 파일 \texttt{harry.txt}를 읽어서 이 파일에 등장하는 모든
+  단어의 목록을 중복된 단어 없이 사전식 순서로 정렬한다. 이제 새로운 단어
+  하나를 키보드로부터 입력 받는다. 저장된 단어들 중에서 이 새로운 단어를
+  접두어(prefix)로 하는 모든 단어를 찾아서 한 줄에 하나씩 출력하는 프로그램을
+  작성하라. 마지막으로 찾아진 단어의 개수를 출력하라. 어떤 단어가 다른 단어의
+  접두어인지는 표준 라이브러리가 제공하는 \texttt{strncmp} 함수를 이용하여 검사할
+  수 있다. 이 함수의 사용 방법은 검색하여 알아보라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+int prefix(char *pre, char *words);
+int main(){
+  char *words[100000];
+  char buf[100];
+  int n = 0;
+  FILE *fp = fopen("harry.txt", "r");
+  while(fscanf(fp, "%s", buf)!=EOF){
+    int i = 0;
+    for(;i<n;i++){
+      if(strcmp(buf,words[i])==0)
+        break;
+    }
+    if(i==n)
+      words[n++] = strdup(buf);
+  }
+  fclose(fp);
+  for(int i=0; words[i]; i++){
+    for(int j=0; words[j]; j++){
+      if(strcmp(words[i], words[j])<0){
+        char *tmp = words[i];
+        words[i] = words[j];
+        words[j] = tmp;
+      }
+    }
+  }
+  scanf("%s", buf);
+  printf("\n");
+  int count = 0;
+  for(int i=0; words[i]; i++){
+    if(prefix(buf, words[i])){
+      printf("%s\n", words[i]);
+      count++;
+    }
+  }
+  printf("%d\n", count);
+  return 0;
+}
+int prefix(char *pre, char *words){
+  return strncmp(pre, words, strlen(pre))==0;
+}
+\end{lstlisting}
+코드가 꽤 복잡하다. 우선 
+\begin{lstlisting}[style=C]
+char *words[100000];
+\end{lstlisting}
+은 문자열(\texttt{char *}) 100000개로 구성된 배열을 만든다. 
+\begin{lstlisting}[style=C]
+while(fscanf(fp, "%s", buf)!=EOF)
+\end{lstlisting}
+는 입력된 파일이 파일의 끝(\texttt{EOF})에 이를 때까지 문자열을 한 줄 씩 읽는다.
+이 \texttt{while}문 전체를 보자.
+\begin{lstlisting}[style=C]
+while(fscanf(fp, "%s", buf)!=EOF){
+  int i = 0;
+  for(; i<n; i++){
+    if(strcmp(buf, words[i])==0)
+      break;
+  }
+  if(i==n)
+    words[n++] = strdup(buf);
+}
+\end{lstlisting}
+앞서 선언한 문자열 배열 \texttt{words}의 인덱스는 \texttt{n}으로, 버퍼에서
+한 번씩 복제(\texttt{strdup})할 때마다 \texttt{n}이 증가한다. 
+또한 문자열을 한 줄씩 읽는 \texttt{while}문의 인덱스는 \texttt{i}인데,
+\texttt{while}문 내부의 \texttt{for}문도 \texttt{i}를 사용한다.
+문자열 배열상의 문자열 개수 \texttt{n}번 동안 버퍼와 \texttt{i}번째
+문자열 배열을 비교(\texttt{strcmp})하여 일치하면 \texttt{for}문에서
+\texttt{break}한다. 이때 \texttt{i}는 \texttt{for}문 외부에서
+선언되었기에 증가된 \texttt{i} 혹은 중복이 발생한 \texttt{i}의 값이 유지된다.
+이때 \texttt{i}와 \texttt{n}이 일치하면 문자열 배열에 버퍼의 문자열을
+복제하고 \texttt{n}을 증가하는 것이다. 좀 꼬였는데, 중복 없이
+입력하기 위한 것이다.
+
+\texttt{prefix} 함수에 사용된 \texttt{strncmp}는 길이를 지정하여
+\texttt{strcmp}하는 함수다.
+\hfill\break
+\begin{mdframed}\textbf{17. }
+  입력으로 텍스트 파일 \texttt{harry.txt}를 읽는다. 이 텍스트 파일은 오직
+  영문 소문자만으로 구성되어 있다. 이 파일에 등장하는 길이가 6이상인 모든
+  단어의 목록과 각 단어의 등장 빈도를 구하여 화면으로 출력하는 프로그램을
+  작성하라. 단어들은 사전식 순서로 정렬되어 출력되어야 한다. 출력 파일의
+  각 줄에 하나의 단어와 그 단어의 등장 빈도를 콜론으로 구분하여 출력하라.
+  동일한 단어가 중복해서 출력되어서는 안 된다. 출력의 마지막에는 전체 단어의
+  개수를 출력하라. 아래는 올바른 출력의 시작 부분과 끝 부분을 보여준다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+int wordCount(char* file, char* word);
+int main(){
+  char *words[100000];
+  int count, n = 0;
+  FILE *fp = fopen("harry.txt", "r");
+  char buf[100];
+  while(fscanf(fp, "%s", buf)!=EOF){
+    if(strlen(buf)>=6){
+      int i = 0;
+      for(;i<n;i++){
+        if(strcmp(buf,words[i])==0)
+          break;
+      }
+      if(i==n)
+        words[n++] = strdup(buf);
+    }
+  }
+  fclose(fp);
+  for(int i=0; words[i]; i++){
+    for(int j=0; words[j]; j++){
+      if(strcmp(words[i],words[j])<0){
+        char *temp = words[i];
+        words[i] = words[j];
+        words[j] = temp;
+      }
+    }
+  }
+  for(count=0; count<n; count++)
+    printf("%s: %d\n", words[count], wordCount("harry.txt",words[count]));
+  printf("%d\n", count);
+}
+int wordCount(char *file, char *word){
+  int wc = 0;
+  FILE *txt = fopen(file, "r");
+  char buf[100];
+  while((fgets(buf, 100, txt))!=NULL){
+    if((strstr(buf, word))!=NULL)
+      wc++;
+  }
+  fclose(txt);
+  return wc;
+}
+\end{lstlisting}
+\texttt{while}문은 앞선 문제와 일치한다. \texttt{wordCount}에서 쓴
+\texttt{strstr} 함수는 \texttt{file}에 \texttt{word}가 나타나지 않으면 
+\texttt{NULL}을 반환한다. 즉 \texttt{file}에 \texttt{word}가 이미 있으면
+\texttt{wc}를 하나 증가시키는 함수가 \texttt{wordCount}다.
+\hfill\break
+\begin{mdframed}\textbf{19. }
+  하나의 영문 소문자로 된 문자열이 입력으로 주어진다. 이 문자열에서 자음이
+  가장 여러 번 연속해서 등장하는 부분을 찾아서 그 부분을 출력하는 프로그램을
+  작성하라. 예를 들어 문자열 ``nietzsche''에서는 ``tzsch''가 가장 긴 연속된
+  자음이다. 입력 문자열의 길이는 100이하이고, `a', `e', `i', `o', `u'를 제외한
+  모든 알파벳은 자음으로 간주한다. 
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+int isVowel(char c);
+int main(){
+  char input[101];
+  scafn("%s", input);
+  int maxConVow = 0;
+  int curConVow = 0;
+  int index = 0;
+  for(int i=0; i<strlen(input); i++){
+    if(isVowel(input[i]))
+      curConVow++;
+    else{
+      if(curConVow > maxConVow){
+        maxConVow = curConVow;
+        index = i- maxConVow;
+      }
+      curConVow = 0;
+    }
+  }
+  if(curConVow > maxConVow){
+    maxConVow = curConVow;
+    index = length - maxConVow;
+  }
+  if(maxConVow > 0){
+    for(int i=index; i<index+maxConVow; i++)
+      printf("%c", input[i]);
+    printf("\n");
+  }
+}
+int isVowel(char c){
+  return(c != 'a' && c!= 'e' && c != 'i' && c != 'o' && c != 'u');
+}
+\end{lstlisting}
+\chapter{문자열}
+\begin{mdframed}\textbf{1. }
+  하나의 구간(interval)은 시작점과 끝점의 좌표로 정의된다. 구간의 시작점과 끝점은
+  정수이고, 끝점은 항상 시작점보다 크거나 같다. 먼저 구간의 개수 $n<100$이
+  주어지고, 이어서 $n$개의 구간이 입력으로 주어진다. 그런 다음 다시 추가로 하나의
+  구간이 주어진다. 추가로 주어진 구간에 완전히 포함되면서 가장 긴 구간을 찾아 그
+  길이를 출력하는 프로그램을 작성하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+int eval(int (*arr)[2], int (*arr)[2], int size);
+int main(){
+  int n;
+  scanf("%d", &n);
+  int (*interval)[2] = malloc(sizeof(int[n][2]));
+  for(int i=0; i<n; i++){
+    for(int j=0; j<2; j++)
+      scanf("%d", &interval[i][j]);
+  }
+  int newval[1][2];
+  for(int i=0; i<2; i++)
+    scanf("%d", &newval[0][i]);
+  printf("%d\n", eval(interval, newval, n));
+  free(interval);
+}
+int eval(int (*arr1)[2], int (*arr2)[2], int size){
+  int j=0;
+  int length[100];
+  for(int i=0; i<size; i++){
+    if(arr2[0][0] <= arr1[i][0] && arr2[0][1] >= arr1[i][1]){
+      length[j] = arr1[i][1]-arr1[i][0];
+      j++;
+    }
+  }
+  int maxLength = 0;
+  for(int i=0; i<j; i++){
+    if(maxLength <= length[i])
+      maxLength = length[i];
+  }
+  return maxLength;
+}
+\end{lstlisting}
+우선 \texttt{int (*arr)[2]}은 정수형 포인터 배열을 나타낸다. 
+\texttt{int (*interval)[2]}를 선언한 다음, \texttt{int[n][2]}의 크기로
+\texttt{malloc}한다. 즉 2차원 배열이다.
+\hfill\break
+\begin{mdframed}\textbf{2. }
+  입력으로 $n<100$개의 구간이 주어진다. 각 구간은 구간의 시작점과 끝점으로
+  표현된다. 각 구간의 시작점과 끝점은 정수이고, 끝점은 항상 시작점보다 크거나
+  같다. 이 구간들을 시작점이 빠른 순서대로 정렬하여 출력하는 프로그램을
+  작성하라. 시작점이 같은 경우 끝점이 빠른 것을 먼저 출력한다. 입력 형식은 
+  먼저 $n$의 값이 주어지고, 이어서 각 구간의 시작점과 끝점이 차례대로 주어진다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+void psuedoInsertionSort(int *arr1, int *arr2, int size);
+int main(){
+  int n;
+  scanf("%d", &n);
+  int *first = (int*)malloc(sizeof(int)*n);
+  int *second = (int*)malloc(sizeof(int)*n);
+  for(int i=0; i<n; i++){
+    int num1, num2;
+    scanf("%d", &num1);
+    scanf("%d", &num2);
+    first[i] = num1;
+    second[i] = num2;
+  }
+  psuedoInsertionSort(first, second, n);
+  printf("\n");
+  for(int i=0; i<n; i++)
+    printf("%d %d\n", first[i], second[i]);
+  free(first);
+  free(second);
+}
+void psuedoInsertionSort(int *arr1, int *arr2, int size){
+  int i, j, key1, key2;
+  for(i=1; i<size; i++){
+    key1 = arr1[i];
+    key2 = arr2[i];
+    for(j=i-1; j>=0 && (arr1[j]>key1 || (arr1[j]==key1&&arr2[j]>key2)); j--){
+      arr1[j+1] = arr1[j];
+      arr2[j+1] = arr2[j];
+    }
+    arr1[j+1] = key1;
+    arr2[j+1] = key2;
+  }
+}
+\end{lstlisting}
+앞선 문제와 다르게 이차원 배열을 그냥 배열 두 개로 구현할 수도 있다.
+\hfill\break
+\begin{mdframed}\textbf{3. }
+  키보드로부터 여러 개의 단어로 이루어진 한 라인의 텍스트를 입력받은 후
+  단어와 단어 사이에 있는 하나의 공백 문자를 제외한 모든 공백 문자를 제거하고
+  출력하는 프로그램을 작성하라. 또한 마지막에 출력된 문자열의 길이를 출력한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+  char in[1000];
+  fgets(in, sizeof(in), stdin);
+  char *out;
+  out = (char*)malloc(sizeof(char)*length);
+  int index = 0;
+  int space = 1;
+  for(int i=0; i<strlen(in); i++){
+    if(isspace(in[i])){
+      if(!space){
+        out[index++] = ' ';
+        space = 1;
+      }
+    }else{
+      out[index++] = in[i];
+      space = 0;
+    }
+  }
+  if(index > 0 && out[index-1] == ' ')
+    index--;
+  out[index] = '\0';
+  printf("%s:%d\n", out, strlen(out));
+  free(out);
+}
+\end{lstlisting}
+\texttt{scanf}가 아니라 \texttt{fgets}를 사용하는 이유는 공백 문자를 포함하여
+입력하기 위한 것이다. 또한 \texttt{isspace} 함수는 \texttt{ctype.h} 헤더에
+포함되어 있으며, 어떤 문자가 공백 문자인지 판별한다.
+\hfill\break
+\begin{mdframed}\textbf{4. }
+  사전 파일 \texttt{shuffled\_dict.txt}을 읽는다. 이 파일에는 각 줄마다 하나의
+  ``단어''그 단어에 대한 ``설명''이 저장되어 있다. ``단어''와 그 단어에 대한
+  ``설명''은 하나의 탭 문자로 구분되어 있다. ``단어''는 하나의 영문 소문자
+  문자열이며, ``설명''은 여러 개의 단어로 구성된 문장이다. 이 사전 파일에서
+  단어들은 사전식 순서로 정렬되어 있지 않다. 이 파일을 읽은 후 단어들을 사전식
+  순서로 정렬하여 ``\texttt{sorted\_dict.txt}''라는 이름의 새로운 파일을 생성하는
+  프로그램을 작성하라. 저장된 파일에서는 한 줄에 하나의 단어와 그 단어에 대한
+  설명을 탭 문자로 구분하여 저장해야 한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <string.h>
+int main(){
+  char *words[100000];
+  char buf[1000];
+  int n = 0;
+  FILE *txt = fopen("shuffled_dict.txt", "r");
+  FILE *ntxt = fopen("sorted_dict.txt", "w");
+  while(fgets(buf, 1000, txt)!=NULL)
+    words[n++] = strdup(buf);
+  for(int i=0; words[i]; i++){
+    for(int j=0; words[j]; j++){
+      if(strcmp(words[i],words[j])<0){
+        char *tmp = words[i];
+        words[i] = words[j];
+        words[j] = tmp;
+      }
+    }
+  }
+  fclose(txt);
+  for(int i=0; i<n; i++){
+    char *r = strchr(words[i], '\t');
+    *r = '\t';
+    fprintf(ntxt, "%s\n", words[i]);
+  }
+  fclose(ntxt);
+}
+\end{lstlisting}
+\texttt{strchr} 함수는 문자열에서 특정 문자를 찾은 다음 그 주소를 리턴한다.
+사실 \texttt{shuffled\_dict.txt} 파일 자체가 탭 문자로 구분되어 있기에
+정렬 말고는 할 일이 없다.
+\hfill\break
+\begin{mdframed}\textbf{5. }
+  \texttt{table.txt}를 읽어서 \texttt{output.txt} 파일에 테이블 형태로
+  출력하는 프로그램을 작성하라. 입력 파일의 첫 줄에는 테이블 행의 개수
+  $m\leq10$과 열의 개수 $n\leq10$이 주어진다. 이어진 $m$줄에는 각 줄마다
+  테이블의 한 행에 들어갈 $n$개의 내용이 문자 \texttt{\&}로 구분되어
+  주어진다. 테이블의 어떤 칸은 빈 칸일 수도 있다는 것을 유념하라. 빈 칸의
+  경우에도 하나 이상의 공백 문자로 표현되어 있다. 불필요한 공백 문자들을
+  제거하여 최대한 깔끔하게 출력되도록 하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_ROWS 100
+#define MAX_COLS 100
+
+int main(){
+  int rows, cols;
+  int width[MAX_COLS] = {0};
+  char buf[256];
+  char table[MAX_ROWS][MAX_COLS][256];
+  FILE *input, *output;
+  input = fopen("table.txt", "r");
+  output = fopen("output.txt", "w");
+  if(fgets(buf, sizeof(buf), input)!=NULL)
+    sscanf(buf, "%d %d", &rows, &cols);
+  for(int row=0; row<rows; row++){
+    if(fgets(buf, sizeof(buf), input)==NULL)
+      break;
+    char *token = strtok(buf, "&");
+    int col = 0;
+    while(token != NULL && col < cols){
+      strcpy(table[row][col], token);
+      int tokLen = strlen(table[row][col]);
+      if(tokLen > width[col])
+        width[col] = tokLen;
+      token = strtok(NULL, "&");
+      col++;
+    }
+  }
+  for(int row=0; row<rows; row++){
+    for(int col=0; col<cols; col++){
+      fprintf(output, "%-*s", width[col], table[row][col]);
+      if(col <cols-1)
+        fprintf(output, " ");
+    }
+    fprintf(output, "\n");
+  }
+  fclose(input);
+  fclose(output);
+}
+\end{lstlisting}
+\texttt{strtok}의 용례(\url{https://blockdmask.tistory.com/382})와 더불어
+\texttt{fprintf}의 용례(\url{https://jhnyang.tistory.com/314})를 이해하면
+수월한 문제다.
+\hfill\break
+\begin{mdframed}\textbf{6. }
+  프로그램을 시작하면 먼저 텍스트 파일 \texttt{data.mat}을 읽는다. 이 파일의
+  첫 줄에는 양의 정수 $N\leq 100$이 주어지고, 이어진 $N$ 줄에는 각 줄마다
+  $N$개의 정수가 주어진다. 즉 하나의 $N\times N$ 정수 행렬이 주어진다.
+  그런 다음 화면에 프롬프트를 출력하고 일련의 사용자 명령을 처리하는
+  프로그램을 작성하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_SIZE 100
+#define BUF_SIZE 256
+
+void show_mat(int matrix[MAX_SIZE][MAX_SIZE], int size);
+void colmax_mat(int matrix[MAX_SIZE][MAX_SIZE], int size);
+void colmin_mat(int matrix[MAX_SIZE][MAX_SIZE], int size);
+void rowmax_mat(int matrix[MAX_SIZE][MAX_SIZE], int size);
+void rowmin_mat(int matrix[MAX_SIZE][MAX_SIZE], int size);
+void slice_mat(int matrix[MAX_SIZE][MAX_SIZE], int size, int x, int p, int y, int q);
+
+int main(){
+  const char* exit = "exit";
+  const char* show = "show";
+  const char* colmax = "colmax";
+  const char* colmin = "colmin";
+  const char* rowmax = "rowmax";
+  const char* rowmin = "rowmin";
+  const char* slice = "slice"; 
+  char matrix[MAX_SIZE][MAX_SIZE][BUF_SIZE]; 
+  char buf[BUF_SIZE];
+  int n;
+  int width[MAX_SIZE] = {0};
+  int numMat[MAX_SIZE][MAX_SIZE];
+  FILE *input;
+  input = fopen("data.mat", "r");
+  if(fgets(buf, sizeof(buf), input)!=NULL)
+    sscanf(buf, "%d", &n);
+  for(int row=0; row<n; row++){
+    if(fgets(buf, sizeof(buf),input)==NULL)
+      break;
+    char *token = strtok(buf, "\t");
+    int col = 0;
+    while(token != NULL && col<n){
+      strcpy(matrix[row][col], token);
+      int tokLen = strlen(matrix[row][col]);
+      if(tokLen > width[col])
+        width[col] = tokLen;
+      token = strtok(NULL, "\t");
+      col++;
+    }
+    char* temp = strdup(matrix[row][0]);
+    token = strtok(temp, " ");
+    col = 0;
+    while(token != NULL){
+      int number = atoi(token);
+      numMat[row][col]=number;
+      token = strtok(NULL, " ");
+      col++;
+    }
+  }
+  while(1){
+    char arg[10];
+    printf("\n$ ");
+    scanf("%s", arg);
+    if(strcmp(arg, exit)==0)
+      break;
+    else if(strcmp(arg, show)==0)
+      show_mat(numMat, n);
+    else if(strcmp(arg, colmax)==0)
+      colmax_mat(numMat, n);
+    else if(strcmp(arg, colmin)==0)
+      colmin_mat(numMat, n);
+    else if(strcmp(arg, rowmax)==0)
+      rowmax_mat(numMat, n);
+    else if(strcmp(arg, rowmin)==0)
+      rowmin_mat(numMat, n);
+    else if(strcmp(arg, slice)==0){
+      int x, p, y, q;
+      scanf("%d %d %d %d", &x, &p, &y, &q);
+      slice_mat(numMat, n, x, p, y, q);
+    }
+  }
+  fclose(input);
+}
+void show_mat(int matrix[MAX_SIZE][MAX_SIZE], int size){
+  for(int row=0; row<size; row++){
+    for(int col=0; col<size; col++)
+      printf("%d\t", matrix[row][col]);
+    printf("\n");
+  }
+}
+void colmax_mat(int matrix[MAX_SIZE][MAX_SIZE], int size){
+  int max[MAX_SIZE];
+  for(int i=0;i<size;i++)
+    max[i] = matrix[0][i];
+  for(int row=0;row<size;row++){
+    for(int col=0;col<size;col++){
+      if(max[col]< matrix[row][col])
+        max[col] = matrix[row][col];
+    }
+  }
+  for(int row=0;row<size;row++)
+    printf("%d\t", max[row]);
+  printf("\n");
+}
+void colmin_mat(int matrix[MAX_SIZE][MAX_SIZE], int size){
+  int min[MAX_SIZE];
+  for(int i=0;i<size;i++)
+    min[i] = matrix[0][i];
+  for(int row=0;row<size;row++){
+    for(int col=0;col<size;col++){
+      if(min[col]>matrix[row][col])
+        min[col] = matrix[row][col];
+    }
+  }
+  for(int row=0;row<size;row++)
+    printf("%d\t", min[row]);
+  printf("\n");
+}
+void rowmax_mat(int matrix[MAX_SIZE][MAX_SIZE], int size){
+  int max[MAX_SIZE];
+  for(int i=0;i<size;i++)
+    max[i] = matrix[i][0];
+  for(int row=0;row<size;row++){
+    for(int col=0;col<size;col++){
+      if(max[col]<matrix[col][row])
+        max[col] = matrix[col][row];
+    }
+  }
+  for(int row=0;row<size;row++)
+    printf("%d\t", max[row]);
+  printf("\n");
+}
+void rowmin_mat(int matrix[MAX_SIZE][MAX_SIZE], int size){
+  int min[MAX_SIZE];
+  for(int i=0;i<size;i++)
+    min[i] = matrix[i][0];
+  for(int row=0;row<size;row++){
+    for(int col=0;col<size;col++){
+      if(min[col]>matrix[col][row])
+        min[col] = matrix[col][row];
+    }
+  }
+  for(int row=0;row<size;row++)
+    printf("%d\t", min[row]);
+  printf("\n");
+}
+void slice_mat(int matrix[MAX_SIZE][MAX_SIZE], int size, int x, int p, int y, int q){
+  for(int row=x; row<size; row=row+p){
+    for(int col=y; col<size; col=col+q)
+      printf("%d\t", matrix[row][col]);
+  printf("\n");
+  }
+}
+\end{lstlisting}
+그냥 엄청 귀찮은 문제다.
+\hfill\break
+\begin{mdframed}\textbf{7. }
+  강아지가 $N\times N$ 크기의 2차원 배열의 가운데 위치에서 출발한다.
+  $N$은 홀수다. 상, 하, 좌, 우 4방향으로 인접한 셀들 중에서 방문한 적이 없는
+  한 셀을 동일한 확률로 랜덤하게 선택하여 한 칸 이동한다. 배열의 가장자리
+  셀에 도착하면 탈출에 성공한 것이다. 하지만 아무 곳으로도 이동할 수 없는
+  상태에 처하면 탈출에 실패한 것이다. 입력으로 하나의 홀수 $N\leq100$을 받아서
+  강아지가 탈출에 성공할 확률을 시뮬레이션으로 계산하는 프로그램을 작성하라. 
+  실험 횟수는 10,000번으로 하라.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int escape(int N);
+int main() {
+  int N;
+  scanf("%d", &N);
+  int success = escape(N);
+  double prob = (double)success/10000.0;
+  printf("%.3lf\n", prob);
+  return 0;
+}
+int escape(int N) {
+  int count = 0;
+  int x, y;
+  srand(time(NULL));
+  for (int i = 0; i < 10000; i++) {
+    x = N/2;
+    y = N/2;
+    int visited[N][N];
+    for(int row = 0; row < N; row++){
+      for(int col = 0; col < N; col++)
+        visited[row][col] = 0;
+    }
+    while (x > 0 && x < N-1 && y > 0 && y < N-1){
+      visited[x][y] = 1;
+      int dir[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+      int possDir[4][2];
+      int possDirCnt = 0;
+      for (int i=0; i<4; i++) {
+        int nX = x + dir[i][0];
+        int nY = y + dir[i][1];
+          if (!visited[nX][nY]){
+            possDir[possDirCnt][0] = nX;
+            possDir[possDirCnt][1] = nY;
+            possDirCnt++;
+          }
+        }
+      if(possDirCnt == 0)
+        break;
+      int random = rand() % possDirCnt;
+        x = possDir[random][0];
+        y = possDir[random][1];
+    }
+    if(x == 0 || x == N - 1 || y == 0 || y == N-1)
+      count++;
+  }
+  return count;
+}
+\end{lstlisting}
+\texttt{time}을 통한 유사난수의 구현과 다중 조건 문장이 핵심이다.
+\hfill\break
+\begin{mdframed}\textbf{8. }
+  입력 파일 \texttt{board.txt}에 오목판의 상태가 주어진다. 파일의 첫 줄에는
+  바둑판의 크기 $N\leq19$가 주어지고, 이어진 $N$줄에는 각 줄마다 $N$개의
+  정수 0, 1 혹은 2가 주어진다. 0은 빈자리를 표시하고 1은 검은 돌, 2는 흰 돌을
+  표시한다. 주어진 상태가 검은 돌이 이긴 상태인지, 흰 돌이 이긴 상태인지, 혹은
+  아직 아무도 못 이긴 상태인지 검사하여 Black, White, 혹은 Not Finished라고
+  출력하는 프로그램을 작성하라. 둘 다 이긴 상태는 없다고 가정한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_N 19
+int check(int board[MAX_N][MAX_N], int N);
+int main(){
+  int N;
+  FILE *inputFile;
+  inputFile = fopen("board.txt", "r");
+  fscanf(inputFile, "%d", &N);
+  int board[MAX_N][MAX_N];
+  for(int i=0; i<N; i++) {
+    for(int j=0; j<N; j++)
+      fscanf(inputFile, "%d", &board[i][j]);
+  }
+  int result = check(board, N);
+  if(result == 1) 
+    printf("Black\n");
+  else if(result == 2)
+    printf("White\n");
+  else
+    printf("Not Finished\n");
+  fclose(inputFile);
+  return 0;
+}
+
+int check(int board[MAX_N][MAX_N], int N){
+  int i, j;
+  for (i=0; i<N; i++){
+    for (j=0; j<=N-5; j++){
+      if (board[i][j] == 1 && board[i][j + 1] == 1 && board[i][j + 2] == 1 && board[i][j + 3] == 1 && board[i][j + 4] == 1)
+        return 1;
+      if (board[i][j] == 2 && board[i][j + 1] == 2 && board[i][j + 2] == 2 && board[i][j + 3] == 2 && board[i][j + 4] == 2) 
+        return 2; 
+    }
+  }
+  for (i=0; i<=N-5; i++){
+    for (j=0; j<N; j++){
+      if (board[i][j] == 1 && board[i + 1][j] == 1 && board[i + 2][j] == 1 && board[i + 3][j] == 1 && board[i + 4][j] == 1)
+        return 1; 
+      if (board[i][j] == 2 && board[i + 1][j] == 2 && board[i + 2][j] == 2 && board[i + 3][j] == 2 && board[i + 4][j] == 2)
+        return 2; 
+    }
+  }
+  for(i=0; i<=N-5; i++){
+    for(j=0; j<=N-5; j++){
+      if (board[i][j] == 1 && board[i + 1][j + 1] == 1 && board[i + 2][j + 2] == 1 && board[i + 3][j + 3] == 1 && board[i + 4][j + 4] == 1)
+        return 1;
+      if (board[i][j] == 2 && board[i + 1][j + 1] == 2 && board[i + 2][j + 2] == 2 && board[i + 3][j + 3] == 2 && board[i + 4][j + 4] == 2)
+        return 2;
+    }
+  }
+  for(i= 0; i<=N-5; i++){
+    for (j=N-1; j>=4; j--){
+      if (board[i][j] == 1 && board[i + 1][j - 1] == 1 && board[i + 2][j - 2] == 1 && board[i + 3][j - 3] == 1 && board[i + 4][j - 4] == 1)
+        return 1; 
+      if (board[i][j] == 2 && board[i + 1][j - 1] == 2 && board[i + 2][j - 2] == 2 && board[i + 3][j - 3] == 2 && board[i + 4][j - 4] == 2)
+        return 2;
+      }
+  }
+  return 0;
+}
+\end{lstlisting}
+다중 조건문을 활용하면 되는 문제다.
+\hfill\break
+\begin{mdframed}\textbf{9. }
+  \texttt{sample.html} 파일을 읽어서 파일에 등장하는 모든 HTML 태그들을 제거한
+  후 \texttt{sample.txt}라는 이름의 파일로 저장하는 프로그램을 작성하라. 
+  단 HTML 파일에서 태그를 제거하는 것 말고 다른 부분은 그대로 유지되어야 한다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int main() {
+  FILE *input = fopen("sample.html", "r");
+  FILE *output = fopen("sample.txt", "w");
+  char c;
+  bool in = false; 
+  while((c = fgetc(input)) != EOF){
+    if (c == '<')
+      in = true;
+    else if (c == '>') 
+      in = false;
+    else if (!in) 
+      fputc(c, output);
+  }
+  fclose(input);
+  fclose(output);
+  return 0;
+}
+\end{lstlisting}
+\hfill\break
+\begin{mdframed}\textbf{10. }
+  입력으로 텍스트파일 \texttt{input.txt}를 읽어서 왼쪽 정렬하여 
+  \texttt{output.txt} 파일로 출력하는 프로그램을 작성하라. 출력 파일의 한 줄은
+  80 문자를 초과해서는 안되며, 단어를 자르지 않는 한도 내에서 가능한 한
+  최대한 80 문자에 가깝도록 맞춘다.
+\end{mdframed}
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 80
+void align(FILE *input, FILE *output);
+
+int main(){
+  FILE *input = fopen("input.txt", "r");
+  FILE *output = fopen("output.txt", "w");
+  align(input, output);
+  fclose(input);
+  fclose(output);
+  return 0;
+}
+void align(FILE *input, FILE *output){
+  char line[MAX+1]; 
+  int currLength = 0;
+  while(fgets(line, sizeof(line), input) != NULL){
+    int length = strlen(line);
+    if(length > 0 && line[length-1] == '\n'){
+      line[length-1] = '\0';
+      length--;
+    }
+    int i = 0;
+    while(i<length){
+      int rem = MAX - currLength;
+      if (rem >= length - i){
+        fprintf(output, "%s", &line[i]);
+        currLength += length-i;
+        break;
+      } else{
+      fprintf(output, "%.*s\n", rem, &line[i]);
+      currLength = 0;
+      i += rem;
+      }
+    }
+  }
+}
+\end{lstlisting}
 \end{document}
