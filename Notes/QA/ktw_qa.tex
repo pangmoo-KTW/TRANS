@@ -8,7 +8,7 @@
 \chapterstyle{chappell}
 \setlist{nosep}
 \hypersetup{
-  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,
+  colorlinks=true,linkcolor=teal,filecolor=magenta,urlcolor=cyan,citecolor=magenta
 }
 \newtheorem{defn}{정의}[chapter]
 \newtheorem{theo}{정리}[chapter]
@@ -19,6 +19,53 @@
 \date{\today}
 \begin{document}
 \maketitle
+\tableofcontents
+\frontmatter
+\chapter{서문}
+본고는 양자 알고리즘 강의록이다. 우선 양자 정보 기초 과정을 수강한 대학원생이
+대상이다. 이들 기초 과정은 보통 쇼어의 인수분해 알고리즘 (1994) 혹은 그로버의
+탐색 알고리즘 (1996) 같은 양자 알고리즘 분야의 초창기 돌파구를 다룬다. 본고는
+지난 25년간 개발된 양자 알고리즘 여럿을 탐구하여 양자컴퓨팅에 이보다 많은 것이
+존재한다는 사실을 보인다.
+
+이 강의록은 양자 알고리즘 분야의 몇 가지 주요 주제를 여섯 부분으로 나눠 다룬다.
+
+\hfill
+\begin{itemize}
+  \item \ref{part:1}편에서는 \emph{양자 회로}를 다룬다. 특히 양자 알고리즘을
+    주어진 보편 양자 회로 집합으로 나타내는 문제를 다룬다.
+\end{itemize}
+\mainmatter
+\chapter{기초}
+1장은 양자계산에 대한 배경 지식을 일별한다. 우리는 이들 주제를 아주 높은 수준으로
+다루는데, 강의록을 이해하기 위해 알아야 하는 내용의 감을 잡기 위해서다. 이들
+주제가 낯설다면, 양자계산에 대한 교재를 통해 보충할 수 있다. Nielsen과 Chuang
+\cite{nielsen00}, Kitaev, Shen, Vyalvi \cite{kitaev02}, Kaye, Laflamme, Mosca
+\cite{kaye06}의 교재를 참고하라.
+\section{양자 데이터}
+양자컴퓨터는 계산을 수행하기 위해 정보의 양자역학적인 표현을 사용하는 장치다.
+정보는 양자 비트, 복소벡터공간상의 $\ell_2$-정규화된 벡터로 나타낼 수 있는 상태로
+저장된다. 이를테면 우리는 $n$ 큐비트의 상태를 아래처럼 작성할 수 있으며
+\begin{equation}
+  \ket{\psi} = \sum_{x\in\{0,1\}^n}a_x\ket{x}
+\end{equation}
+여기서 $a_x\in\mathbb{C}$는 $\sum_x|a_x|^2=1$을 만족한다. 우리는 상태의 기저
+$\ket{\psi}$를 \emph{계산 기저}라고 부른다. 
+
+더 추상적인 형식으로 데이터를 저장하는 것이 양자 상태라고 받아들이는 편이
+종종 유용하다. 이를테면 군 $G$가 주어질 때, 군 원소 $g\in G$에 대응하는
+기저 상태에 대해 $\ket{g}$라고 쓰고
+\begin{equation}
+  \ket{\phi} = \sum_{g\in G}b_g\ket{g}
+\end{equation}
+라고 군에 대한 임의의 중첩을 나타낸다. 우리는 비트 문자열로 군 원소를 나타내는
+효율적인 표준 방식이 존재한다고 가정하겠다. 보통 이런 표현을 명시적으로 보일
+필요는 없다.
+
+양자 컴퓨터가 상태 $\ket{\psi}$\emph{와} 상태 $\ket{\phi}$를 저장한다면, 총
+상태는 이들 두 상태의 텐서 곱으로 주어진다. 이를 $\ket{\psi}\otimes\ket{\phi}=
+\ket{\psi}\ket{\phi}=\ket{\psi,\phi}$라고 나타낸다. 
+\part{양자 회로}\label{part:1}
 \chapter{선형대수}
 \section{스펙트럼 이론}
 스펙트럼{\footnotesize spectral} 이론은 선형 연산자의 구조를 파악하기 위한
@@ -107,4 +154,6 @@ $n$ 큐비트의 상태는 아래처럼 적는다.
 여기서 $\|\ket{\psi}\|=\sqrt{\braket{\psi|\psi}}$는 $\ket{\psi}$의 2-노름을
 나타낸다. 스펙트럼 노름은 $A$의 최대 특잇값{\footnotesize singular value}으로
 볼 수 있다. 벡터를 최대한 늘릴 수 있는 행렬로 생각하면 된다.
+\bibliography{ref}
+\bibliographystyle{plain}
 \end{document}

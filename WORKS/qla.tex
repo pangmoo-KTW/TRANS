@@ -3,7 +3,7 @@
 \usefapapersize{210mm,297mm,30mm,*,30mm,32mm}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{braket,hyperref,nicematrix,graphicx,xcolor,caption}
-\usepackage{euler,enumitem,mdframed,ob-chapstyles,tikz,quantikz}
+\usepackage{euler,enumitem,mdframed,ob-chapstyles,tikz,quantikz,verbatim}
 \hypersetup{colorlinks=true,linkcolor=magenta,citecolor=magenta,urlcolor=cyan,}
 \chapterstyle{chappell}
 \newtheorem{defn}{정의}[chapter]
@@ -170,15 +170,14 @@ $\ket{\psi}$였다는 사실을 $\ket{\psi(t)}$로 표기하자. 초기 상태 $
   \Rightarrow &\ket{\psi(t)}=e^{-iHt}\ket{\psi(0)}
 \end{align*}
 정리하면, 해밀토니언 시뮬레이션은 문제는 말 그대로 해밀토니언을 시뮬레이션하는
-문제다. 대표적인 해법은 \textbf{트로터 근사}다. 충분히 큰 $r$에 대해 아래가 
-성립한다.
+문제다. 대표적인 해법은 \textbf{트로터 근사}다. 충분히 큰 $r\rightarrow\infty$에
+대해 아래가 성립한다.
 \[
   e^{-iHt} \approx \left(e^{-iE_1t/r}e^{-iE_2t/r}\cdots e^{-iE_mt/r}\right)^r
 \]
-여기서 $m=\frac{1}{\epsilon}$이다. 따라서 이 근사를 구현하기 위해서는
-$\frac{1}{\epsilon}$에 비례하는 게이트가 필요하다. 즉 게이트 복잡도가 
-$\textrm{poly}(1/\epsilon)$이다. 결코 최적해가 아니다. 이후 개선된 알고리즘들이
-나타났으며 이들은 아래 프레임워크로 이어진다.
+이 근사를 구현하기 위해서는 $\frac{1}{\epsilon}$에 비례하는 게이트가 필요하다.
+즉 게이트 복잡도가 $\textrm{poly}(1/\epsilon)$이다. 결코 최적해가 아니다. 
+이후 개선된 알고리즘들이 나타났으며 이들은 아래 프레임워크로 이어진다.
 \begin{mdframed}
 \begin{enumerate}[label=(\roman*)]
   \item ``블록-인코딩''이라는 유형의 양자 회로를 정의한다.
@@ -194,44 +193,100 @@ $\textrm{poly}(1/\epsilon)$이다. 결코 최적해가 아니다. 이후 개선�
   $A\in\mathbb{C}^{r\times c}$가 주어질 때, $U\in\mathbb{C}^{d\times d}$는
   $U$가 $\mathcal{O}(Q)$ 게이트로 구현가능하고 항등행렬의 첫 $r$열과 $c$열인
   $B_{L,1}\in\mathbb{C}^{d\times r},B_{R,1}\in\mathbb{C}^{d\times c}$에 대해
-  \begin{equation}
+  \begin{equation}\label{eq:1-1}
     B_{L,1}^{\dagger}UB_{R,1} = A
   \end{equation}
   를 만족하면 $A$의 $Q$-블록 인코딩이라고 부른다. 다시 말해 아래와 같다.
-  \[
+  \begin{equation}\label{eq:1-2}
     U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix}
-  \]
+  \end{equation}
   여기서 $\cdot$ 은 $U$의 임의의 원소를 나타낸다. 
 \end{defn}
+방정식 \ref{eq:1-1}과 방정식 \ref{eq:1-2}가 같은 말이라는 사실을 이해하는
+것이 중요하다. $c=2,d=8,r=4$라고 가정하자. 다시 말해 $A\in\mathbb{C}^{4\times2},
+U\in\mathbb{C}^{8\times 8}, B_{L,1}\in\mathbb{C}^{8\times 4}, 
+B_{R,1}\in\mathbb{C}^{8\times 2}$라고 가정하자.
+\begin{align*}
+  &B^{\dagger}_{L,1} =
+    \begin{pmatrix}
+      1&0&0&0&0&0&0&0\\0&1&0&0&0&0&0&0\\0&0&1&0&0&0&0&0\\0&0&0&1&0&0&0&0
+  \end{pmatrix},\;
+  U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix} =
+  \begin{pmatrix}
+    a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{31}&a_{32}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{41}&a_{42}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
+  \end{pmatrix},\;
+    B_{R,1} =  \begin{pmatrix}
+    1&0\\0&1\\0&0\\0&0\\0&0\\0&0\\0&0\\0&0
+  \end{pmatrix}\\
+  \Rightarrow\quad&B_{L,1}^{\dagger}U = 
+  \begin{pmatrix}
+    a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{31}&a_{32}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{41}&a_{42}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
+  \end{pmatrix} \quad\Longrightarrow
+  B_{L,1}^{\dagger}UB_{R,1} =
+  \begin{pmatrix}
+    a_{11}&a_{12}\\a_{21}&a_{22}\\a_{31}&a_{32}\\a_{41}&a_{42}
+  \end{pmatrix}
+  = A
+\end{align*}
 여기서 $d,r,c$를 $2^n$으로 고려하면 위 항들을 큐비트로 받아들일 수 있다.
 \begin{equation}\label{equ:1-2}
   (\bra0^{\otimes a_L}\otimes I)U(\ket0^{\otimes a_R}\otimes I) = A
 \end{equation}
-즉 블록-인코딩은 유니타리 양자 회로의 일반화다.
+여기서 $\ket{0}^{\otimes a_R}$은 두 가지 의미로 해석할 수 있는데, 첫째는
+말 그대로 $\ket0$을 $a_R$번 텐서곱하는 것이다. 즉 
+\[
+  \ket0 = \begin{pmatrix}1\\0\end{pmatrix}\Rightarrow
+  \ket0\otimes\ket0 = \begin{pmatrix}1\\0\\0\\0\end{pmatrix}\Longrightarrow
+  \ket0^{\otimes a_R} = \begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}
+\]
+이라서 $\ket0^{\otimes a_R}\otimes I$는 어떤 크기의 항등행렬 $I$에 대해 아래와
+같다.
+\[
+  \ket0^{\otimes a_R}\otimes I =
+  \begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&0&0
+  \end{pmatrix}
+\]
+즉 $d,r,c$가 $2^n$일 때 $B_{L,1}^{\dagger}=\bra{0}^{\otimes a_L}\otimes I,
+B_{R,1}=\ket0^{\otimes a_R}\otimes I$다. 다른 한편 양자회로의 각 와이어는
+텐서곱으로 인터랙션한다. 다시 말해 $\ket0$으로 초기화된 와이어가 $a$개
+있다고 볼 수 있다. 그런데 이런 블록-인코딩이 필요한 이유는 무엇일까? 
+아래 보조정리를 확인하자. 
+\begin{lemm}
+  유니타리 $U$를 $Q$ 게이트로 구현하는 양자 회로는 $U$의 $Q$-블록 인코딩이다.
+\end{lemm}
+당연한 사실이다. 한편 $\ket{\psi}\mapsto U\ket{\psi}$와 같은 사상을 위해
+유니타리 $U$를 구현하는 회로를 사용하는 것과 마찬가지로, $A$의 블록-인코딩 또한
+$\ket{\psi}\mapsto A\ket{\psi}$와 같은 사상을 수행하기 위해 쓰일 수 있다. 물론
+실패할 확률이 존재하지만, 이는 유니타리 회로가 제공하는 것보다 더 일반적인
+유형의 선형대수학적 연산을 수행할 수 있도록 한다. 즉 블록-인코딩은 유니타리
+양자 회로의 일반화다.
+\begin{lemm}
+  $A\in\mathbb{C}^{r\times c}$의 $Q$-블록 인코딩 $U\in\mathbb{C}^{d\times d}$와
+  상태 $\ket{\psi}\in\mathbb{C}^c$가 주어질 때, 상태
+  $A\ket{\psi}$를 $\mathcal{O}(Q)$ 게이트와 
+  $\|A\ket{\psi}\|^2$의 확률로 생산하는 양자 회로가 존재한다.
+\end{lemm}
 \begin{figure}[h]
   \centering
   \begin{quantikz}
     \lstick{$\ket0^{\otimes a}$}  &\gate[2]{U}&\meter{}\\
     \lstick{$\ket{\psi}$}   &\qw         &\qw
   \end{quantikz}
-  \caption{기본적인 블록-인코딩 회로. $U$가 행렬 $A\in\mathbb{C}^{r\times r}$의
+  \caption{기본적인 블록-인코딩 회로. $U$가 행렬 $A\in\mathbb{C}^{r\times c}$의
   블록-인코딩이라면 첫 번째 와이어의 측정 결과가 $\ket0^{\otimes a}$인 경우
 회로의 출력은 $A\ket{\psi}$다.\label{fig:1-1}} 
 \end{figure}
-\begin{lemm}
-  유니타리 $U$를 $Q$ 게이트로 구현하는 양자 회로는 $U$의 $Q$-블록 인코딩이다.
-\end{lemm}
-$\ket{\psi}\mapsto U\ket{\psi}$와 같은 사상을 위해 유니타리 $U$를
-구현하는 회로에 대해, $A$의 블록-인코딩 또한 $\ket{\psi}\mapsto A\ket{\psi}$와
-같은 사상을 수행하기 위해 쓰일 수 있다. 물론 실패할 확률이 존재하지만, 이는
-유니타리 회로가 제공하는 것보다 더 일반적인 유형의 선형대수학적 연산을
-수행할 수 있도록 한다.
-\begin{lemm}
-  $A\in\mathbb{C}^{r\times c}$의 $Q$-블록 인코딩 $U\in\mathbb{C}^{d\times d}$와
-  상태 $\ket{\psi}\in\mathbb{C}^c$가 주어질 때, 상태
-  $\frac{A\ket{\psi}}{\|A\ket{\psi}\|}$를 $\mathcal{O}(Q)$ 게이트와 
-  $\|A\ket{\psi}\|^2$의 확률로 생산하는 양자 회로가 존재한다.
-\end{lemm}
+
 \begin{proof}
   그림 \ref{fig:1-1}상의 회로를 보라. 우리는 상태 $\ket{\psi}$를 취해
   $\ket{0}$으로 초기화된 $a_R$ 큐비트를 더한다. 그런 다음, 블록-인코딩 $U$를
@@ -239,6 +294,72 @@ $\ket{\psi}\mapsto U\ket{\psi}$와 같은 사상을 위해 유니타리 $U$를
   방정식 \ref{equ:1-2}에 의해 최종 상태는 $A\ket{\psi}$다. 이는 확률
   $\|A\ket{\psi}\|^2$로 일어난다.
 \end{proof}
+여기서 측정이 무엇인지 이해해야 한다. 위 증명에서 측정 직전 양자 계의 상태는
+$U(\ket0^{\otimes a_R}\otimes I)\ket{\psi}$였고 이에 $\ket0^{\otimes a_L}$를
+측정한 결과가 모두 $0$인지, 즉 모든 $a_L$ 큐비트가 $\bra0$으로 결정되냐는 것이
+관건이다.
+\[
+  P(0) = \|(\bra0^{\otimes a_L}\otimes I)U(\ket0^{\otimes a_R}\otimes I)
+  \ket{\psi}\|^2
+  = \|A\ket{\psi}\|^2
+  = P\left(A\ket{\psi}\right)
+\]
+
+큐비트의 측정 결과가 
+여기서 측정이 무엇인지 이해해야 한다. 양자 측정은 측정 연산자의 모음 $\{M_m\}$으로
+기술된다. 이들은 측정되는 계의 상태 공간에 대한 연산자다. 인덱스 $m$은 실험으로
+나타날 수 있는 측정 결과를 가리킨다. 측정 직전 양자 계의 상태가 $\ket{\psi}$였다면
+결과 $m$이 나타나는 확률은 아래와 같이 주어진다.
+\[
+  P(m) = \braket{\psi|M^{\dagger}_mM_m|\psi}
+\]
+$M_0 = \ket0\bra0$이고, $M_1 = \ket1\bra1$이다. 따라서 $a_L$ 큐비트의 측정 결과가
+$0$이라는 말은 그 결과가 $\ket0\bra0$라는 뜻이다. 
+위 증명에서 측정 직전 양자 계의 상태는 $\ket0^{\otimes a_L}$이었다. 그 결과가
+$0$일 확률은 아래와 같다.
+\[
+  P(0) = \bra0^{\otimes a_L}|M_0^{\dagger}M_0\ket0^{\otimes a_L}
+  =\bra0^{\otimes a_L}|\ket0\bra0\ket0^{\otimes a_L}
+\]
+
+여기서 측정의 선형대수적인 개념을 이해해야 한다. 측정이란 관측 상태에 대응하는
+특정 결과를 얻는 확률을 말한다. 그리고 $\ket{\psi_j}$를 기저로 
+$\ket{\phi}$라는 상태를 측정하는 확률은 아래와 같은 내적의 제곱으로 주어진다.
+\[
+  P(\ket{\psi_j}) = |\braket{\psi_j|\phi}|^2
+\]
+위 증명도 마찬가지다. $\ket0^{\otimes aL}$을 측정했을 때 $U (\ket{0}^{\otimes 
+a_R}\otimes I)$라는 결과를 취하는 확률은 아래와 같다. 
+\[
+  P(A\ket{\psi}) =
+  \|(\bra0^{\otimes aL}\otimes I )U (\ket{0}^{\otimes a_R}\otimes I)\|^2
+  = \|A\ket{\psi}\|^2
+\]
+\begin{comment}
+여기서 이해해야 하는 것은 $\|\|$이라는 노름과 측정의 개념 및 회로 표현이다.
+벡터 노름과 다르게 행렬, 다시 말해 변환의 크기는 어떻게 재는가? 이를 위해
+사용하는 것이 \emph{유도{\tiny induced} 노름}이다. 말 그대로 벡터 노름에서
+유도한 것이다. 이들 유도 노름 가운데 유도 2-노름 혹은 스펙트럼 노름을 사용할
+것인데, 이는 행렬의 최대 특잇값을 말한다. 직관적으로는 행렬이 벡터를 늘릴
+수 있는 최대 스케일이라고 해석할 수 있다. 또한 특잇값은 어떤 $n\times m$ 연산자
+$A$가 $V$에서 $U$로의 사상이라고 하자. 각 $v_i\in V$는 $u_i\in U$와 어떤
+스칼라 $\sigma_i$에 따라 아래와 같이 전개될 것이다.
+\begin{align*}
+  &Av_i = u_i\sigma_i \\
+  \Rightarrow\; &AV = U\Sigma \\
+  \Rightarrow \;& A = U\Sigma V^{\dagger}
+\end{align*}
+마지막 등식을 특잇값 분해라고 부르며 $\Sigma$의 원소들이 특잇값이다. 다시 말해
+$\sigma_i$ 가운데 가장 큰 것이 바로 $A$의 스펙트럼 노름이다.
+\[
+  \|A\| = \max_{\|x\|\neq0}\frac{\|Ax\|}{\|x\|}
+\]
+즉 최대로 늘어난 $\|Ax\|$를 벡터 노름 $\|x\|$으로 나눈 것, 행렬이 벡터를 늘릴
+수 있는 최대 스케일이다. 따라서 $\frac{A\ket{\psi}}{\|A\ket{\psi}\|}$란 
+$A$라는 행렬-연산자를 $\ket{\psi}$라는 상태-벡터에 적용한 $A\ket{\psi}$를
+$A\ket{\psi}$가 상태-벡터를 늘릴 수 있는 최대 스케일, 혹은 최대 특잇값으로
+정규화한 것이다.
+\end{comment}
 \section{블록-인코딩의 확장가능성}
 행렬의 효율적인 블록-인코딩을 만들 수 있는 조건은 무엇인가? 이에 해밀토니언
 시뮬레이션 문제를 재고한다. 

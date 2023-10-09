@@ -1372,6 +1372,7 @@ INPUT /usr/share/texmf-dist/tex/latex/amsfonts/ueuex.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/euler/euex7.tfm
+INPUT /usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT ./qla.aux
 INPUT qla.aux
 INPUT qla.aux
@@ -1675,7 +1676,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmad.pfb

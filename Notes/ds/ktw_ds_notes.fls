@@ -1154,6 +1154,9 @@ INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tctt1000.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmca.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmac.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmc2.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanumgtmd2.tfm
 INPUT ktw_ds_notes.aux
 INPUT ./ktw_ds_notes.out
 INPUT ./ktw_ds_notes.out
@@ -1166,12 +1169,16 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbb.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbd.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc2.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd2.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb
