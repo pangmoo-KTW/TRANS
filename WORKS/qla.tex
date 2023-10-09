@@ -248,19 +248,18 @@ B_{R,1}\in\mathbb{C}^{8\times 2}$라고 가정하자.
   \ket0 = \begin{pmatrix}1\\0\end{pmatrix}\Rightarrow
   \ket0\otimes\ket0 = \begin{pmatrix}1\\0\\0\\0\end{pmatrix}\Longrightarrow
   \ket0^{\otimes a_R} = \begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}
-\]
-이라서 $\ket0^{\otimes a_R}\otimes I$는 어떤 크기의 항등행렬 $I$에 대해 아래와
-같다.
-\[
+  ,\quad
   \ket0^{\otimes a_R}\otimes I =
   \begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&0&0
   \end{pmatrix}
 \]
-즉 $d,r,c$가 $2^n$일 때 $B_{L,1}^{\dagger}=\bra{0}^{\otimes a_L}\otimes I,
-B_{R,1}=\ket0^{\otimes a_R}\otimes I$다. 다른 한편 양자회로의 각 와이어는
+그리하여 $d,r,c$가 $2^n$일 때 $B_{L,1}^{\dagger}=\bra{0}^{\otimes a_L}\otimes I,
+B_{R,1}=\ket0^{\otimes a_R}\otimes I$다. 
+
+다른 한편 양자회로의 각 와이어는
 텐서곱으로 인터랙션한다. 다시 말해 $\ket0$으로 초기화된 와이어가 $a$개
 있다고 볼 수 있다. 그런데 이런 블록-인코딩이 필요한 이유는 무엇일까? 
-아래 보조정리를 확인하자. 
+우선 아래 보조정리를 확인하자. 
 \begin{lemm}
   유니타리 $U$를 $Q$ 게이트로 구현하는 양자 회로는 $U$의 $Q$-블록 인코딩이다.
 \end{lemm}
@@ -305,61 +304,6 @@ $U(\ket0^{\otimes a_R}\otimes I)\ket{\psi}$였고 이에 $\ket0^{\otimes a_L}$�
   = P\left(A\ket{\psi}\right)
 \]
 
-큐비트의 측정 결과가 
-여기서 측정이 무엇인지 이해해야 한다. 양자 측정은 측정 연산자의 모음 $\{M_m\}$으로
-기술된다. 이들은 측정되는 계의 상태 공간에 대한 연산자다. 인덱스 $m$은 실험으로
-나타날 수 있는 측정 결과를 가리킨다. 측정 직전 양자 계의 상태가 $\ket{\psi}$였다면
-결과 $m$이 나타나는 확률은 아래와 같이 주어진다.
-\[
-  P(m) = \braket{\psi|M^{\dagger}_mM_m|\psi}
-\]
-$M_0 = \ket0\bra0$이고, $M_1 = \ket1\bra1$이다. 따라서 $a_L$ 큐비트의 측정 결과가
-$0$이라는 말은 그 결과가 $\ket0\bra0$라는 뜻이다. 
-위 증명에서 측정 직전 양자 계의 상태는 $\ket0^{\otimes a_L}$이었다. 그 결과가
-$0$일 확률은 아래와 같다.
-\[
-  P(0) = \bra0^{\otimes a_L}|M_0^{\dagger}M_0\ket0^{\otimes a_L}
-  =\bra0^{\otimes a_L}|\ket0\bra0\ket0^{\otimes a_L}
-\]
-
-여기서 측정의 선형대수적인 개념을 이해해야 한다. 측정이란 관측 상태에 대응하는
-특정 결과를 얻는 확률을 말한다. 그리고 $\ket{\psi_j}$를 기저로 
-$\ket{\phi}$라는 상태를 측정하는 확률은 아래와 같은 내적의 제곱으로 주어진다.
-\[
-  P(\ket{\psi_j}) = |\braket{\psi_j|\phi}|^2
-\]
-위 증명도 마찬가지다. $\ket0^{\otimes aL}$을 측정했을 때 $U (\ket{0}^{\otimes 
-a_R}\otimes I)$라는 결과를 취하는 확률은 아래와 같다. 
-\[
-  P(A\ket{\psi}) =
-  \|(\bra0^{\otimes aL}\otimes I )U (\ket{0}^{\otimes a_R}\otimes I)\|^2
-  = \|A\ket{\psi}\|^2
-\]
-\begin{comment}
-여기서 이해해야 하는 것은 $\|\|$이라는 노름과 측정의 개념 및 회로 표현이다.
-벡터 노름과 다르게 행렬, 다시 말해 변환의 크기는 어떻게 재는가? 이를 위해
-사용하는 것이 \emph{유도{\tiny induced} 노름}이다. 말 그대로 벡터 노름에서
-유도한 것이다. 이들 유도 노름 가운데 유도 2-노름 혹은 스펙트럼 노름을 사용할
-것인데, 이는 행렬의 최대 특잇값을 말한다. 직관적으로는 행렬이 벡터를 늘릴
-수 있는 최대 스케일이라고 해석할 수 있다. 또한 특잇값은 어떤 $n\times m$ 연산자
-$A$가 $V$에서 $U$로의 사상이라고 하자. 각 $v_i\in V$는 $u_i\in U$와 어떤
-스칼라 $\sigma_i$에 따라 아래와 같이 전개될 것이다.
-\begin{align*}
-  &Av_i = u_i\sigma_i \\
-  \Rightarrow\; &AV = U\Sigma \\
-  \Rightarrow \;& A = U\Sigma V^{\dagger}
-\end{align*}
-마지막 등식을 특잇값 분해라고 부르며 $\Sigma$의 원소들이 특잇값이다. 다시 말해
-$\sigma_i$ 가운데 가장 큰 것이 바로 $A$의 스펙트럼 노름이다.
-\[
-  \|A\| = \max_{\|x\|\neq0}\frac{\|Ax\|}{\|x\|}
-\]
-즉 최대로 늘어난 $\|Ax\|$를 벡터 노름 $\|x\|$으로 나눈 것, 행렬이 벡터를 늘릴
-수 있는 최대 스케일이다. 따라서 $\frac{A\ket{\psi}}{\|A\ket{\psi}\|}$란 
-$A$라는 행렬-연산자를 $\ket{\psi}$라는 상태-벡터에 적용한 $A\ket{\psi}$를
-$A\ket{\psi}$가 상태-벡터를 늘릴 수 있는 최대 스케일, 혹은 최대 특잇값으로
-정규화한 것이다.
-\end{comment}
 \section{블록-인코딩의 확장가능성}
 행렬의 효율적인 블록-인코딩을 만들 수 있는 조건은 무엇인가? 이에 해밀토니언
 시뮬레이션 문제를 재고한다. 
