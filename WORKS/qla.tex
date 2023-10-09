@@ -22,7 +22,7 @@
 Ewin Tang의 2023년 Parc City Mathematics Institute 대학원생 대상 강의
 {\slshape Quantum and quantum-inspired linear algebra}(\url{https://ewintang.com/pcmi/})를
 중심으로 블록인코딩, QSVT, 양자 시뮬레이션, 양자 선형대수의 개념을 익힌다. 
-\end{abstract}\pagestyle{empty}\newpage
+\end{abstract}\newpage
 \tableofcontents
 \setcounter{chapter}{-1}
 \chapter{기초 양자역학}
@@ -343,6 +343,66 @@ $U(\ket0^{\otimes a_R}\otimes I)\ket{\psi}$였고 이에 $\ket0^{\otimes a_L}$�
   $\sum\alpha_iU^{(i)}$의 $\left(k+\sum_{i=0}^{k-1}Q^{(i)}\right)$-블록인코딩을 
   구성할 수 있다.
 \end{lemm}
+\begin{figure}[h]\centering
+  \begin{quantikz}
+    \lstick{$\ket0$}&\gate[1]{V^{\dagger}}&\octrl{1}
+                    &\ctrl{1}&\qw&\gate[1]{V}&\qw\\
+    \lstick{$\ket0^{\otimes a}$}&\qw&\gate[2]{U^{(0)}} 
+                                &\gate[2]{U^{(1)}}&\qw&\qw&\qw\\
+    \lstick{$\ket{\psi}$}&\qw & & & \qw &\qw &\qw
+  \end{quantikz}
+  \caption{$U^{(0)}$과 $U^{(1)}$이 $A^{(0)}$과 $A^{(1)}$의 블록-인코딩이라고 할
+    때, 이 회로는 $|V_{0,0}|^2A^{(0)}+|V_{0,1}|^2A^{(1)}$의 블록-인코딩으로,
+    입력 $\ket{\psi}$에 대해 쓰인다. 여기서 $U^{(0)}$과 $U^{(1)}$은 $\ket0$과
+    $\ket1$에 의해 통제된다.\label{fig:1-3}}
+\end{figure}
+\begin{proof}
+  우선 $k=2$ 블록-인코딩의 선형결합을 고려하자. 그림 \ref{fig:1-3}은 선형결합을
+  구현하는 회로를 나타낸다. 통제-$U^{(0)}$과 통제-$U^{(1)}$은 아래 유니타리를
+  적용한다.
+  \begin{equation}
+    \begin{pmatrix}U^{(0)}&\\&I\end{pmatrix}
+    \begin{pmatrix}I&\\&U^{(1)}\end{pmatrix}=
+    \begin{pmatrix}U^{(0)}&\\&U^{(1)}\end{pmatrix}=
+    (\ket0\bra0)\otimes U^{(0)}+(\ket1\bra1)\otimes U^{(1)}
+  \end{equation}
+  따라서 전체 회로는 아래를 수행한다.
+  \begin{equation}
+    \begin{pmatrix}V_{0,0}I&V_{0,1}I\\V_{1,0}I&V_{1,1}I\end{pmatrix}^{\dagger}
+    \begin{pmatrix}U^{(0)}&\\&U^{(1)}\end{pmatrix}
+    \begin{pmatrix}V_{0,0}I&V_{0,1}I\\V_{1,0}I&V_{1,1}I\end{pmatrix}=
+    (V^{\dagger}\ket0\bra0V)\otimes U^{(0)}+(V^{\dagger}\ket1\bra1V)\otimes
+    U^{(1)}
+  \end{equation}
+  이 행렬에서 블록-인코딩에 해당하는 것은 아래와 같다.
+  \begin{equation}
+    |V_{00}|^2U^{(0)}+|V_{1,0}|^2 U^{(1)}
+  \end{equation}
+  따라서 임의의 음이 아니며 합이 $1$인 두 실수 $\alpha_0,\alpha_1$에 대해
+  단일 큐비트 유니타리 $V$가 존재하여 첫 번째 열이 $\sqrt{\alpha_0},
+  \sqrt{\alpha_1}$이다. 이에 위 블록-인코딩이 가능하다. $\alpha_0$가 음이면
+  $|\alpha_0|$에 대해 회로를 설계하여 $U^{(0)}$ 대신 $-U^{(0)}$을 통제
+  유니타리로 사용하면 된다.
+
+  일반화하면, $U$가 $A$의 블록-인코딩일 때, $I\otimes U$ 또한 $A$의
+  블록-인코딩이기에 추가 손실 없이 $U^{(i)}$의 크기에 따라 차원을 요컨대
+  $d\times d$로 
+  늘릴 수 있다. 또한, 추가 손실 없이 $U^{(i)}=I$와 $\alpha_i=0$를
+  선형결합에 더해 $k$를 $2$의 제곱수로 만들 수 있다. 
+  $V\in\mathbb{C}^{k\times k}$가 아래를 만족하며
+  \[
+    V\ket0 = \sum_{i=0}^k\sqrt{|\alpha_i|}\ket{i}
+  \]
+  $U\in\mathbb{C}^{kd\times kd}$가 아래와 같은 유니타리라고 하자.
+  \[
+    \sum_{i=0}^{k-1}(\ket{k}\bra{k})\otimes\left(\frac{\alpha_i}{|\alpha_i|}
+    U^{(i)}\right)
+  \]
+  그렇다면 $(V^{\dagger}\otimes I)U(V\otimes I)$는 $\sum \alpha_i U^{(i)}$의
+  블록-인코딩이다. $V$를 적용하는 비용은 $\mathcal{O}(k)$이며
+  통제-$U^{(i)}$ 사용 비용이 $U^{(i)}$ 자체 비용의 상수배라고 할 때, 
+  $U$의 비용은 $\mathcal{O}(k+\sum_i Q^{(i)})$다. 
+\end{proof}
 \chapter{양자 특잇값 변환}
 \chapter{다항식에 의한 근사}
 \chapter{양자 선형대수}
