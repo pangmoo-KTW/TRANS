@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  13 OCT 2023 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  13 OCT 2023 13:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -880,60 +880,61 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (./ob-chapstyles.sty)
 \c@defn=\count356
 \c@theo=\count357
-\c@lemm=\count358
-\c@thes=\count359
-\c@axio=\count360
-\c@prob=\count361
+\c@exem=\count358
+\c@lemm=\count359
+\c@thes=\count360
+\c@axio=\count361
+\c@prob=\count362
  (./NHM_KTW.aux)
 \openout1 = `NHM_KTW.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 59.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 60.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 60.
  (/usr/share/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
    defining Unicode char U+00B7 (decimal 183)
  (/usr/share/texmf-dist/tex/latex/kotex-oblivoir/memhangul-ucs/memucs-gremph.sty
 Package: memucs-gremph 
 LaTeX Info: Redefining \itshape on input line 74.
 LaTeX Info: Redefining \slshape on input line 78.
 )
-Package hyperref Info: Link coloring OFF on input line 59.
+Package hyperref Info: Link coloring OFF on input line 60.
  (./NHM_KTW.out) (./NHM_KTW.out)
 \@outlinefile=\write4
 \openout4 = `NHM_KTW.out'.
 
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count362
+\scratchcounter=\count363
 \scratchdimen=\dimen281
 \scratchbox=\box67
-\nofMPsegments=\count363
-\nofMParguments=\count364
+\nofMPsegments=\count364
+\nofMParguments=\count365
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count365
+\MPscratchCnt=\count366
 \MPscratchDim=\dimen282
-\MPnumerator=\count366
-\makeMPintoPDFobject=\count367
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
 \everyMPtoPDFconversion=\toks43
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -943,15 +944,15 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 74--76
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
@@ -959,10 +960,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for LUC+nanumgt on input line 95.
+LaTeX Font Info:    Trying to load font information for LUC+nanumgt on input line 96.
  (/usr/share/texmf-dist/tex/latex/nanumtype1/lucnanumgt.fd
 File: lucnanumgt.fd 2013/02/12 v0.1 Nanum Gothic font definitions
-) (./NHM_KTW.bbl
+) [1
+
+
+] (./NHM_KTW.bbl
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\<let>-command' on input line 1.
@@ -1051,10 +1055,7 @@ Underfull \hbox (badness 1184) in paragraph at lines 24--27
 \OT1/cmr/m/it/10 ics (LIPIcs)\OT1/cmr/m/n/10 , pages 49:1--49:21, Dagstuhl,
  []
 
-[1
 
-
-]
 Underfull \hbox (badness 1546) in paragraph at lines 34--37
 []\OT1/cmr/m/n/10 Ewin Tang.  A quantum-inspired clas-si-
  []
@@ -1064,28 +1065,26 @@ Underfull \hbox (badness 2050) in paragraph at lines 34--37
 \OT1/cmr/m/n/10 In \OT1/cmr/m/it/10 Pro-ceed-ings of the 51st An-nual ACM
  []
 
-) [2
-
-] (./NHM_KTW.aux)
+) [2] (./NHM_KTW.aux)
 Package rerunfilecheck Info: File `NHM_KTW.out' has not changed.
-(rerunfilecheck)             Checksum: E8A919F34EA68BA5CEE81C76B4AB8072;752.
+(rerunfilecheck)             Checksum: 04149F009E95883AD4E09905FDBE16BC;846.
  ) 
 Here is how much of TeX's memory you used:
- 19031 strings out of 477985
- 309016 string characters out of 5840058
- 1870388 words of memory out of 5000000
- 38717 multiletter control sequences out of 15000+600000
- 554245 words of font info for 178 fonts, out of 8000000 for 9000
+ 19067 strings out of 477985
+ 309485 string characters out of 5840058
+ 1884388 words of memory out of 5000000
+ 38734 multiletter control sequences out of 15000+600000
+ 556596 words of font info for 186 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,22n,117p,483b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjbc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.p
-fb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
-Output written on NHM_KTW.pdf (3 pages, 2934686 bytes).
+ 108i,22n,117p,483b,627s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtbd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb1.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmd6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjbb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.p
+fb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
+Output written on NHM_KTW.pdf (3 pages, 3131748 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 391 compressed objects within 4 object streams
- 23 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 598 PDF objects out of 1000 (max. 8388607)
+ 420 compressed objects within 5 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 

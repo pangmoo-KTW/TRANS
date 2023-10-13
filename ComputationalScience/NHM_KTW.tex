@@ -7,6 +7,7 @@
 \usepackage{enumitem,mdframed,ob-chapstyles}
 \newtheorem{defn}{정의}[chapter]
 \newtheorem{theo}{정리}[chapter]
+\newtheorem{exem}{예시}[chapter]
 \newtheorem{lemm}{보조정리}[chapter]
 \newtheorem{thes}{논제}[chapter]
 \newtheorem{axio}{공리}[chapter]
@@ -108,6 +109,7 @@ Aaronson\cite{Aaronson2015}은 HHL 알고리즘과 양자 기계학습 및 그 �
 \section{양자 기계학습과 고전 데이터}
 \section{QSVT}
 \chapter{블록 인코딩}
+\section{기초 정의}
 블록 인코딩은 유니타리가 해밀토니언 시뮬레이션의 효과적인 해법에 관한
 Childs et.al \cite{Childs2017}의 연구에서 비롯하며, 기본적으로는 유니타리가
 아닌 행렬을 양자컴퓨터에서 사용할 수 있도록 하는 기법이다. 
@@ -123,16 +125,73 @@ Childs et.al \cite{Childs2017}의 연구에서 비롯하며, 기본적으로는 
 \begin{equation}
   A = (\ket0^{\otimes a_L}\otimes I)U(\ket0^{\otimes a_R}\otimes I)
 \end{equation}
-일반적으로 \cite{Gilyen2019, Rall2020} 아래처럼 정의한다.
+$r,c$가 $2$의 거듭제곱이어야 하는 것은 큰 제약이 아니다. $A$에 대해 $A_e\in
+\mathbb{C}^{2^s}\times{2^s}$를 정의하여 $A$를 $A_e$의 좌측 상단에 두고 나머지
+성분은 $0$으로 두면 되기 때문이다. 
+
+일반적으로 블록 인코딩은 \cite{Gilyen2019, Rall2020} 아래처럼 정의한다.
 \begin{defn}[(블록 인코딩)]
   $A$, 조정자 $\alpha\in\mathbb{R}_{+}$, 블록을 위한 패딩 $a\in\mathbb{R}_+$,
-  정밀도 $\epsilon\in\mathbb{R}_+$가 주어질 때, $U$는 아래를 만족하는 경우
-  $A$의 $(\alpha,a,\epsilon)$-블록 인코딩이다.
+  정밀도 $\epsilon\in\mathbb{R}_+$가 주어질 때, $U$가 아래를 만족하며
   \begin{equation}
-    \|A-\alpha(\bra0^{\otimes a}\otimes I)U(\ket0^{\otimes a}\otimes I)\|\leq
+    \|A/\alpha-(\bra0^{\otimes a}\otimes I)U(\ket0^{\otimes a}\otimes I)\|\leq
     \epsilon
   \end{equation}
+  $Q$개의 게이트로 구현할 수 있다면 $\epsilon$ 정밀도의 $\alpha$ 조정
+  $Q$ 블록 인코딩이라고 부른다.
 \end{defn}
+의미를 더 직관적으로 소화하기 위해 $\epsilon$과 $\alpha$를 생략하여
+정확하며 $1$로 조정된 $Q$ 블록 인코딩을 정의하면 아래와 같다.
+\begin{defn}
+  $A\in\mathbb{C}^{r\times c}$가 주어질 때, $U\in\mathbb{C}^{d\times d}$는
+  $U$가 $\mathcal{O}(Q)$ 게이트로 구현가능하고 항등행렬의 첫 $r$열과 $c$열인
+  $B_{L}\in\mathbb{C}^{d\times r},B_{R}\in\mathbb{C}^{d\times c}$에 대해
+  \begin{equation}\label{eq:1-1}
+    B_{L}^{\dagger}UB_{R} = A
+  \end{equation}
+  를 만족하면 $A$의 $Q$ 블록 인코딩이라고 부른다. 
+\end{defn}
+아래는 이들 정의가 동치라는 사실을 이해하기 위한 예시다.
+\begin{exem}
+$c=2,d=8,r=4$라고 가정하자. 다시 말해 $A\in\mathbb{C}^{4\times2},
+U\in\mathbb{C}^{8\times 8}, B_{L,1}\in\mathbb{C}^{8\times 4}, 
+B_{R,1}\in\mathbb{C}^{8\times 2}$라고 가정하자.
+\begingroup
+\setlength\arraycolsep{-0.1pt}
+\begin{align*}
+  &B^{\dagger}_{L} =
+    \begin{pmatrix}
+      1&0&0&0&0&0&0&0\\0&1&0&0&0&0&0&0\\0&0&1&0&0&0&0&0\\0&0&0&1&0&0&0&0
+  \end{pmatrix},
+  B_{R} =  \begin{pmatrix}
+    1&0\\0&1\\0&0\\0&0\\0&0\\0&0\\0&0\\0&0
+  \end{pmatrix}\\
+  &U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix} =
+  \begin{pmatrix}
+    a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{31}&a_{32}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{41}&a_{42}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
+  \end{pmatrix},\\
+  &\Rightarrow\quad B_{L}^{\dagger}U = 
+  \begin{pmatrix}
+    a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{31}&a_{32}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
+    a_{41}&a_{42}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
+  \end{pmatrix}\\&\Rightarrow
+  B_{L}^{\dagger}UB_{R} =
+  \begin{pmatrix}
+    a_{11}&a_{12}\\a_{21}&a_{22}\\a_{31}&a_{32}\\a_{41}&a_{42}
+  \end{pmatrix}
+= A
+\end{align*}
+\endgroup
+\end{exem}
 \bibliography{ref}
 \bibliographystyle{plain}
 \end{document}
