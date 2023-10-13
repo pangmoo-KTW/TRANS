@@ -104,10 +104,10 @@ Aaronson\cite{Aaronson2015}은 HHL 알고리즘과 양자 기계학습 및 그 �
 사용하는 고전 데이터에 대해 오직 다항 수준의 감속(polynomial slowdown)으로
 양자 추천 알고리즘\cite{KP2017}을 모사하는 고전 알고리즘을 내놓으며 이런 과정을
 역양자화(dequantization)라고 명명했다.
+\begin{centering}
+  \vdots
+\end{centering}
 \section{표기 및 기초}
-\chapter{역양자화}
-\section{양자 기계학습과 고전 데이터}
-\section{QSVT}
 \chapter{블록 인코딩}
 \section{기초 정의}
 블록 인코딩은 유니타리가 해밀토니언 시뮬레이션의 효과적인 해법에 관한
@@ -129,8 +129,8 @@ $r,c$가 $2$의 거듭제곱이어야 하는 것은 큰 제약이 아니다. $A$
 \mathbb{C}^{2^s}\times{2^s}$를 정의하여 $A$를 $A_e$의 좌측 상단에 두고 나머지
 성분은 $0$으로 두면 되기 때문이다. 
 
-일반적으로 블록 인코딩은 \cite{Gilyen2019, Rall2020} 아래처럼 정의한다.
-\begin{defn}[(블록 인코딩)]
+일반적으로 블록 인코딩은 \cite{Gilyen2019,Rall2020} 아래처럼 정의한다.
+\begin{defn}[블록 인코딩]
   $A$, 조정자 $\alpha\in\mathbb{R}_{+}$, 블록을 위한 패딩 $a\in\mathbb{R}_+$,
   정밀도 $\epsilon\in\mathbb{R}_+$가 주어질 때, $U$가 아래를 만족하며
   \begin{equation}
@@ -154,19 +154,24 @@ $r,c$가 $2$의 거듭제곱이어야 하는 것은 큰 제약이 아니다. $A$
 아래는 이들 정의가 동치라는 사실을 이해하기 위한 예시다.
 \begin{exem}
 $c=2,d=8,r=4$라고 가정하자. 다시 말해 $A\in\mathbb{C}^{4\times2},
-U\in\mathbb{C}^{8\times 8}, B_{L,1}\in\mathbb{C}^{8\times 4}, 
-B_{R,1}\in\mathbb{C}^{8\times 2}$라고 가정하자.
-\begingroup
-\setlength\arraycolsep{-0.1pt}
-\begin{align*}
-  &B^{\dagger}_{L} =
+U\in\mathbb{C}^{8\times 8}, B_{L}\in\mathbb{C}^{8\times 4}, 
+B_{R}\in\mathbb{C}^{8\times 2}$라고 가정하자. 그렇다면 $B_L^{\dagger}$는
+다음과 같고
+\[
+B^{\dagger}_{L} =
     \begin{pmatrix}
       1&0&0&0&0&0&0&0\\0&1&0&0&0&0&0&0\\0&0&1&0&0&0&0&0\\0&0&0&1&0&0&0&0
-  \end{pmatrix},
-  B_{R} =  \begin{pmatrix}
+  \end{pmatrix}
+\]
+$B_R$은 아래와 같으며
+\[
+B_{R} =  \begin{pmatrix}
     1&0\\0&1\\0&0\\0&0\\0&0\\0&0\\0&0\\0&0
-  \end{pmatrix}\\
-  &U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix} =
+  \end{pmatrix}
+\]
+$U$는 다음과 같다. 
+\[
+U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix} =
   \begin{pmatrix}
     a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
@@ -176,22 +181,59 @@ B_{R,1}\in\mathbb{C}^{8\times 2}$라고 가정하자.
     \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     \cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
-  \end{pmatrix},\\
-  &\Rightarrow\quad B_{L}^{\dagger}U = 
+  \end{pmatrix}
+\]
+이에 아래가 성립한다.
+\begin{align*}
+  \Rightarrow\quad &B_{L}^{\dagger}U = 
   \begin{pmatrix}
     a_{11}&a_{12}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     a_{21}&a_{22}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     a_{31}&a_{32}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot\\
     a_{41}&a_{42}&\cdot&\cdot&\cdot&\cdot&\cdot&\cdot
-  \end{pmatrix}\\&\Rightarrow
+  \end{pmatrix}\\\Rightarrow\quad&
   B_{L}^{\dagger}UB_{R} =
   \begin{pmatrix}
     a_{11}&a_{12}\\a_{21}&a_{22}\\a_{31}&a_{32}\\a_{41}&a_{42}
   \end{pmatrix}
 = A
 \end{align*}
-\endgroup
 \end{exem}
+\section{QSVT}
+\chapter{역양자화}
+\section{양자 기계학습과 고전 데이터}
+\section{양자 선형대수와 고전 선형대수}
+\chapter{블록 인코딩의 근본 문제}
+따라서 일부 양자 기계학습 알고리즘은 실질적인 속도 증진을 보이지 않는다. 잇따르는
+물음들 가운데 하나가 블록 인코딩에 대한 것이다.
+\begin{prob}
+  역양자화를 방지할 수 있도록 블록 인코딩을 구성하는 다른 방법이 존재하는가?
+\end{prob}
+요컨대 Kerenidis와 Praksash\cite{kerenidis2020} 그리고 Chakraborty 
+et.al\cite{chakraborty2018}은 입력 행렬을 저장할 수 있는 크기 혹은 노름을 조정하는
+QRAM을 대안으로 내놓는다. 이들 대안은 역양자화될 가능성이 적은데, 왜냐하면
+이들 대안이 BQP 완전으로 알려진 \cite{HHL2009} 희소 입력 행렬의 모델을 일반화하고
+강화하기 때문이다. 이에 대안적인 QRAM상 블록 인코딩이 어떻게 구성되었는지 살핀다.
+\section{양자적으로 접근 가능한 자료구조}
+Chakraborty et.al이 내놓은 대안적인 QRAM은 이른바 \emph{양자적으로 접근 가능한
+자료구조}(quantum-accesible data structure)이다. QROM(quantum-r에 저장되어 있을 경우,
+중첩으로 접근 가능하지만 양자 상태로 저장될 필요는 없는 사실상 고전적인
+자료구조다. 
+\begin{theo}
+  $A\in\mathbb{C}^{m\times n}$이라고 두자. 
+  \begin{enumerate}[label=(\roman*)]
+    \item $p\in[0,1]$을 고정한다. $A\in\mathbb{C}^{m\times n}$, $A^(p)$, 
+      $A^{(1-p)^{\dagger}}$가 모두 양자적으로 접근 가능한 자료구조상에 저장되어
+      있을 경우, $\mathcal{O}(\textrm{polylog}(mn/\epsilon))$ 시간 안에
+      구현할 수 있는 유니타리 $U_R$과 $U_L$이 존재하여 $U_R^{\dagger}U_L$이
+      $A$의 $(\eta_{p(A)},\lceil\log(n+m+1)\rceil,\epsilon)$ 블록 인코딩으로
+      성립한다.
+    \item 다른 한편 $A$가 양자적으로 접근 가능한 자료구조상에 저장되어
+      있을 경우, $\mathcal{O}(\|A\|_F,\lceil\log(m+n)\rceil, \epsilon)$
+      시간 안에 구현할 수 있는 유니타리 $U_R,U_L$이 존재하여 $A$의
+      $(\|A\|_F,\lceil\log(m+n)\rceil,\epsilon)$ 블록 인코딩으로 성립한다.
+  \end{enumerate}
+\end{theo}
 \bibliography{ref}
 \bibliographystyle{plain}
 \end{document}

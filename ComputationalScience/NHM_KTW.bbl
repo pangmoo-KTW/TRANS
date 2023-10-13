@@ -5,6 +5,11 @@ Scott Aaronson.
 \newblock Read the fine print.
 \newblock {\em Nature Physics}, 11:291 -- 293, 2015.
 
+\bibitem{chakraborty2018}
+Shantanav Chakraborty, Andr{\'a}s Gily{\'e}n, and Stacey Jeffery.
+\newblock The power of block-encoded matrix powers: improved regression techniques via faster hamiltonian simulation.
+\newblock In {\em International Colloquium on Automata, Languages and Programming}, 2018.
+
 \bibitem{Childs2017}
 Andrew~M. Childs, Robin Kothari, and Rolando~D. Somma.
 \newblock Quantum algorithm for systems of linear equations with exponentially improved dependence on precision.
@@ -24,6 +29,11 @@ Aram~W. Harrow, Avinatan Hassidim, and Seth Lloyd.
 Iordanis Kerenidis and Anupam Prakash.
 \newblock {Quantum Recommendation Systems}.
 \newblock In Christos~H. Papadimitriou, editor, {\em 8th Innovations in Theoretical Computer Science Conference (ITCS 2017)}, volume~67 of {\em Leibniz International Proceedings in Informatics (LIPIcs)}, pages 49:1--49:21, Dagstuhl, Germany, 2017. Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
+
+\bibitem{kerenidis2020}
+Iordanis Kerenidis and Anupam Prakash.
+\newblock Quantum gradient descent for linear systems and least squares.
+\newblock {\em Phys. Rev. A}, 101:022316, Feb 2020.
 
 \bibitem{Rall2020}
 Patrick Rall.
