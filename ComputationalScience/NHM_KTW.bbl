@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{Aaronson2015}
+Scott Aaronson.
+\newblock Read the fine print.
+\newblock {\em Nature Physics}, 11:291 -- 293, 2015.
+
+\bibitem{HHL2009}
+Aram~W. Harrow, Avinatan Hassidim, and Seth Lloyd.
+\newblock Quantum algorithm for linear systems of equations.
+\newblock {\em Phys. Rev. Lett.}, 103:150502, Oct 2009.
+
+\bibitem{KP2017}
+Iordanis Kerenidis and Anupam Prakash.
+\newblock {Quantum Recommendation Systems}.
+\newblock In Christos~H. Papadimitriou, editor, {\em 8th Innovations in Theoretical Computer Science Conference (ITCS 2017)}, volume~67 of {\em Leibniz International Proceedings in Informatics (LIPIcs)}, pages 49:1--49:21, Dagstuhl, Germany, 2017. Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
+
+\bibitem{Tang2019}
+Ewin Tang.
+\newblock A quantum-inspired classical algorithm for recommendation systems.
+\newblock In {\em Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing}, STOC 2019, page 217–228, New York, NY, USA, 2019. Association for Computing Machinery.
+
+\end{thebibliography}

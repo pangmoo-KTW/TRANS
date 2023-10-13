@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696872393 "qla.tex" "qla.pdf" "qla" 1696872395 0
+["pdflatex"] 1696873763 "qla.tex" "qla.pdf" "qla" 1696873765 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -125,6 +125,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc0.tfm" 1689853683 1252 550ca25062ebc90c66b675808adf8c6d ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm" 1689853683 1256 65e23cc1bcd2b64aca8af1f732fed042 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.tfm" 1689853683 1252 818c5e98aaef778763029f70d8876c68 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc3.tfm" 1689853683 1268 1364c73bafbd0d19f22e0484c465f663 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc4.tfm" 1689853683 1260 9b758ab7a4dde34b1a04a2b2aae66eac ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm" 1689853683 1240 519d105c3f882d4e81d993bd5669c5c8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm" 1689853683 1260 8036be1c5030d1ed0ea8755dd5820fff ""
@@ -245,6 +246,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb" 1689853683 255779 fdfc954d6fbf12a349b0f0048856b5ae ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb" 1689853683 161865 4f209de35b3f8f8bf0c6bd2626c71039 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb" 1689853683 153768 774715bfa19c744cd0c61d8837698d54 ""
+  "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc3.pfb" 1689853683 159636 95fe7c0526ffc7040309eb751cd4014d ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb" 1689853683 179426 936e80fb1ebcb112ad90fb1e16e65352 ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb" 1689853683 160980 bd8397c3a5098b5e923061af463cdc2f ""
   "/usr/share/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb" 1689853683 187129 6f90122b69ea350c302ecb7ec19b0cd5 ""
@@ -472,10 +474,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
   "ob-chapstyles.sty" 1695005882 16266 49af227aa1be7fe1bc1cc93e61ec07db ""
-  "qla.aux" 1696872394 5991 71b2a16faf5964f98be0af34b5805cb7 "pdflatex"
-  "qla.out" 1696872394 1247 e1e1942a270e1fec14e13a89e77addef "pdflatex"
-  "qla.tex" 1696872391 21186 aea4c95f4fc3fdd246173569e33fdedf ""
-  "qla.toc" 1696872394 983 112280358104b3f2970b516051d4f69c "pdflatex"
+  "qla.aux" 1696873764 6125 c1f1dc00c498a8d0387822b063a04337 "pdflatex"
+  "qla.out" 1696873764 1403 b3e33a48ab0aee15dda5f8dceabc90af "pdflatex"
+  "qla.tex" 1696873761 21892 415ab5fd42486e1421d3971dcc7e6d23 ""
+  "qla.toc" 1696873764 1076 53077ed9e026d30b17b67b2622050f36 "pdflatex"
   (generated)
   "qla.aux"
   "qla.log"

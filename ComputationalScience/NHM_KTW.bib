@@ -1,0 +1,56 @@
+{
+\renewcommand{\clearpage}{}
+\bibliography{\jobname}
+}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+  \makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \dagger\dagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \dagger\dagger \else\@ctrerr\fi}}
+    \makeatother
+\providecommand{\keywords}[1]
+{
+  \textbf{\textit{Keywords:}} #1
+}
+\providecommand{\kkeywords}[1]
+{
+  \textbf{{키워드:}} #1
+}
+
+\renewenvironment{abstract}
+{\textbf{\abstractname.}\ \ignorespaces}
+ {\par\medskip}
+\title{\Huge\textbf{블록 인코딩의 구성\\}\huge(Construction of Block-encodings)}
+\author{
+  \begin{tabular}{cc}
+    \shortstack{\emph{\Large노\;\;현\;\;민\;\;}\thanks{국립부경대학교 과학컴퓨팅학과 학생}}
+ &
+ \shortstack{{\emph{\Large김\;\;태\;\;원\;}}\thanks{국립부경대학교 컴퓨터공학과 학생}}\\
+    \shortstack{(Hyeonmin Roh)} & \shortstack{(Taewon Kim)}
+  \end{tabular}
+}
+\date{}
+\begin{document}
+\onecolumn
+\maketitle\thispagestyle{empty}
+\begin{abstract}
+\end{abstract}
+\kkeywords{하, 하, 하}
+\hfill\break
+
+\renewcommand{\abstractname}{\textit{Abstract}}
+\begin{abstract}
+\end{abstract}
+\keywords{la, la, la}
+\clearpage
+\twocolumn
+\newpage
+\chapter{gk}
+\section{lala}
+\lipsum
+\bibliography{ref}
+\bibliographystyle{plain}
+\end{document}
