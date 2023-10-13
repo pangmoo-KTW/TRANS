@@ -45,7 +45,7 @@
 {\textbf{\abstractname.}\ \ignorespaces}
  {\par\medskip}
  % title & author
-\title{\Huge\textbf{블록 인코딩의 구성\\}\huge(Construction of Block-encodings)}
+\title{\Huge\textbf{블록 인코딩의 구성: \huge대안적 QRAM을 중심으로\\}\huge(Construction of Block-encodings: \Large concerning alternatives of QRAM)}
 \author{
   \begin{tabular}{cc}
     \shortstack{\emph{\Large노\;\;현\;\;민\;\;}\thanks{국립부경대학교 과학컴퓨팅학과 학생}}
@@ -104,9 +104,7 @@ Aaronson\cite{Aaronson2015}은 HHL 알고리즘과 양자 기계학습 및 그 �
 사용하는 고전 데이터에 대해 오직 다항 수준의 감속(polynomial slowdown)으로
 양자 추천 알고리즘\cite{KP2017}을 모사하는 고전 알고리즘을 내놓으며 이런 과정을
 역양자화(dequantization)라고 명명했다.
-\begin{centering}
-  \vdots
-\end{centering}
+\[\pmb{\vdots}\]
 \section{표기 및 기초}
 \chapter{블록 인코딩}
 \section{기초 정의}
@@ -203,7 +201,7 @@ U = \begin{pmatrix}A&\cdot\\\cdot&\cdot\end{pmatrix} =
 \chapter{역양자화}
 \section{양자 기계학습과 고전 데이터}
 \section{양자 선형대수와 고전 선형대수}
-\chapter{블록 인코딩의 근본 문제}
+\chapter{블록 인코딩의 구성}
 따라서 일부 양자 기계학습 알고리즘은 실질적인 속도 증진을 보이지 않는다. 잇따르는
 물음들 가운데 하나가 블록 인코딩에 대한 것이다.
 \begin{prob}
@@ -214,11 +212,14 @@ et.al\cite{chakraborty2018}은 입력 행렬을 저장할 수 있는 크기 혹�
 QRAM을 대안으로 내놓는다. 이들 대안은 역양자화될 가능성이 적은데, 왜냐하면
 이들 대안이 BQP 완전으로 알려진 \cite{HHL2009} 희소 입력 행렬의 모델을 일반화하고
 강화하기 때문이다. 이에 대안적인 QRAM상 블록 인코딩이 어떻게 구성되었는지 살핀다.
+\[\pmb{\vdots}\]
 \section{양자적으로 접근 가능한 자료구조}
 Chakraborty et.al이 내놓은 대안적인 QRAM은 이른바 \emph{양자적으로 접근 가능한
-자료구조}(quantum-accesible data structure)이다. QROM(quantum-r에 저장되어 있을 경우,
+자료구조}(quantum-accesible data structure)이다. QROM(quantum-random-access
+read-only memory)에 저장되어 있을 경우,
 중첩으로 접근 가능하지만 양자 상태로 저장될 필요는 없는 사실상 고전적인
 자료구조다. 
+\[\pmb{\vdots}\]
 \begin{theo}
   $A\in\mathbb{C}^{m\times n}$이라고 두자. 
   \begin{enumerate}[label=(\roman*)]
