@@ -5,6 +5,16 @@ Scott Aaronson.
 \newblock Read the fine print.
 \newblock {\em Nature Physics}, 11:291 -- 293, 2015.
 
+\bibitem{Childs2017}
+Andrew~M. Childs, Robin Kothari, and Rolando~D. Somma.
+\newblock Quantum algorithm for systems of linear equations with exponentially improved dependence on precision.
+\newblock {\em SIAM J. Comput.}, 46(6):1920–1950, jan 2017.
+
+\bibitem{Gilyen2019}
+András Gilyén, Yuan Su, Guang~Hao Low, and Nathan Wiebe.
+\newblock Quantum singular value transformation and beyond: exponential improvements for quantum matrix arithmetics.
+\newblock pages 193--204, 06 2019.
+
 \bibitem{HHL2009}
 Aram~W. Harrow, Avinatan Hassidim, and Seth Lloyd.
 \newblock Quantum algorithm for linear systems of equations.
@@ -14,6 +24,11 @@ Aram~W. Harrow, Avinatan Hassidim, and Seth Lloyd.
 Iordanis Kerenidis and Anupam Prakash.
 \newblock {Quantum Recommendation Systems}.
 \newblock In Christos~H. Papadimitriou, editor, {\em 8th Innovations in Theoretical Computer Science Conference (ITCS 2017)}, volume~67 of {\em Leibniz International Proceedings in Informatics (LIPIcs)}, pages 49:1--49:21, Dagstuhl, Germany, 2017. Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
+
+\bibitem{Rall2020}
+Patrick Rall.
+\newblock Quantum algorithms for estimating physical quantities using block encodings.
+\newblock {\em Phys. Rev. A}, 102:022408, Aug 2020.
 
 \bibitem{Tang2019}
 Ewin Tang.

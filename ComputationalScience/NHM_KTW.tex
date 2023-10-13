@@ -5,6 +5,12 @@
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{braket,graphicx,xcolor,caption}
 \usepackage{enumitem,mdframed,ob-chapstyles}
+\newtheorem{defn}{정의}[chapter]
+\newtheorem{theo}{정리}[chapter]
+\newtheorem{lemm}{보조정리}[chapter]
+\newtheorem{thes}{논제}[chapter]
+\newtheorem{axio}{공리}[chapter]
+\newtheorem{prob}{문제}[chapter]
 % chapterstyle
 \chapterstyle{obkomalike}
 % header & footer
@@ -87,6 +93,7 @@ block-encoding, QSVT}
 \twocolumn            
 \pagenumbering{arabic}    % Main Matter
 \chapter{개요}
+\section{역사}
 양자 기계학습(Quantum Machine Learning) 알고리즘은 고전 기계학습 알고리즘에
 대해 지수적인 가속(exponential speedup)을 보인다는 주장이 존재한다. 이들
 주장과 더불어 양자 기계학습이라는 분야 자체가 연립일차방정식 $Ax=b$의 해를
@@ -95,8 +102,37 @@ Aaronson\cite{Aaronson2015}은 HHL 알고리즘과 양자 기계학습 및 그 �
 지니는 한계를 지적했다. 머지 않아 Tang\cite{Tang2019}은 기계학습에서 주로
 사용하는 고전 데이터에 대해 오직 다항 수준의 감속(polynomial slowdown)으로
 양자 추천 알고리즘\cite{KP2017}을 모사하는 고전 알고리즘을 내놓으며 이런 과정을
-역양자화(dequantization)라고 명명했다. 
-\chapter{My Chapter}
+역양자화(dequantization)라고 명명했다.
+\section{표기 및 기초}
+\chapter{역양자화}
+\section{양자 기계학습과 고전 데이터}
+\section{QSVT}
+\chapter{블록 인코딩}
+블록 인코딩은 유니타리가 해밀토니언 시뮬레이션의 효과적인 해법에 관한
+Childs et.al \cite{Childs2017}의 연구에서 비롯하며, 기본적으로는 유니타리가
+아닌 행렬을 양자컴퓨터에서 사용할 수 있도록 하는 기법이다. 
+
+행렬 $A\in\mathbb{C}^{r\times c}$가 있다고 하자. 이때 $A$는 정방일 필요가
+없다. 그렇다면 유니타리 $U$가 존재하여 $A$가 $U$의 좌측 상단을 차지한다. 즉
+임의의 행렬 성분 $\cdot$ 에 대해 $A$의 블록 인코딩 $U$는 아래와 같다.
+\begin{equation}
+  U = \begin{bmatrix}A&\cdot\\\cdot&\cdot\end{bmatrix}
+\end{equation}
+여기서 $A$의 지수 $r,c$를 $2$의 거듭제곱으로 둬, 아래처럼 $\ket0$과 $\bra0$에
+대해 나타내는 것이 목표다. 
+\begin{equation}
+  A = (\ket0^{\otimes a_L}\otimes I)U(\ket0^{\otimes a_R}\otimes I)
+\end{equation}
+일반적으로 \cite{Gilyen2019, Rall2020} 아래처럼 정의한다.
+\begin{defn}[(블록 인코딩)]
+  $A$, 조정자 $\alpha\in\mathbb{R}_{+}$, 블록을 위한 패딩 $a\in\mathbb{R}_+$,
+  정밀도 $\epsilon\in\mathbb{R}_+$가 주어질 때, $U$는 아래를 만족하는 경우
+  $A$의 $(\alpha,a,\epsilon)$-블록 인코딩이다.
+  \begin{equation}
+    \|A-\alpha(\bra0^{\otimes a}\otimes I)U(\ket0^{\otimes a}\otimes I)\|\leq
+    \epsilon
+  \end{equation}
+\end{defn}
 \bibliography{ref}
 \bibliographystyle{plain}
 \end{document}
