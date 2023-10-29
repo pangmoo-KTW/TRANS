@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                   %
+%                      JAMI - LaTeX format                          %
+%                                                                   %
+%     E-mail address  : ryoocs@hnu.kr                               %
+%                                                                   %
+%                                                                   %
+%                                                                   %
+%   We are accepting manuscripts with AMSTeX or LaTeX versions      %
+%   through E-mail.                                                 %
+%                                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[10pt,twoside,reqno]{amsart} %For LaTeX2e users
+
+%\documentstyle[10pt,twoside]{amsart} %For old version of Latex users
+
+\allowdisplaybreaks
+\usepackage{amsmath,amstext,amssymb,braket}
+\usepackage{graphicx}
+
+\textwidth 12.2 cm
+\textheight 19.3 cm
+\oddsidemargin 1.2cm
+\evensidemargin 1.2cm
+\calclayout
+
+\setcounter{page}{1}
+%
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\bf\csname the#1\endcsname. }
+\renewcommand{\section}{\@startsection{section}{1}
+   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}
+   {\normalfont\upshape\bfseries\centering}}
+%\@addtoreset{thm}{section} \@addtoreset{rem}{section}
+\renewcommand{\@biblabel}[1]{\@ifnotempty{#1}{#1.}}
+\makeatother
+%
+\renewcommand{\refname}{\sc References}
+%
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}{Remark}[section]
+
+\def\pn{\par\noindent}
+
+
+\begin{document}
+
+\leftline{\scriptsize \it  J. Appl. Math. {$\&$}
+Informatics Vol. {\bf 4x}(2023), No. x, pp. xx - xx   }
+\vspace{-0.15cm}
+%\leftline{\footnotesize Website: http://www.jami.or.kr}
+\leftline{\footnotesize https://doi.org/10.14317/jami.201x.xxx}
+
+
+
+\vspace{1.3cm}
+
+\title
+{ %Full title of the paper
+Constructions of Block-encloding and their effects on Quantum Speedups$^\dagger$  
+}
+
+\author
+{ %Firstname Lastname, Firstname Lastname
+  Hyeonmin Roh$^*$, Taewon Kim$^{**}$ 
+}
+
+\thanks{ {\scriptsize  Received     ,     .  Revised ,   .    Accepted     ,   . \enskip $^*$Corresponding author.}\\
+\indent{\scriptsize $^\dagger$%funding-------------------------------------------------------------------
+{Please add: ``This research received no external funding'' or ``This research was funded by NAME OF FUNDER grant number XXX.'' and  and ``The APC was funded by XXX''. Check carefully that the details given are accurate and use the standard spelling of funding agency names, any errors may affect your future funding.}
+Example:This work was supported by the research grant of the University}\\
+\indent{\scriptsize $\copyright$ 2023 KSCAM}}
+
+
+\maketitle
+
+
+\begin{abstract}
+Abstract is here, not exceeding {\it 160} words. It must contain {\it Main Facts}.
+
+\vskip 0.4 true cm
+
+
+\noindent
+ AMS Mathematics Subject Classification : 65H05, 65F10.
+
+\noindent 
+{\it Key words and phrases } : %keyword 1, keyword 2, keyword 3.
+Nonlinear equation, three-step iterative method, multi-step iterative method.
+
+\end{abstract}
+
+
+\pagestyle{myheadings}
+\markboth{\centerline {\scriptsize  the names of the authors  }}
+         {\centerline {\scriptsize  title of paper  }}
+
+
+\bigskip
+\section{Introcution}
+On claimed exponential speedups of quantum machine learning algorithms
+subsequent to HHL algorithm for solving linear system of equations,
+Tang presented classical counterparts for fair amount of QML algorithms
+by exploiting basic linear algebraic properties underlying data structures 
+used during accessing matrices in a quantum-advantable way, and corresponding
+them to classical randomied numerical linear algebra methods. Such process is
+termed `dequantization'. 
+
+All known linear algebraic QML techinques are captured by Quantum singluar 
+vlaue transformation (QSVT), a unifying framework of quantum algorithms.
+QSVT can be classified by their input model assumptions, whether if
+inputs for QML are sparse or low-rank. Since sparse-access input models
+are known to give expnential speedup, dequantization attacks low-rank
+input models, where classical data without strong restrictions are appliable.
+
+For classical data, QML algorithms must efficiently prepair them as qunatum
+states. So we assume the existence of quantum random access memory (QRAM), 
+a qunatum device corresponding to classical RAM. QRAM stores $n$ bits of data
+and query those data in superposition by a $\textrm{polylog}(n)$ time. 
+Dequantization is essentially the process of providing psuedo-QRAM to classical
+computers, by assumming a input model of sampeling and query access to a vector,
+which would lead to a fair comparison between quantum and classical machine
+learning.
+
+Results of dequantization draw a border line for our understanding of QML
+algorithms and their limitations. Hence, one of the open problems of
+QML is whether there exist other ways to construct data structures that
+prevent dequantizaition. We focus on this matter by its basic unit, termed
+`Block-encoding'. Our goal is to formally define two alternative data structure
+implicitly stated by Kerenidis and Prakash, and CHakraborty, Gily\'en, and
+Jeffery, generelizing sparse-input model to QRAM-input model.
+
+\section{Nomenclature}
+
+\section{Block-encoding}
+The notion of block-encoding was devised as a solution to the problem of
+Hamiltonian simulation. Hamiltonian simulation, one of the original motivations
+for designing practical quantum computers, may stated as follows: For time
+evolution of the wave function $\ket{\psi(t)}$ governed by the Schr{\"o}dinger
+equation, that is,
+\[
+  i\hslash\frac{\textrm{d}}{\textrm{dt}}\ket{\psi(t)}
+  = H(t)\ket{\psi(t)}
+\]
+the Hamiltonian, an operator with units of energy, is $H(t)$. Hamiltionian
+simulation is a problem of designing quantum circuit or unitary matrix $U$
+consisting of $\textrm{poly}(n,t,1/\epsilon)$ gates such that $\|U-{e^{iHt}}\|\leq
+\epsilon$. % Childs - lecture notes
+The cost of Hamiltonian simulation depends on the number of qubits
+$n$, evolution time $t$, target error $\epsilon$, and access models of
+Hamiltonian $H$. While acheiving optimal Hamiltonian simulation by the
+process called `Qubitization', Low and Chuang (2019) defined a \emph{standard-form
+encoding}, a primitive statement of \emph{block-encoding}. Basically, 
+qubitization is a technique of representing Hermitian or subnormalized matrix
+as the top-left block of a unitary matrix, that is;
+\[
+  U=\begin{bmatrix}A/\alpha &\cdot \\ &\cdot &\cdot \end{bmatrix}
+\]
+where $\cdot$ denotes arbitrary elements of $U$. 
+\begin{defn}[Block-encoding] For $A\in\mathbb{C}^{n\times m}, \alpha,\epsilon
+  \in\mathbb{R}_{+}$ and $a\in\mathbb{N}$, $(s+a)$-qubit unitary $U$ is an
+  $(\alpha,a,\epsilon)$-block-encoding of $A$ if
+  \[
+    \|A-\alpha(\bra0^{\otimes a}\otimes I)U(\ket0^{\otimes a}\otimes I)\|\leq
+    \epsilon.
+  \]
+\end{defn}
+For $n,m\leq 2^s$ we may define an embedding matrix $A_e\in
+\mathbb{C}^{2^s\times 2^s}$ such that the top-left block of $A_e$ is $A$ and
+all other entries are $0$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                             %
+%                                             %
+%          Text for Introduction              %
+%                                             %
+%                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Introduction is here
+
+
+\section{Main results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                             %
+%                                             %
+%          Text for main results              %
+%                                             %
+%                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Main results are here
+
+\begin{thm}[Pan and Zhang {\cite[p. 682 (1.5)]{bc}}]
+Theorem is here
+\end{thm}
+\begin{proof}
+Proof is here ~\cite[Proposition 1.4]{cp}
+\end{proof}
+
+\begin{lem}[Yun \cite{pang}]
+Lemma is here
+\end{lem}
+\begin{proof}
+Proof is here
+\end{proof}
+
+\begin{cor}[\cite{pang}]
+Corollary is here
+\end{cor}
+
+\begin{defn}
+Definition is here
+\end{defn}
+
+\begin{rem}
+Remark is here
+\end{rem}
+
+
+\bigskip
+{\bf Conflicts of interest} : {Declare conflicts of interest or state ``The authors declare no conflict of interest.'' Authors must identify and declare any personal circumstances or interest that may be perceived as inappropriately influencing the representation or interpretation of reported research results.} 
+
+%% Optional-------------------------------------------------------------
+\bigskip
+{\bf Data availability} : {In this section, please provide details regarding where data supporting reported results can be found, including links to publicly archived datasets analyzed or generated during the study. If the study did not report any data, you might add ``Not applicable'' here.} 
+%-----------------------------------------------------------------------
+
+%% Optional-------------------------------------------------------------
+\bigskip
+{\bf Acknowledgments} : {In this section you can acknowledge any support given which is not covered by the author contribution or funding sections.}
+%-----------------------------------------------------------------------
+
+
+\bigskip
+\bibliography{ref}
+\bibliographystyle{amsplain}
+\begin{thebibliography}{0}
+%bib files are not available.-------------------------
+
+%ref-book----------------------------------------------
+\bibitem{bc} 
+C. Baiocchi and A. Capelo, 
+{\it Variational and Quasi Variational Inequalities}, 
+J. Wiley and Sons, 
+New York, 
+1984.
+
+%ref-journal-------------------------------------------
+\bibitem{chakraborty2019}
+Chakraborty, Gily{\'en} and Jeffery. {\it The Power of Block-Encoded Matrix
+Powers}, ICALP {\bf 132} (2019), 33:1-33:14.
+
+\bibitem{kerenidis2020}
+Kerenidis, Iordanis and Prakash, Anupam. {\it Quantum gradient descent for
+linear systems and leaste squares}, Phys.Rev.A {\bf 2} (2020), 022316.
+
+\bibitem{tang2023}
+Tang, Ewin, and James Lee. {\it Quantum Machine Learning Without Any Quantum},
+ProQuest Dissertations and Theses, University of Washington (2023), 21-22.
+
+\bibitem{cp} 
+D. Chan and J.S. Pang, 
+{\it The generalized quasi variational inequality problems}, 
+Math. Oper. Research 
+{\bf 7} (1982), 
+211-222.
+
+\bibitem{belly} 
+C. Belly, 
+{\it Variational and Quasi Variational Inequalities}, 
+J. Appl. Math. and Computing 
+{\bf 6} (1999), 
+234-266.
+
+\bibitem{pang} 
+D. Pang, 
+{\it The generalized quasi variational inequality problems}, 
+J. Appl. Math. and Computing 
+{\bf 8} (2002), 
+123-245.
+
+
+
+\bigskip
+\bigskip
+
+%Type a brief sketch of biography and research interests not exceeding 85 words.------------------------
+%The following is a sample biography
+
+\pn {\bf 1st Author name} received M.Sc. from Seoul National University and Ph.D. at University of Minnesota. 
+Since 1992 he has been at Chungnam National University. 
+His research interests include numerical optimization and biological computation.
+
+\medskip
+\pn % Affiliations / Addresses
+Department of Mathematics, Chungnam National University, Daejeon 305-764, Korea. 
+\pn{\tt e-mail: soh@cnu.ac.kr}
+
+\bigskip
+\pn {\bf 2nd Author name} received M.Sc. from Kyungpook National University, and Ph.D. from Iowa State University. 
+He is currently a professor at Chungbuk National University since 1991. 
+His research interests are computational mathematics, iterative method and parallel computation.
+
+\medskip
+\pn % Affiliations / Addresses
+Department of Mathematics, College of Natural Sciences, Chungbuk National University, Cheongju 361-763, Korea.
+\pn{\tt e-mail: gmjae@chungbuk.ac.kr}
+
+
+
+\end{thebibliography}
+
+\end{document}
