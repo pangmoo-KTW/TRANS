@@ -143,6 +143,82 @@ Jeffery, generelizing sparse-input model to QRAM-input model.
 \section{Nomenclature}
 
 \section{Block-encoding}
+What lets an algorithm to be dequantized? Below is a QRAM data structure used
+for the recommendation algorithm, which is the first algorithm to be dequantized.
+\begin{thm}[Kerenidis 2017, Theorem 15]
+  Let $A\in\mathbb{R}^{m\times n}$ be a matrix with $A_{ij}\in\mathbb{R}$ being
+  the entry of the $i$-th row and the $j$-th column. If $w$ is the number of
+  entries that have already arrived in the system, given the entries $(i,j,A_{ij}$
+  in an arbitrary order, there exists a data structure to store the matrix
+  $A$ with the following properties:
+  \begin{enumerate}
+    \item The size of the data structure is $\mathcal{O}(w\log^2(mn))$.
+    \item Given the entries $(i,j,A_{ij})$ in an arbitrary order, the time
+      to store them is $\mathcal{O}(\log^2(mn))$.
+    \item There exists a quantum algorithm that can perform the following maps
+      in $\textrm{\normalfont polylog}(mn)$ time for $i\in[m]$ and $j\in[n]$:
+      \begin{align*}
+        \widetilde{U}&: \ket{i}\ket0\mapsto\ket{i}\ket{A_i},\\
+        \widetilde{V}&: \ket0\ket{j}\mapsto\ket{\widetilde{A}}\ket{j},
+      \end{align*}
+      where $\widetilde{A}\in\mathbb{R}^m$ has entries $\widetilde{A_i}=\|A_i\|$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  The data structure consists of an array of $m$ binary trees $B_i,i\in[m]$.
+  When a new entry $(i,j,A_{ij}$ arrives the leaf node $j$, in tree $B_i$ is
+  created if not present and updated otherwise. The depth of each tree $B_i$
+  is at most $\lceil\log n\rceil$. An internal node $v$ of $B_i$ stores the sum
+  of the values of all leaves in the subtree rooted at $v$, i.e. the sum of
+  the square amplitudes of the entries of $A_i$ in the subtree. Hence, the value
+  stored at the root is $\|A_i\|^2$. 
+  \begin{enumerate}
+    \item The memory required for the data structure is $\mathcal{O}(w\log^2 mn)$
+      as for each entry $(i,j,A_{ij}$ at most $\lceil\log n\rceil$ new nodes are
+      added, each node requiring $\mathcal{O}(\log mn)$ bits.
+    \item The time required to store entry $(i,j,A_{ij})$ is $\mathcal{O}(\log^2
+      mn)$ as the insertion algorithm makes at most $\lceil \log n\rceil$ updates
+      to the data structure and each update requires time $\mathcal{O}(\log mn)$
+      to retrieve the address of the updated node.
+    \item The amplitudes stored in the internal nodes of $B_i$ are used to
+      apply a sequence of conditional rotations to the initial state
+      $\ket0^{\lceil\log n\rceil}$ to obtain $\ket{A_i}$. Also, note that the
+      amplitudes of the vector $\widetilde{A}$ are equanto $\|A_i\|$,
+      and the values stored on the roots of the trees $B_i$ are qual to 
+      $\|A_i\|^2$. Hence by a smilar construction for the $m$ roots, we can
+      perform the unitary $\widetilde{V}$ efficiently.
+  \end{enumerate}
+  
+\end{proof}
+
+\begin{thm}[\cite{chakraborty2019}]
+  Let $A\in\mathbb{R}^{m\times n}$ be a matrix with $A_{ij}\in\mathbb{R}$ being
+  the entry of the $i$-th row and the $j$-th column. If $w$ is the number
+  of non-zero entries of $A$, then there exits a data structure of size 
+  $\mathcal{O}\left(w\log^2(mn)\right)$ that, given the entries $(i,j,A_{ij})$
+  in an arbitrary order, stores them such that time taken to store each
+  entry of $A$ is $\mathcal{O}\left(\log(mn)\right)$. Once this data structure
+  has been initiated with all non-zero entries of $A$, there exists a quantum
+  algorithm that can perform the following maps with $\epsilon$-precision in
+  $\mathcal{O}(\textrm{\normalfont polylog}(mn/\epsilon))$ time:
+  \begin{align*}
+    \widetilde{U}&:\ket{i}\ket{0}\mapsto\frac{1}{\|A_{i \cdot}\|}\sum_{j=1}^n
+    A_{i,j}\ket{j}=\ket{i,A_i}, \\
+    \widetilde{V}&:\ket{0}\ket{j}\mapsto\frac{1}{\|A\|_F}
+    \sum_{i=1}^m\|A_{i,\cdot}\|
+    \ket{i}\ket{j}=\ket{\widetilde{A},j},
+  \end{align*}
+  where $\ket{A_{i,\cdot}}$ is the normalized quantum state corresponding to
+  the $i$-th row of $A$ and $\ket{\widetilde{A}}$ is a normalized quantum
+  state such that $\braket{i|\widetilde{A}}=\|A_{i,\cdot}\|$, i.e. the norm
+  of the $i$-th row of $A$.
+
+  In particular, given a vector $\pmb{v}\in\mathbb{R}^{m\times1}$ stored in this
+  data structure, we can generate an $\epsilon$-approximation of the
+  superposition $\sum_{i=1}^m v_i\ket{i}/\|\pmb{v}\|$ in complexity
+  $\textrm{\normalfont polylog}(m/\epsilon)$.
+  \end{thm}
+
 The notion of block-encoding was devised as a solution to the problem of
 Hamiltonian simulation. Hamiltonian simulation, one of the original motivations
 for designing practical quantum computers, may stated as follows: For time
@@ -159,7 +235,7 @@ consisting of $\textrm{poly}(n,t,1/\epsilon)$ gates such that $\|U-{e^{iHt}}\|\l
 The cost of Hamiltonian simulation depends on the number of qubits
 $n$, evolution time $t$, target error $\epsilon$, and access models of
 Hamiltonian $H$. While acheiving optimal Hamiltonian simulation by the
-process called `Qubitization', Low and Chuang (2019) defined a \emph{standard-form
+process called `Qubitization', Low and Chuang (2017) defined a \emph{standard-form
 encoding}, a primitive statement of \emph{block-encoding}. Basically, 
 qubitization is a technique of representing Hermitian or subnormalized matrix
 as the top-left block of a unitary matrix, that is;
@@ -178,6 +254,31 @@ where $\cdot$ denotes arbitrary elements of $U$.
 For $n,m\leq 2^s$ we may define an embedding matrix $A_e\in
 \mathbb{C}^{2^s\times 2^s}$ such that the top-left block of $A_e$ is $A$ and
 all other entries are $0$.
+
+\begin{thm}[\cite{chakraborty2019}]
+  Let $A\in\mathbb{C}^{m\times n}$.
+  \begin{enumerate}
+    \item Fix $p\in [0,1]$. If $A^{(p)}$ and $(A^{(1-p)})^{\dagger}$ are both
+      stored in quantum-accessible data structures, then there exist
+      unitaries $U_R$ and $U_L$ that can be implemented in time
+      $\mathcal{O}(\textrm{\normalfont polylog}(mn/\epsilon))$ such that
+      $U_R^{\dagger}U_L$ is a $(\mu_p(A), \lceil\log(n+m+1)\rceil, 
+      \epsilon)$-block-encoding of $\bar{A}$.
+    \item On th other hand, if $A$ is stored in a quantum-accessible data
+      structure, then there exist unitaries $U_R$ and $U_L$ that can
+      be implemented in time $\mathcal{O}(\textrm{\normalfont polylog}(mn/\epsilon))$ such
+      that $U_R^{\dagger}U_L$ is a $(\|A\|_F, \lceil\log(m+n)\rceil,
+      \epsilon)$-block-encoding of $\bar{A}$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  For $j\in[m]$, we difne $\ket{\psi_j}$ and $\ket{\phi_j}$ as follows.
+  \begin{align*}
+    \ket{\psi_j} &= \frac{\sum_{k\in[n]}A^p_{j,k}\ket{j,m+k}}{\sqrt{s_{2p}}(A)}+
+    \sqrt{1-\frac{\sum_{k\in[n]}A^{2p}_{j,k}}{s_{2p}(A)}}\ket{j,n+m+1}\\
+    \ket{\phi_j} &= \frac{}{}
+  \end{align*}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                             %
