@@ -5,6 +5,12 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{aaronson2015}
+Scott Aaronson, \emph{Read the fine print}, Nature Physics \textbf{11} (2015), 291 -- 293.
+
+\bibitem{tang2019}
+Ewin Tang, \emph{A quantum-inspired classical algorithm for recommendation systems}, Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing (New York, NY, USA), STOC 2019, Association for Computing Machinery, 2019, p.~217–228.
 
 \end{thebibliography}

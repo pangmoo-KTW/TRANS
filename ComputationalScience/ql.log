@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  31 OCT 2023 03:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.26)  3 NOV 2023 08:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -130,13 +130,45 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen152
 \Gin@req@width=\dimen153
+) (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count272
+\float@exts=\toks28
+\float@box=\box54
+\@float@everytoks=\toks29
+\@floatcapt=\box55
+) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@thm=\count272
-\c@rem=\count273
+\@float@every@algorithm=\toks30
+\c@algorithm=\count273
+) (/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+ (/usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count274
+\c@ALG@rem=\count275
+\c@ALG@nested=\count276
+\ALG@tlm=\skip58
+\ALG@thistlm=\skip59
+\c@ALG@Lnr=\count277
+\c@ALG@blocknr=\count278
+\c@ALG@storecount=\count279
+\c@ALG@tmpcounter=\count280
+\ALG@tmplength=\skip60
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+\c@thm=\count281
+\c@rem=\count282
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count274
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count283
+\l__pdf_internal_box=\box56
 ) (./ql.aux)
 \openout1 = `ql.aux'.
 
@@ -163,17 +195,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count275
+\scratchcounter=\count284
 \scratchdimen=\dimen154
-\scratchbox=\box55
-\nofMPsegments=\count276
-\nofMParguments=\count277
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count278
+\scratchbox=\box57
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count287
 \MPscratchDim=\dimen155
-\MPnumerator=\count279
-\makeMPintoPDFobject=\count280
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks32
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -183,29 +215,456 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 Class amsart Warning: Abstract should precede \maketitle in AMS document classes; reported on input line 88.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3] [4]
-Overfull \hbox (2.62718pt too wide) in paragraph at lines 338--340
+
+Overfull \vbox (2.51901pt too high) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2]
+./ql.tex:236: Undefined control sequence.
+<recently read> \wildetilde 
+                            
+l.236   $SQ(\widetilde{v})$ for $\wildetilde
+                                            {v}\in\mathbb{C}^n$, we have
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+Overfull \hbox (1.9516pt too wide) in paragraph at lines 295--299
+[]\OT1/cmr/m/n/10 The mem-ory re-quired for this data struc-ture is bounded by $\OMS/cmsy/m/n/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 w [][] mn\OT1/cmr/m/n/10 )$.
+ []
+
+[4] [5] [6]
+Overfull \hbox (2.62718pt too wide) in paragraph at lines 468--470
 \OT1/cmr/m/n/10 data sup-port-ing re-ported re-sults can be found, in-clud-ing links to pub-licly archived
  []
 
-(./ql.bbl
 
-LaTeX Warning: Empty `thebibliography' environment on input line 10.
+./ql.tex:481: LaTeX Error: Lonely \item--perhaps a missing list environment.
 
-) [5] (./ql.aux) ) 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.481 \bibitem{bc}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:481: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.481 \bibitem{bc}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:481: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.481 \bibitem{bc}
+                  
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:489: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.489 \bibitem{harrow2009}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:489: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.489 \bibitem{harrow2009}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:489: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.489 \bibitem{harrow2009}
+                          
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:496: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496 \bibitem{aaronson2015}
+                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:496: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.496 \bibitem{aaronson2015}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:496: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.496 \bibitem{aaronson2015}
+                            
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:503: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.503 \bibitem{kerenidis2017}
+                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:503: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.503 \bibitem{kerenidis2017}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:503: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.503 \bibitem{kerenidis2017}
+                             
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:510: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.510 \bibitem{babbush2018}
+                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:510: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.510 \bibitem{babbush2018}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:510: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.510 \bibitem{babbush2018}
+                           
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:518: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.518 \bibitem{chakraborty2019}
+                               
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:518: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.518 \bibitem{chakraborty2019}
+                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:518: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.518 \bibitem{chakraborty2019}
+                               
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:522: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.522 \bibitem{tang2019}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:522: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.522 \bibitem{tang2019}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:522: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.522 \bibitem{tang2019}
+                        
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:527: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.527 \bibitem{kerenidis2020}
+                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:527: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.527 \bibitem{kerenidis2020}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:527: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.527 \bibitem{kerenidis2020}
+                             
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:531: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.531 \bibitem{jaques2023}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:531: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.531 \bibitem{jaques2023}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:531: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.531 \bibitem{jaques2023}
+                          
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:536: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.536 \bibitem{tang2023}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:536: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.536 \bibitem{tang2023}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:536: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.536 \bibitem{tang2023}
+                        
+I'm forgetting what you said and using zero instead.
+
+[7]
+
+./ql.tex:541: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.541 \bibitem{cp}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:541: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.541 \bibitem{cp}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:541: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.541 \bibitem{cp}
+                  
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:548: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548 \bibitem{belly}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:548: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.548 \bibitem{belly}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:548: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.548 \bibitem{belly}
+                     
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:555: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.555 \bibitem{pang}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./ql.tex:555: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.555 \bibitem{pang}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ql.tex:555: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.555 \bibitem{pang}
+                    
+I'm forgetting what you said and using zero instead.
+
+
+./ql.tex:591: LaTeX Error: \begin{document} ended by \end{thebibliography}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.591 \end{thebibliography}
+                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./ql.tex:591: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.591 \end{thebibliography}
+                           
+Things are pretty mixed up, but I think the worst is over.
+
+[8] (./ql.aux) ) 
 Here is how much of TeX's memory you used:
- 3108 strings out of 477985
- 42808 string characters out of 5840058
- 1862388 words of memory out of 5000000
- 23135 multiletter control sequences out of 15000+600000
- 520857 words of font info for 64 fonts, out of 8000000 for 9000
+ 3784 strings out of 477985
+ 53758 string characters out of 5840058
+ 1863388 words of memory out of 5000000
+ 23796 multiletter control sequences out of 15000+600000
+ 520606 words of font info for 63 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
- 71i,11n,76p,349b,315s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb>
-Output written on ql.pdf (5 pages, 279069 bytes).
+ 71i,11n,76p,349b,338s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb>
+Output written on ql.pdf (8 pages, 295426 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
