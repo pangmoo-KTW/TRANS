@@ -18,7 +18,8 @@
 
 \allowdisplaybreaks
 \usepackage{amsmath,amstext,amssymb,braket}
-\usepackage{graphicx,algorithm,algpseudocode}
+\usepackage{graphicx,forest}
+\usetikzlibrary{arrows.meta}
 
 \textwidth 12.2 cm
 \textheight 19.3 cm
@@ -121,21 +122,22 @@ utilized in QML algorithms. Furthermore, Tang \cite{tang2019} introduced
 \emph{dequantization}, a method that provides efficient classical counterparts
 on classical data for QML algorithms by randomized-linear algebraic exploitations
 of quantum-advantageous assumptions. Since then, preventing dequantization
-have been one of urgent open problems \cite{tang2023} in the theory of QML.
+have been one of open problems \cite{tang2023} in QML theory.
 
-All recognized QML techniques rooted in linear algebra fall under the umbrella
-of Quantum Singular Value Transformation (QSVT), serving as a unifying framework
-for quantum algorithms. QSVT is categorized based on the assumptions of the input
-models. These assumptions revolve around whether the inputs for QML are sparse or
-low-rank. While sparse-access input models are known for providing exponential
-speedups, dequantization targets low-rank input models where classical data, 
-without strict limitations, can be applied.
+%All recognized QML techniques rooted in linear algebra fall under the umbrella
+%of Quantum Singular Value Transformation (QSVT), serving as a unifying framework
+%for quantum algorithms. QSVT is categorized based on the assumptions of the input
+%models. These assumptions revolve around whether the inputs for QML are sparse or
+%low-rank. While sparse-access input models are known for providing exponential
+%speedups, dequantization targets low-rank input models where classical data, 
+%without strict limitations, can be applied.
 
-To make classical data compatible with QML algorithms, they need to be efficiently
-transformed into quantum states. This necessitates assuming the existence of
-Quantum Random Access Memory (QRAM), a quantum counterpart to classical RAM, 
-capable of storing n bits of data and querying these data in superposition 
-within a time complexity of polylog$(n)$. Dequantization essentially involves
+Just like ML, input data models are commonly classical for QML. To make classical
+data compatible with QML algorithms, such data need to be efficiently transformed
+into quantum states. Simple solution is to assume the existence of Quantum 
+Random Access Memory (QRAM), a quantum counterpart to classical RAM, capable of
+storing $n$ bits of data and querying these data in superposition within a time
+complexity of polylog$(n)$. Dequantization essentially involves
 mimicking QRAM for classical computers by assuming an input model of sampling
 and query access to a vector. This assumption allows for a fair comparison
 between quantum and classical machine learning methodologies.
@@ -145,17 +147,11 @@ algorithms and their constraints. Consequently, a significant unresolved issue
 in QML pertains to identifying alternative methods for constructing data 
 structures that prevent dequantization. This issue is the focal point, 
 considering its fundamental unit termed 'Block-encoding.' The objective is to
-formally define an alternative data structure, implicitly suggested by Kerenidis
-and Prakash, and Chakraborty, Gilyén, and Jeffery, and provided general exposition
+formally define an alternative data structure implicitly suggested by Kerenidis
+and Prakash, and Chakraborty, Gilyén, and Jeffery, and provid general exposition
 to the question of what properties let QML algorithms to be dequantized.
 
 \section{Nomenclature}
-The maximum of the $p$-th power of the $\ell_p$ norm for the row vectors:
-\[
-  s_p(A):=\max_{i\in[m]}\|a_i\|_p^p
-\]
-The sparsity $s(A)$ is the maximu number of non-zero entries in a row of $A$.
-
 \section{Quantum accesibble classical data structure}
 Regarding QML and dequantization, notion such as Quantum accesibble classical
 memory or Quantum Read-Only Memory (QROM \cite{babbush2018}) are termed simply
@@ -233,22 +229,59 @@ sampling and query access may be generalized by some oversampling rate.
 \end{defn}
 \begin{defn}[\cite{tang2023} Definition 4.3]
   For $v\in\mathbb{C}^n$ and $\phi\geq1$, if $Q(v)$ and 
-  $SQ(\widetilde{v})$ for $\wildetilde{v}\in\mathbb{C}^n$, we have 
+  $SQ(\widetilde{v})$ for $\widetilde{v}\in\mathbb{C}^n$, we have 
   $\phi$-\emph{oversampling and query access to $v$} or $SQ_{\phi}(v)$. Also,
   \begin{align*}
-    s_{\phi}(v) &:= s(\widetilde{v}),\\
-    q_{\phi}(v) &:= q(\widetilde{v}),\\
-    n_{\phi}(v) &:= n(\widetilde{v}),\\
-    sq_{\phi}(v) &:= \max(s_{\phi}(v),q_{\phi}(v),n_{\phi}(v)).
+    s_{\phi}(v) := s(\widetilde{v}),\;
+    q_{\phi}(v) := q(\widetilde{v}),\;
+    n_{\phi}(v) := n(\widetilde{v}),\;
+    sq_{\phi}(v) := \max(s_{\phi}(v),q_{\phi}(v),n_{\phi}(v)).
   \end{align*}
 \end{defn}
-\begin{cor}
-  For a QRAM $U_Q(T)$, we need $\lceil\log^N\rceil$ qubits.
-\end{cor}
-\begin{proof}
-  Note that $U_Q(T)$ is unitary. By linearity, access by superposition is
-  possible. 
-\end{proof}
+
+\begin{figure}[h]
+  \begin{forest}
+    for tree={
+      edge={-{Stealth[]}},
+    }
+      [$\|\widetilde{A}\|^2$
+        [$\|\widetilde{A_1}\|^2$
+        [$\|\widetilde{A_{11}}\|^2+\|\widetilde{A_{12}}\|^2$
+          [$\|\widetilde{A_{11}}\|^2$
+            ]
+            [
+            $\|\widetilde{A_{12}}\|^2$
+            ]
+          ]
+          [$\|\widetilde{A_{13}}\|^2+\|\widetilde{A_{14}}\|^2$
+          [$\|\widetilde{A_{13}}\|^2$
+            ]
+            [$\|\widetilde{A_{14}}\|^2$
+            ]
+          ]
+        ]
+        [$\|\widetilde{A_2}\|^2$
+        [$\|\widetilde{A_{21}}\|^2+\|\widetilde{A_{22}}\|^2$
+          [$\|\widetilde{A_{21}}\|^2$
+            ]
+            [$\|\widetilde{A_{22}}\|^2$
+            ]
+          ]
+          [ $\|\widetilde{A_{23}}\|^2+\|\widetilde{A_{24}}\|^2$
+          [$\|\widetilde{A_{23}}\|^2$
+            ]
+            [$\|\widetilde{A_{24}}\|^2$
+            ]
+          ]
+        ]
+      ]
+  \end{forest}
+  \caption{example of a $\phi$-sampling and qeury access data structure}
+\end{figure}
+Note that $SQ_{\phi}(v)$ constructs an identical tree structure to the one
+from QRAM. So, we can dequantize whenever QML algorithm relies on QRAM
+based data structure. However, there have been variations for such definitions
+of QRAM, which might prevent dequantization.
 \section{QRAM, data structures and Block-encoding}
 Regarding QML and dequantization, `QRAM' denotes a \emph{quantum accesibble
 classical memory}.
@@ -476,6 +509,8 @@ all other entries are $0$.
 
 \bigskip
 %bib files are not available.-------------------------
+\bibliographystyle{amsplain}
+\begin{thebibliography}{0}
 
 %ref-book----------------------------------------------
 \bibitem{bc} 
