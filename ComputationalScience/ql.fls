@@ -606,14 +606,12 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT ql.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

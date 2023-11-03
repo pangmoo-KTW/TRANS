@@ -88,11 +88,11 @@ Example:This work was supported by the research grant of the University}\\
 
 \begin{abstract}
   The main goal of this paper is to formulate a quantum data structure that
-  prevents the existence of efficient classical counterparts of Quantum machine
-  learning algorithms based upon the data structure or input assumption. Such
-  existence and prevention have been an open problem in the field of quantum
-  machine learning theory, and provide some general properties regarding the
-  problem. %not exceed 160 words and must contain Main Facts 
+  prevents efficient classical counterparts of Quantum machine learning
+  algorithms. Since such prevention have been an open problem in quantum 
+  machine learning theory, we provide some general properties regarding the
+  problem, focusing on norm variation.
+  %not exceed 160 words and must contain Main Facts 
 
 \vskip 0.4 true cm
 
@@ -102,7 +102,6 @@ Example:This work was supported by the research grant of the University}\\
 
 \noindent 
 {\it Key words and phrases } : %keyword 1, keyword 2, keyword 3.
-Nonlinear equation, three-step iterative method, multi-step iterative method.
 
 \end{abstract}
 
@@ -114,15 +113,15 @@ Nonlinear equation, three-step iterative method, multi-step iterative method.
 
 \bigskip
 \section{Introcution}
-Quantum machine learning (QML) is a interdisciplinary field of study subsequent
+Quantum machine learning (QML) is a field of study subsequent
 to HHL algorithm \cite{harrow2009} that approximately solves a system of linear
-equations in a logarithmic time. However, there have been serious critiques 
+equations in a logarithmic time. However, there have been critiques 
 \cite{aaronson2015} on input model assumptions or quantum data structures
 utilized in QML algorithms. Furthermore, Tang \cite{tang2019} introduced 
 \emph{dequantization}, a method that provides efficient classical counterparts
 on classical data for QML algorithms by randomized-linear algebraic exploitations
-of quantum-advantageous assumptions. Since then, preventing dequantization
-have been one of open problems \cite{tang2023} in QML theory.
+of quantum-advantageous assumptions. Currently, preventing dequantization
+is one of open problems \cite{tang2023} in QML theory.
 
 %All recognized QML techniques rooted in linear algebra fall under the umbrella
 %of Quantum Singular Value Transformation (QSVT), serving as a unifying framework
@@ -132,7 +131,7 @@ have been one of open problems \cite{tang2023} in QML theory.
 %speedups, dequantization targets low-rank input models where classical data, 
 %without strict limitations, can be applied.
 
-Just like ML, input data models are commonly classical for QML. To make classical
+As in ML, input data models are classical for QML usually. To make classical
 data compatible with QML algorithms, such data need to be efficiently transformed
 into quantum states. Simple solution is to assume the existence of Quantum 
 Random Access Memory (QRAM), a quantum counterpart to classical RAM, capable of
@@ -148,7 +147,7 @@ in QML pertains to identifying alternative methods for constructing data
 structures that prevent dequantization. This issue is the focal point, 
 considering its fundamental unit termed 'Block-encoding.' The objective is to
 formally define an alternative data structure implicitly suggested by Kerenidis
-and Prakash, and Chakraborty, Gilyén, and Jeffery, and provid general exposition
+and Prakash, and Chakraborty, Gilyén, and Jeffery, and provide general exposition
 to the question of what properties let QML algorithms to be dequantized.
 
 \section{Nomenclature}
@@ -166,7 +165,7 @@ memory or Quantum Read-Only Memory (QROM \cite{babbush2018}) are termed simply
     U_Q(T)\ket{i}\ket{0} = \ket{i}\ket{T_i}.
   \]
 \end{defn}
-Note that $U_Q(T)$ is unitary. By linearity, number of qubits during access
+Note that $U_Q(T)$ is unitary. By linearity, the number of qubits during access
 by superposition is $\lceil\log^N\rceil$. Hence, assume that query of the
 form $\ket{i}\ket{0}\rightarrow\ket{i}\ket{T_i}$ requires 
 $\mathcal{O}(\textrm{polylog})$ time. Following is an input model or a data
@@ -198,7 +197,7 @@ This data structure is an array of $m$  binary trees. The value
 stored at the root is $\|A_i\|^2$ for $i\in[m]$, and depth of each tree is
 at most $\lceil\log n\rceil$. Here, dequantization questions the assumption
 of `\emph{qauntum access} to the data structure that can efficiently handle
-classical inputs' and provides a comparison equalizer. Goal is to classically
+classical inputs' and provides a fair comparison. Goal is to classically
 construct identical tree with only a polynomial slowdown. 
 \begin{defn}[\cite{tang2023} Definition 4.1]
   For all $i\in[n]$, if we can query for $v(i)$, we have \emph{query access}
@@ -280,149 +279,54 @@ sampling and query access may be generalized by some oversampling rate.
 \end{figure}
 Note that $SQ_{\phi}(v)$ constructs an identical tree structure to the one
 from QRAM. So, we can dequantize whenever QML algorithm relies on QRAM
-based data structure. However, there have been variations for such definitions
-of QRAM, which might prevent dequantization.
-\section{QRAM, data structures and Block-encoding}
-Regarding QML and dequantization, `QRAM' denotes a \emph{quantum accesibble
-classical memory}.
-\begin{defn}[\cite{jaques2023} Definition 1]
-  is a collection of unitaries $U_{\textrm{QRAM}}(T)$, where 
-  $T\in\{0,1\}^n$ is a table of data, such that for all states $\ket{i}$
-  in the computational basis, $0\leq i\leq n-1$,
+based data structure. 
+\section{Alternative Data Structures}
+However, there have been variations for such definitions of QRAM, which might
+prevent dequantization. We first present such variant with general approach,
+then with more concrete form of presentation by \emph{block-encoding}.
+Theorem below constructs a more efficient variant of QRAM, where the memory
+requirement \cite{kerenidis2020} is $\widetilde{\mathcal{O}}(mn)$ and time cost
+of update, insertion, or deletion for a single entry is
+$\mathcal{O}(\textrm{polylog}(n))$.
+of art. 
+\begin{thm}[\cite{kerenidis2020} Theorem IV.2]
+  Let $M=\max_{i\in[m]}\|a_i\|^2$ and $A\in\mathbb{R}^{m\times n}$. There
+  eixsts an efficient QRAM data structure for storing matrix entries
+  $(i,j,a_{ij})$ such that access to this data structure allows a quantum
+  algorithm to implement following unitary in time 
+  $\widetilde{\mathcal{O}}(\log (mn))$.
   \[
-    U_{\textrm{QRAM}}(T)\ket{i}\ket0=\ket{i}\ket{T_i}_.
+    U\ket{i,0^{\lceil\log(n+1)\rceil}} = \ket{i}\frac{1}{\sqrt{M}}
+    \left(\sum_{j\in[n]}a_{ij}\ket{j}+(M-\|a_i\|^2)^{1/2}\ket{n+1}\right).k
+  \]
+\end{thm}
+Before heading to the proof, it is helpful to understand utility of $M$.
+\begin{defn}
+  The normalized vector state corresponding to vector $x\in\mathbb{R}^n$ and
+  $M\in\mathbb{R}$ such that $\|x\|^2\leq M$ is the quantum state
+  \[
+    \ket{\bar{x}} = \frac{1}{\sqrt{M}}
+    \left(\sum_{i\in[n]}x_i\ket{i}+(M-\|x\|^2)^{1/2}\ket{n+1}\right).
   \]
 \end{defn}
-The following is a data structure employed in the quantum recommendation 
-algorithm, which happens to be the first QML algorithm to undergo the 
-process of dequantization.
-\begin{thm}[Kerenidis 2017, Theorem 15]
-  Let $A \in \mathbb{R}^{m \times n}$ be a matrix with $A_{ij} \in \mathbb{R}$ representing
-  the entry at the $i$-th row and the $j$-th column. Suppose $w$ is the count of entries that
-  have already been received in the system, where entries $(i, j, A_{ij})$ arrive in an arbitrary order.
-  In such a scenario, there exists a data structure for storing the matrix $A$ with the following properties:
-
-  \begin{enumerate}
-    \item The data structure's size is $\mathcal{O}(w \log^2(mn))$.
-    \item When provided with entries $(i, j, A_{ij})$ in an arbitrary order, the time required to store them
-       is $\mathcal{O}(\log^2(mn))$.
-    \item A quantum algorithm exists that can perform the following mappings in $\textrm{\normalfont polylog}(mn)$ time
-       for $i \in [m]$ and $j \in [n]$:
-       \begin{align*}
-        \widetilde{U} & : \ket{i}\ket{0} \mapsto \ket{i}\ket{A_i},\\
-        \widetilde{V} & : \ket{0}\ket{j} \mapsto \ket{\widetilde{A}}\ket{j},
-       \end{align*}
-       where $\widetilde{A} \in \mathbb{R}^m$ has entries $\widetilde{A_i} = \|A_i\|$.
-  \end{enumerate}
-\end{thm}
+So the key variation is the norm in the input state.
 \begin{proof}
-  The data structure comprises an array of $m$ binary trees, denoted as $B_i$ 
-  for $i \in [m]$. When a new entry $(i, j, A_{ij})$ arrives, a leaf node for
-  $j$ in tree $B_i$ is created if it doesn't already exist, and updated if it
-  does. The depth of each tree $B_i$ is at most $\lceil\log n\rceil$. An internal
-  node $v$ within $B_i$ stores the sum of the values of all the leaves in the
-  subtree rooted at $v$, which is essentially the sum of the square amplitudes
-  of the entries of $A_i$ in that subtree. Consequently, the value stored at th
-  e root of each tree is $\|A_i\|^2$. 
-  \begin{enumerate}
-    \item The memory required for this data structure is bounded by
-      $\mathcal{O}(w\log^2 mn)$. For each entry $(i, j, A_{ij})$, at most
-      $\lceil\log n\rceil$ new nodes are added, and each node necessitates
-      $\mathcal{O}(\log mn)$ bits.
-    \item The time required to store an entry $(i, j, A_{ij})$ is
-      $\mathcal{O}(\log^2 mn)$. The insertion algorithm involves at most 
-      $\lceil \log n\rceil$ updates to the data structure, and each update takes
-      $\mathcal{O}(\log mn)$ time to retrieve the address of the updated node.
-    \item The amplitudes stored in the internal nodes of $B_i$ are utilized
-      to apply a sequence of conditional rotations to the initial state
-      $\ket0^{\lceil\log n\rceil}$ to obtain $\ket{A_i}$. Furthermore, it's
-      worth noting that the amplitudes of the vector $\widetilde{A}$ are equal
-      to $\|A_i\|$, and the values stored in the roots of the trees $B_i$ are
-      equal to $\|A_i\|^2$. Consequently, a similar construction for the $m$
-      roots allows us to efficiently perform the unitary $\widetilde{V}$.
-  \end{enumerate}
-\end{proof}
-\begin{thm}[Chakraborty, 2018, Theorem 1]
-  Consider a matrix $A \in \mathbb{R}^{m \times n}$ with entries $A_{ij} \in
-  \mathbb{R}$ representing the element at the $i$-th row and the $j$-th column.
-  Let $w$ be the count of non-zero entries in $A$. Then, there exists a data
-  structure of size $\mathcal{O}(w \log^2(mn))$ that, when provided with entries
-  $(i, j, A_{ij})$ in any order, stores them such that the time required to store
-  each entry of $A$ is $\mathcal{O}(\log(mn))$.
-
-  Once this data structure has been initialized with all non-zero entries of $A$,
-  there exists a quantum algorithm that can perform the following mappings with
-  $\epsilon$-precision in $\mathcal{O}(\textrm{\normalfont 
-  polylog}(mn/\epsilon))$ time:
+  $m$ binary trees $B_i$ $\longrightarrow$ use {\bfseries rotation}
   \begin{align*}
-    \widetilde{U} & : \ket{i}\ket{0} \mapsto \frac{1}{\|A_{i \cdot}\|}
-    \sum_{j=1}^n A_{i,j}\ket{j} = \ket{i, A_i}, \\
-    \widetilde{V} & : \ket{0}\ket{j} \mapsto \frac{1}{\|A\|_F}
-    \sum_{i=1}^m\|A_{i,\cdot}\|\ket{i}\ket{j} = \ket{\widetilde{A}, j},
+    \bullet\\\bullet \\\bullet
   \end{align*}
-
-  where $\ket{A_{i,\cdot}}$ is the normalized quantum state corresponding to
-  the $i$-th row of $A$, and $\ket{\widetilde{A}}$ is a normalized quantum state
-  such that $\braket{i|\widetilde{A}} = \|A_{i,\cdot}\|$, which represents the
-  norm of the $i$-th row of $A$.
-
-  Notably, when given a vector $\pmb{v} \in \mathbb{R}^{m \times 1}$ stored in
-  this data structure, it is possible to generate an $\epsilon$-approximation of
-  the superposition $\sum_{i=1}^m \frac{v_i}{\|\pmb{v}\|}\ket{i}$ with a
-  computational complexity of $\textrm{\normalfont polylog}(m/\epsilon)$.
-\end{thm}
-\begin{proof}
 \end{proof}
-\begin{thm}[Kerenidis, Prakash, 2020, Theorem IV.2]
-  Let $A\in\mathbb{R}^{m\times n}$ and $M=\max_{i\in[m]}\|a_i\|^2$. There is an
-  efficient data structure for storing matrix entries $(i,j,a_{ij})$ such that
-  access to this data structure allows a quantum algorithm to implement the
-  following unitary in time $\widetilde{\mathcal{O}}(\log(mn))$.
-  \[
-    U\ket{i,0^{\lceil\log(n+1)\rceil}}=\ket{i}\frac{1}{\sqrt{m}}
-    \left(\sum_{j\in[n]}a_{ij}\ket{j}+(m-\|a_i\|^2)^{1/2}\ket{n+1}\right)
-  \]
-\end{thm}
-\begin{proof}
-\end{proof}
-\begin{thm}
-  Thm on dequantizaion / or expansion of dat structs above.
-\end{thm}
-\begin{proof}
-\end{proof}
-\begin{cor}
-  \textbf{Midway main Results}
-\end{cor}
-\begin{proof}
-\end{proof}
-\section{Block-encoding}
-
-In order to appreciate powers of these alternatives, we introduce the notion
-of block-encoding, which was devised as a solution to the problem of
-Hamiltonian simulation. Hamiltonian simulation, one of the original motivations
-for designing practical quantum computers, may stated as follows: For time
-evolution of the wave function $\ket{\psi(t)}$ governed by the Schr{\"o}dinger
-equation, that is,
-\[
-  i\hslash\frac{\textrm{d}}{\textrm{dt}}\ket{\psi(t)}
-  = H(t)\ket{\psi(t)}
-\]
-the Hamiltonian, an operator with units of energy, is $H(t)$. Hamiltionian
-simulation is a problem of designing quantum circuit or unitary matrix $U$
-consisting of $\textrm{poly}(n,t,1/\epsilon)$ gates such that $\|U-{e^{iHt}}\|\leq
-\epsilon$. % Childs - lecture notes
-The cost of Hamiltonian simulation depends on the number of qubits
-$n$, evolution time $t$, target error $\epsilon$, and access models of
-Hamiltonian $H$. While acheiving optimal Hamiltonian simulation by the
-process called `Qubitization', Low and Chuang (2017) defined a \emph{standard-form
-encoding}, a primitive statement of \emph{block-encoding}. Basically, 
-qubitization is a technique of representing Hermitian or subnormalized matrix
-as the top-left block of a unitary matrix, that is;
+Now we define the notion of block-encoding to clarify the prevention
+of result above. Block-encdoing was devised during a optimal
+solution of Hamiltonian simulation probem, \cite{low2019} originally termed
+as `qubitization'. Simply put, block-encoding is a technique of representing
+Hermitian or subnormalized matrix as the top-left block of a unitary matrix, 
+that is;
 \[
   U=\begin{bmatrix}A/\alpha &\cdot \\ \cdot &\cdot \end{bmatrix}
 \]
 where $\cdot$ denotes arbitrary elements of $U$. 
-\begin{defn}[Block-encoding] For $A\in\mathbb{C}^{n\times m}, \alpha,\epsilon
+\begin{defn}[Gily\'en 2019] For $A\in\mathbb{C}^{n\times m}, \alpha,\epsilon
   \in\mathbb{R}_{+}$ and $a\in\mathbb{N}$, $(s+a)$-qubit unitary $U$ is an
   $(\alpha,a,\epsilon)$-block-encoding of $A$ if
   \[
@@ -450,27 +354,15 @@ all other entries are $0$.
       \epsilon)$-block-encoding of $\bar{A}$.
   \end{enumerate}
 \end{thm}
-\begin{proof}
-  For $j\in[m]$, we difne $\ket{\psi_j}$ and $\ket{\phi_j}$ as follows.
-  \begin{align*}
-    \ket{\psi_j} &= \frac{\sum_{k\in[n]}A^p_{j,k}\ket{j,m+k}}{\sqrt{s_{2p}}(A)}+
-    \sqrt{1-\frac{\sum_{k\in[n]}A^{2p}_{j,k}}{s_{2p}(A)}}\ket{j,n+m+1}\\
-    \ket{\phi_j} &= \frac{}{} \cdots
-  \end{align*}
-\end{proof}
-\begin{defn}
-  singular value decomposition
-\end{defn}
-\begin{thm}[Kerenidis, Prakash, 2020, Theorem IV.4]
-\end{thm}
-\begin{proof}
-\end{proof}
 
 \begin{thm}
-  \textbf{Main Results}
+  Chakraborty2019 
 \end{thm}
-\begin{proof}
-\end{proof}
+
+\begin{thm}
+  main result 
+\end{thm}
+
 \section{Examples and Applications}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                             %
@@ -550,6 +442,13 @@ Phys. Rv.
 {\bf 8} (2018),
 041015.
 
+\bibitem{low2019}
+H. Low and I. Chuang,
+{\it Hamiltonian Simulation by Qubitization},
+Quantum
+{\bf 3} (2019),
+163.
+
 \bibitem{chakraborty2019}
 Chakraborty, Gily{\'en} and Jeffery. {\it The Power of Block-Encoded Matrix
 Powers}, ICALP {\bf 132} (2019), 33:1-33:14.
@@ -560,8 +459,10 @@ Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing (2019
 217--228.
 
 \bibitem{kerenidis2020}
-Kerenidis, Iordanis and Prakash, Anupam. {\it Quantum gradient descent for
-linear systems and leaste squares}, Phys.Rev.A {\bf 2} (2020), 022316.
+Kerenidis, Iordanis and Prakash, Anupam, 
+{\it Quantum gradient descent for linear systems and leaste squares}, 
+Phys.Rev.A {\bf 2} (2020), 
+022316.
 
 \bibitem{jaques2023}
 S. Jaques and A. Rattew,
