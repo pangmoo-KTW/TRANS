@@ -113,15 +113,14 @@ Example:This work was supported by the research grant of the University}\\
 
 \bigskip
 \section{Introcution}
-Quantum machine learning (QML) is a field of study subsequent
-to HHL algorithm \cite{harrow2009} that approximately solves a system of linear
-equations in a logarithmic time. However, there have been critiques 
-\cite{aaronson2015} on input model assumptions or quantum data structures
-utilized in QML algorithms. Furthermore, Tang \cite{tang2019} introduced 
-\emph{dequantization}, a method that provides efficient classical counterparts
-on classical data for QML algorithms by randomized-linear algebraic exploitations
-of quantum-advantageous assumptions. Currently, preventing dequantization
-is one of open problems \cite{tang2023} in QML theory.
+Quantum machine learning (QML) is a field of study after the HHL algorithm
+\cite{harrow2009} that approximately solves a system of linear equations in a
+logarithmic time. However, there have been critiques \cite{aaronson2015} on input
+model assumptions or quantum data structures utilized in QML algorithms. Furthermore,
+Tang \cite{tang2019} introduced \emph{dequantization}, a method that provides efficient
+classical counterparts on classical data for QML algorithms by randomized-linear
+algebraic exploitations of quantum-advantageous assumptions. Currently, preventing
+dequantization is one of the open problems \cite{tang2023} in QML theory.
 
 %All recognized QML techniques rooted in linear algebra fall under the umbrella
 %of Quantum Singular Value Transformation (QSVT), serving as a unifying framework
@@ -131,50 +130,42 @@ is one of open problems \cite{tang2023} in QML theory.
 %speedups, dequantization targets low-rank input models where classical data, 
 %without strict limitations, can be applied.
 
-As in ML, input data models are classical for QML usually. To make classical
-data compatible with QML algorithms, such data need to be efficiently transformed
-into quantum states. Simple solution is to assume the existence of Quantum 
-Random Access Memory (QRAM), a quantum counterpart to classical RAM, capable of
-storing $n$ bits of data and querying these data in superposition within a time
-complexity of polylog$(n)$. Dequantization essentially involves
-mimicking QRAM for classical computers by assuming an input model of sampling
-and query access to a vector. This assumption allows for a fair comparison
-between quantum and classical machine learning methodologies.
+Input data for QML algorithms are mostly classical as ML. For compatibllity of classical 
+data with QML algorithms, such data get efficiently transformed
+into quantum states. A simple solution is to assume a quantum counterpart to classical
+RAM. That is \emph{quantum random access memory} (QRAM) storing $n$ bits of data and
+capable of querying these data in superposition within a time complexity of polylog$(n)$.
+For a fair comparison between quantum and classical machine learning methodologies,
+dequantization assumes an input model of \emph{sampling and query access} to a vector.
 
 The outcomes of dequantization establish a boundary for our comprehension of QML
 algorithms and their constraints. Consequently, a significant unresolved issue
 in QML pertains to identifying alternative methods for constructing data 
-structures that prevent dequantization. This issue is the focal point, 
-considering its fundamental unit termed 'Block-encoding.' The objective is to
-formally define an alternative data structure implicitly suggested by Kerenidis
-and Prakash, and Chakraborty, Gilyén, and Jeffery, and provide general exposition
-to the question of what properties let QML algorithms to be dequantized.
+structures that prevent dequantization. The objective is to provide general exposition
+to the question of what properties allow or prevent dequantization of QML algorithms.
 
 \section{Nomenclature}
 \section{Quantum accesibble classical data structure}
-Regarding QML and dequantization, notion such as Quantum accesibble classical
-memory or Quantum Read-Only Memory (QROM \cite{babbush2018}) are termed simply
-`QRAM' because most data used in ML are classical. 
+Most data given for QML are classical. So we use the term QRAM to denote notions such as
+Quantum accessible classical memory or Quantum Read-Only Memory (QROM \cite{babbush2018}). 
 
 \begin{defn}[\cite{jaques2023} Definition 1]
-  For a table of data $T\in\{0,1\}^N$, 
-  QRAM is a collection of unitaries $U_Q(T)$,
+  Let a table of data $T\in\{0,1\}^N$. QRAM is a collection of unitaries $U_Q(T)$
   such that for all states $\ket{i}$ in the computational basis
-  where $0\leq i\leq N-1$, 
+  with $0\leq i\leq N-1$, 
   \[
     U_Q(T)\ket{i}\ket{0} = \ket{i}\ket{T_i}.
   \]
+  Or by mapping, query of the form $\ket{i}\ket{0}\rightarrow\ket{i}\ket{T_i}$ requires
+  $\mathcal{O}(\textrm{polylog})$ time.
 \end{defn}
-Note that $U_Q(T)$ is unitary. By linearity, the number of qubits during access
-by superposition is $\lceil\log^N\rceil$. Hence, assume that query of the
-form $\ket{i}\ket{0}\rightarrow\ket{i}\ket{T_i}$ requires 
-$\mathcal{O}(\textrm{polylog})$ time. Following is an input model or a data
-structure upon such QRAM, employed in quantum recommendation algorithm.
+An \emph{input model} or a \emph{data structure} for the quantum recommendation algorithm
+uses such QRAM.
 \begin{thm}[\cite{kerenidis2017} Theorem 15]
   Let $A\in\mathbb{R}^{m\times n}$ be a matrix. Let $(i,j,A_{ij})$ be 
-  entries arriving in the system in a arbitrary order, and $w$ be the
-  number of entries already in the system. Then, there exists a data structre
-  to store the matrix $A$ with following properties:
+  entries arriving in the system in an arbitrary order with $w$ as the
+  number of entries already in the system. Then, there exists a data structure
+  to store the matrix $A$ with the following properties:
   \begin{enumerate}
     \item The size of the data structure is $\mathcal{O}(w\log^2(mn))$.
     \item The time to store a new entry $(i,j,A_{ij})$ is 
