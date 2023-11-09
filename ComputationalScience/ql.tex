@@ -68,7 +68,7 @@ Informatics Vol. {\bf 4x}(2023), No. x, pp. xx - xx   }
 
 \title
 { %Full title of the paper
-Variation in norms of quantum input models$^\dagger$  
+A Survey on alternative quantum input models$^\dagger$  
 }
 
 \author
@@ -87,11 +87,15 @@ Example:This work was supported by the research grant of the University}\\
 
 
 \begin{abstract}
-  The main goal of this paper is to formulate a quantum data structure that
-  prevents efficient classical counterparts of Quantum machine learning
-  algorithms. Since such prevention have been an open problem in quantum 
-  machine learning theory, we provide some general properties regarding the
-  problem, focusing on norm variation.
+  This paper provides an expository expansion to an open problem in quantum
+  machine learning; whether there are alternative data structures that
+  prevent efficient classical counterparts for quantum machine learning 
+  algorithms. 
+  %The main goal of this paper is to formulate a quantum data structure that
+  %prevents efficient classical counterparts of Quantum machine learning
+  %algorithms. Since such prevention have been an open problem in quantum 
+  %machine learning theory, we provide some general properties regarding the
+  %problem, focusing on norm variation.
   %not exceed 160 words and must contain Main Facts 
 
 \vskip 0.4 true cm
@@ -113,83 +117,212 @@ Example:This work was supported by the research grant of the University}\\
 
 \bigskip
 \section{Introcution}
-Quantum machine learning (QML) is a field of study after the HHL algorithm
+Quantum machine learning (QML) was activated by the HHL algorithm
 \cite{harrow2009} that approximately solves a system of linear equations in a
-logarithmic time. However, there have been critiques \cite{aaronson2015} on input
-model assumptions or quantum data structures utilized in QML algorithms. Furthermore,
-Tang \cite{tang2019} introduced \emph{dequantization}, a method that provides efficient
-classical counterparts on classical data for QML algorithms by randomized-linear
-algebraic exploitations of quantum-advantageous assumptions. Currently, preventing
-dequantization is one of the open problems \cite{tang2023} in QML theory.
+logarithmic time. However, as Aaronson \cite{aaronson2015} critiqued, HHL and
+other QML algorithms involved quantum advantageous \emph{input assumptions} 
+or \emph{data structures}. Critically, Tang \cite{tang2019} introduced
+\emph{dequantization}, a method of providing efficient classical counterparts
+for large amount of QML algorithms by randomized-linear algebraic exploitations of
+quantum-advantageous assumptions, hence demystifying claimed exponential
+speedups of QML algorithms. This paper focus on the problem of constructing
+data structrues that prevent dequantization, that is, an open problem stated
+in Tang's thesis \cite{tang2023} with implicit examples by Chakraborty, Gily\'en 
+and Jeffry \cite{chakraborty2019} and Kerenidis and Prakash \cite{kerenidis2020}.
 
-%All recognized QML techniques rooted in linear algebra fall under the umbrella
-%of Quantum Singular Value Transformation (QSVT), serving as a unifying framework
-%for quantum algorithms. QSVT is categorized based on the assumptions of the input
-%models. These assumptions revolve around whether the inputs for QML are sparse or
-%low-rank. While sparse-access input models are known for providing exponential
-%speedups, dequantization targets low-rank input models where classical data, 
-%without strict limitations, can be applied.
+\section{Preliminaries}
 
-Input data for QML algorithms are mostly classical as ML. For compatibllity of classical 
-data with QML algorithms, such data get efficiently transformed
-into quantum states. A simple solution is to assume a quantum counterpart to classical
-RAM. That is \emph{quantum random access memory} (QRAM) storing $n$ bits of data and
-capable of querying these data in superposition within a time complexity of polylog$(n)$.
-For a fair comparison between quantum and classical machine learning methodologies,
-dequantization assumes an input model of \emph{sampling and query access} to a vector.
-
-The outcomes of dequantization establish a boundary for our comprehension of QML
-algorithms and their constraints. Consequently, a significant unresolved issue
-in QML pertains to identifying alternative methods for constructing data 
-structures that prevent dequantization. The objective is to provide general exposition
-to the question of what properties allow or prevent dequantization of QML algorithms.
-
-\section{Nomenclature}
-\section{Quantum accesibble classical data structure}
-Most data given for QML are classical. So we use the term QRAM to denote notions such as
-Quantum accessible classical memory or Quantum Read-Only Memory (QROM \cite{babbush2018}). 
-
-\begin{defn}[\cite{jaques2023} Definition 1]
-  Let a table of data $T\in\{0,1\}^N$. QRAM is a collection of unitaries $U_Q(T)$
-  such that for all states $\ket{i}$ in the computational basis
-  with $0\leq i\leq N-1$, 
-  \[
-    U_Q(T)\ket{i}\ket{0} = \ket{i}\ket{T_i}.
-  \]
-  Or by mapping, query of the form $\ket{i}\ket{0}\rightarrow\ket{i}\ket{T_i}$ requires
-  $\mathcal{O}(\textrm{polylog})$ time.
+By practical or industrial reasons, the majority of data given for QML are
+classical.
+\begin{defn}
+  Classical data is an element of $n$-fold Cartesian product $\{0,1\}^n$.
 \end{defn}
-An \emph{input model} or a \emph{data structure} for the quantum recommendation algorithm
-uses such QRAM.
+
+To utillize classical data within a quantum computer, there must be an efficient
+way or a structure to prepare those data inputs into quantum states, where
+quantum states are defined as follows.
+
+\begin{defn}
+  For $a_x\in\mathbb{C}$, if $\sum_x|a_x|^2=1$, sum of $\ell_2$-normalized
+  vectors in a complex vector space
+  \[
+    \ket{\psi} = \sum_{x\in\{0,1\}^n}a_x\ket{x}
+  \]
+  is the state of $n$ qubits.
+\end{defn}
+
+We simply assumme that such efficient preperation by supposing Quantum Random
+Access Memory (QRAM), a classical memory that can be accessed by quantum
+algorithms. Incidentally, QRAM is quite a broad term
+as noted in survey of Jaques and Rattew \cite{jaques2023}, but following
+abstraction might suffice for our discussion. Beforehand, it is useful to
+introduce following abbreviation
+\[
+  \ket{\psi}\otimes\ket{\phi} = \ket{\psi}\ket{\phi} = \ket{\psi, \phi}
+\]
+since $\ket{\;\cdot\;}$ denotes a column vector.
+
+\begin{defn}
+  For classical data $t_i\in\{0,1\}^n$, existence of QRAM is an assumption
+  that there exist unitaries of the form
+  \[
+    U\ket{i,0}=\ket{i,t_i}
+  \]
+  and such action of $U$ requires $\mathcal{O}(\textrm{polylog}(n))$ time.
+\end{defn}
+
+Classical data $t_i$ constitues a classical memory $T$. Register of $\ket{i}$
+is called the address register. Time complexity of $U$ expressed in big-oh
+notation means that there exists constants $c$ and $n_0$ both equal or greater
+than $0$ such that $T(n)$, a time function of $U$ for $n$, is equal or less than
+the polylogarithmic function of $n$ multiplied by $c$ for all $n\geq n_0$.
+Another useful notation in algorithmic analysis is 
+$\widetilde{\mathcal{O}}(f(n))$, shorthand for $\mathcal{O}(g(n)\log^k g(n))$.
+
+\section{Quantum accesibble classical data structure}
+
+QRAM enables input models or \emph{data structures} for processing matrix
+input in a quantum adventageous way. We restate such data structure utilized
+in the quantum recommendation algorithm by Kerenidis \cite{kerenidis2017},
+first QML algorithm to be dequantized by Tang \cite{tang2019}. In advance,
+we check state preparation method by Grover and Rudolph \cite{grover2002}.
+
+\begin{cor}
+  Let a probability distribution $\{p_i\}$ such that $p_i^{(m)}$ is the
+  probability for the random variable $x$ to lie in the $i$th region, and 
+  $p_s^{(m)}$ is the probability for $x$ to lie in $s$th region. For an
+  orthonormal state $\ket{i}$, let a $m$-qubit state as follows
+  \[
+    \ket{\psi_m} = \sum_{i=0}^{2^m-1}\sqrt{p_i^{(m)}}\ket{i}.
+  \]
+  Then, we can get the mapping of
+  \[
+    \ket{\psi_{m+1}}=\sum_{i=0}^{2^{m+1}-1}\sqrt{p_i^{(m+1)}}\ket{i}.
+  \]
+\end{cor}
+\begin{proof}
+  Let $n=\log N$ for the total number of points $N$ to discretize the
+  distribution $p(x)$. That is, we divide the distribution with $2^m$ of regions
+  for some $m$. We subdivide these $2^m$ regions to yield a $2^{m+1}$
+  region discretization of $p(x)$. 
+  
+  First, we define the left and right boundaries of region $i$ as
+  $x_L^i$ and $x_R^i$  with the function
+  \[
+    f(i)=\frac{\int_{x_L^i}^{(x_R^i-x_L^i)/2}p(x)dx}{\int_{x_L^i}^{x_R^i}p(x)dx}.
+  \]
+  That is, for $x$ in the region $i$, the probability of $x$ also lying
+  in the left half of this region. Since an integral on $p(x)$ can be
+  classicaly computed efficiently, we take an ancillia register initially
+  in the state $\ket{0\ldots 0}$ and construct a circuit which efficiently
+  performs the computation
+  \[
+    \sqrt{p_i^{(m)}}\ket{i,0\cdots0}\mapsto\sqrt{p_i^{(m)}}\ket{i,\theta_i)}
+  \]
+  where $\theta_i\equiv \arccos\sqrt{f(i)}$. Then, by a controlled rotation
+  of angle $\theta_i$ on the $m+1$'th qubit, we have
+  \[
+    \sqrt{p_i^{(m)}}\ket{i,\theta_i,0}\mapsto
+    \sqrt{p_i^{(m)}}\ket{i,\theta_i}(\cos\theta_i\ket0+\sin\theta_i\ket1)
+  \]
+  where we can uncompute the register containing $\ket{\theta_i}$ with
+  \[
+    \sqrt{p_i^{(m)}}\ket{i}\mapsto\sqrt{\alpha_i}\ket{i,0}+
+    \sqrt{\beta_i}\ket{i,1}
+  \]
+  where $\alpha$ and $\beta$ are the probability for $x$ to lie in the left
+  or right half of the region $i$, respectivly. 
+  We apply the mapping above for $m$-qubit states given as
+  \[
+    \ket{\psi_m} = \sum_{i=0}^{2^m-1}\sqrt{p_i^{(m)}}\ket{i}.
+  \]
+  Then, we get $\sqrt{\psi_{m_1}}$ as desired.
+\end{proof}
+\begin{lem}
+  Given a certain probability distribution $\{p_i\}$, we can efficiently
+  construct a superposition of
+  \[
+    \ket{\psi(\{p_i\})} = \sum_i\sqrt{p_i}\ket{i}.
+  \]
+\end{lem}
+\begin{proof}
+  By repeating the cororally above until $m=n$, we can efficiently construct
+  a superposition as desired.
+\end{proof}
+
+This result, variable by construction details, is used in the data structure
+below to to efficiently perform $\widetilde{U}$ and $\widetilde{V}$.
+
 \begin{thm}[\cite{kerenidis2017} Theorem 15]
-  Let $A\in\mathbb{R}^{m\times n}$ be a matrix. Let $(i,j,A_{ij})$ be 
-  entries arriving in the system in an arbitrary order with $w$ as the
-  number of entries already in the system. Then, there exists a data structure
-  to store the matrix $A$ with the following properties:
+  For a real matrix $A\in\mathbb{R}^{m\times n}$, let $(i,j,A_{ij})$ be given
+  data. If we assume QRAM, then, there exists a data structure
+  representable by binary search trees to store the matrix $A$ with
+  following properties:
   \begin{enumerate}
-    \item The size of the data structure is $\mathcal{O}(w\log^2(mn))$.
-    \item The time to store a new entry $(i,j,A_{ij})$ is 
-      $\mathcal{O}(\log^2(mn))$.
-    \item Corresponding to the rows of the matrix currently stored,
-      a quantum algorithm that has quantum access to the data structure
-      can perform the mapping 
-      \[
-        \widetilde{U}:\ket{i}\ket{0}\rightarrow\ket{i}\ket{A_i},
-      \]
-      and for $\widetilde{A}\in\mathbb{R}^m$ with entries 
-      $\widetilde{A_i}=\|A_i\|$ and $j\in[n]$,
-      \[
-        \widetilde{V}:\ket{0}\ket{j}\rightarrow\ket{\widetilde{A}}\ket{j}.
-      \]
-      This quantum algorithm takes $\textrm{\normalfont polylog}(mn)$ time.
+    \item The size of the data structure is $\mathcal{O}(w \log^2(mn))$ where
+    $w$ is the number of data entries already in the tree.
+  \item The time to store a new data $(i,j,A_{ij})$ is $\mathcal{O}(\log^2 (mn))$.
+  \item There exists a quantum algorithm that takes $\textrm{\normalfont 
+    polylog}(mn)$ time to perform the mapping
+    \[
+      \widetilde{U}:\ket{i,0}\rightarrow \ket{i, A_i}
+    \]
+    and for $\widetilde{A}\in\mathbb{R}^m$ with entries $\widetilde{A_i}=\|A_i\|$,
+    \[
+      \widetilde{V}:\ket{0,j}\rightarrow\ket{\widetilde{A},j}.
+    \]
   \end{enumerate}
 \end{thm}
-This data structure is an array of $m$  binary trees. The value
+\begin{proof}
+  The data structure consits $m$ binary trees $B_i$, where $i\in[m]$. 
+  Leaf node is created or updated by the arrival of new entry $(i,j,A_{ij})$,
+  storing the value $A_{ij}^2$, where internal node $v$ stores the sum of the
+  values of all leaves in the subtree rooted at $v$. Hence, the value stored
+  at the root is $\|A_i\|^2$.
+\begin{figure}[h]
+  \begin{forest}
+    for tree={
+      edge={-{Stealth[]}},
+    }
+    [$\|A_i\|^2$
+      [$\|A_{i1}\|^2+\|A_{i2}\|^2$
+        [$\|A_{i1}\|^2$
+          [$A_{i1}^2$
+          ]
+        ]
+        [$\|A_{i2}\|^2$
+          [$A_{i2}^2$
+          ]
+        ]
+      ]
+      [$\|A_{i3}\|^2+\|A_{i4}\|^2$
+        [$\|A_{i3}\|^2$
+          [$A_{i3}^2$
+          ]
+        ]
+        [$\|A_{i4}\|^2$
+          [$A_{i4}^2$
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{example for $A^{i\times 4}$}
+\end{figure}
+
+  The depth of the tree is at most $\lceil\log n\rceil$ for most $n$ leaves,
+  which is the number of updates required for a new entry. If we store
+  each tree sorted as ordered list, update node address retrival time and
+  bits required for memory would be $\mathcal{O}(\log mn)$. Thus, the size of the
+  data structure is $\mathcal{O}(w\log^2(mn))$ and the time to store a new
+  entry is $\mathcal{O}(\log^2(mn))$. 
+\end{proof}
+This data structure constitues an array of $m$  binary trees. The value
 stored at the root is $\|A_i\|^2$ for $i\in[m]$, and depth of each tree is
-at most $\lceil\log n\rceil$. Here, dequantization questions the assumption
-of `\emph{qauntum access} to the data structure that can efficiently handle
-classical inputs' and provides a fair comparison. Goal is to classically
-construct identical tree with only a polynomial slowdown. 
+at most $\lceil\log n\rceil$. For a fair evaluation of quantum speedup
+provided by such QRAM-dependant data stucture, dequantization starts
+from constructing equivalent binary search tree with only a polynomial
+slowdown.
 \begin{defn}[\cite{tang2023} Definition 4.1]
   For all $i\in[n]$, if we can query for $v(i)$, we have \emph{query access}
   to a vector $v\in\mathbb{C}^n$, denoted by $Q(v)$. For all 
@@ -404,6 +537,12 @@ New York,
 1984.
 
 %ref-journal-------------------------------------------
+\bibitem{grover2002}
+L. Grover and T. Rudolph,
+{\it Creating superpositions that correspond to efficiently integrable
+probability distributions,"},
+arXiv preprint quant-ph/0208112, (2002).
+
 \bibitem{harrow2009}
 A. W. Harrow, A. Hassidim and S. Lloyd,
 {\it Quantum algorithm for linear Systems of equations},

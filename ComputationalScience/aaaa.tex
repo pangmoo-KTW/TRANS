@@ -1,0 +1,31 @@
+\documentclass[14pt,twoside,reqno]{amsart}
+\begin{document}
+\section{lala}
+\begin{itemize}
+  \item GLM08b speculate \emph{passive} compnenents to enact the memory, such
+    that after a signal is sent into the device, it \emph{propagates
+    without external control to complete the memory access}.
+  \item Results on QRAM are scattered.
+  \item Classically we are used to ``gates" being static physical components
+    that data propagates through, just as depicted in circuit diagrams.
+    Applying that intuition to quantum computing is unjustified.
+  \item In contrast, the memory peripheral framework of JS19 models quantum
+    computer as data are static physical components, and gates are operations
+    that a controller applies to the data.
+  \item In this framework a quantum computer is a physical object (e.g., some
+    Hilbert space) called a \emph{memory peripheral} that evolves independently
+    under som Hamiltonian.
+  \item There is also a memory controller that can choose to intervene on the
+    object, either by applying a quantum channel from some defined set,
+    or modifying the Hamilton.
+  \item The crux of QRAM is that if a query state is a superposition over
+    all addresses, then for the device or circuit to respond appropriately,
+    it must perform a memory access over \emph{all} addresses simultaneously.
+  \item imagining the memory laid out in space, a QRAM access must transfer
+    some information to each of the bits in memory if it hopes to correctly
+    perform a superposition of memory accesses. 
+  \item This sets up an immediate contrast to classical memory, which can
+    instead adaptively direct a signal through different parts of a memory
+    circuit.
+\end{itemize}
+\end{document}
