@@ -249,9 +249,49 @@ we check state preparation method by Grover and Rudolph \cite{grover2002}.
   By repeating the cororally above until $m=n$, we can efficiently construct
   a superposition as desired.
 \end{proof}
+\begin{exa}
+\begin{figure}[h]
+    \begin{forest}
+      for tree={
+        edge={-},
+      }
+    [$1.0$
+      [$0.32$
+        [$0.16$
+        ]
+        [$0.16$
+        ]
+      ]
+      [$0.68$
+        [$0.64$
+        ]
+        [$0.04$
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Vector state preparation for $4$-dimensional state $\ket{\phi}$}
+\end{figure}
 
-This result, variable by construction details, is used in the data structure
-below to to efficiently perform $\widetilde{U}$ and $\widetilde{V}$.
+  Let a $4$-dimensional state of $\ket{\phi}=0.4\ket{00}+0.4\ket{01}+
+  0.8\ket{10}+0.2\ket{11}$. Then, by Lemma 3.2, we apply rotation on the
+  first qubit, that yields:
+  \[
+    \ket{0,0}\mapsto(\sqrt{0.32}\ket{0}+\ket{0.68}\ket{1})\ket0.
+  \]
+  Untill $m=n$, we apply rotation on the next qubit, conditioned on the last one:
+  \begin{align*}
+    (\sqrt{0.32}\ket0+\sqrt{0.68})\ket0\mapsto
+    \begin{aligned}
+      &\sqrt{0.32}\ket0\frac{1}{\sqrt{0.32}}(0.4\ket0+0.4\ket1)\\&\quad +\\&
+    \sqrt{0.68}\ket1\frac{1}{\sqrt{0.68}}(0.8\ket0+0.2\ket1).
+  \end{aligned}
+  \end{align*}
+\end{exa}
+
+This result, which may have alternatives by construction details, is used in
+the data structure below to to efficiently perform $\widetilde{U}$ and
+$\widetilde{V}$.
 
 \begin{thm}[\cite{kerenidis2017} Theorem 15]
   For a real matrix $A\in\mathbb{R}^{m\times n}$, let $(i,j,A_{ij})$ be given
@@ -315,7 +355,22 @@ below to to efficiently perform $\widetilde{U}$ and $\widetilde{V}$.
   each tree sorted as ordered list, update node address retrival time and
   bits required for memory would be $\mathcal{O}(\log mn)$. Thus, the size of the
   data structure is $\mathcal{O}(w\log^2(mn))$ and the time to store a new
-  entry is $\mathcal{O}(\log^2(mn))$. 
+  entry is $\mathcal{O}(\log^2(mn))$.
+
+  Now let a quantum algorithm has an access to these $m$-binary trees. 
+  We apply Lemma 3.2, that is, we apply a sequence of conditional rotations
+  to the initial state $\ket0^{\lceil\log n\rceil}$ to obtain $\ket{A_i}$.
+  For $B_{i,t_i}$, conditioned on the first register being $\ket{i}$ and the
+  first $d$ qubits begin in state $\ket{t_i}$ for the depth $d$, the rotation
+  is applied to the $d+1$ qubit as follows
+  \[
+  \ket{i,t_i,0}\mapsto \ket{i,t_i}\frac{1}{\sqrt{B_{i,t_{i0}}}}
+  \left(\ket{0}+\sqrt{B_i,t_{i1}}\ket1\right).
+  \]
+  So there are $\lceil\log n\rceil$ rotations applied and for each
+  rotations we need two quantum queries from each node in the superposition.
+  This process also holds for $\widetilde{V}$.
+  Hence, $\textrm{polylog}(mn)$ time is required.
 \end{proof}
 This data structure constitues an array of $m$  binary trees. The value
 stored at the root is $\|A_i\|^2$ for $i\in[m]$, and depth of each tree is

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1699570612 "ql.tex" "ql.pdf" "ql" 1699570613 0
+["pdflatex"] 1699573007 "ql.tex" "ql.pdf" "ql" 1699573008 0
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1689853683 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -166,8 +166,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693050855 4536171 a99c91227ad639ddb323da780ab5cd00 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693050829 6768060 70fc59a0586548925d965eca336b065e ""
-  "ql.aux" 1699570613 1907 a0dbcd0eae01f88ae13bd1d286b3d48e "pdflatex"
-  "ql.tex" 1699570610 24487 1cc0f0faf69b868fc4aa777aed58b2c9 ""
+  "ql.aux" 1699573008 2092 a52fbc0c0ce78bdb60adfac56314da8d "pdflatex"
+  "ql.tex" 1699573006 26243 492177690ba1edefb4dbdd6315795d17 ""
   (generated)
   "ql.aux"
   "ql.log"
