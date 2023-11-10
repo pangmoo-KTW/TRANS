@@ -179,6 +179,20 @@ the polylogarithmic function of $n$ multiplied by $c$ for all $n\geq n_0$.
 Another useful notation in algorithmic analysis is 
 $\widetilde{\mathcal{O}}(f(n))$, shorthand for $\mathcal{O}(g(n)\log^k g(n))$.
 
+For other notations mainly regarding the norm:
+\begin{align*}
+  n\in\mathbb{N}, [n]&:=\{1,\ldots,n\}. \\
+  z\in\mathbb{C}, |z|&:=\sqrt{z^*z}\quad\textrm{[aboslute value]} \\
+  v\in\mathbb{C}^n, \|v\| &:= \left(\sum_{i=1}^n|v_i|^2\right)^{1/2}
+  \quad\textrm{[Euclidean norm]}\\
+  A\in\mathbb{C}^{m\times n}, \|A\|_F&
+  :=\left(\sum_{i=1}^m\sum_{j=1}^n|A_{ij}|^2\right)^{1/2}
+  \quad\textrm{[Frobenius norm]}\\
+  \|A\|&:=\max_{\ket{\psi}}
+  \frac{\|A\ket{\psi}\|}{\|\ket{\psi}\|}
+  \quad\textrm{[spectral norm]}
+\end{align*}
+
 \section{Quantum accesibble classical data structure}
 
 QRAM enables input models or \emph{data structures} for processing matrix
@@ -372,39 +386,103 @@ $\widetilde{V}$.
   This process also holds for $\widetilde{V}$.
   Hence, $\textrm{polylog}(mn)$ time is required.
 \end{proof}
-This data structure constitues an array of $m$  binary trees. The value
-stored at the root is $\|A_i\|^2$ for $i\in[m]$, and depth of each tree is
-at most $\lceil\log n\rceil$. For a fair evaluation of quantum speedup
-provided by such QRAM-dependant data stucture, dequantization starts
-from constructing equivalent binary search tree with only a polynomial
-slowdown.
+For a fair evaluation of quantum speedup provided by such QRAM-dependant data
+stucture, dequantization starts by constructing equivalent binary search tree.
 \begin{defn}[\cite{tang2023} Definition 4.1]
-  For all $i\in[n]$, if we can query for $v(i)$, we have \emph{query access}
+  For all $i\in[n]$, if we can query for $v_i$, we have \emph{query access}
   to a vector $v\in\mathbb{C}^n$, denoted by $Q(v)$. For all 
   $(i,j)\in[m]\times[n]$, if we can query for $A_{ij}$, we have $Q(A)$ to
   a matrix $A\in\mathbb{C}^{m\times n}$. Time cost of such query is denoted
   by $q(v)$ and $q(A)$, respectively.
 \end{defn}
+
+\begin{figure}[h]
+  \begin{forest}
+    for tree={
+      edge={-{Stealth[]}},
+    }
+      [$\|A\|^2_F$
+        [$\|A_1\|^2$
+          [$\|A_{11}\|^2+\|A_{12}\|^2$
+            [$\|A_{11}\|^2$
+              [$A_{11}$
+              ]
+            ]
+            [$\|A_{12}\|^2$
+              [$A_{12}$]
+            ]
+          ]
+          [$\|A_{13}\|^2+\|A_{14}\|^2$
+            [$\|A_{13}\|^2$
+              [$A_{13}$]
+            ]
+            [$\|A_{14}\|^2$
+              [$A_{14}$]
+            ]
+          ]
+        ]
+        [$\|A_2\|^2$
+          [$\|A_{21}\|^2+\|A_{22}\|^2$
+            [$\|A_{21}\|^2$
+              [$A_{21}$]
+            ]
+            [$\|A_{22}\|^2$
+              [$A_{22}$]
+            ]
+          ]
+          [$\|A_{23}\|^2+\|A_{24}\|^2$
+            [$\|A_{23}\|^2$
+              [$A_{23}$]
+            ]
+            [$\|A_{24}\|^2$
+              [$A_{24}$]
+            ]
+          ]
+        ]
+      ]
+  \end{forest}
+  \caption{$SQ$ data structure for $A\in\mathbb{C}^{2\times4}$}
+\end{figure}
+
+
 \begin{defn}[\cite{tang2023} Definition 4.2]
   For a vector $v\in\mathbb{C}^n$, we have \emph{sampling and query access} to
   $v$, denoted by $SQ(v)$, if we can:
   \begin{enumerate}
     \item have query access to $v$;
     \item obtain independent samples $i\in[n]$ following the distribution
-      $\mathcal{D}_v\in\mathbb{R}^n$ with $\mathcal{D}_v(i):=|v(i)|^2/\|v\|^2$;
+      $\mathcal{D}_v\in\mathbb{R}^n$ with $\mathcal{D}_{v_i}:=|v_i|^2/\|v\|^2$;
     \item have query access to $\|v\|$.
   \end{enumerate}
   Cost of entry querying, index sampling, norm querying, are denoted as
-  $q(v),s(v),$ and $n(v)$, respectively. Also, let $sq(v):=\max(q(v),s(v),n(v))$.
+  $q(v),s(v),$ and $n(v)$, respectively. Also, $sq(v):=\max(q(v),s(v),n(v))$.
 \end{defn}
-Samples obtained from sampling and query access are analogue to the quantum
-state $\ket{v} := 1/\|v\|\sum v_i\ket{i}$ in the computational basis. Such
-sampling and query access may be generalized by some oversampling rate.
+
+We could think of $SQ(v)$ as $Q(v)$ with access to computational basis, since
+samples obtained from sampling and query access are analogue to the quantum
+state $\ket{v} := 1/\|v\|\sum v_i\ket{i}$ in the computational basis. In
+particular, computational basis measurement lets efficient estimation of matrix
+products through Monte Carlo methods \cite{drineas2006}
+
+\begin{thm}
+  DKM06 : Fast Monte Carlo
+\end{thm}
+
+Such sampling and query access may be generalized by some oversampling rate.
+
+\begin{lem}
+  Let a QML algorithm assumes QRAM bases data structure for a matrix
+  $A\in\mathbb{C}^{m\times n}$. Then, for the classical counterpart, we 
+  get $SQ(A)$ with $q(A)=\mathcal{O}(1), s(A)=\mathcal{O}(\log mn)$, and
+  $n(A)=\mathcal{O}(1)$. 
+\end{lem}
+
 \begin{defn}
   For $v\in\mathbb{C}^n$ and $\phi\geq1$, we have
   $\widetilde{v}\in\mathbb{C}^n$ if $\|\widetilde{v}\|^2=\phi\|v\|^2$ and
   $|\widetilde{v}_i|^2\geq |v_i|^2$ for all $i\in[n]$.
 \end{defn}
+
 \begin{defn}[\cite{tang2023} Definition 4.3]
   For $v\in\mathbb{C}^n$ and $\phi\geq1$, if $Q(v)$ and 
   $SQ(\widetilde{v})$ for $\widetilde{v}\in\mathbb{C}^n$, we have 
@@ -417,45 +495,26 @@ sampling and query access may be generalized by some oversampling rate.
   \end{align*}
 \end{defn}
 
-\begin{figure}[h]
-  \begin{forest}
-    for tree={
-      edge={-{Stealth[]}},
-    }
-      [$\|\widetilde{A}\|^2$
-        [$\|\widetilde{A_1}\|^2$
-        [$\|\widetilde{A_{11}}\|^2+\|\widetilde{A_{12}}\|^2$
-          [$\|\widetilde{A_{11}}\|^2$
-            ]
-            [
-            $\|\widetilde{A_{12}}\|^2$
-            ]
-          ]
-          [$\|\widetilde{A_{13}}\|^2+\|\widetilde{A_{14}}\|^2$
-          [$\|\widetilde{A_{13}}\|^2$
-            ]
-            [$\|\widetilde{A_{14}}\|^2$
-            ]
-          ]
-        ]
-        [$\|\widetilde{A_2}\|^2$
-        [$\|\widetilde{A_{21}}\|^2+\|\widetilde{A_{22}}\|^2$
-          [$\|\widetilde{A_{21}}\|^2$
-            ]
-            [$\|\widetilde{A_{22}}\|^2$
-            ]
-          ]
-          [ $\|\widetilde{A_{23}}\|^2+\|\widetilde{A_{24}}\|^2$
-          [$\|\widetilde{A_{23}}\|^2$
-            ]
-            [$\|\widetilde{A_{24}}\|^2$
-            ]
-          ]
-        ]
-      ]
-  \end{forest}
-  \caption{example of a $\phi$-sampling and qeury access data structure}
-\end{figure}
+\begin{defn}[\cite{tang2023} Definition 4.7]
+  For a matrix $A\in\mathbb{C}^{m\times n}$, we have $SQ(A)$ if we have
+  $SQ(A_i)$ for all $i\in[m]$ and $SQ(a)$ for $a\in\mathbb{R}^m$ the vector
+  of row norms, that is, $a_i:=\|A_i\|$.
+
+  We have $SQ_{\phi}(A)$ if we have $Q(A)$ and $SQ(\widetilde{A})$ for
+  $\widetilde{A}\in\mathbb{C}^{m\times n}$ such that $\|\widetilde{A}\|^2_F=
+  \phi\|A\|^2_F$ and $|\widetilde{A}_{ij}|^2\geq|A_{ij}|^2$ for all 
+  $(i,j)\in[m]\times[n]$.
+
+  Complexities are denoted as follows.
+  \begin{align*}
+    s_{\phi}(A) &:= \max(s(\widetilde{A}_i),s(\widetilde{a}));\\
+    q_{\phi}(A) &:= \max(q(\widetilde{A}_i),q(\widetilde{a}),);\\
+    q(A)&:=\max(q(A_i));\\
+    n_{\phi}(A)&:=n(\widetilde{a});\\
+    sq_{\phi}(A)&:=\max(s_{\phi}(A),q_{\phi}(A),q(A),n_{\phi}(A)).
+  \end{align*}
+\end{defn}
+
 Note that $SQ_{\phi}(v)$ constructs an identical tree structure to the one
 from QRAM. So, we can dequantize whenever QML algorithm relies on QRAM
 based data structure. 
@@ -597,6 +656,14 @@ L. Grover and T. Rudolph,
 {\it Creating superpositions that correspond to efficiently integrable
 probability distributions,"},
 arXiv preprint quant-ph/0208112, (2002).
+
+\bibitem{drineas2006}
+P. Drineas, R. Kannan, and M. Mahoney,
+{\it Fast Monte Carlo algorithms for matrices I: approximating matrix 
+multiplication},
+SIAM. Jour. Comp
+{\bf 36.1} (2006),
+132-157.
 
 \bibitem{harrow2009}
 A. W. Harrow, A. Hassidim and S. Lloyd,
